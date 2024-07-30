@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|c:\\users\\adlos\\source\\repos\\rts 2d\\rts 2d\\strumenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|solutionrelative:rts 2d\\strumenti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|c:\\users\\adlos\\source\\repos\\rts 2d\\rts 2d\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|solutionrelative:rts 2d\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2d\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|solutionrelative:rts 2d\\battle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2d\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|solutionrelative:rts 2d\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|c:\\users\\adlos\\source\\repos\\rts 2d\\rts 2d\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|solutionrelative:rts 2d\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2d\\variabili.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CECD2F8-EB5E-4EAD-904F-845A732800E5}|rts 2D\\rts 2D.csproj|solutionrelative:rts 2d\\variabili.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Strumenti.cs",
+              "DocumentMoniker": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Strumenti.cs",
+              "RelativeDocumentMoniker": "rts 2D\\Strumenti.cs",
+              "ToolTip": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Strumenti.cs",
+              "RelativeToolTip": "rts 2D\\Strumenti.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T11:31:02.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Program.cs",
+              "RelativeDocumentMoniker": "rts 2D\\Program.cs",
+              "ToolTip": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Program.cs",
+              "RelativeToolTip": "rts 2D\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T11:05:52.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Battle.cs",
+              "DocumentMoniker": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Battle.cs",
+              "RelativeDocumentMoniker": "rts 2D\\Battle.cs",
+              "ToolTip": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Battle.cs",
+              "RelativeToolTip": "rts 2D\\Battle.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T13:41:17.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Variabili.cs",
+              "DocumentMoniker": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Variabili.cs",
+              "RelativeDocumentMoniker": "rts 2D\\Variabili.cs",
+              "ToolTip": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Variabili.cs",
+              "RelativeToolTip": "rts 2D\\Variabili.cs",
+              "ViewState": "AQIAAOQBAAAAAAAAAAAqwAMCAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T09:56:32.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Form1.cs",
+              "RelativeDocumentMoniker": "rts 2D\\Form1.cs",
+              "ToolTip": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Form1.cs",
+              "RelativeToolTip": "rts 2D\\Form1.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAIwGMBAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T22:25:50.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Form1.cs",
+              "RelativeDocumentMoniker": "rts 2D\\Form1.cs",
+              "ToolTip": "C:\\Users\\Adlos\\source\\repos\\rts 2D\\rts 2D\\Form1.cs [Progettazione]",
+              "RelativeToolTip": "rts 2D\\Form1.cs [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T22:22:42.453Z",
+              "EditorCaption": " [Progettazione]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
