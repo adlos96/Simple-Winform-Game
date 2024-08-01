@@ -51,7 +51,7 @@ namespace rts_2D
         public static int tipi_Di_Unità_Att = 0;
 
         public static int timer_Invasione = timer_Invasione_Set;
-        public static int timer_Invasione_Set = 60 * 1;
+        public static int timer_Invasione_Set = 50 * 1;
 
         public static double ProgressColorMax = 0.66;
         public static double ProgressColorMin = 0.33;
@@ -122,7 +122,7 @@ namespace rts_2D
                 Pietra  = 100,
                 Ferro   = 100,
                 Oro     = 100,
-                Produzione = 1.58,
+                Produzione = 1.62,
                 TempoCostruzione = 24
             };
             public static CostoCostruzione Segheria = new CostoCostruzione
@@ -132,7 +132,7 @@ namespace rts_2D
                 Pietra  = 175,
                 Ferro   = 175,
                 Oro     = 175,
-                Produzione = 1.41,
+                Produzione = 1.46,
                 TempoCostruzione = 27
             };
             public static CostoCostruzione CavaPietra = new CostoCostruzione
@@ -142,7 +142,7 @@ namespace rts_2D
                 Pietra  = 250,
                 Ferro   = 250,
                 Oro     = 250,
-                Produzione = 1.17,
+                Produzione = 1.22,
                 TempoCostruzione = 33
             };
             public static CostoCostruzione MinieraFerro = new CostoCostruzione
@@ -152,7 +152,7 @@ namespace rts_2D
                 Pietra  = 325,
                 Ferro   = 325,
                 Oro     = 325,
-                Produzione = 0.99,
+                Produzione = 1.04,
                 TempoCostruzione = 38
             };
             public static CostoCostruzione MinieraOro = new CostoCostruzione
@@ -162,7 +162,7 @@ namespace rts_2D
                 Pietra  = 400,
                 Ferro   = 400,
                 Oro     = 400,
-                Produzione = 0.84,
+                Produzione = 0.91,
                 TempoCostruzione = 46
             };
         }
@@ -260,6 +260,14 @@ namespace rts_2D
                 Pietra = 7000,
                 Ferro = 6000,
                 Oro = 5000
+            };
+            public static Ricerca Sblocco_Invasioni = new Ricerca
+            {
+                Cibo = 7000,
+                Legno = 6000,
+                Pietra = 5000,
+                Ferro = 4000,
+                Oro = 3500
             };
 
             public static Ricerca Produzione_I = new Ricerca
@@ -360,75 +368,171 @@ namespace rts_2D
             };
             public static Ricerca Attacco_I = new Ricerca
             {
-                Cibo = 4000,
-                Legno = 3500,
-                Pietra = 3000,
-                Ferro = 2500,
-                Oro = 2000
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3500,
+                Oro = 3000
             };
             public static Ricerca Attacco_II = new Ricerca
             {
-                Cibo = 5500,
-                Legno = 5000,
-                Pietra = 4500,
-                Ferro = 4000,
-                Oro = 3500
+                Cibo = 6500,
+                Legno = 6000,
+                Pietra = 5500,
+                Ferro = 5000,
+                Oro = 4500
             };
             public static Ricerca Attacco_III = new Ricerca
             {
-                Cibo = 8000,
-                Legno = 7500,
-                Pietra = 7000,
-                Ferro = 6500,
-                Oro = 6000
+                Cibo = 9000,
+                Legno = 8500,
+                Pietra = 8000,
+                Ferro = 7500,
+                Oro = 7000
             };
             public static Ricerca Difesa_I = new Ricerca
             {
-                Cibo = 4000,
-                Legno = 3500,
-                Pietra = 3000,
-                Ferro = 2500,
-                Oro = 2000
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3500,
+                Oro = 3000
             };
             public static Ricerca Difesa_II = new Ricerca
             {
-                Cibo = 5500,
-                Legno = 5000,
-                Pietra = 4500,
-                Ferro = 4000,
-                Oro = 3500
+                Cibo = 6500,
+                Legno = 6000,
+                Pietra = 5500,
+                Ferro = 5000,
+                Oro = 4500
             };
             public static Ricerca Difesa_III = new Ricerca
             {
-                Cibo = 8000,
-                Legno = 7500,
-                Pietra = 7000,
-                Ferro = 6500,
-                Oro = 6000
+                Cibo = 9000,
+                Legno = 8500,
+                Pietra = 8000,
+                Ferro = 7500,
+                Oro = 7000
             };
             public static Ricerca Salute_I = new Ricerca
             {
-                Cibo = 4000,
-                Legno = 3500,
-                Pietra = 3000,
-                Ferro = 2500,
-                Oro = 2000
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3500,
+                Oro = 3000
             };
             public static Ricerca Salute_II = new Ricerca
             {
-                Cibo = 5500,
-                Legno = 5000,
-                Pietra = 4500,
-                Ferro = 4000,
-                Oro = 3500
+                Cibo = 6500,
+                Legno = 6000,
+                Pietra = 5500,
+                Ferro = 5000,
+                Oro = 4500
             };
             public static Ricerca Salute_III = new Ricerca
             {
-                Cibo = 8000,
-                Legno = 7500,
-                Pietra = 7000,
-                Ferro = 6500,
-                Oro = 6000
+                Cibo = 9000,
+                Legno = 8500,
+                Pietra = 8000,
+                Ferro = 7500,
+                Oro = 7000
+            };
+            public static Ricerca Città_Salute_I = new Ricerca
+            {
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3500,
+                Oro = 3000
+            };
+            public static Ricerca Città_Salute_II = new Ricerca
+            {
+                Cibo = 6500,
+                Legno = 6000,
+                Pietra = 5500,
+                Ferro = 5000,
+                Oro = 4500
+            };
+            public static Ricerca Città_Salute_III = new Ricerca
+            {
+                Cibo = 9000,
+                Legno = 8500,
+                Pietra = 8000,
+                Ferro = 7500,
+                Oro = 7000
+            };
+            public static Ricerca Città_Difesa_I = new Ricerca
+            {
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3500,
+                Oro = 3000
+            };
+            public static Ricerca Città_Difesa_II = new Ricerca
+            {
+                Cibo = 6500,
+                Legno = 6000,
+                Pietra = 5500,
+                Ferro = 5000,
+                Oro = 4500
+            };
+            public static Ricerca Città_Difesa_III = new Ricerca
+            {
+                Cibo = 9000,
+                Legno = 8500,
+                Pietra = 8000,
+                Ferro = 7500,
+                Oro = 7000
+            };
+            public static Ricerca Città_Guarnigione_I = new Ricerca
+            {
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3500,
+                Oro = 3000
+            };
+            public static Ricerca Città_Guarnigione_II = new Ricerca
+            {
+                Cibo = 6500,
+                Legno = 6000,
+                Pietra = 5500,
+                Ferro = 5000,
+                Oro = 4500
+            };
+            public static Ricerca Città_Guarnigione_III = new Ricerca
+            {
+                Cibo = 9000,
+                Legno = 8500,
+                Pietra = 8000,
+                Ferro = 7500,
+                Oro = 7000
+            };
+            public static Ricerca Città_Riparazione_I = new Ricerca
+            {
+                Cibo = 6000,
+                Legno = 5500,
+                Pietra = 5000,
+                Ferro = 4500,
+                Oro = 4000
+            };
+            public static Ricerca Città_Riparazione_II = new Ricerca
+            {
+                Cibo = 7500,
+                Legno = 7000,
+                Pietra = 6500,
+                Ferro = 6000,
+                Oro = 5500
+            };
+            public static Ricerca Città_Riparazione_III = new Ricerca
+            {
+                Cibo = 10500,
+                Legno = 9500,
+                Pietra = 9000,
+                Ferro = 8500,
+                Oro = 8000
             };
         }
 
@@ -438,8 +542,8 @@ namespace rts_2D
             {
                 Salute = 6,
                 Attacco = 3,
-                Difesa = 1,
-                Distanza = 0,
+                Difesa = 3,
+                Distanza = 1,
                 Salario = 1,
                 Cibo = 1,
                 Quantità = 0
@@ -448,8 +552,8 @@ namespace rts_2D
             {
                 Salute = 7,
                 Attacco = 4,
-                Difesa = 3,
-                Distanza = 6,
+                Difesa = 4,
+                Distanza = 2,
                 Salario = 1,
                 Cibo = 1,
                 Quantità = 0
@@ -457,8 +561,8 @@ namespace rts_2D
             public static Esercito Arciere = new Esercito
             {
                 Salute = 5,
-                Attacco = 5,
-                Difesa = 1,
+                Attacco = 6,
+                Difesa = 2,
                 Distanza = 6,
                 Salario = 1,
                 Cibo = 1,
@@ -466,10 +570,10 @@ namespace rts_2D
             };
             public static Esercito Catapulta = new Esercito
             {
-                Salute = Guerriero.Salute / 1.53 * CostoReclutamento.Guerriero.Popolazione,
-                Attacco = 12,
-                Difesa = Guerriero.Salute / 1.43 * CostoReclutamento.Guerriero.Popolazione,
-                Distanza = 14,
+                Salute = Guerriero.Salute * 0.71 * CostoReclutamento.Guerriero.Popolazione,
+                Attacco = 18,
+                Difesa = Guerriero.Salute * 0.71 * CostoReclutamento.Guerriero.Popolazione,
+                Distanza = 18,
                 Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
                 Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
                 Quantità = 0
@@ -489,40 +593,40 @@ namespace rts_2D
             {
                 Salute = 6,
                 Attacco = 3,
-                Difesa = 1,
-                Distanza = 0,
-                Salario = 0.18,
-                Cibo = 0.29,
-                Quantità = 10
+                Difesa = 3,
+                Distanza = 1,
+                Salario = 0.16,
+                Cibo = 0.32,
+                Quantità = 0
             };
             public static Esercito Lanciere = new Esercito
             {
                 Salute = 7,
                 Attacco = 4,
-                Difesa = 3,
-                Distanza = 6,
-                Salario = 0.22,
-                Cibo = 0.33,
-                Quantità = 10
+                Difesa = 4,
+                Distanza = 2,
+                Salario = 0.20,
+                Cibo = 0.35,
+                Quantità = 0
             };
             public static Esercito Arciere = new Esercito
             {
                 Salute = 5,
-                Attacco = 5,
-                Difesa = 1,
+                Attacco = 8,
+                Difesa = 2,
                 Distanza = 6,
-                Salario = 0.27,
-                Cibo = 0.39,
-                Quantità = 8
+                Salario = 0.25,
+                Cibo = 0.41,
+                Quantità = 0
             };
             public static Esercito Catapulta = new Esercito
             {
-                Salute = Guerriero.Salute / 1.88 * CostoReclutamento.Guerriero.Popolazione,
+                Salute = Guerriero.Salute * 0.75 * CostoReclutamento.Catapulta.Popolazione,
                 Attacco = 18,
-                Difesa = Guerriero.Salute / 1.68 * CostoReclutamento.Guerriero.Popolazione,
-                Distanza = 14,
-                Salario = CostoReclutamento.Guerriero.Popolazione * 0.799,
-                Cibo = CostoReclutamento.Guerriero.Popolazione * 0.699,
+                Difesa = Guerriero.Salute * 0.75 * CostoReclutamento.Catapulta.Popolazione,
+                Distanza = 18,
+                Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.749,
+                Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.699,
                 Quantità = 0
             };
         }
@@ -530,8 +634,8 @@ namespace rts_2D
         {
             public new int Salute { get; set; }
             public new int Difesa { get; set; }
-            public int SaluteMax { get; set; }
-            public int DifesaMax { get; set; }
+            public new int SaluteMax { get; set; }
+            public new int DifesaMax { get; set; }
             public int Guarnigione { get; set; }
             public int Arceri { get; set; }
             public int Guerrieri { get; set; }
@@ -579,6 +683,39 @@ namespace rts_2D
                 SaluteMax = 500,
                 DifesaMax = 250
             };
+        }
+        public class Riparazioni : Esercito
+        {
+            public double Mura_Salute { get; set; }
+            public double Mura_Difesa { get; set; }
+            public double Torre_Salute { get; set; }
+            public double Torre_Difesa { get; set; }
+            public double Castello_Salute { get; set; }
+            public double Castello_Difesa { get; set; }
+            public int Riparazione { get; set; }
+
+            public static Riparazioni Stato = new Riparazioni
+            {
+                Mura_Salute = 0,
+                Mura_Difesa = 0,
+                Torre_Salute = 0,
+                Torre_Difesa = 0,
+                Castello_Salute = 0,
+                Castello_Difesa = 0
+            };
+            public static CostoCostruzione Costo_Riparazioni = new CostoCostruzione
+            {
+                Cibo = 9,
+                Legno = 6,
+                Pietra = 10,
+                Ferro = 8,
+                Oro = 14
+            };
+            public static Riparazioni Valore = new Riparazioni
+            {
+                Riparazione = 1
+            };
+
         }
     }
 }

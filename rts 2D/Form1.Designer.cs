@@ -79,6 +79,11 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txt_Tempo_Reclutamento = new System.Windows.Forms.TextBox();
             this.Blocco_Costruzione = new System.Windows.Forms.GroupBox();
+            this.lbl_Miniera_Oro_X0 = new System.Windows.Forms.Label();
+            this.lbl_Miniera_Ferro_X0 = new System.Windows.Forms.Label();
+            this.lbl_Cava_X0 = new System.Windows.Forms.Label();
+            this.lbl_Segheria_X0 = new System.Windows.Forms.Label();
+            this.lbl_Fattoria_X0 = new System.Windows.Forms.Label();
             this.txt_Totale_Coda_Costruzioni = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txt_Fattoria_Coda = new System.Windows.Forms.TextBox();
@@ -97,6 +102,10 @@
             this.lbl_Fattoria_X5 = new System.Windows.Forms.Label();
             this.lbl_Fattoria_X1 = new System.Windows.Forms.Label();
             this.Blocco_Reclutamento = new System.Windows.Forms.GroupBox();
+            this.lbl_Catapulta_X0 = new System.Windows.Forms.Label();
+            this.lbl_Arciere_X0 = new System.Windows.Forms.Label();
+            this.lbl_Lanciere_X0 = new System.Windows.Forms.Label();
+            this.lbl_Guerriero_X0 = new System.Windows.Forms.Label();
             this.txt_Lancieri_Coda = new System.Windows.Forms.TextBox();
             this.txt_Guerriero_Coda = new System.Windows.Forms.TextBox();
             this.txt_Arciere_Coda = new System.Windows.Forms.TextBox();
@@ -130,6 +139,7 @@
             this.Blocco_Risorse = new System.Windows.Forms.GroupBox();
             this.Blocco_Ricerca = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btn_Citta_Riparazioni = new System.Windows.Forms.Button();
             this.btn_Citta_Difesa = new System.Windows.Forms.Button();
             this.btn_Citta_Guarnigione = new System.Windows.Forms.Button();
             this.btn_Citta_Salute = new System.Windows.Forms.Button();
@@ -175,6 +185,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.Blocco_Strutture_Esercito = new System.Windows.Forms.GroupBox();
             this.lbl_Tempo = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.Blocco_Costruzione.SuspendLayout();
             this.Blocco_Reclutamento.SuspendLayout();
             this.Blocco_Produzione.SuspendLayout();
@@ -253,7 +265,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 16);
+            this.label1.Location = new System.Drawing.Point(25, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 5;
@@ -271,7 +283,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(214, 16);
+            this.label3.Location = new System.Drawing.Point(218, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 8;
@@ -280,7 +292,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(147, 16);
+            this.label4.Location = new System.Drawing.Point(151, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 7;
@@ -289,7 +301,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(279, 16);
+            this.label5.Location = new System.Drawing.Point(287, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 10;
@@ -350,7 +362,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(2, 16);
+            this.label12.Location = new System.Drawing.Point(6, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 19;
@@ -370,7 +382,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(49, 16);
+            this.label8.Location = new System.Drawing.Point(50, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 21;
@@ -390,7 +402,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(132, 16);
+            this.label9.Location = new System.Drawing.Point(134, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 25;
@@ -410,7 +422,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(95, 16);
+            this.label10.Location = new System.Drawing.Point(94, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 23;
@@ -430,7 +442,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(175, 16);
+            this.label16.Location = new System.Drawing.Point(174, 16);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 13);
             this.label16.TabIndex = 29;
@@ -450,7 +462,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(117, 97);
+            this.label14.Location = new System.Drawing.Point(141, 97);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 13);
             this.label14.TabIndex = 35;
@@ -460,7 +472,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(117, 71);
+            this.label15.Location = new System.Drawing.Point(141, 71);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(40, 13);
             this.label15.TabIndex = 33;
@@ -470,7 +482,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(117, 19);
+            this.label17.Location = new System.Drawing.Point(141, 19);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 13);
             this.label17.TabIndex = 31;
@@ -489,54 +501,60 @@
             // 
             // txt_Catapulta
             // 
-            this.txt_Catapulta.Location = new System.Drawing.Point(62, 94);
+            this.txt_Catapulta.Location = new System.Drawing.Point(78, 94);
             this.txt_Catapulta.Name = "txt_Catapulta";
-            this.txt_Catapulta.Size = new System.Drawing.Size(30, 20);
+            this.txt_Catapulta.ReadOnly = true;
+            this.txt_Catapulta.Size = new System.Drawing.Size(33, 20);
             this.txt_Catapulta.TabIndex = 41;
             this.txt_Catapulta.Text = "0";
             this.txt_Catapulta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Arciere
             // 
-            this.txt_Arciere.Location = new System.Drawing.Point(62, 68);
+            this.txt_Arciere.Location = new System.Drawing.Point(78, 68);
             this.txt_Arciere.Name = "txt_Arciere";
-            this.txt_Arciere.Size = new System.Drawing.Size(30, 20);
+            this.txt_Arciere.ReadOnly = true;
+            this.txt_Arciere.Size = new System.Drawing.Size(33, 20);
             this.txt_Arciere.TabIndex = 40;
             this.txt_Arciere.Text = "0";
             this.txt_Arciere.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Guerriero
             // 
-            this.txt_Guerriero.Location = new System.Drawing.Point(62, 16);
+            this.txt_Guerriero.Location = new System.Drawing.Point(78, 16);
             this.txt_Guerriero.Name = "txt_Guerriero";
-            this.txt_Guerriero.Size = new System.Drawing.Size(30, 20);
+            this.txt_Guerriero.ReadOnly = true;
+            this.txt_Guerriero.Size = new System.Drawing.Size(33, 20);
             this.txt_Guerriero.TabIndex = 39;
             this.txt_Guerriero.Text = "0";
             this.txt_Guerriero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Cava
             // 
-            this.txt_Cava.Location = new System.Drawing.Point(61, 71);
+            this.txt_Cava.Location = new System.Drawing.Point(80, 71);
             this.txt_Cava.Name = "txt_Cava";
-            this.txt_Cava.Size = new System.Drawing.Size(29, 20);
+            this.txt_Cava.ReadOnly = true;
+            this.txt_Cava.Size = new System.Drawing.Size(33, 20);
             this.txt_Cava.TabIndex = 64;
             this.txt_Cava.Text = "0";
             this.txt_Cava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Segheria
             // 
-            this.txt_Segheria.Location = new System.Drawing.Point(61, 45);
+            this.txt_Segheria.Location = new System.Drawing.Point(80, 45);
             this.txt_Segheria.Name = "txt_Segheria";
-            this.txt_Segheria.Size = new System.Drawing.Size(29, 20);
+            this.txt_Segheria.ReadOnly = true;
+            this.txt_Segheria.Size = new System.Drawing.Size(33, 20);
             this.txt_Segheria.TabIndex = 63;
             this.txt_Segheria.Text = "0";
             this.txt_Segheria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Fattoria
             // 
-            this.txt_Fattoria.Location = new System.Drawing.Point(61, 19);
+            this.txt_Fattoria.Location = new System.Drawing.Point(80, 19);
             this.txt_Fattoria.Name = "txt_Fattoria";
-            this.txt_Fattoria.Size = new System.Drawing.Size(29, 20);
+            this.txt_Fattoria.ReadOnly = true;
+            this.txt_Fattoria.Size = new System.Drawing.Size(33, 20);
             this.txt_Fattoria.TabIndex = 62;
             this.txt_Fattoria.Text = "0";
             this.txt_Fattoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -554,7 +572,7 @@
             // lbl_CavaPietra
             // 
             this.lbl_CavaPietra.AutoSize = true;
-            this.lbl_CavaPietra.Location = new System.Drawing.Point(116, 74);
+            this.lbl_CavaPietra.Location = new System.Drawing.Point(141, 74);
             this.lbl_CavaPietra.Name = "lbl_CavaPietra";
             this.lbl_CavaPietra.Size = new System.Drawing.Size(62, 13);
             this.lbl_CavaPietra.TabIndex = 58;
@@ -564,7 +582,7 @@
             // lbl_Segheria
             // 
             this.lbl_Segheria.AutoSize = true;
-            this.lbl_Segheria.Location = new System.Drawing.Point(116, 50);
+            this.lbl_Segheria.Location = new System.Drawing.Point(141, 50);
             this.lbl_Segheria.Name = "lbl_Segheria";
             this.lbl_Segheria.Size = new System.Drawing.Size(49, 13);
             this.lbl_Segheria.TabIndex = 57;
@@ -574,7 +592,7 @@
             // lbl_Fattoria
             // 
             this.lbl_Fattoria.AutoSize = true;
-            this.lbl_Fattoria.Location = new System.Drawing.Point(116, 22);
+            this.lbl_Fattoria.Location = new System.Drawing.Point(141, 22);
             this.lbl_Fattoria.Name = "lbl_Fattoria";
             this.lbl_Fattoria.Size = new System.Drawing.Size(42, 13);
             this.lbl_Fattoria.TabIndex = 56;
@@ -583,18 +601,20 @@
             // 
             // txt_Miniera_Oro
             // 
-            this.txt_Miniera_Oro.Location = new System.Drawing.Point(61, 123);
+            this.txt_Miniera_Oro.Location = new System.Drawing.Point(80, 123);
             this.txt_Miniera_Oro.Name = "txt_Miniera_Oro";
-            this.txt_Miniera_Oro.Size = new System.Drawing.Size(29, 20);
+            this.txt_Miniera_Oro.ReadOnly = true;
+            this.txt_Miniera_Oro.Size = new System.Drawing.Size(33, 20);
             this.txt_Miniera_Oro.TabIndex = 70;
             this.txt_Miniera_Oro.Text = "0";
             this.txt_Miniera_Oro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Miniera_Ferro
             // 
-            this.txt_Miniera_Ferro.Location = new System.Drawing.Point(61, 97);
+            this.txt_Miniera_Ferro.Location = new System.Drawing.Point(80, 97);
             this.txt_Miniera_Ferro.Name = "txt_Miniera_Ferro";
-            this.txt_Miniera_Ferro.Size = new System.Drawing.Size(29, 20);
+            this.txt_Miniera_Ferro.ReadOnly = true;
+            this.txt_Miniera_Ferro.Size = new System.Drawing.Size(33, 20);
             this.txt_Miniera_Ferro.TabIndex = 69;
             this.txt_Miniera_Ferro.Text = "0";
             this.txt_Miniera_Ferro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -602,7 +622,7 @@
             // lbl_MinieraOro
             // 
             this.lbl_MinieraOro.AutoSize = true;
-            this.lbl_MinieraOro.Location = new System.Drawing.Point(116, 126);
+            this.lbl_MinieraOro.Location = new System.Drawing.Point(141, 126);
             this.lbl_MinieraOro.Name = "lbl_MinieraOro";
             this.lbl_MinieraOro.Size = new System.Drawing.Size(61, 13);
             this.lbl_MinieraOro.TabIndex = 66;
@@ -612,7 +632,7 @@
             // lbl_MinieraFerro
             // 
             this.lbl_MinieraFerro.AutoSize = true;
-            this.lbl_MinieraFerro.Location = new System.Drawing.Point(116, 100);
+            this.lbl_MinieraFerro.Location = new System.Drawing.Point(141, 100);
             this.lbl_MinieraFerro.Name = "lbl_MinieraFerro";
             this.lbl_MinieraFerro.Size = new System.Drawing.Size(68, 13);
             this.lbl_MinieraFerro.TabIndex = 65;
@@ -631,9 +651,10 @@
             // 
             // txt_Lancieri
             // 
-            this.txt_Lancieri.Location = new System.Drawing.Point(62, 42);
+            this.txt_Lancieri.Location = new System.Drawing.Point(78, 42);
             this.txt_Lancieri.Name = "txt_Lancieri";
-            this.txt_Lancieri.Size = new System.Drawing.Size(30, 20);
+            this.txt_Lancieri.ReadOnly = true;
+            this.txt_Lancieri.Size = new System.Drawing.Size(33, 20);
             this.txt_Lancieri.TabIndex = 81;
             this.txt_Lancieri.Text = "0";
             this.txt_Lancieri.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -641,7 +662,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(117, 45);
+            this.label23.Location = new System.Drawing.Point(141, 45);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(44, 13);
             this.label23.TabIndex = 80;
@@ -663,6 +684,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(94, 174);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(98, 13);
@@ -672,6 +694,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(85, 146);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(109, 13);
@@ -692,6 +715,11 @@
             // 
             // Blocco_Costruzione
             // 
+            this.Blocco_Costruzione.Controls.Add(this.lbl_Miniera_Oro_X0);
+            this.Blocco_Costruzione.Controls.Add(this.lbl_Miniera_Ferro_X0);
+            this.Blocco_Costruzione.Controls.Add(this.lbl_Cava_X0);
+            this.Blocco_Costruzione.Controls.Add(this.lbl_Segheria_X0);
+            this.Blocco_Costruzione.Controls.Add(this.lbl_Fattoria_X0);
             this.Blocco_Costruzione.Controls.Add(this.txt_Totale_Coda_Costruzioni);
             this.Blocco_Costruzione.Controls.Add(this.label33);
             this.Blocco_Costruzione.Controls.Add(this.txt_Fattoria_Coda);
@@ -722,20 +750,76 @@
             this.Blocco_Costruzione.Controls.Add(this.lbl_MinieraFerro);
             this.Blocco_Costruzione.Controls.Add(this.txt_Miniera_Ferro);
             this.Blocco_Costruzione.Controls.Add(this.lbl_MinieraOro);
-            this.Blocco_Costruzione.Location = new System.Drawing.Point(12, 93);
+            this.Blocco_Costruzione.Location = new System.Drawing.Point(12, 88);
             this.Blocco_Costruzione.Name = "Blocco_Costruzione";
-            this.Blocco_Costruzione.Size = new System.Drawing.Size(199, 213);
+            this.Blocco_Costruzione.Size = new System.Drawing.Size(211, 210);
             this.Blocco_Costruzione.TabIndex = 86;
             this.Blocco_Costruzione.TabStop = false;
             this.Blocco_Costruzione.Text = "Costruzione Strutture";
             this.Blocco_Costruzione.Visible = false;
             // 
+            // lbl_Miniera_Oro_X0
+            // 
+            this.lbl_Miniera_Oro_X0.AutoSize = true;
+            this.lbl_Miniera_Oro_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Miniera_Oro_X0.Location = new System.Drawing.Point(5, 126);
+            this.lbl_Miniera_Oro_X0.Name = "lbl_Miniera_Oro_X0";
+            this.lbl_Miniera_Oro_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Miniera_Oro_X0.TabIndex = 115;
+            this.lbl_Miniera_Oro_X0.Text = "X0";
+            this.lbl_Miniera_Oro_X0.Click += new System.EventHandler(this.lbl_Miniera_Oro_X0_Click);
+            // 
+            // lbl_Miniera_Ferro_X0
+            // 
+            this.lbl_Miniera_Ferro_X0.AutoSize = true;
+            this.lbl_Miniera_Ferro_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Miniera_Ferro_X0.Location = new System.Drawing.Point(5, 101);
+            this.lbl_Miniera_Ferro_X0.Name = "lbl_Miniera_Ferro_X0";
+            this.lbl_Miniera_Ferro_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Miniera_Ferro_X0.TabIndex = 114;
+            this.lbl_Miniera_Ferro_X0.Text = "X0";
+            this.lbl_Miniera_Ferro_X0.Click += new System.EventHandler(this.lbl_Miniera_Ferro_X0_Click);
+            // 
+            // lbl_Cava_X0
+            // 
+            this.lbl_Cava_X0.AutoSize = true;
+            this.lbl_Cava_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Cava_X0.Location = new System.Drawing.Point(5, 75);
+            this.lbl_Cava_X0.Name = "lbl_Cava_X0";
+            this.lbl_Cava_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Cava_X0.TabIndex = 113;
+            this.lbl_Cava_X0.Text = "X0";
+            this.lbl_Cava_X0.Click += new System.EventHandler(this.lbl_Cava_X0_Click);
+            // 
+            // lbl_Segheria_X0
+            // 
+            this.lbl_Segheria_X0.AutoSize = true;
+            this.lbl_Segheria_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Segheria_X0.Location = new System.Drawing.Point(5, 49);
+            this.lbl_Segheria_X0.Name = "lbl_Segheria_X0";
+            this.lbl_Segheria_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Segheria_X0.TabIndex = 112;
+            this.lbl_Segheria_X0.Text = "X0";
+            this.lbl_Segheria_X0.Click += new System.EventHandler(this.lbl_Segheria_X0_Click);
+            // 
+            // lbl_Fattoria_X0
+            // 
+            this.lbl_Fattoria_X0.AutoSize = true;
+            this.lbl_Fattoria_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Fattoria_X0.Location = new System.Drawing.Point(5, 23);
+            this.lbl_Fattoria_X0.Name = "lbl_Fattoria_X0";
+            this.lbl_Fattoria_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Fattoria_X0.TabIndex = 111;
+            this.lbl_Fattoria_X0.Text = "X0";
+            this.lbl_Fattoria_X0.Click += new System.EventHandler(this.lbl_Fattoria_X0_Click);
+            // 
             // txt_Totale_Coda_Costruzioni
             // 
-            this.txt_Totale_Coda_Costruzioni.Location = new System.Drawing.Point(128, 148);
+            this.txt_Totale_Coda_Costruzioni.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Totale_Coda_Costruzioni.Location = new System.Drawing.Point(128, 152);
             this.txt_Totale_Coda_Costruzioni.Name = "txt_Totale_Coda_Costruzioni";
             this.txt_Totale_Coda_Costruzioni.ReadOnly = true;
-            this.txt_Totale_Coda_Costruzioni.Size = new System.Drawing.Size(18, 20);
+            this.txt_Totale_Coda_Costruzioni.Size = new System.Drawing.Size(26, 13);
             this.txt_Totale_Coda_Costruzioni.TabIndex = 100;
             this.txt_Totale_Coda_Costruzioni.Text = "0";
             this.txt_Totale_Coda_Costruzioni.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -743,6 +827,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(4, 152);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(118, 13);
@@ -751,50 +836,50 @@
             // 
             // txt_Fattoria_Coda
             // 
-            this.txt_Fattoria_Coda.Location = new System.Drawing.Point(92, 19);
+            this.txt_Fattoria_Coda.Location = new System.Drawing.Point(115, 19);
             this.txt_Fattoria_Coda.Name = "txt_Fattoria_Coda";
             this.txt_Fattoria_Coda.ReadOnly = true;
-            this.txt_Fattoria_Coda.Size = new System.Drawing.Size(18, 20);
+            this.txt_Fattoria_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Fattoria_Coda.TabIndex = 94;
             this.txt_Fattoria_Coda.Text = "0";
             this.txt_Fattoria_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Segheria_Coda
             // 
-            this.txt_Segheria_Coda.Location = new System.Drawing.Point(92, 45);
+            this.txt_Segheria_Coda.Location = new System.Drawing.Point(115, 45);
             this.txt_Segheria_Coda.Name = "txt_Segheria_Coda";
             this.txt_Segheria_Coda.ReadOnly = true;
-            this.txt_Segheria_Coda.Size = new System.Drawing.Size(18, 20);
+            this.txt_Segheria_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Segheria_Coda.TabIndex = 95;
             this.txt_Segheria_Coda.Text = "0";
             this.txt_Segheria_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Cava_Coda
             // 
-            this.txt_Cava_Coda.Location = new System.Drawing.Point(92, 71);
+            this.txt_Cava_Coda.Location = new System.Drawing.Point(115, 71);
             this.txt_Cava_Coda.Name = "txt_Cava_Coda";
             this.txt_Cava_Coda.ReadOnly = true;
-            this.txt_Cava_Coda.Size = new System.Drawing.Size(18, 20);
+            this.txt_Cava_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Cava_Coda.TabIndex = 96;
             this.txt_Cava_Coda.Text = "0";
             this.txt_Cava_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Miniera_Oro_Coda
             // 
-            this.txt_Miniera_Oro_Coda.Location = new System.Drawing.Point(92, 123);
+            this.txt_Miniera_Oro_Coda.Location = new System.Drawing.Point(115, 123);
             this.txt_Miniera_Oro_Coda.Name = "txt_Miniera_Oro_Coda";
             this.txt_Miniera_Oro_Coda.ReadOnly = true;
-            this.txt_Miniera_Oro_Coda.Size = new System.Drawing.Size(18, 20);
+            this.txt_Miniera_Oro_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Miniera_Oro_Coda.TabIndex = 98;
             this.txt_Miniera_Oro_Coda.Text = "0";
             this.txt_Miniera_Oro_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Miniera_Ferro_Coda
             // 
-            this.txt_Miniera_Ferro_Coda.Location = new System.Drawing.Point(92, 97);
+            this.txt_Miniera_Ferro_Coda.Location = new System.Drawing.Point(115, 97);
             this.txt_Miniera_Ferro_Coda.Name = "txt_Miniera_Ferro_Coda";
             this.txt_Miniera_Ferro_Coda.ReadOnly = true;
-            this.txt_Miniera_Ferro_Coda.Size = new System.Drawing.Size(18, 20);
+            this.txt_Miniera_Ferro_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Miniera_Ferro_Coda.TabIndex = 97;
             this.txt_Miniera_Ferro_Coda.Text = "0";
             this.txt_Miniera_Ferro_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -803,104 +888,118 @@
             // 
             this.lbl_Miniera_Oro_X5.AutoSize = true;
             this.lbl_Miniera_Oro_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Miniera_Oro_X5.Location = new System.Drawing.Point(7, 126);
+            this.lbl_Miniera_Oro_X5.Location = new System.Drawing.Point(30, 126);
             this.lbl_Miniera_Oro_X5.Name = "lbl_Miniera_Oro_X5";
             this.lbl_Miniera_Oro_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Miniera_Oro_X5.TabIndex = 93;
             this.lbl_Miniera_Oro_X5.Text = "X5";
+            this.lbl_Miniera_Oro_X5.Click += new System.EventHandler(this.lbl_Miniera_Oro_X5_Click);
             // 
             // lbl_Miniera_Oro_X1
             // 
             this.lbl_Miniera_Oro_X1.AutoSize = true;
             this.lbl_Miniera_Oro_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Miniera_Oro_X1.Location = new System.Drawing.Point(35, 126);
+            this.lbl_Miniera_Oro_X1.Location = new System.Drawing.Point(57, 126);
             this.lbl_Miniera_Oro_X1.Name = "lbl_Miniera_Oro_X1";
             this.lbl_Miniera_Oro_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Miniera_Oro_X1.TabIndex = 92;
             this.lbl_Miniera_Oro_X1.Text = "X1";
+            this.lbl_Miniera_Oro_X1.Click += new System.EventHandler(this.lbl_Miniera_Oro_X1_Click);
             // 
             // lbl_Miniera_Ferro_X5
             // 
             this.lbl_Miniera_Ferro_X5.AutoSize = true;
             this.lbl_Miniera_Ferro_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Miniera_Ferro_X5.Location = new System.Drawing.Point(7, 100);
+            this.lbl_Miniera_Ferro_X5.Location = new System.Drawing.Point(30, 100);
             this.lbl_Miniera_Ferro_X5.Name = "lbl_Miniera_Ferro_X5";
             this.lbl_Miniera_Ferro_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Miniera_Ferro_X5.TabIndex = 91;
             this.lbl_Miniera_Ferro_X5.Text = "X5";
+            this.lbl_Miniera_Ferro_X5.Click += new System.EventHandler(this.lbl_Miniera_Ferro_X5_Click);
             // 
             // lbl_Miniera_Ferro_X1
             // 
             this.lbl_Miniera_Ferro_X1.AutoSize = true;
             this.lbl_Miniera_Ferro_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Miniera_Ferro_X1.Location = new System.Drawing.Point(35, 100);
+            this.lbl_Miniera_Ferro_X1.Location = new System.Drawing.Point(57, 100);
             this.lbl_Miniera_Ferro_X1.Name = "lbl_Miniera_Ferro_X1";
             this.lbl_Miniera_Ferro_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Miniera_Ferro_X1.TabIndex = 90;
             this.lbl_Miniera_Ferro_X1.Text = "X1";
+            this.lbl_Miniera_Ferro_X1.Click += new System.EventHandler(this.lbl_Miniera_Ferro_X1_Click);
             // 
             // lbl_Cava_X5
             // 
             this.lbl_Cava_X5.AutoSize = true;
             this.lbl_Cava_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Cava_X5.Location = new System.Drawing.Point(7, 74);
+            this.lbl_Cava_X5.Location = new System.Drawing.Point(30, 74);
             this.lbl_Cava_X5.Name = "lbl_Cava_X5";
             this.lbl_Cava_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Cava_X5.TabIndex = 89;
             this.lbl_Cava_X5.Text = "X5";
+            this.lbl_Cava_X5.Click += new System.EventHandler(this.lbl_Cava_X5_Click);
             // 
             // lbl_Cava_X1
             // 
             this.lbl_Cava_X1.AutoSize = true;
             this.lbl_Cava_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Cava_X1.Location = new System.Drawing.Point(35, 74);
+            this.lbl_Cava_X1.Location = new System.Drawing.Point(57, 74);
             this.lbl_Cava_X1.Name = "lbl_Cava_X1";
             this.lbl_Cava_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Cava_X1.TabIndex = 88;
             this.lbl_Cava_X1.Text = "X1";
+            this.lbl_Cava_X1.Click += new System.EventHandler(this.lbl_Cava_X1_Click);
             // 
             // lbl_Segheria_X5
             // 
             this.lbl_Segheria_X5.AutoSize = true;
             this.lbl_Segheria_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Segheria_X5.Location = new System.Drawing.Point(7, 48);
+            this.lbl_Segheria_X5.Location = new System.Drawing.Point(30, 48);
             this.lbl_Segheria_X5.Name = "lbl_Segheria_X5";
             this.lbl_Segheria_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Segheria_X5.TabIndex = 87;
             this.lbl_Segheria_X5.Text = "X5";
+            this.lbl_Segheria_X5.Click += new System.EventHandler(this.lbl_Segheria_X5_Click);
             // 
             // lbl_Segheria_X1
             // 
             this.lbl_Segheria_X1.AutoSize = true;
             this.lbl_Segheria_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Segheria_X1.Location = new System.Drawing.Point(35, 48);
+            this.lbl_Segheria_X1.Location = new System.Drawing.Point(57, 48);
             this.lbl_Segheria_X1.Name = "lbl_Segheria_X1";
             this.lbl_Segheria_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Segheria_X1.TabIndex = 86;
             this.lbl_Segheria_X1.Text = "X1";
+            this.lbl_Segheria_X1.Click += new System.EventHandler(this.lbl_Segheria_X1_Click);
             // 
             // lbl_Fattoria_X5
             // 
             this.lbl_Fattoria_X5.AutoSize = true;
             this.lbl_Fattoria_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Fattoria_X5.Location = new System.Drawing.Point(7, 22);
+            this.lbl_Fattoria_X5.Location = new System.Drawing.Point(30, 22);
             this.lbl_Fattoria_X5.Name = "lbl_Fattoria_X5";
             this.lbl_Fattoria_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Fattoria_X5.TabIndex = 85;
             this.lbl_Fattoria_X5.Text = "X5";
+            this.lbl_Fattoria_X5.Click += new System.EventHandler(this.lbl_Fattoria_X5_Click);
             // 
             // lbl_Fattoria_X1
             // 
             this.lbl_Fattoria_X1.AutoSize = true;
             this.lbl_Fattoria_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Fattoria_X1.Location = new System.Drawing.Point(35, 22);
+            this.lbl_Fattoria_X1.Location = new System.Drawing.Point(57, 22);
             this.lbl_Fattoria_X1.Name = "lbl_Fattoria_X1";
             this.lbl_Fattoria_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Fattoria_X1.TabIndex = 84;
             this.lbl_Fattoria_X1.Text = "X1";
+            this.lbl_Fattoria_X1.Click += new System.EventHandler(this.lbl_Fattoria_X1_Click);
             // 
             // Blocco_Reclutamento
             // 
+            this.Blocco_Reclutamento.Controls.Add(this.lbl_Catapulta_X0);
+            this.Blocco_Reclutamento.Controls.Add(this.lbl_Arciere_X0);
+            this.Blocco_Reclutamento.Controls.Add(this.lbl_Lanciere_X0);
+            this.Blocco_Reclutamento.Controls.Add(this.lbl_Guerriero_X0);
             this.Blocco_Reclutamento.Controls.Add(this.txt_Lancieri_Coda);
             this.Blocco_Reclutamento.Controls.Add(this.txt_Guerriero_Coda);
             this.Blocco_Reclutamento.Controls.Add(this.txt_Arciere_Coda);
@@ -926,60 +1025,105 @@
             this.Blocco_Reclutamento.Controls.Add(this.label23);
             this.Blocco_Reclutamento.Controls.Add(this.txt_Arciere);
             this.Blocco_Reclutamento.Controls.Add(this.txt_Catapulta);
-            this.Blocco_Reclutamento.Location = new System.Drawing.Point(217, 93);
+            this.Blocco_Reclutamento.Location = new System.Drawing.Point(229, 88);
             this.Blocco_Reclutamento.Name = "Blocco_Reclutamento";
-            this.Blocco_Reclutamento.Size = new System.Drawing.Size(204, 213);
+            this.Blocco_Reclutamento.Size = new System.Drawing.Size(196, 210);
             this.Blocco_Reclutamento.TabIndex = 87;
             this.Blocco_Reclutamento.TabStop = false;
             this.Blocco_Reclutamento.Text = "Reclutamento";
             this.Blocco_Reclutamento.Visible = false;
             // 
+            // lbl_Catapulta_X0
+            // 
+            this.lbl_Catapulta_X0.AutoSize = true;
+            this.lbl_Catapulta_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Catapulta_X0.Location = new System.Drawing.Point(4, 97);
+            this.lbl_Catapulta_X0.Name = "lbl_Catapulta_X0";
+            this.lbl_Catapulta_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Catapulta_X0.TabIndex = 110;
+            this.lbl_Catapulta_X0.Text = "X0";
+            this.lbl_Catapulta_X0.Click += new System.EventHandler(this.lbl_Catapulta_X0_Click);
+            // 
+            // lbl_Arciere_X0
+            // 
+            this.lbl_Arciere_X0.AutoSize = true;
+            this.lbl_Arciere_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Arciere_X0.Location = new System.Drawing.Point(4, 71);
+            this.lbl_Arciere_X0.Name = "lbl_Arciere_X0";
+            this.lbl_Arciere_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Arciere_X0.TabIndex = 109;
+            this.lbl_Arciere_X0.Text = "X0";
+            this.lbl_Arciere_X0.Click += new System.EventHandler(this.lbl_Arciere_X0_Click);
+            // 
+            // lbl_Lanciere_X0
+            // 
+            this.lbl_Lanciere_X0.AutoSize = true;
+            this.lbl_Lanciere_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Lanciere_X0.Location = new System.Drawing.Point(4, 45);
+            this.lbl_Lanciere_X0.Name = "lbl_Lanciere_X0";
+            this.lbl_Lanciere_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Lanciere_X0.TabIndex = 108;
+            this.lbl_Lanciere_X0.Text = "X0";
+            this.lbl_Lanciere_X0.Click += new System.EventHandler(this.lbl_Lanciere_X0_Click);
+            // 
+            // lbl_Guerriero_X0
+            // 
+            this.lbl_Guerriero_X0.AutoSize = true;
+            this.lbl_Guerriero_X0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_Guerriero_X0.Location = new System.Drawing.Point(4, 19);
+            this.lbl_Guerriero_X0.Name = "lbl_Guerriero_X0";
+            this.lbl_Guerriero_X0.Size = new System.Drawing.Size(22, 13);
+            this.lbl_Guerriero_X0.TabIndex = 107;
+            this.lbl_Guerriero_X0.Text = "X0";
+            this.lbl_Guerriero_X0.Click += new System.EventHandler(this.lbl_Guerriero_X0_Click);
+            // 
             // txt_Lancieri_Coda
             // 
-            this.txt_Lancieri_Coda.Location = new System.Drawing.Point(94, 42);
+            this.txt_Lancieri_Coda.Location = new System.Drawing.Point(113, 42);
             this.txt_Lancieri_Coda.Name = "txt_Lancieri_Coda";
             this.txt_Lancieri_Coda.ReadOnly = true;
-            this.txt_Lancieri_Coda.Size = new System.Drawing.Size(17, 20);
+            this.txt_Lancieri_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Lancieri_Coda.TabIndex = 106;
             this.txt_Lancieri_Coda.Text = "0";
             this.txt_Lancieri_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Guerriero_Coda
             // 
-            this.txt_Guerriero_Coda.Location = new System.Drawing.Point(94, 16);
+            this.txt_Guerriero_Coda.Location = new System.Drawing.Point(113, 16);
             this.txt_Guerriero_Coda.Name = "txt_Guerriero_Coda";
             this.txt_Guerriero_Coda.ReadOnly = true;
-            this.txt_Guerriero_Coda.Size = new System.Drawing.Size(17, 20);
+            this.txt_Guerriero_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Guerriero_Coda.TabIndex = 103;
             this.txt_Guerriero_Coda.Text = "0";
             this.txt_Guerriero_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Arciere_Coda
             // 
-            this.txt_Arciere_Coda.Location = new System.Drawing.Point(94, 68);
+            this.txt_Arciere_Coda.Location = new System.Drawing.Point(113, 68);
             this.txt_Arciere_Coda.Name = "txt_Arciere_Coda";
             this.txt_Arciere_Coda.ReadOnly = true;
-            this.txt_Arciere_Coda.Size = new System.Drawing.Size(17, 20);
+            this.txt_Arciere_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Arciere_Coda.TabIndex = 104;
             this.txt_Arciere_Coda.Text = "0";
             this.txt_Arciere_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Catapulta_Coda
             // 
-            this.txt_Catapulta_Coda.Location = new System.Drawing.Point(94, 94);
+            this.txt_Catapulta_Coda.Location = new System.Drawing.Point(113, 94);
             this.txt_Catapulta_Coda.Name = "txt_Catapulta_Coda";
             this.txt_Catapulta_Coda.ReadOnly = true;
-            this.txt_Catapulta_Coda.Size = new System.Drawing.Size(17, 20);
+            this.txt_Catapulta_Coda.Size = new System.Drawing.Size(26, 20);
             this.txt_Catapulta_Coda.TabIndex = 105;
             this.txt_Catapulta_Coda.Text = "0";
             this.txt_Catapulta_Coda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Totale_Coda_Addestramento
             // 
-            this.txt_Totale_Coda_Addestramento.Location = new System.Drawing.Point(146, 121);
+            this.txt_Totale_Coda_Addestramento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Totale_Coda_Addestramento.Location = new System.Drawing.Point(146, 125);
             this.txt_Totale_Coda_Addestramento.Name = "txt_Totale_Coda_Addestramento";
             this.txt_Totale_Coda_Addestramento.ReadOnly = true;
-            this.txt_Totale_Coda_Addestramento.Size = new System.Drawing.Size(18, 20);
+            this.txt_Totale_Coda_Addestramento.Size = new System.Drawing.Size(26, 13);
             this.txt_Totale_Coda_Addestramento.TabIndex = 102;
             this.txt_Totale_Coda_Addestramento.Text = "0";
             this.txt_Totale_Coda_Addestramento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -987,6 +1131,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(12, 124);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(128, 13);
@@ -997,86 +1142,94 @@
             // 
             this.lbl_Catapulta_X5.AutoSize = true;
             this.lbl_Catapulta_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Catapulta_X5.Location = new System.Drawing.Point(10, 97);
+            this.lbl_Catapulta_X5.Location = new System.Drawing.Point(29, 97);
             this.lbl_Catapulta_X5.Name = "lbl_Catapulta_X5";
             this.lbl_Catapulta_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Catapulta_X5.TabIndex = 99;
             this.lbl_Catapulta_X5.Text = "X5";
+            this.lbl_Catapulta_X5.Click += new System.EventHandler(this.lbl_Catapulta_X5_Click);
             // 
             // lbl_Catapulta_X1
             // 
             this.lbl_Catapulta_X1.AutoSize = true;
             this.lbl_Catapulta_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Catapulta_X1.Location = new System.Drawing.Point(38, 97);
+            this.lbl_Catapulta_X1.Location = new System.Drawing.Point(56, 97);
             this.lbl_Catapulta_X1.Name = "lbl_Catapulta_X1";
             this.lbl_Catapulta_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Catapulta_X1.TabIndex = 98;
             this.lbl_Catapulta_X1.Text = "X1";
+            this.lbl_Catapulta_X1.Click += new System.EventHandler(this.lbl_Catapulta_X1_Click);
             // 
             // lbl_Arciere_X5
             // 
             this.lbl_Arciere_X5.AutoSize = true;
             this.lbl_Arciere_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Arciere_X5.Location = new System.Drawing.Point(10, 71);
+            this.lbl_Arciere_X5.Location = new System.Drawing.Point(29, 71);
             this.lbl_Arciere_X5.Name = "lbl_Arciere_X5";
             this.lbl_Arciere_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Arciere_X5.TabIndex = 97;
             this.lbl_Arciere_X5.Text = "X5";
+            this.lbl_Arciere_X5.Click += new System.EventHandler(this.lbl_Arciere_X5_Click);
             // 
             // lbl_Arciere_X1
             // 
             this.lbl_Arciere_X1.AutoSize = true;
             this.lbl_Arciere_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Arciere_X1.Location = new System.Drawing.Point(38, 71);
+            this.lbl_Arciere_X1.Location = new System.Drawing.Point(56, 71);
             this.lbl_Arciere_X1.Name = "lbl_Arciere_X1";
             this.lbl_Arciere_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Arciere_X1.TabIndex = 96;
             this.lbl_Arciere_X1.Text = "X1";
+            this.lbl_Arciere_X1.Click += new System.EventHandler(this.lbl_Arciere_X1_Click);
             // 
             // lbl_Lanciere_X5
             // 
             this.lbl_Lanciere_X5.AutoSize = true;
             this.lbl_Lanciere_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Lanciere_X5.Location = new System.Drawing.Point(10, 45);
+            this.lbl_Lanciere_X5.Location = new System.Drawing.Point(29, 45);
             this.lbl_Lanciere_X5.Name = "lbl_Lanciere_X5";
             this.lbl_Lanciere_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Lanciere_X5.TabIndex = 95;
             this.lbl_Lanciere_X5.Text = "X5";
+            this.lbl_Lanciere_X5.Click += new System.EventHandler(this.lbl_Lanciere_X5_Click);
             // 
             // lbl_Lanciere_X1
             // 
             this.lbl_Lanciere_X1.AutoSize = true;
             this.lbl_Lanciere_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Lanciere_X1.Location = new System.Drawing.Point(38, 45);
+            this.lbl_Lanciere_X1.Location = new System.Drawing.Point(56, 45);
             this.lbl_Lanciere_X1.Name = "lbl_Lanciere_X1";
             this.lbl_Lanciere_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Lanciere_X1.TabIndex = 94;
             this.lbl_Lanciere_X1.Text = "X1";
+            this.lbl_Lanciere_X1.Click += new System.EventHandler(this.lbl_Lanciere_X1_Click);
             // 
             // lbl_Guerriero_X5
             // 
             this.lbl_Guerriero_X5.AutoSize = true;
             this.lbl_Guerriero_X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Guerriero_X5.Location = new System.Drawing.Point(10, 19);
+            this.lbl_Guerriero_X5.Location = new System.Drawing.Point(29, 19);
             this.lbl_Guerriero_X5.Name = "lbl_Guerriero_X5";
             this.lbl_Guerriero_X5.Size = new System.Drawing.Size(22, 13);
             this.lbl_Guerriero_X5.TabIndex = 93;
             this.lbl_Guerriero_X5.Text = "X5";
+            this.lbl_Guerriero_X5.Click += new System.EventHandler(this.lbl_Guerriero_X5_Click);
             // 
             // lbl_Guerriero_X1
             // 
             this.lbl_Guerriero_X1.AutoSize = true;
             this.lbl_Guerriero_X1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_Guerriero_X1.Location = new System.Drawing.Point(38, 19);
+            this.lbl_Guerriero_X1.Location = new System.Drawing.Point(56, 19);
             this.lbl_Guerriero_X1.Name = "lbl_Guerriero_X1";
             this.lbl_Guerriero_X1.Size = new System.Drawing.Size(22, 13);
             this.lbl_Guerriero_X1.TabIndex = 92;
             this.lbl_Guerriero_X1.Text = "X1";
+            this.lbl_Guerriero_X1.Click += new System.EventHandler(this.lbl_Guerriero_X1_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(332, 16);
+            this.label11.Location = new System.Drawing.Point(334, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 13);
             this.label11.TabIndex = 89;
@@ -1097,13 +1250,14 @@
             // txt_Cose
             // 
             this.txt_Cose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.txt_Cose.Location = new System.Drawing.Point(12, 312);
+            this.txt_Cose.Location = new System.Drawing.Point(12, 315);
             this.txt_Cose.Multiline = true;
             this.txt_Cose.Name = "txt_Cose";
             this.txt_Cose.ReadOnly = true;
             this.txt_Cose.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_Cose.Size = new System.Drawing.Size(409, 144);
+            this.txt_Cose.Size = new System.Drawing.Size(226, 219);
             this.txt_Cose.TabIndex = 90;
+            this.txt_Cose.Visible = false;
             // 
             // txt_Produzione_Popolazione
             // 
@@ -1207,6 +1361,7 @@
             this.btn_Invasioni.UseVisualStyleBackColor = true;
             this.btn_Invasioni.Visible = false;
             this.btn_Invasioni.Click += new System.EventHandler(this.btn_Invasioni_Click);
+            this.btn_Invasioni.MouseHover += new System.EventHandler(this.btn_Invasioni_MouseHover);
             // 
             // txt_Esercito_Invasore
             // 
@@ -1218,15 +1373,18 @@
             this.txt_Esercito_Invasore.Size = new System.Drawing.Size(204, 117);
             this.txt_Esercito_Invasore.TabIndex = 105;
             this.txt_Esercito_Invasore.Text = "0";
+            this.txt_Esercito_Invasore.Visible = false;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(10, 21);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 13);
+            this.label26.Size = new System.Drawing.Size(51, 13);
             this.label26.TabIndex = 106;
-            this.label26.Text = "Invasione:";
+            this.label26.Text = "Invasore:";
+            this.label26.Visible = false;
             // 
             // txt_Timer_Invasione
             // 
@@ -1239,6 +1397,7 @@
             this.txt_Timer_Invasione.TabIndex = 107;
             this.txt_Timer_Invasione.Text = "0";
             this.txt_Timer_Invasione.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Timer_Invasione.Visible = false;
             // 
             // Blocco_Invasioni
             // 
@@ -1247,12 +1406,12 @@
             this.Blocco_Invasioni.Controls.Add(this.btn_Invasioni);
             this.Blocco_Invasioni.Controls.Add(this.txt_Timer_Invasione);
             this.Blocco_Invasioni.Controls.Add(this.txt_Esercito_Invasore);
-            this.Blocco_Invasioni.Location = new System.Drawing.Point(427, 267);
+            this.Blocco_Invasioni.Location = new System.Drawing.Point(477, 267);
             this.Blocco_Invasioni.Name = "Blocco_Invasioni";
-            this.Blocco_Invasioni.Size = new System.Drawing.Size(225, 189);
+            this.Blocco_Invasioni.Size = new System.Drawing.Size(223, 189);
             this.Blocco_Invasioni.TabIndex = 108;
             this.Blocco_Invasioni.TabStop = false;
-            this.Blocco_Invasioni.Text = "Battaglia";
+            this.Blocco_Invasioni.Text = "Invasione in arrivo";
             this.Blocco_Invasioni.Visible = false;
             // 
             // txt_Numero_Ondata
@@ -1266,6 +1425,7 @@
             this.txt_Numero_Ondata.TabIndex = 112;
             this.txt_Numero_Ondata.Text = "0";
             this.txt_Numero_Ondata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Numero_Ondata.Visible = false;
             // 
             // Blocco_Risorse
             // 
@@ -1293,15 +1453,16 @@
             this.Blocco_Risorse.TabIndex = 109;
             this.Blocco_Risorse.TabStop = false;
             this.Blocco_Risorse.Text = "Risorse";
+            this.Blocco_Risorse.Visible = false;
             // 
             // Blocco_Ricerca
             // 
             this.Blocco_Ricerca.Controls.Add(this.groupBox7);
             this.Blocco_Ricerca.Controls.Add(this.groupBox6);
             this.Blocco_Ricerca.Controls.Add(this.groupBox1);
-            this.Blocco_Ricerca.Location = new System.Drawing.Point(945, 6);
+            this.Blocco_Ricerca.Location = new System.Drawing.Point(941, 4);
             this.Blocco_Ricerca.Name = "Blocco_Ricerca";
-            this.Blocco_Ricerca.Size = new System.Drawing.Size(209, 260);
+            this.Blocco_Ricerca.Size = new System.Drawing.Size(209, 257);
             this.Blocco_Ricerca.TabIndex = 110;
             this.Blocco_Ricerca.TabStop = false;
             this.Blocco_Ricerca.Text = "Ricerca";
@@ -1309,9 +1470,11 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btn_Citta_Riparazioni);
             this.groupBox7.Controls.Add(this.btn_Citta_Difesa);
             this.groupBox7.Controls.Add(this.btn_Citta_Guarnigione);
             this.groupBox7.Controls.Add(this.btn_Citta_Salute);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(6, 173);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(195, 79);
@@ -1319,9 +1482,21 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Città";
             // 
+            // btn_Citta_Riparazioni
+            // 
+            this.btn_Citta_Riparazioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Citta_Riparazioni.Location = new System.Drawing.Point(3, 14);
+            this.btn_Citta_Riparazioni.Name = "btn_Citta_Riparazioni";
+            this.btn_Citta_Riparazioni.Size = new System.Drawing.Size(86, 28);
+            this.btn_Citta_Riparazioni.TabIndex = 112;
+            this.btn_Citta_Riparazioni.Text = "Riparazione I";
+            this.btn_Citta_Riparazioni.UseVisualStyleBackColor = true;
+            this.btn_Citta_Riparazioni.Click += new System.EventHandler(this.btn_Citta_Riparazioni_Click);
+            this.btn_Citta_Riparazioni.MouseHover += new System.EventHandler(this.btn_Citta_Riparazioni_MouseHover);
+            // 
             // btn_Citta_Difesa
             // 
-            this.btn_Citta_Difesa.Enabled = false;
+            this.btn_Citta_Difesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Citta_Difesa.Location = new System.Drawing.Point(94, 13);
             this.btn_Citta_Difesa.Name = "btn_Citta_Difesa";
             this.btn_Citta_Difesa.Size = new System.Drawing.Size(96, 28);
@@ -1333,7 +1508,7 @@
             // 
             // btn_Citta_Guarnigione
             // 
-            this.btn_Citta_Guarnigione.Enabled = false;
+            this.btn_Citta_Guarnigione.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Citta_Guarnigione.Location = new System.Drawing.Point(94, 47);
             this.btn_Citta_Guarnigione.Name = "btn_Citta_Guarnigione";
             this.btn_Citta_Guarnigione.Size = new System.Drawing.Size(96, 28);
@@ -1345,8 +1520,8 @@
             // 
             // btn_Citta_Salute
             // 
-            this.btn_Citta_Salute.Enabled = false;
-            this.btn_Citta_Salute.Location = new System.Drawing.Point(5, 47);
+            this.btn_Citta_Salute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Citta_Salute.Location = new System.Drawing.Point(3, 47);
             this.btn_Citta_Salute.Name = "btn_Citta_Salute";
             this.btn_Citta_Salute.Size = new System.Drawing.Size(86, 28);
             this.btn_Citta_Salute.TabIndex = 110;
@@ -1360,6 +1535,7 @@
             this.groupBox6.Controls.Add(this.btn_Risorse_Produzione);
             this.groupBox6.Controls.Add(this.btn_Risorse_Costruzione);
             this.groupBox6.Controls.Add(this.btn_Risorse_Popolazione);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(6, 15);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(195, 78);
@@ -1369,6 +1545,7 @@
             // 
             // btn_Risorse_Produzione
             // 
+            this.btn_Risorse_Produzione.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Risorse_Produzione.Location = new System.Drawing.Point(3, 12);
             this.btn_Risorse_Produzione.Name = "btn_Risorse_Produzione";
             this.btn_Risorse_Produzione.Size = new System.Drawing.Size(89, 28);
@@ -1380,6 +1557,7 @@
             // 
             // btn_Risorse_Costruzione
             // 
+            this.btn_Risorse_Costruzione.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Risorse_Costruzione.Location = new System.Drawing.Point(95, 12);
             this.btn_Risorse_Costruzione.Name = "btn_Risorse_Costruzione";
             this.btn_Risorse_Costruzione.Size = new System.Drawing.Size(96, 28);
@@ -1391,6 +1569,7 @@
             // 
             // btn_Risorse_Popolazione
             // 
+            this.btn_Risorse_Popolazione.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Risorse_Popolazione.Location = new System.Drawing.Point(95, 46);
             this.btn_Risorse_Popolazione.Name = "btn_Risorse_Popolazione";
             this.btn_Risorse_Popolazione.Size = new System.Drawing.Size(96, 28);
@@ -1406,6 +1585,7 @@
             this.groupBox1.Controls.Add(this.btn_Esercito_Attacco);
             this.groupBox1.Controls.Add(this.btn_Esercito_Salute);
             this.groupBox1.Controls.Add(this.btn_Esercito_Reclutamento);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(195, 83);
@@ -1415,6 +1595,7 @@
             // 
             // btn_Esercito_Difesa
             // 
+            this.btn_Esercito_Difesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Esercito_Difesa.Location = new System.Drawing.Point(92, 14);
             this.btn_Esercito_Difesa.Name = "btn_Esercito_Difesa";
             this.btn_Esercito_Difesa.Size = new System.Drawing.Size(96, 28);
@@ -1426,6 +1607,7 @@
             // 
             // btn_Esercito_Attacco
             // 
+            this.btn_Esercito_Attacco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Esercito_Attacco.Location = new System.Drawing.Point(3, 14);
             this.btn_Esercito_Attacco.Name = "btn_Esercito_Attacco";
             this.btn_Esercito_Attacco.Size = new System.Drawing.Size(86, 28);
@@ -1437,6 +1619,7 @@
             // 
             // btn_Esercito_Salute
             // 
+            this.btn_Esercito_Salute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Esercito_Salute.Location = new System.Drawing.Point(3, 49);
             this.btn_Esercito_Salute.Name = "btn_Esercito_Salute";
             this.btn_Esercito_Salute.Size = new System.Drawing.Size(86, 28);
@@ -1448,6 +1631,7 @@
             // 
             // btn_Esercito_Reclutamento
             // 
+            this.btn_Esercito_Reclutamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Esercito_Reclutamento.Location = new System.Drawing.Point(92, 48);
             this.btn_Esercito_Reclutamento.Name = "btn_Esercito_Reclutamento";
             this.btn_Esercito_Reclutamento.Size = new System.Drawing.Size(96, 28);
@@ -1476,9 +1660,9 @@
             this.Blocco_Città.Controls.Add(this.groupBox4);
             this.Blocco_Città.Controls.Add(this.groupBox3);
             this.Blocco_Città.Controls.Add(this.label13);
-            this.Blocco_Città.Location = new System.Drawing.Point(658, 267);
+            this.Blocco_Città.Location = new System.Drawing.Point(706, 262);
             this.Blocco_Città.Name = "Blocco_Città";
-            this.Blocco_Città.Size = new System.Drawing.Size(281, 305);
+            this.Blocco_Città.Size = new System.Drawing.Size(281, 287);
             this.Blocco_Città.TabIndex = 112;
             this.Blocco_Città.TabStop = false;
             this.Blocco_Città.Text = "Città";
@@ -1521,11 +1705,11 @@
             // 
             this.lbl_Guarnigione_Torre.AutoSize = true;
             this.lbl_Guarnigione_Torre.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Guarnigione_Torre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Guarnigione_Torre.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Guarnigione_Torre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Guarnigione_Torre.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Guarnigione_Torre.Location = new System.Drawing.Point(213, 41);
             this.lbl_Guarnigione_Torre.Name = "lbl_Guarnigione_Torre";
-            this.lbl_Guarnigione_Torre.Size = new System.Drawing.Size(29, 12);
+            this.lbl_Guarnigione_Torre.Size = new System.Drawing.Size(35, 13);
             this.lbl_Guarnigione_Torre.TabIndex = 124;
             this.lbl_Guarnigione_Torre.Text = "5847";
             // 
@@ -1533,11 +1717,11 @@
             // 
             this.lbl_Difesa_Torre.AutoSize = true;
             this.lbl_Difesa_Torre.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Difesa_Torre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Difesa_Torre.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Difesa_Torre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Difesa_Torre.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Difesa_Torre.Location = new System.Drawing.Point(213, 25);
             this.lbl_Difesa_Torre.Name = "lbl_Difesa_Torre";
-            this.lbl_Difesa_Torre.Size = new System.Drawing.Size(51, 12);
+            this.lbl_Difesa_Torre.Size = new System.Drawing.Size(59, 13);
             this.lbl_Difesa_Torre.TabIndex = 123;
             this.lbl_Difesa_Torre.Text = "5847 DIF";
             // 
@@ -1545,11 +1729,11 @@
             // 
             this.lbl_Salute_Torre.AutoSize = true;
             this.lbl_Salute_Torre.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Salute_Torre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Salute_Torre.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Salute_Torre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Salute_Torre.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Salute_Torre.Location = new System.Drawing.Point(213, 9);
             this.lbl_Salute_Torre.Name = "lbl_Salute_Torre";
-            this.lbl_Salute_Torre.Size = new System.Drawing.Size(47, 12);
+            this.lbl_Salute_Torre.Size = new System.Drawing.Size(55, 13);
             this.lbl_Salute_Torre.TabIndex = 122;
             this.lbl_Salute_Torre.Text = "5847 HP";
             // 
@@ -1562,6 +1746,7 @@
             this.progressBar_Salute_Torre.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_Salute_Torre.TabIndex = 120;
             this.progressBar_Salute_Torre.Value = 99;
+            this.progressBar_Salute_Torre.Click += new System.EventHandler(this.progressBar_Salute_Torre_Click);
             this.progressBar_Salute_Torre.MouseHover += new System.EventHandler(this.progressBar_Salute_Torre_MouseHover);
             // 
             // btn_Torre
@@ -1583,6 +1768,7 @@
             this.progressBar_Difesa_Torre.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_Difesa_Torre.TabIndex = 118;
             this.progressBar_Difesa_Torre.Value = 66;
+            this.progressBar_Difesa_Torre.Click += new System.EventHandler(this.progressBar_Difesa_Torre_Click);
             this.progressBar_Difesa_Torre.MouseHover += new System.EventHandler(this.progressBar_Difesa_Torre_MouseHover);
             // 
             // progressBar_Guarnigione_Torre
@@ -1615,11 +1801,11 @@
             // 
             this.lbl_Guarnigione_Mura.AutoSize = true;
             this.lbl_Guarnigione_Mura.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Guarnigione_Mura.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Guarnigione_Mura.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Guarnigione_Mura.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Guarnigione_Mura.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Guarnigione_Mura.Location = new System.Drawing.Point(213, 40);
             this.lbl_Guarnigione_Mura.Name = "lbl_Guarnigione_Mura";
-            this.lbl_Guarnigione_Mura.Size = new System.Drawing.Size(29, 12);
+            this.lbl_Guarnigione_Mura.Size = new System.Drawing.Size(35, 13);
             this.lbl_Guarnigione_Mura.TabIndex = 127;
             this.lbl_Guarnigione_Mura.Text = "5847";
             // 
@@ -1637,11 +1823,11 @@
             // 
             this.lbl_Difesa_Mura.AutoSize = true;
             this.lbl_Difesa_Mura.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Difesa_Mura.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Difesa_Mura.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Difesa_Mura.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Difesa_Mura.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Difesa_Mura.Location = new System.Drawing.Point(213, 24);
             this.lbl_Difesa_Mura.Name = "lbl_Difesa_Mura";
-            this.lbl_Difesa_Mura.Size = new System.Drawing.Size(51, 12);
+            this.lbl_Difesa_Mura.Size = new System.Drawing.Size(59, 13);
             this.lbl_Difesa_Mura.TabIndex = 126;
             this.lbl_Difesa_Mura.Text = "5847 DIF";
             // 
@@ -1654,17 +1840,18 @@
             this.progressBar_Salute_Mura.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_Salute_Mura.TabIndex = 121;
             this.progressBar_Salute_Mura.Value = 99;
+            this.progressBar_Salute_Mura.Click += new System.EventHandler(this.progressBar_Salute_Mura_Click);
             this.progressBar_Salute_Mura.MouseHover += new System.EventHandler(this.progressBar_Salute_Mura_MouseHover);
             // 
             // lbl_Salute_Mura
             // 
             this.lbl_Salute_Mura.AutoSize = true;
             this.lbl_Salute_Mura.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Salute_Mura.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Salute_Mura.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Salute_Mura.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Salute_Mura.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Salute_Mura.Location = new System.Drawing.Point(213, 8);
             this.lbl_Salute_Mura.Name = "lbl_Salute_Mura";
-            this.lbl_Salute_Mura.Size = new System.Drawing.Size(47, 12);
+            this.lbl_Salute_Mura.Size = new System.Drawing.Size(55, 13);
             this.lbl_Salute_Mura.TabIndex = 125;
             this.lbl_Salute_Mura.Text = "5847 HP";
             // 
@@ -1689,6 +1876,7 @@
             this.progressBar_Difesa_Mura.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_Difesa_Mura.TabIndex = 122;
             this.progressBar_Difesa_Mura.Value = 66;
+            this.progressBar_Difesa_Mura.Click += new System.EventHandler(this.progressBar_Difesa_Mura_Click);
             this.progressBar_Difesa_Mura.MouseHover += new System.EventHandler(this.progressBar_Difesa_Mura_MouseHover);
             // 
             // groupBox3
@@ -1710,11 +1898,11 @@
             // 
             this.lbl_Guarnigione_Castello.AutoSize = true;
             this.lbl_Guarnigione_Castello.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Guarnigione_Castello.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Guarnigione_Castello.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Guarnigione_Castello.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Guarnigione_Castello.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Guarnigione_Castello.Location = new System.Drawing.Point(213, 40);
             this.lbl_Guarnigione_Castello.Name = "lbl_Guarnigione_Castello";
-            this.lbl_Guarnigione_Castello.Size = new System.Drawing.Size(29, 12);
+            this.lbl_Guarnigione_Castello.Size = new System.Drawing.Size(35, 13);
             this.lbl_Guarnigione_Castello.TabIndex = 121;
             this.lbl_Guarnigione_Castello.Text = "5847";
             // 
@@ -1722,11 +1910,11 @@
             // 
             this.lbl_Difesa_Castello.AutoSize = true;
             this.lbl_Difesa_Castello.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Difesa_Castello.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Difesa_Castello.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Difesa_Castello.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Difesa_Castello.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Difesa_Castello.Location = new System.Drawing.Point(213, 24);
             this.lbl_Difesa_Castello.Name = "lbl_Difesa_Castello";
-            this.lbl_Difesa_Castello.Size = new System.Drawing.Size(51, 12);
+            this.lbl_Difesa_Castello.Size = new System.Drawing.Size(59, 13);
             this.lbl_Difesa_Castello.TabIndex = 120;
             this.lbl_Difesa_Castello.Text = "5847 DIF";
             // 
@@ -1734,11 +1922,11 @@
             // 
             this.lbl_Salute_Castello.AutoSize = true;
             this.lbl_Salute_Castello.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Salute_Castello.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Bold);
-            this.lbl_Salute_Castello.ForeColor = System.Drawing.Color.Coral;
+            this.lbl_Salute_Castello.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.lbl_Salute_Castello.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbl_Salute_Castello.Location = new System.Drawing.Point(213, 8);
             this.lbl_Salute_Castello.Name = "lbl_Salute_Castello";
-            this.lbl_Salute_Castello.Size = new System.Drawing.Size(47, 12);
+            this.lbl_Salute_Castello.Size = new System.Drawing.Size(55, 13);
             this.lbl_Salute_Castello.TabIndex = 119;
             this.lbl_Salute_Castello.Text = "5847 HP";
             // 
@@ -1773,24 +1961,27 @@
             this.progressBar_Difesa_Castello.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_Difesa_Castello.TabIndex = 115;
             this.progressBar_Difesa_Castello.Value = 66;
+            this.progressBar_Difesa_Castello.Click += new System.EventHandler(this.progressBar_Difesa_Castello_Click);
             this.progressBar_Difesa_Castello.MouseHover += new System.EventHandler(this.progressBar_Difesa_Castello_MouseHover);
             // 
             // progressBar_Salute_Castello
             // 
             this.progressBar_Salute_Castello.BackColor = System.Drawing.SystemColors.Control;
             this.progressBar_Salute_Castello.Location = new System.Drawing.Point(94, 10);
+            this.progressBar_Salute_Castello.MarqueeAnimationSpeed = 10;
             this.progressBar_Salute_Castello.Name = "progressBar_Salute_Castello";
             this.progressBar_Salute_Castello.Size = new System.Drawing.Size(117, 10);
             this.progressBar_Salute_Castello.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar_Salute_Castello.TabIndex = 114;
             this.progressBar_Salute_Castello.Value = 100;
+            this.progressBar_Salute_Castello.Click += new System.EventHandler(this.progressBar_Salute_Castello_Click);
             this.progressBar_Salute_Castello.MouseHover += new System.EventHandler(this.progressBar_Salute_Castello_MouseHover);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(91, 266);
+            this.label13.Location = new System.Drawing.Point(96, 256);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(91, 16);
             this.label13.TabIndex = 107;
@@ -1799,13 +1990,14 @@
             // Txt_Log_Battaglie
             // 
             this.Txt_Log_Battaglie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.Txt_Log_Battaglie.Location = new System.Drawing.Point(12, 462);
+            this.Txt_Log_Battaglie.Location = new System.Drawing.Point(244, 315);
             this.Txt_Log_Battaglie.Multiline = true;
             this.Txt_Log_Battaglie.Name = "Txt_Log_Battaglie";
             this.Txt_Log_Battaglie.ReadOnly = true;
             this.Txt_Log_Battaglie.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Txt_Log_Battaglie.Size = new System.Drawing.Size(409, 115);
+            this.Txt_Log_Battaglie.Size = new System.Drawing.Size(227, 219);
             this.Txt_Log_Battaglie.TabIndex = 113;
+            this.Txt_Log_Battaglie.Visible = false;
             // 
             // label18
             // 
@@ -1824,11 +2016,12 @@
             this.Blocco_Strutture_Esercito.Controls.Add(this.txt_Esercito);
             this.Blocco_Strutture_Esercito.Controls.Add(this.label7);
             this.Blocco_Strutture_Esercito.Controls.Add(this.txt_Log);
-            this.Blocco_Strutture_Esercito.Location = new System.Drawing.Point(427, 69);
+            this.Blocco_Strutture_Esercito.Location = new System.Drawing.Point(427, 64);
             this.Blocco_Strutture_Esercito.Name = "Blocco_Strutture_Esercito";
             this.Blocco_Strutture_Esercito.Size = new System.Drawing.Size(512, 197);
             this.Blocco_Strutture_Esercito.TabIndex = 113;
             this.Blocco_Strutture_Esercito.TabStop = false;
+            this.Blocco_Strutture_Esercito.Visible = false;
             // 
             // lbl_Tempo
             // 
@@ -1840,11 +2033,35 @@
             this.lbl_Tempo.Text = "CIAO";
             this.lbl_Tempo.Visible = false;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(12, 299);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(138, 13);
+            this.label19.TabIndex = 115;
+            this.label19.Text = "Resoconto Costruzione";
+            this.label19.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(247, 299);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(122, 13);
+            this.label20.TabIndex = 116;
+            this.label20.Text = "Resoconto Battaglie";
+            this.label20.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 635);
+            this.ClientSize = new System.Drawing.Size(1152, 560);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.lbl_Tempo);
             this.Controls.Add(this.Blocco_Strutture_Esercito);
             this.Controls.Add(this.Txt_Log_Battaglie);
@@ -2040,6 +2257,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label lbl_Tempo;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lbl_Miniera_Oro_X0;
+        private System.Windows.Forms.Label lbl_Miniera_Ferro_X0;
+        private System.Windows.Forms.Label lbl_Cava_X0;
+        private System.Windows.Forms.Label lbl_Segheria_X0;
+        private System.Windows.Forms.Label lbl_Fattoria_X0;
+        private System.Windows.Forms.Label lbl_Catapulta_X0;
+        private System.Windows.Forms.Label lbl_Arciere_X0;
+        private System.Windows.Forms.Label lbl_Lanciere_X0;
+        private System.Windows.Forms.Label lbl_Guerriero_X0;
+        private System.Windows.Forms.Button btn_Citta_Riparazioni;
     }
 }
 

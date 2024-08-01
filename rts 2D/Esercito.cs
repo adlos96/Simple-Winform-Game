@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static rts_2D.Variabili;
+
 
 namespace rts_2D
 {
@@ -17,57 +17,57 @@ namespace rts_2D
         public Esercito_Form()
         {
             InitializeComponent();
-            if (form_Spostamento_truppe == "Castello") lbl_Spostamento.Text = "Castello";
-            if (form_Spostamento_truppe == "Torre") lbl_Spostamento.Text = "Torre";
-            if (form_Spostamento_truppe == "Mura") lbl_Spostamento.Text = "Mura";
+            if (Variabili.form_Spostamento_truppe == "Castello") lbl_Spostamento.Text = "Castello";
+            if (Variabili.form_Spostamento_truppe == "Torre") lbl_Spostamento.Text = "Torre";
+            if (Variabili.form_Spostamento_truppe == "Mura") lbl_Spostamento.Text = "Mura";
         }
 
         private void Esercito_Load(object sender, EventArgs e)
         {
             if (lbl_Spostamento.Text == "Castello")
             {
-                txt_Guerrieri_Spostamento.Text  = Città.Castello.Guerrieri.ToString();
-                txt_Lancieri_Spostamento.Text   = Città.Castello.Lancieri.ToString();
-                txt_Arcieri_Spostamento.Text    = Città.Castello.Arceri.ToString();
-                txt_Catapulte_Spostamento.Text  = Città.Castello.Catapulte.ToString();
+                txt_Guerrieri_Spostamento.Text  = Variabili.Città.Castello.Guerrieri.ToString();
+                txt_Lancieri_Spostamento.Text   = Variabili.Città.Castello.Lancieri.ToString();
+                txt_Arcieri_Spostamento.Text    = Variabili.Città.Castello.Arceri.ToString();
+                txt_Catapulte_Spostamento.Text  = Variabili.Città.Castello.Catapulte.ToString();
             }
             if (lbl_Spostamento.Text == "Torre")
             {
-                txt_Guerrieri_Spostamento.Text  = Città.Torre.Guerrieri.ToString();
-                txt_Lancieri_Spostamento.Text   = Città.Torre.Lancieri.ToString();
-                txt_Arcieri_Spostamento.Text    = Città.Torre.Arceri.ToString();
-                txt_Catapulte_Spostamento.Text  = Città.Torre.Catapulte.ToString();
+                txt_Guerrieri_Spostamento.Text  = Variabili.Città.Torre.Guerrieri.ToString();
+                txt_Lancieri_Spostamento.Text   = Variabili.Città.Torre.Lancieri.ToString();
+                txt_Arcieri_Spostamento.Text    = Variabili.Città.Torre.Arceri.ToString();
+                txt_Catapulte_Spostamento.Text  = Variabili.Città.Torre.Catapulte.ToString();
             }
             if (lbl_Spostamento.Text == "Mura")
             {
-                txt_Guerrieri_Spostamento.Text  = Città.Mura.Guerrieri.ToString();
-                txt_Lancieri_Spostamento.Text   = Città.Mura.Lancieri.ToString();
-                txt_Arcieri_Spostamento.Text    = Città.Mura.Arceri.ToString();
-                txt_Catapulte_Spostamento.Text  = Città.Mura.Catapulte.ToString();
+                txt_Guerrieri_Spostamento.Text  = Variabili.Città.Mura.Guerrieri.ToString();
+                txt_Lancieri_Spostamento.Text   = Variabili.Città.Mura.Lancieri.ToString();
+                txt_Arcieri_Spostamento.Text    = Variabili.Città.Mura.Arceri.ToString();
+                txt_Catapulte_Spostamento.Text  = Variabili.Città.Mura.Catapulte.ToString();
             }
-            txt_Guerrieri_Esercito.Text = Esercito.Guerriero.Quantità.ToString();
-            txt_Lancieri_Esercito.Text = Esercito.Lanciere.Quantità.ToString();
-            txt_Arcieri_Esercito.Text = Esercito.Arciere.Quantità.ToString();
-            txt_Catapulte_Esercito.Text = Esercito.Catapulta.Quantità.ToString();
+            txt_Guerrieri_Esercito.Text = Variabili.Esercito.Guerriero.Quantità.ToString();
+            txt_Lancieri_Esercito.Text = Variabili.Esercito.Lanciere.Quantità.ToString();
+            txt_Arcieri_Esercito.Text = Variabili.Esercito.Arciere.Quantità.ToString();
+            txt_Catapulte_Esercito.Text = Variabili.Esercito.Catapulta.Quantità.ToString();
 
-            trackbar_Lancieri.Maximum = Esercito.Lanciere.Quantità;
+            trackbar_Lancieri.Maximum = Variabili.Esercito.Lanciere.Quantità;
             trackbar_Lancieri.Minimum = 0;
             txt_Min_Trackbar_Lancieri.Text = trackbar_Lancieri.Minimum.ToString();
             txt_Max_Trackbar_Lancieri.Text = trackbar_Lancieri.Maximum.ToString();
 
-            trackbar_Guerrieri.Maximum = Esercito.Guerriero.Quantità;
+            trackbar_Guerrieri.Maximum = Variabili.Esercito.Guerriero.Quantità;
             trackbar_Guerrieri.Minimum = 0;
 
             txt_Min_Trackbar_Guerrieri.Text = trackbar_Guerrieri.Minimum.ToString();
             txt_Max_Trackbar_Guerrieri.Text = trackbar_Guerrieri.Maximum.ToString();
 
-            trackbar_Arcieri.Maximum = Esercito.Arciere.Quantità;
+            trackbar_Arcieri.Maximum = Variabili.Esercito.Arciere.Quantità;
             trackbar_Arcieri.Minimum = 0;
 
             txt_Min_Trackbar_Arcieri.Text = trackbar_Arcieri.Minimum.ToString();
             txt_Max_Trackbar_Arcieri.Text = trackbar_Arcieri.Maximum.ToString();
 
-            trackbar_Catapulte.Maximum = Esercito.Catapulta.Quantità;
+            trackbar_Catapulte.Maximum = Variabili.Esercito.Catapulta.Quantità;
             trackbar_Catapulte.Minimum = 0;
 
             txt_Min_Trackbar_Catapulte.Text = trackbar_Catapulte.Minimum.ToString();
@@ -86,72 +86,72 @@ namespace rts_2D
                 case "Castello":
                     if (guerrieri > 0)
                     {
-                        Esercito.Guerriero.Quantità -= guerrieri;
-                        Città.Castello.Guerrieri += guerrieri;
+                        Variabili.Esercito.Guerriero.Quantità -= guerrieri;
+                        Variabili.Città.Castello.Guerrieri += guerrieri;
                     }
                     if (lancieri > 0)
                     {
-                        Esercito.Lanciere.Quantità -= lancieri;
-                        Città.Castello.Lancieri += lancieri;
+                        Variabili.Esercito.Lanciere.Quantità -= lancieri;
+                        Variabili.Città.Castello.Lancieri += lancieri;
                     }
                     if (arcieri > 0)
                     {
-                        Esercito.Arciere.Quantità -= arcieri;
-                        Città.Castello.Arceri += arcieri;
+                        Variabili.Esercito.Arciere.Quantità -= arcieri;
+                        Variabili.Città.Castello.Arceri += arcieri;
                     }
                     if (catapulte > 0)
                     {
-                        Esercito.Catapulta.Quantità -= catapulte;
-                        Città.Castello.Catapulte += catapulte;
+                        Variabili.Esercito.Catapulta.Quantità -= catapulte;
+                        Variabili.Città.Castello.Catapulte += catapulte;
                     }
                     break;
                 case "Torre":
                     if (guerrieri > 0)
                     {
-                        Esercito.Guerriero.Quantità -= guerrieri;
-                        Città.Torre.Guerrieri += guerrieri;
+                        Variabili.Esercito.Guerriero.Quantità -= guerrieri;
+                        Variabili.Città.Torre.Guerrieri += guerrieri;
                     }
                     if (lancieri > 0)
                     {
-                        Esercito.Lanciere.Quantità -= lancieri;
-                        Città.Torre.Lancieri += lancieri;
+                        Variabili.Esercito.Lanciere.Quantità -= lancieri;
+                        Variabili.Città.Torre.Lancieri += lancieri;
                     }
                     if (arcieri > 0)
                     {
-                        Esercito.Arciere.Quantità -= arcieri;
-                        Città.Torre.Arceri += arcieri;
+                        Variabili.Esercito.Arciere.Quantità -= arcieri;
+                        Variabili.Città.Torre.Arceri += arcieri;
                     }
                     if (catapulte > 0)
                     {
-                        Esercito.Catapulta.Quantità -= catapulte;
-                        Città.Torre.Catapulte += catapulte;
+                        Variabili.Esercito.Catapulta.Quantità -= catapulte;
+                        Variabili.Città.Torre.Catapulte += catapulte;
                     }
                     break;
                 case "Mura":
                     if (guerrieri > 0)
                     {
-                        Esercito.Guerriero.Quantità -= guerrieri;
-                        Città.Mura.Guerrieri += guerrieri;
+                        Variabili.Esercito.Guerriero.Quantità -= guerrieri;
+                        Variabili.Città.Mura.Guerrieri += guerrieri;
                     }
                     if (lancieri > 0)
                     {
-                        Esercito.Lanciere.Quantità -= lancieri;
-                        Città.Mura.Lancieri += lancieri;
+                        Variabili.Esercito.Lanciere.Quantità -= lancieri;
+                        Variabili.Città.Mura.Lancieri += lancieri;
                     }
                     if (arcieri > 0)
                     {
-                        Esercito.Arciere.Quantità -= arcieri;
-                        Città.Mura.Arceri += arcieri;
+                        Variabili.Esercito.Arciere.Quantità -= arcieri;
+                        Variabili.Città.Mura.Arceri += arcieri;
                     }
                     if (catapulte > 0)
                     {
-                        Esercito.Catapulta.Quantità -= catapulte;
-                        Città.Mura.Catapulte += catapulte;
+                        Variabili.Esercito.Catapulta.Quantità -= catapulte;
+                        Variabili.Città.Mura.Catapulte += catapulte;
                     }
                     break;
-
             }
             ActiveForm.Close();
+            return;
         }
 
         private void trackbar_Guerrieri_Scroll(object sender, EventArgs e)
