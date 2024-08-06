@@ -187,6 +187,16 @@
             this.lbl_Tempo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.Blocco_Abilità = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txt_Totale_Token_Abilità = new System.Windows.Forms.TextBox();
+            this.btn_Applica_Effetto_Abilità = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox_Effetto_Abilità = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_Descrizione_Abilità = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txt_Resoconto = new System.Windows.Forms.TextBox();
             this.Blocco_Costruzione.SuspendLayout();
             this.Blocco_Reclutamento.SuspendLayout();
             this.Blocco_Produzione.SuspendLayout();
@@ -202,6 +212,8 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.Blocco_Strutture_Esercito.SuspendLayout();
+            this.Blocco_Abilità.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Start
@@ -2055,11 +2067,131 @@
             this.label20.Text = "Resoconto Battaglie";
             this.label20.Visible = false;
             // 
+            // Blocco_Abilità
+            // 
+            this.Blocco_Abilità.Controls.Add(this.txt_Descrizione_Abilità);
+            this.Blocco_Abilità.Controls.Add(this.label27);
+            this.Blocco_Abilità.Controls.Add(this.comboBox_Effetto_Abilità);
+            this.Blocco_Abilità.Controls.Add(this.label22);
+            this.Blocco_Abilità.Controls.Add(this.btn_Applica_Effetto_Abilità);
+            this.Blocco_Abilità.Controls.Add(this.label21);
+            this.Blocco_Abilità.Controls.Add(this.txt_Totale_Token_Abilità);
+            this.Blocco_Abilità.Location = new System.Drawing.Point(12, 540);
+            this.Blocco_Abilità.Name = "Blocco_Abilità";
+            this.Blocco_Abilità.Size = new System.Drawing.Size(350, 109);
+            this.Blocco_Abilità.TabIndex = 117;
+            this.Blocco_Abilità.TabStop = false;
+            this.Blocco_Abilità.Text = "Abilità";
+            this.Blocco_Abilità.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 19);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 13);
+            this.label21.TabIndex = 106;
+            this.label21.Text = "Token:";
+            // 
+            // txt_Totale_Token_Abilità
+            // 
+            this.txt_Totale_Token_Abilità.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Totale_Token_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Totale_Token_Abilità.Location = new System.Drawing.Point(41, 20);
+            this.txt_Totale_Token_Abilità.Name = "txt_Totale_Token_Abilità";
+            this.txt_Totale_Token_Abilità.ReadOnly = true;
+            this.txt_Totale_Token_Abilità.Size = new System.Drawing.Size(28, 13);
+            this.txt_Totale_Token_Abilità.TabIndex = 107;
+            this.txt_Totale_Token_Abilità.Text = "0";
+            this.txt_Totale_Token_Abilità.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_Applica_Effetto_Abilità
+            // 
+            this.btn_Applica_Effetto_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Applica_Effetto_Abilità.Location = new System.Drawing.Point(284, 15);
+            this.btn_Applica_Effetto_Abilità.Name = "btn_Applica_Effetto_Abilità";
+            this.btn_Applica_Effetto_Abilità.Size = new System.Drawing.Size(58, 24);
+            this.btn_Applica_Effetto_Abilità.TabIndex = 110;
+            this.btn_Applica_Effetto_Abilità.Text = "Applica";
+            this.btn_Applica_Effetto_Abilità.UseVisualStyleBackColor = true;
+            this.btn_Applica_Effetto_Abilità.Click += new System.EventHandler(this.btn_Applica_Effetto_Abilità_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(72, 20);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 13);
+            this.label22.TabIndex = 111;
+            this.label22.Text = "Effetto:";
+            // 
+            // comboBox_Effetto_Abilità
+            // 
+            this.comboBox_Effetto_Abilità.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_Effetto_Abilità.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox_Effetto_Abilità.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Effetto_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.comboBox_Effetto_Abilità.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBox_Effetto_Abilità.FormattingEnabled = true;
+            this.comboBox_Effetto_Abilità.Location = new System.Drawing.Point(115, 16);
+            this.comboBox_Effetto_Abilità.Name = "comboBox_Effetto_Abilità";
+            this.comboBox_Effetto_Abilità.Size = new System.Drawing.Size(163, 21);
+            this.comboBox_Effetto_Abilità.TabIndex = 118;
+            this.comboBox_Effetto_Abilità.SelectedIndexChanged += new System.EventHandler(this.comboBox_Effetto_Abilità_SelectedIndexChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(4, 40);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 13);
+            this.label27.TabIndex = 120;
+            this.label27.Text = "Descrizione";
+            // 
+            // txt_Descrizione_Abilità
+            // 
+            this.txt_Descrizione_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Descrizione_Abilità.Location = new System.Drawing.Point(7, 55);
+            this.txt_Descrizione_Abilità.Multiline = true;
+            this.txt_Descrizione_Abilità.Name = "txt_Descrizione_Abilità";
+            this.txt_Descrizione_Abilità.ReadOnly = true;
+            this.txt_Descrizione_Abilità.Size = new System.Drawing.Size(335, 48);
+            this.txt_Descrizione_Abilità.TabIndex = 118;
+            this.txt_Descrizione_Abilità.Text = "0";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.txt_Resoconto);
+            this.groupBox8.Location = new System.Drawing.Point(993, 262);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(157, 258);
+            this.groupBox8.TabIndex = 118;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Resoconto:";
+            this.groupBox8.Visible = false;
+            // 
+            // txt_Resoconto
+            // 
+            this.txt_Resoconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Resoconto.Location = new System.Drawing.Point(8, 13);
+            this.txt_Resoconto.Multiline = true;
+            this.txt_Resoconto.Name = "txt_Resoconto";
+            this.txt_Resoconto.ReadOnly = true;
+            this.txt_Resoconto.Size = new System.Drawing.Size(143, 239);
+            this.txt_Resoconto.TabIndex = 118;
+            this.txt_Resoconto.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 560);
+            this.ClientSize = new System.Drawing.Size(1316, 661);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.Blocco_Abilità);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.lbl_Tempo);
@@ -2103,6 +2235,10 @@
             this.groupBox3.PerformLayout();
             this.Blocco_Strutture_Esercito.ResumeLayout(false);
             this.Blocco_Strutture_Esercito.PerformLayout();
+            this.Blocco_Abilità.ResumeLayout(false);
+            this.Blocco_Abilità.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2269,6 +2405,16 @@
         private System.Windows.Forms.Label lbl_Lanciere_X0;
         private System.Windows.Forms.Label lbl_Guerriero_X0;
         private System.Windows.Forms.Button btn_Citta_Riparazioni;
+        private System.Windows.Forms.GroupBox Blocco_Abilità;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txt_Totale_Token_Abilità;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btn_Applica_Effetto_Abilità;
+        private System.Windows.Forms.ComboBox comboBox_Effetto_Abilità;
+        private System.Windows.Forms.TextBox txt_Descrizione_Abilità;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox txt_Resoconto;
     }
 }
 

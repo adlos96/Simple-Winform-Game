@@ -245,7 +245,7 @@ namespace rts_2D
                 Variabili.Popolazione -= Variabili.CostoReclutamento.Guerriero.Popolazione * Guerriero;
                 Variabili.Coda.Guerriero.quantità += (int)Guerriero;
             }
-            else
+            else if (Guerriero > 0)
             {
                 Guerriero = 0;
                 txt_Cose.Text = txt_Cose.Text + "Reclutamento Guerriero fallita, risorse insufficienti\r\n";
@@ -267,7 +267,7 @@ namespace rts_2D
                 Variabili.Popolazione -= Variabili.CostoReclutamento.Lanciere.Popolazione * Lanciere;
                 Variabili.Coda.Lanciere.quantità += (int)Lanciere;
             }
-            else
+            else if (Lanciere > 0)
             {
                 Lanciere = 0;
                 txt_Cose.Text = txt_Cose.Text + "Reclutamento Lanciere fallita, risorse insufficienti\r\n";
@@ -289,7 +289,7 @@ namespace rts_2D
                 Variabili.Popolazione -= Variabili.CostoReclutamento.Arciere.Popolazione * Arciere;
                 Variabili.Coda.Arciere.quantità += (int)Arciere;
             }
-            else
+            else if (Arciere > 0)
             {
                 txt_Cose.Text = txt_Cose.Text + "Reclutamento Arciere fallita, risorse insufficienti\r\n";
                 Arciere = 0;
@@ -311,7 +311,7 @@ namespace rts_2D
                 Variabili.Popolazione -= Variabili.CostoReclutamento.Catapulta.Popolazione * Catapulta;
                 Variabili.Coda.Catapulta.quantità += (int)Catapulta;
             }
-            else
+            else if (Catapulta > 0)
             {
                 txt_Cose.Text = "Reclutamento Catapulta fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                 Catapulta = 0;
@@ -360,20 +360,29 @@ namespace rts_2D
         private async void btn_Start_Click(object sender, EventArgs e)
         {
             _ = Task.Run(() => Loop());
-            btn_Invasioni.Visible = true;
+            comboBox_Effetto_Abilità.Text = "Seleziona abilità";
+            comboBox_Effetto_Abilità.Items.Add("Rinforzo Esercito");
+            //comboBox_Effetto_Abilità.Items.Add("Rinforzo Città");
+            comboBox_Effetto_Abilità.Items.Add("Guerrieri");
+            comboBox_Effetto_Abilità.Items.Add("Lancieri");
+            comboBox_Effetto_Abilità.Items.Add("Arcieri");
+
             Blocco_Costruzione.Visible = true;
-            Blocco_Invasioni.Visible = true;
             Blocco_Produzione.Visible = true;
             Blocco_Reclutamento.Visible = true;
-            lbl_Tempo.Visible = true;
-            btn_Ricerca.Visible = true;
             Blocco_Strutture_Esercito.Visible = true;
-            Txt_Log_Battaglie.Visible = true;
-            txt_Cose.Visible = true;
+            Blocco_Abilità.Visible = true;
             Blocco_Risorse.Visible = true;
+            Blocco_Invasioni.Visible = true;
+
+            btn_Invasioni.Visible = true;
+            btn_Ricerca.Visible = true;
+            btn_Start.Visible = false;
+            lbl_Tempo.Visible = true;
             label19.Visible = true;
             label20.Visible = true;
-            btn_Start.Visible = false;
+            Txt_Log_Battaglie.Visible = true;
+            txt_Cose.Visible = true;
         }
         private async Task<double> Cibo()
         {
@@ -389,12 +398,12 @@ namespace rts_2D
         async Task Loop()
         {
             int i = 4;
-            Variabili.Cibo = 3800000;
-            Variabili.Legno = 3900000;
-            Variabili.Pietra = 3700000;
-            Variabili.Ferro = 3900000;
-            Variabili.Oro = 4800000;
-            Variabili.Popolazione = 1;
+            Variabili.Cibo = 3800;
+            Variabili.Legno = 3900;
+            Variabili.Pietra = 3700;
+            Variabili.Ferro = 3900;
+            Variabili.Oro = 4800;
+            Variabili.Popolazione = 10;
 
             //Città - Salute
             progressBar_Salute_Castello.Minimum = 0;
@@ -621,32 +630,32 @@ namespace rts_2D
             txt_Cibo.Invoke((Action)(async () =>
             {
 
-                if (Variabili.Città.Mura.Salute == 0)
+                if (Variabili.Città.Mura.Salute == 0 || Variabili.Città.Mura.Salute == Variabili.Città.Mura.SaluteMax)
                 {
                     progressBar_Salute_Mura.SetState(1);
                     progressBar_Salute_Mura.Value = Variabili.Città.Mura.Salute;
                 }
-                if (Variabili.Città.Mura.Difesa == 0)
+                if (Variabili.Città.Mura.Difesa == 0 || Variabili.Città.Mura.Difesa ==  Variabili.Città.Mura.DifesaMax)
                 {
                     progressBar_Difesa_Mura.SetState(1);
                     progressBar_Difesa_Mura.Value = Variabili.Città.Mura.Difesa;
                 }
-                if (Variabili.Città.Torre.Salute == 0)
+                if (Variabili.Città.Torre.Salute == 0 || Variabili.Città.Torre.Salute == Variabili.Città.Torre.SaluteMax)
                 {
                     progressBar_Salute_Torre.SetState(1);
                     progressBar_Salute_Torre.Value = Variabili.Città.Torre.Salute;
                 }
-                if (Variabili.Città.Torre.Difesa == 0)
+                if (Variabili.Città.Torre.Difesa == 0 || Variabili.Città.Torre.Difesa == Variabili.Città.Torre.DifesaMax)
                 {
                     progressBar_Difesa_Torre.SetState(1);
                     progressBar_Difesa_Torre.Value = Variabili.Città.Torre.Difesa;
                 }
-                if (Variabili.Città.Castello.Salute == 0)
+                if (Variabili.Città.Castello.Salute == 0 || Variabili.Città.Castello.Salute == Variabili.Città.Castello.SaluteMax)
                 {
                     progressBar_Salute_Castello.SetState(1);
                     progressBar_Salute_Castello.Value = Variabili.Città.Castello.Salute;
                 }
-                if (Variabili.Città.Castello.Difesa == 0)
+                if (Variabili.Città.Castello.Difesa == 0 || Variabili.Città.Castello.Difesa == Variabili.Città.Castello.DifesaMax)
                 {
                     progressBar_Difesa_Castello.SetState(1);
                     progressBar_Difesa_Castello.Value = Variabili.Città.Castello.Difesa;
@@ -741,6 +750,7 @@ namespace rts_2D
                 // Usa Invoke per eseguire le operazioni sul thread dell'UI
                 txt_Cibo.Invoke((Action)(async () =>
                 {
+                    txt_Totale_Token_Abilità.Text = Variabili.token.ToString();
                     txt_Cibo.Text = Variabili.Cibo.ToString("0.00");
                     txt_Legno.Text = Variabili.Legno.ToString("0.00");
                     txt_Pietra.Text = Variabili.Pietra.ToString("0.00");
@@ -849,7 +859,7 @@ namespace rts_2D
         }
         async void Loop_Invasione()
         {
-            int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0;
+            int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0, a = 0;
             int respawn = 0;
 
             Variabili.EsercitoNemico.Guerriero.Quantità += 14;
@@ -859,58 +869,56 @@ namespace rts_2D
 
             while (true)
             {
-                if (Invasione_Ondata > 10 && guerriero >= Variabili.CostoReclutamento.Guerriero.TempoReclutamento - 7) Variabili.EsercitoNemico.Guerriero.Quantità += 2;
-                if (Invasione_Ondata > 7 && lanciere >= Variabili.CostoReclutamento.Lanciere.TempoReclutamento - 9) Variabili.EsercitoNemico.Lanciere.Quantità += 2;
-                if (Invasione_Ondata > 19 && arciere >= Variabili.CostoReclutamento.Arciere.TempoReclutamento - 10) Variabili.EsercitoNemico.Arciere.Quantità += 2;
-                if (Invasione_Ondata > 26 && catapulta >= Variabili.CostoReclutamento.Catapulta.TempoReclutamento - 13) Variabili.EsercitoNemico.Catapulta.Quantità += 2;
+                if (Invasione_Ondata > 7 && guerriero >= Variabili.EsercitoNemico.Guerriero.TempoReclutamento - 3) Variabili.EsercitoNemico.Guerriero.Quantità += 1;
+                if (Invasione_Ondata > 10 && lanciere >= Variabili.EsercitoNemico.Lanciere.TempoReclutamento - 3) Variabili.EsercitoNemico.Lanciere.Quantità += 1;
+                if (Invasione_Ondata > 18 && arciere >= Variabili.EsercitoNemico.Arciere.TempoReclutamento - 3) Variabili.EsercitoNemico.Arciere.Quantità += 1;
+                if (Invasione_Ondata > 25 && catapulta >= Variabili.EsercitoNemico.Catapulta.TempoReclutamento - 3) Variabili.EsercitoNemico.Catapulta.Quantità += 1;
 
-                if (guerriero >= Variabili.CostoReclutamento.Guerriero.TempoReclutamento - 6)
+                if (guerriero >= Variabili.EsercitoNemico.Guerriero.TempoReclutamento)
                 {
                     Variabili.EsercitoNemico.Guerriero.Quantità++;
                     guerriero = 0;
                 }
-                if (lanciere >= Variabili.CostoReclutamento.Lanciere.TempoReclutamento - 8 && Invasione_Ondata >= 8)
+                if (lanciere >= Variabili.EsercitoNemico.Lanciere.TempoReclutamento && Invasione_Ondata >= 8)
                 {
                     Variabili.EsercitoNemico.Lanciere.Quantità++;
                     lanciere = 0;
                 }
-                if (arciere >= Variabili.CostoReclutamento.Arciere.TempoReclutamento - 9 && Invasione_Ondata >= 16)
+                if (arciere >= Variabili.EsercitoNemico.Arciere.TempoReclutamento && Invasione_Ondata >= 16)
                 {
                     Variabili.EsercitoNemico.Arciere.Quantità++;
                     arciere = 0;
                 }
-                if (catapulta >= Variabili.CostoReclutamento.Catapulta.TempoReclutamento - 12 && Invasione_Ondata >= 23)
+                if (catapulta >= Variabili.EsercitoNemico.Catapulta.TempoReclutamento && Invasione_Ondata >= 23)
                 {
                     Variabili.EsercitoNemico.Catapulta.Quantità++;
                     catapulta = 0;
                 }
 
                 Variabili.forza_Esercito_Att =
-                    Variabili.EsercitoNemico.Guerriero.Quantità * ((Variabili.Esercito.Guerriero.Salute * 0.33) + (Variabili.Esercito.Guerriero.Attacco * 0.72)) +
-                    Variabili.EsercitoNemico.Lanciere.Quantità * ((Variabili.Esercito.Lanciere.Salute * 0.33) + (Variabili.Esercito.Lanciere.Attacco * 0.72)) +
-                    Variabili.EsercitoNemico.Arciere.Quantità * ((Variabili.Esercito.Arciere.Salute * 0.33) + (Variabili.Esercito.Arciere.Attacco * 0.72)) +
-                    Variabili.EsercitoNemico.Catapulta.Quantità * ((Variabili.Esercito.Catapulta.Salute * 0.33) + (Variabili.Esercito.Catapulta.Attacco * 0.72));
+                    Variabili.EsercitoNemico.Guerriero.Quantità * ((Variabili.EsercitoNemico.Guerriero.Salute * 0.33) + (Variabili.EsercitoNemico.Guerriero.Attacco * 0.72)) +
+                    Variabili.EsercitoNemico.Lanciere.Quantità * ((Variabili.EsercitoNemico.Lanciere.Salute * 0.33) + (Variabili.EsercitoNemico.Lanciere.Attacco * 0.72)) +
+                    Variabili.EsercitoNemico.Arciere.Quantità * ((Variabili.EsercitoNemico.Arciere.Salute * 0.33) + (Variabili.EsercitoNemico.Arciere.Attacco * 0.72)) +
+                    Variabili.EsercitoNemico.Catapulta.Quantità * ((Variabili.EsercitoNemico.Catapulta.Salute * 0.33) + (Variabili.EsercitoNemico.Catapulta.Attacco * 0.72));
 
                 if (Variabili.timer_Invasione == 0)
                 {
                     await Battle.Battaglia();
                     Invasione_Ondata++;
-                    Variabili.timer_Invasione = Variabili.timer_Invasione_Set + (15 * Invasione_Ondata);
+                    Variabili.timer_Invasione = Variabili.timer_Invasione_Set + (17 * Invasione_Ondata);
                     respawn = 0;
                 }
                 if (Invasione_Ondata > 5 && respawn == 19)
                 {
-                    Variabili.EsercitoNemico.Guerriero.Quantità += 3;
-                    Variabili.EsercitoNemico.Lanciere.Quantità += 2;
-
+                    Variabili.EsercitoNemico.Guerriero.Quantità += 1;
+                    Variabili.EsercitoNemico.Lanciere.Quantità += 1;
                 }
-                //if (Invasione_Ondata > 19 && respawn == 19)
-                //{
-                //    Variabili.EsercitoNemico.Guerriero.Quantità += 3;
-                //    Variabili.EsercitoNemico.Lanciere.Quantità += 2;
-                //    Variabili.EsercitoNemico.Arciere.Quantità += 1;
-                //    Variabili.EsercitoNemico.Catapulta.Quantità += 1;
-                //}
+
+                if (a >= 10 * 60)
+                {
+                    Variabili.token++;
+                    a = 0;
+                }
 
                 txt_Cibo.Invoke((Action)(async () => { Invasione(); }));
                 Variabili.timer_Invasione--;
@@ -1160,7 +1168,7 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Popolazione_I.Oro;
 
                         btn_Risorse_Popolazione.Text = "Popolazione II";
-                        Variabili.Popolazione_Up += 0.07;
+                        Variabili.Popolazione_Up += 0.11;
                     }
                     else txt_Cose.Text = "Ricerca Popolazione I fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -1179,7 +1187,7 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Popolazione_II.Oro;
 
                         btn_Risorse_Popolazione.Text = "Popolazione III";
-                        Variabili.Popolazione_Up += 0.11;
+                        Variabili.Popolazione_Up += 0.16;
                     }
                     else txt_Cose.Text = "Ricerca Popolazione II fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -1199,7 +1207,7 @@ namespace rts_2D
 
                         btn_Risorse_Popolazione.Text = "Popolazione IV";
                         btn_Risorse_Popolazione.Enabled = false;
-                        Variabili.Popolazione_Up += 0.14;
+                        Variabili.Popolazione_Up += 0.21;
                     }
                     else txt_Cose.Text = "Ricerca Popolazione III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -1267,13 +1275,57 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Reclutamento_III.Oro;
 
                         btn_Esercito_Reclutamento.Text = "Reclutamento IV";
-                        btn_Esercito_Reclutamento.Enabled = false;
                         Variabili.CostoReclutamento.Guerriero.TempoReclutamento -= 3;
                         Variabili.CostoReclutamento.Lanciere.TempoReclutamento -= 3;
                         Variabili.CostoReclutamento.Arciere.TempoReclutamento -= 3;
                         Variabili.CostoReclutamento.Catapulta.TempoReclutamento -= 4;
                     }
                     else txt_Cose.Text = "Ricerca Reclutamento III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
+                    break;
+                case "Reclutamento IV":
+                    if (Variabili.Cibo >= Variabili.Ricerca.Reclutamento_IV.Cibo &&
+                        Variabili.Legno >= Variabili.Ricerca.Reclutamento_IV.Legno &&
+                        Variabili.Pietra >= Variabili.Ricerca.Reclutamento_IV.Pietra &&
+                        Variabili.Ferro >= Variabili.Ricerca.Reclutamento_IV.Ferro &&
+                        Variabili.Oro >= Variabili.Ricerca.Reclutamento_IV.Oro &&
+                        btn_Esercito_Reclutamento.Text == "Reclutamento IV")
+                    {
+                        Variabili.Cibo -= Variabili.Ricerca.Reclutamento_IV.Cibo;
+                        Variabili.Legno -= Variabili.Ricerca.Reclutamento_IV.Legno;
+                        Variabili.Pietra -= Variabili.Ricerca.Reclutamento_IV.Pietra;
+                        Variabili.Ferro -= Variabili.Ricerca.Reclutamento_IV.Ferro;
+                        Variabili.Oro -= Variabili.Ricerca.Reclutamento_IV.Oro;
+
+                        btn_Esercito_Reclutamento.Text = "Reclutamento V";
+                        Variabili.CostoReclutamento.Guerriero.TempoReclutamento -= 4;
+                        Variabili.CostoReclutamento.Lanciere.TempoReclutamento -= 4;
+                        Variabili.CostoReclutamento.Arciere.TempoReclutamento -= 5;
+                        Variabili.CostoReclutamento.Catapulta.TempoReclutamento -= 5;
+                    }
+                    else txt_Cose.Text = "Ricerca Reclutamento IV fallita, risorse insufficienti\r\n" + txt_Cose.Text;
+                    break;
+                case "Reclutamento V":
+                    if (Variabili.Cibo >= Variabili.Ricerca.Reclutamento_V.Cibo &&
+                        Variabili.Legno >= Variabili.Ricerca.Reclutamento_V.Legno &&
+                        Variabili.Pietra >= Variabili.Ricerca.Reclutamento_V.Pietra &&
+                        Variabili.Ferro >= Variabili.Ricerca.Reclutamento_V.Ferro &&
+                        Variabili.Oro >= Variabili.Ricerca.Reclutamento_V.Oro &&
+                        btn_Esercito_Reclutamento.Text == "Reclutamento V")
+                    {
+                        Variabili.Cibo -= Variabili.Ricerca.Reclutamento_V.Cibo;
+                        Variabili.Legno -= Variabili.Ricerca.Reclutamento_V.Legno;
+                        Variabili.Pietra -= Variabili.Ricerca.Reclutamento_V.Pietra;
+                        Variabili.Ferro -= Variabili.Ricerca.Reclutamento_V.Ferro;
+                        Variabili.Oro -= Variabili.Ricerca.Reclutamento_V.Oro;
+
+                        btn_Esercito_Reclutamento.Text = "Reclutamento VI";
+                        btn_Esercito_Reclutamento.Enabled = false;
+                        Variabili.CostoReclutamento.Guerriero.TempoReclutamento -= 4;
+                        Variabili.CostoReclutamento.Lanciere.TempoReclutamento -= 5;
+                        Variabili.CostoReclutamento.Arciere.TempoReclutamento -= 5;
+                        Variabili.CostoReclutamento.Catapulta.TempoReclutamento -= 6;
+                    }
+                    else txt_Cose.Text = "Ricerca Reclutamento V fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
             }
         }
@@ -1580,9 +1632,9 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Città_Difesa_I.Oro;
 
                         btn_Citta_Difesa.Text = "Difesa II";
-                        Variabili.Città.Mura.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.DifesaMax) * 1.25);
-                        Variabili.Città.Torre.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.DifesaMax) * 1.25);
-                        Variabili.Città.Castello.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.DifesaMax) * 1.25);
+                        Variabili.Città.Mura.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.DifesaMax) * 1.5);
+                        Variabili.Città.Torre.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.DifesaMax) * 1.5);
+                        Variabili.Città.Castello.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.DifesaMax) * 1.5);
 
                     }
                     else txt_Cose.Text = "Ricerca Difesa I (Città) fallita, risorse insufficienti\r\n" + txt_Cose.Text;
@@ -1602,9 +1654,9 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Città_Difesa_II.Oro;
 
                         btn_Citta_Difesa.Text = "Difesa III";
-                        Variabili.Città.Mura.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.DifesaMax) * 1.5);
-                        Variabili.Città.Torre.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.DifesaMax) * 1.5);
-                        Variabili.Città.Castello.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.DifesaMax) * 1.5);
+                        Variabili.Città.Mura.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.DifesaMax) * 1.75);
+                        Variabili.Città.Torre.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.DifesaMax) * 1.75);
+                        Variabili.Città.Castello.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.DifesaMax) * 1.75);
 
                     }
                     else txt_Cose.Text = "Ricerca Difesa II fallita, risorse insufficienti\r\n" + txt_Cose.Text;
@@ -1625,9 +1677,9 @@ namespace rts_2D
 
                         btn_Citta_Difesa.Text = "Difesa IV";
                         btn_Citta_Difesa.Enabled = false;
-                        Variabili.Città.Mura.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.DifesaMax) * 1.5);
-                        Variabili.Città.Torre.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.DifesaMax) * 1.5);
-                        Variabili.Città.Castello.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.DifesaMax) * 1.5);
+                        Variabili.Città.Mura.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.DifesaMax) * 1.75);
+                        Variabili.Città.Torre.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.DifesaMax) * 1.75);
+                        Variabili.Città.Castello.DifesaMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.DifesaMax) * 1.75);
                     }
                     else txt_Cose.Text = "Ricerca Difesa III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -1651,9 +1703,9 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Città_Salute_I.Oro;
 
                         btn_Citta_Salute.Text = "Salute II";
-                        Variabili.Città.Mura.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.SaluteMax) * 1.25);
-                        Variabili.Città.Torre.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.SaluteMax) * 1.25);
-                        Variabili.Città.Castello.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.SaluteMax) * 1.25);
+                        Variabili.Città.Mura.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.SaluteMax) * 1.5);
+                        Variabili.Città.Torre.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.SaluteMax) * 1.5);
+                        Variabili.Città.Castello.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.SaluteMax) * 1.5);
                     }
                     else txt_Cose.Text = "Ricerca Salute I fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -1672,9 +1724,9 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Città_Salute_II.Oro;
 
                         btn_Citta_Salute.Text = "Salute III";
-                        Variabili.Città.Mura.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.SaluteMax) * 1.5);
-                        Variabili.Città.Torre.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.SaluteMax) * 1.5);
-                        Variabili.Città.Castello.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.SaluteMax) * 1.5);
+                        Variabili.Città.Mura.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.SaluteMax) * 1.75);
+                        Variabili.Città.Torre.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.SaluteMax) * 1.75);
+                        Variabili.Città.Castello.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.SaluteMax) * 1.75);
                     }
                     else txt_Cose.Text = "Ricerca Salute III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -1695,9 +1747,9 @@ namespace rts_2D
                         btn_Citta_Salute.Text = "Salute IV";
                         btn_Citta_Salute.Enabled = false;
 
-                        Variabili.Città.Mura.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.SaluteMax) * 1.5);
-                        Variabili.Città.Torre.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.SaluteMax) * 1.5);
-                        Variabili.Città.Castello.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.SaluteMax) * 1.5);
+                        Variabili.Città.Mura.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Mura.SaluteMax) * 1.75);
+                        Variabili.Città.Torre.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Torre.SaluteMax) * 1.75);
+                        Variabili.Città.Castello.SaluteMax = Convert.ToInt32(Convert.ToDouble(Variabili.Città.Castello.SaluteMax) * 1.75);
                     }
                     else txt_Cose.Text = "Ricerca Salute III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
@@ -2383,7 +2435,6 @@ namespace rts_2D
                 if (Variabili.Città.Mura.Salute < Variabili.Città.Mura.SaluteMax && Variabili.Riparazioni.Stato.Mura_Difesa > 0)
                 {
                     Variabili.Città.Mura.Difesa += Variabili.Riparazioni.Valore.Riparazione;
-                    Console.WriteLine("Difesa: " + Variabili.Città.Mura.Difesa);
                     if (Variabili.Città.Mura.Difesa > Variabili.Città.Mura.DifesaMax)
                     {
                         Variabili.Città.Mura.Difesa = Variabili.Città.Mura.DifesaMax;
@@ -2617,9 +2668,67 @@ namespace rts_2D
                     $"Oro:    {Variabili.Ricerca.Sblocco_Invasioni.Oro}\r\n";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void comboBox_Effetto_Abilità_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _ = Task.Run(() => Loop());
+            switch (comboBox_Effetto_Abilità.SelectedItem)
+            {
+                case "Rinforzo Esercito":
+                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Rinforzo_Esercito.Descrizione;
+                    break;                           
+                //case "Rinforzo Città":               
+                //    txt_Descrizione_Abilità.Text = Variabili.Abilità.Rinforzo_Città.Descrizione;
+                //    break;
+                case "Guerrieri":
+                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Guerrieri.Descrizione;
+                    break;
+                case "Lancieri":
+                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Lancieri.Descrizione;
+                    break;
+                case "Arcieri":
+                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Arcieri.Descrizione;
+                    break;
+            }
+        }
+
+        private void btn_Applica_Effetto_Abilità_Click(object sender, EventArgs e)
+        {
+            switch (comboBox_Effetto_Abilità.SelectedItem)
+            {
+                case "Rinforzo Esercito":
+                    if (Variabili.token >= Variabili.Abilità.Rinforzo_Esercito.Costo_Token)
+                    {
+                        Variabili.token -= Variabili.Abilità.Rinforzo_Esercito.Costo_Token;
+                        Variabili.Esercito.Guerriero.Quantità += 110;
+                        Variabili.Esercito.Lanciere.Quantità += 110;
+                        Variabili.Esercito.Arciere.Quantità += 80;
+                        Variabili.Esercito.Catapulta.Quantità += 30;
+                    }
+                    break;
+                case "Rinforzo Città":
+
+                    break;
+                case "Guerrieri":
+                    if (Variabili.token >= Variabili.Abilità.Guerrieri.Costo_Token)
+                    {
+
+                        Variabili.Esercito.Guerriero.Quantità += 200;
+                    }
+                    break;
+                case "Lancieri":
+                    if (Variabili.token >= Variabili.Abilità.Lancieri.Costo_Token)
+                    {
+                        Variabili.token -= Variabili.Abilità.Lancieri.Costo_Token;
+                        Variabili.Esercito.Lanciere.Quantità += 170;
+                    }
+                    break;
+                case "Arcieri":
+                    if (Variabili.token >= Variabili.Abilità.Arcieri.Costo_Token)
+                    {
+                        Variabili.token -= Variabili.Abilità.Arcieri.Costo_Token;
+                        Variabili.Esercito.Arciere.Quantità += 130;
+                    }
+                    break;
+            }
         }
     }
 }

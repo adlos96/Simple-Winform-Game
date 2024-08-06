@@ -343,7 +343,7 @@ namespace rts_2D
         {
             // Calcolare il danno effettivo tenendo conto della difesa
             double dannoEffettivo = danno - difesa;
-            double Difesa_Rimasta = 0, Salute_Rimasta;
+            double Difesa_Rimasta = 0, Salute_Rimasta = 0;
             dannoEffettivo = Math.Max(0, dannoEffettivo); // Assicurarsi che il danno non sia negativo
 
             danno_Strutture =+ dannoEffettivo;
@@ -369,8 +369,8 @@ namespace rts_2D
             }
             if (struttura == "Torre")
             {
-                Difesa_Rimasta = Variabili.Città.Torre.Difesa - (dannoEffettivo * 0.40);
-                Salute_Rimasta = Variabili.Città.Torre.Salute - (dannoEffettivo * 0.20);
+                Difesa_Rimasta = Variabili.Città.Torre.Difesa - (dannoEffettivo * 0.430);
+                Salute_Rimasta = Variabili.Città.Torre.Salute - (dannoEffettivo * 0.220);
 
                 if (Difesa_Rimasta > 0) Variabili.Città.Torre.Difesa = Convert.ToInt32(Difesa_Rimasta);
                 else Variabili.Città.Torre.Difesa = 0;
@@ -380,8 +380,8 @@ namespace rts_2D
 
                 if (assalto_Unità_Att == Variabili.tipi_Di_Unità - 1)
                 {
-                    Form1.Log_Battaglia($"Le difese delle torre è stata ridotta di: {(danno_Strutture * 0.40).ToString("0.00")}");
-                    Form1.Log_Battaglia($"La salute delle torre è stata ridotta di: {(danno_Strutture * 0.20).ToString("0.00")}");
+                    Form1.Log_Battaglia($"Le difese delle torre è stata ridotta di: {(danno_Strutture * 0.430).ToString("0.00")}");
+                    Form1.Log_Battaglia($"La salute delle torre è stata ridotta di: {(danno_Strutture * 0.220).ToString("0.00")}");
                     danno_Strutture = 0;
                     assalto_Unità_Att = 0;
                 }
@@ -389,8 +389,8 @@ namespace rts_2D
             }
             if (struttura == "Castello")
             {
-                Difesa_Rimasta = Variabili.Città.Castello.Difesa - (dannoEffettivo * 0.40);
-                Salute_Rimasta = Variabili.Città.Castello.Salute - (dannoEffettivo * 0.20);
+                Difesa_Rimasta = Variabili.Città.Castello.Difesa - (dannoEffettivo * 0.45);
+                Salute_Rimasta = Variabili.Città.Castello.Salute - (dannoEffettivo * 0.25);
 
                 if (Difesa_Rimasta > 0) Variabili.Città.Castello.Difesa = Convert.ToInt32(Difesa_Rimasta);
                 else Variabili.Città.Castello.Difesa = 0;
@@ -400,8 +400,8 @@ namespace rts_2D
 
                 if (assalto_Unità_Att == Variabili.tipi_Di_Unità - 1)
                 {
-                    Form1.Log_Battaglia($"Le difese delle castello è stata ridotta di: {(danno_Strutture * 0.40).ToString("0.00")}");
-                    Form1.Log_Battaglia($"La salute delle castello è stata ridotta di: {(danno_Strutture * 0.20).ToString("0.00")}");
+                    Form1.Log_Battaglia($"Le difese delle castello è stata ridotta di: {(danno_Strutture * 0.455).ToString("0.00")}");
+                    Form1.Log_Battaglia($"La salute delle castello è stata ridotta di: {(danno_Strutture * 0.245).ToString("0.00")}");
                     danno_Strutture = 0;
                     assalto_Unità_Att = 0;
                 }
@@ -472,9 +472,9 @@ namespace rts_2D
 
             if (arcieri > 0 || catapulte > 0)
             {
+                int attacco = (catapulte_Temp + arcieri_Temp) * 4 / 5;
                 if (guerrieri_Enemy > 0 && picchieri_Enemy > 0)
                 {
-                    int attacco = (catapulte_Temp + arcieri_Temp) * 4 / 5;
                     if (guerrieri_Enemy > picchieri_Enemy)
                     {
                         guerrieri_Morti_Att = attacco * 2 / 3; //Danno 2/3 contro guerrieri
@@ -489,12 +489,12 @@ namespace rts_2D
                 }
                 else if (guerrieri_Enemy > 0)
                 {
-                    guerrieri_Morti_Att = (catapulte_Temp + arcieri_Temp) * 4 / 5;
+                    guerrieri_Morti_Att = attacco * 4 / 5;
                     guerrieri_Enemy -= guerrieri_Morti_Att;
                 }
                 else if (picchieri_Enemy > 0)
                 {
-                    lancieri_Morti_Att = (catapulte_Temp + arcieri_Temp) * 4 / 5;
+                    lancieri_Morti_Att = attacco * 4 / 5;
                     picchieri_Enemy -= lancieri_Morti_Att;
                 }
 
@@ -509,10 +509,9 @@ namespace rts_2D
 
             if (arcieri_Enemy > 0 || catapulte_Enemy > 0)
             {
+                int attacco = (catapulte_Enemy_Temp + arcieri_Enemy_Temp) * 4 / 5;
                 if (guerrieri > 0 && picchieri > 0)
                 {
-                    int attacco = (catapulte_Enemy_Temp + arcieri_Enemy_Temp) * 4 / 5;
-
                     if (guerrieri > picchieri)
                     {
                         guerrieri_Morti = attacco * 2 / 3;
@@ -529,12 +528,14 @@ namespace rts_2D
                 }
                 else if (guerrieri > 0)
                 {
-                    guerrieri = guerrieri - ((catapulte_Enemy_Temp + arcieri_Enemy_Temp) * 4 / 5);
+                    guerrieri_Morti = attacco * 4 / 5;
+                    guerrieri -= guerrieri_Morti;
                     picchieri -= lancieri_Morti;
                 }
                 else if (picchieri > 0)
-                { 
-                    picchieri = picchieri - ((catapulte_Enemy_Temp + arcieri_Enemy_Temp) * 4 / 5);
+                {
+                    lancieri_Morti = attacco * 4 / 5;
+                    picchieri -= lancieri_Morti;
                     guerrieri -= guerrieri_Morti;
                 }
 

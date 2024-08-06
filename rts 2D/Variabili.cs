@@ -28,7 +28,7 @@ namespace rts_2D
         public static double Ferro       = 0;
         public static double Oro         = 0;
         public static double Popolazione = 0;
-        public static double Popolazione_Up = 0.11;
+        public static double Popolazione_Up = 0.21;
 
         public static int fattoria = 0;
         public static int segheria = 0;
@@ -55,6 +55,8 @@ namespace rts_2D
 
         public static double ProgressColorMax = 0.66;
         public static double ProgressColorMin = 0.33;
+
+        public static int token = 0;
 
         public static string form_Spostamento_truppe = "Nothing";
 
@@ -193,7 +195,7 @@ namespace rts_2D
                 Pietra      = 12,
                 Ferro       = 82,
                 Oro         = 32,
-                TempoReclutamento = 19, //55
+                TempoReclutamento = 18, //55
                 Popolazione = 1
             };
             public static CostoReclutamento Lanciere = new CostoReclutamento
@@ -209,7 +211,7 @@ namespace rts_2D
                 Pietra      = 28,
                 Ferro       = 132,
                 Oro         = 81,
-                TempoReclutamento = 24,
+                TempoReclutamento = 23,
                 Popolazione = 1
             };
             public static CostoReclutamento Arciere = new CostoReclutamento
@@ -225,7 +227,7 @@ namespace rts_2D
                 Pietra      = 123,
                 Ferro       = 183,
                 Oro         = 162,
-                TempoReclutamento = 32,
+                TempoReclutamento = 31,
                 Popolazione = 1
             };
             public static CostoReclutamento Catapulta = new CostoReclutamento
@@ -241,7 +243,7 @@ namespace rts_2D
                 Pietra      = 329,
                 Ferro       = 247,
                 Oro         = 256,
-                TempoReclutamento = 61,
+                TempoReclutamento = 60,
                 Popolazione = 5
             };
         }
@@ -365,6 +367,22 @@ namespace rts_2D
                 Pietra = 7000,
                 Ferro = 6500,
                 Oro = 6000
+            };
+            public static Ricerca Reclutamento_IV = new Ricerca
+            {
+                Cibo = 12500,
+                Legno = 11000,
+                Pietra = 10500,
+                Ferro = 9500,
+                Oro = 8000
+            };
+            public static Ricerca Reclutamento_V = new Ricerca
+            {
+                Cibo = 16000,
+                Legno = 15500,
+                Pietra = 14000,
+                Ferro = 13500,
+                Oro = 13000
             };
             public static Ricerca Attacco_I = new Ricerca
             {
@@ -546,7 +564,8 @@ namespace rts_2D
                 Distanza = 1,
                 Salario = 1,
                 Cibo = 1,
-                Quantità = 0
+                Quantità = 0,
+                TempoReclutamento = 19
             };
             public static Esercito Lanciere = new Esercito
             {
@@ -556,7 +575,8 @@ namespace rts_2D
                 Distanza = 2,
                 Salario = 1,
                 Cibo = 1,
-                Quantità = 0
+                Quantità = 0,
+                TempoReclutamento = 24
             };
             public static Esercito Arciere = new Esercito
             {
@@ -566,7 +586,8 @@ namespace rts_2D
                 Distanza = 6,
                 Salario = 1,
                 Cibo = 1,
-                Quantità = 0
+                Quantità = 0,
+                TempoReclutamento = 32
             };
             public static Esercito Catapulta = new Esercito
             {
@@ -576,7 +597,8 @@ namespace rts_2D
                 Distanza = 18,
                 Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
                 Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
-                Quantità = 0
+                Quantità = 0,
+                TempoReclutamento = 61
             };
         }
         public class Esercito
@@ -588,10 +610,11 @@ namespace rts_2D
             public double Salario { get; set; }
             public double Cibo { get; set; }
             public int Quantità { get; set; }
+            public int TempoReclutamento { get; set; }
 
             public static Esercito Guerriero = new Esercito
             {
-                Salute = 6,
+                Salute = 5,
                 Attacco = 3,
                 Difesa = 3,
                 Distanza = 1,
@@ -601,7 +624,7 @@ namespace rts_2D
             };
             public static Esercito Lanciere = new Esercito
             {
-                Salute = 7,
+                Salute = 6,
                 Attacco = 4,
                 Difesa = 4,
                 Distanza = 2,
@@ -611,9 +634,9 @@ namespace rts_2D
             };
             public static Esercito Arciere = new Esercito
             {
-                Salute = 5,
+                Salute = 4,
                 Attacco = 8,
-                Difesa = 2,
+                Difesa = 3,
                 Distanza = 6,
                 Salario = 0.25,
                 Cibo = 0.41,
@@ -684,7 +707,7 @@ namespace rts_2D
                 DifesaMax = 250
             };
         }
-        public class Riparazioni : Esercito
+        public class Riparazioni
         {
             public double Mura_Salute { get; set; }
             public double Mura_Difesa { get; set; }
@@ -714,6 +737,38 @@ namespace rts_2D
             public static Riparazioni Valore = new Riparazioni
             {
                 Riparazione = 1
+            };
+
+        }
+        public class Abilità
+        {
+            public int Costo_Token { get; set; }
+            public string Descrizione { get; set; }
+
+            public static Abilità Rinforzo_Esercito = new Abilità
+            {
+                Costo_Token = 0,
+                Descrizione = "Aggiunge all'esercito sul campo 110 Guerrieri 110 Lancieri 80 Arcieri 30 Catapulte"
+            };
+            public static Abilità Rinforzo_Città = new Abilità
+            {
+                Costo_Token = 0,
+                Descrizione = "Aggiunge a tutte le strutture della città 80 Guerrieri 80 Lancieri 40 Arcieri 20 Catapulte"
+            };
+            public static Abilità Guerrieri = new Abilità
+            {
+                Costo_Token = 0,
+                Descrizione = "Aggiunge all'esercito sul campo 200 Guerrieri"
+            };
+            public static Abilità Lancieri = new Abilità
+            {
+                Costo_Token = 0,
+                Descrizione = "Aggiunge all'esercito sul campo 170 Lancieri"
+            };
+            public static Abilità Arcieri = new Abilità
+            {
+                Costo_Token = 0,
+                Descrizione = "Aggiunge all'esercito sul campo 130 Arcieri"
             };
 
         }
