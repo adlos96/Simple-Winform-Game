@@ -81,75 +81,82 @@ namespace rts_2D
             int lancieri = Convert.ToInt32(txt_Value_Trackbar_Lancieri.Text);
             int arcieri = Convert.ToInt32(txt_Value_Trackbar_Arcieri.Text);
             int catapulte = Convert.ToInt32(txt_Value_Trackbar_Catapulte.Text);
+
+            int guerrieri_Struttuta = Convert.ToInt32(txt_Guerrieri_Spostamento.Text);
+            int lancieri_Struttuta = Convert.ToInt32(txt_Lancieri_Spostamento.Text);
+            int arcieri_Struttuta = Convert.ToInt32(txt_Arcieri_Spostamento.Text);
+            int catapulte_Struttuta = Convert.ToInt32(txt_Catapulte_Spostamento.Text);
+            int totale = guerrieri_Struttuta + lancieri_Struttuta + arcieri_Struttuta + catapulte_Struttuta;
             switch (lbl_Spostamento.Text)
             {
                 case "Castello":
-                    if (guerrieri > 0)
+                    if (guerrieri > 0 && totale + guerrieri <= Variabili.Città.Castello.Guarnigione)
                     {
                         Variabili.Esercito.Guerriero.Quantità -= guerrieri;
                         Variabili.Città.Castello.Guerrieri += guerrieri;
                     }
-                    if (lancieri > 0)
+                    if (lancieri > 0 && totale + lancieri <= Variabili.Città.Castello.Guarnigione)
                     {
                         Variabili.Esercito.Lanciere.Quantità -= lancieri;
                         Variabili.Città.Castello.Lancieri += lancieri;
                     }
-                    if (arcieri > 0)
+                    if (arcieri > 0 && totale + arcieri <= Variabili.Città.Castello.Guarnigione)
                     {
                         Variabili.Esercito.Arciere.Quantità -= arcieri;
                         Variabili.Città.Castello.Arceri += arcieri;
                     }
-                    if (catapulte > 0)
+                    if (catapulte > 0 && totale + catapulte <= Variabili.Città.Castello.Guarnigione)
                     {
                         Variabili.Esercito.Catapulta.Quantità -= catapulte;
                         Variabili.Città.Castello.Catapulte += catapulte;
                     }
                     break;
                 case "Torre":
-                    if (guerrieri > 0)
+                    if (guerrieri > 0 && totale + guerrieri <= Variabili.Città.Torre.Guarnigione)
                     {
                         Variabili.Esercito.Guerriero.Quantità -= guerrieri;
                         Variabili.Città.Torre.Guerrieri += guerrieri;
                     }
-                    if (lancieri > 0)
+                    if (lancieri > 0 && totale + lancieri <= Variabili.Città.Torre.Guarnigione)
                     {
                         Variabili.Esercito.Lanciere.Quantità -= lancieri;
                         Variabili.Città.Torre.Lancieri += lancieri;
                     }
-                    if (arcieri > 0)
+                    if (arcieri > 0 && totale + arcieri <= Variabili.Città.Torre.Guarnigione)
                     {
                         Variabili.Esercito.Arciere.Quantità -= arcieri;
                         Variabili.Città.Torre.Arceri += arcieri;
                     }
-                    if (catapulte > 0)
+                    if (catapulte > 0 && totale + catapulte <= Variabili.Città.Torre.Guarnigione)
                     {
                         Variabili.Esercito.Catapulta.Quantità -= catapulte;
                         Variabili.Città.Torre.Catapulte += catapulte;
                     }
                     break;
                 case "Mura":
-                    if (guerrieri > 0)
+                    if (guerrieri > 0 && totale + guerrieri <= Variabili.Città.Mura.Guarnigione)
                     {
                         Variabili.Esercito.Guerriero.Quantità -= guerrieri;
                         Variabili.Città.Mura.Guerrieri += guerrieri;
                     }
-                    if (lancieri > 0)
+                    if (lancieri > 0 && totale + lancieri <= Variabili.Città.Mura.Guarnigione)
                     {
                         Variabili.Esercito.Lanciere.Quantità -= lancieri;
                         Variabili.Città.Mura.Lancieri += lancieri;
                     }
-                    if (arcieri > 0)
+                    if (arcieri > 0 && totale + arcieri <= Variabili.Città.Mura.Guarnigione)
                     {
                         Variabili.Esercito.Arciere.Quantità -= arcieri;
                         Variabili.Città.Mura.Arceri += arcieri;
                     }
-                    if (catapulte > 0)
+                    if (catapulte > 0 && totale + catapulte <= Variabili.Città.Mura.Guarnigione)
                     {
                         Variabili.Esercito.Catapulta.Quantità -= catapulte;
                         Variabili.Città.Mura.Catapulte += catapulte;
                     }
                     break;
             }
+            Console.WriteLine("Totale Uomini: " + totale);
             ActiveForm.Close();
             return;
         }

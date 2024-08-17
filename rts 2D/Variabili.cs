@@ -296,6 +296,22 @@ namespace rts_2D
                 Ferro = 6500,
                 Oro = 6000
             };
+            public static Ricerca Produzione_IV = new Ricerca
+            {
+                Cibo = 12500,
+                Legno = 11000,
+                Pietra = 10500,
+                Ferro = 9500,
+                Oro = 8000
+            };
+            public static Ricerca Produzione_V = new Ricerca
+            {
+                Cibo = 16000,
+                Legno = 15500,
+                Pietra = 14000,
+                Ferro = 13500,
+                Oro = 13000
+            };
             public static Ricerca Costruzione_I = new Ricerca
             {
                 Cibo = 4000,
@@ -319,6 +335,22 @@ namespace rts_2D
                 Pietra = 7000,
                 Ferro = 6500,
                 Oro = 6000
+            };
+            public static Ricerca Costruzione_IV = new Ricerca
+            {
+                Cibo = 12500,
+                Legno = 11000,
+                Pietra = 10500,
+                Ferro = 9500,
+                Oro = 8000
+            };
+            public static Ricerca Costruzione_V = new Ricerca
+            {
+                Cibo = 16000,
+                Legno = 15500,
+                Pietra = 14000,
+                Ferro = 13500,
+                Oro = 13000
             };
             public static Ricerca Popolazione_I = new Ricerca
             {
@@ -747,28 +779,27 @@ namespace rts_2D
 
             public static Abilità Rinforzo_Esercito = new Abilità
             {
-                Costo_Token = 0,
-                Descrizione = "Aggiunge all'esercito sul campo 110 Guerrieri 110 Lancieri 80 Arcieri 30 Catapulte"
+                Costo_Token = 1,
             };
             public static Abilità Rinforzo_Città = new Abilità
             {
-                Costo_Token = 0,
-                Descrizione = "Aggiunge a tutte le strutture della città 80 Guerrieri 80 Lancieri 40 Arcieri 20 Catapulte"
+                Costo_Token = 2,
             };
             public static Abilità Guerrieri = new Abilità
             {
-                Costo_Token = 0,
-                Descrizione = "Aggiunge all'esercito sul campo 200 Guerrieri"
+                Costo_Token = 1,
             };
             public static Abilità Lancieri = new Abilità
             {
-                Costo_Token = 0,
-                Descrizione = "Aggiunge all'esercito sul campo 170 Lancieri"
+                Costo_Token = 1,
             };
             public static Abilità Arcieri = new Abilità
             {
-                Costo_Token = 0,
-                Descrizione = "Aggiunge all'esercito sul campo 130 Arcieri"
+                Costo_Token = 1,
+            };
+            public static Abilità Popolani = new Abilità
+            {
+                Costo_Token = 1,
             };
 
         }

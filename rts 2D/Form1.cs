@@ -1,10 +1,10 @@
-﻿using rts_2D.Properties;
-using System;
-using System.Drawing;
-using System.Reflection.Emit;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static rts_2D.Variabili;
 
 namespace rts_2D
@@ -15,6 +15,8 @@ namespace rts_2D
         int tokenReclutamento = 0;
         int tokenRiparazione = 0;
         public static int Invasione_Ondata = 0;
+        static bool pausa = false;
+        static bool avvio = false;
 
         private static TextBox log;
         private static TextBox log_Battaglia;
@@ -356,16 +358,16 @@ namespace rts_2D
             txt_Arciere.Text = "0";
             txt_Catapulta.Text = "0";
         }
-
         private async void btn_Start_Click(object sender, EventArgs e)
         {
             _ = Task.Run(() => Loop());
             comboBox_Effetto_Abilità.Text = "Seleziona abilità";
             comboBox_Effetto_Abilità.Items.Add("Rinforzo Esercito");
-            //comboBox_Effetto_Abilità.Items.Add("Rinforzo Città");
+            comboBox_Effetto_Abilità.Items.Add("Rinforzo Città");
             comboBox_Effetto_Abilità.Items.Add("Guerrieri");
             comboBox_Effetto_Abilità.Items.Add("Lancieri");
             comboBox_Effetto_Abilità.Items.Add("Arcieri");
+            comboBox_Effetto_Abilità.Items.Add("Popolani");
 
             Blocco_Costruzione.Visible = true;
             Blocco_Produzione.Visible = true;
@@ -383,56 +385,53 @@ namespace rts_2D
             label20.Visible = true;
             Txt_Log_Battaglie.Visible = true;
             txt_Cose.Visible = true;
+            btn_Pausa.Visible = true;
+            avvio = true;
         }
-        private async Task<double> Cibo()
-        {
-            double cibo = 0;
-
-            cibo += Variabili.Esercito.Guerriero.Quantità * Variabili.Esercito.Guerriero.Cibo;
-            cibo += Variabili.Esercito.Lanciere.Quantità * Variabili.Esercito.Lanciere.Cibo;
-            cibo += Variabili.Esercito.Arciere.Quantità * Variabili.Esercito.Arciere.Cibo;
-            cibo += Variabili.Esercito.Catapulta.Quantità * Variabili.Esercito.Catapulta.Cibo;
-
-            return cibo;
-        }
+        
         async Task Loop()
         {
             int i = 4;
-            Variabili.Cibo = 3800;
-            Variabili.Legno = 3900;
-            Variabili.Pietra = 3700;
-            Variabili.Ferro = 3900;
-            Variabili.Oro = 4800;
-            Variabili.Popolazione = 10;
+            if (avvio == false)
+            {
+                Variabili.Cibo = 4800;
+                Variabili.Legno = 4600;
+                Variabili.Pietra = 4500;
+                Variabili.Ferro = 4500;
+                Variabili.Oro = 5400;
+                Variabili.Popolazione = 15;
 
-            //Città - Salute
-            progressBar_Salute_Castello.Minimum = 0;
-            progressBar_Salute_Torre.Minimum = 0;
-            progressBar_Salute_Mura.Minimum = 0;
-            progressBar_Salute_Castello.Maximum = Variabili.Città.Castello.SaluteMax;
-            progressBar_Salute_Torre.Maximum = Variabili.Città.Torre.SaluteMax;
-            progressBar_Salute_Mura.Maximum = Variabili.Città.Mura.SaluteMax;
+                //Città - Salute
+                progressBar_Salute_Castello.Minimum = 0;
+                progressBar_Salute_Torre.Minimum = 0;
+                progressBar_Salute_Mura.Minimum = 0;
+                progressBar_Salute_Castello.Maximum = Variabili.Città.Castello.SaluteMax;
+                progressBar_Salute_Torre.Maximum = Variabili.Città.Torre.SaluteMax;
+                progressBar_Salute_Mura.Maximum = Variabili.Città.Mura.SaluteMax;
 
-            //Città - Difesa
-            progressBar_Difesa_Castello.Minimum = 0;
-            progressBar_Difesa_Torre.Minimum = 0;
-            progressBar_Difesa_Mura.Minimum = 0;
-            progressBar_Difesa_Castello.Maximum = Variabili.Città.Castello.DifesaMax;
-            progressBar_Difesa_Torre.Maximum = Variabili.Città.Torre.DifesaMax;
-            progressBar_Difesa_Mura.Maximum = Variabili.Città.Mura.DifesaMax;
+                //Città - Difesa
+                progressBar_Difesa_Castello.Minimum = 0;
+                progressBar_Difesa_Torre.Minimum = 0;
+                progressBar_Difesa_Mura.Minimum = 0;
+                progressBar_Difesa_Castello.Maximum = Variabili.Città.Castello.DifesaMax;
+                progressBar_Difesa_Torre.Maximum = Variabili.Città.Torre.DifesaMax;
+                progressBar_Difesa_Mura.Maximum = Variabili.Città.Mura.DifesaMax;
 
-            //Città - Guarnigione
-            progressBar_Guarnigione_Castello.Minimum = 0;
-            progressBar_Guarnigione_Torre.Minimum = 0;
-            progressBar_Guarnigione_Mura.Minimum = 0;
-            progressBar_Guarnigione_Castello.Maximum = Variabili.Città.Castello.Guarnigione;
-            progressBar_Guarnigione_Torre.Maximum = Variabili.Città.Torre.Guarnigione;
-            progressBar_Guarnigione_Mura.Maximum = Variabili.Città.Mura.Guarnigione;
+                //Città - Guarnigione
+                progressBar_Guarnigione_Castello.Minimum = 0;
+                progressBar_Guarnigione_Torre.Minimum = 0;
+                progressBar_Guarnigione_Mura.Minimum = 0;
+                progressBar_Guarnigione_Castello.Maximum = Variabili.Città.Castello.Guarnigione;
+                progressBar_Guarnigione_Torre.Maximum = Variabili.Città.Torre.Guarnigione;
+                progressBar_Guarnigione_Mura.Maximum = Variabili.Città.Mura.Guarnigione;
+            }
 
             while (true)
             {
                 if (i == 4)
                 {
+                    Console.WriteLine("Update Loop");
+                    if (await Pausa() == true) return;
                     //Agiunta risorse
                     Variabili.Cibo = Variabili.Cibo + ((Variabili.CostoCostruzione.Fattoria.Produzione * Variabili.fattoria) - await Cibo());
                     Variabili.Legno = Variabili.Legno + (Variabili.CostoCostruzione.Segheria.Produzione * Variabili.segheria);
@@ -452,10 +451,11 @@ namespace rts_2D
                     await Load_Gui_Città();
                 }
                 i++;
+
                 Thread.Sleep(250);
             }
         }
-        Task Costruzione()
+        async Task Costruzione()
         {
             int Fattoria = 0;
             int Segheria = 0;
@@ -466,6 +466,7 @@ namespace rts_2D
 
             while (true)
             {
+                if (await Pausa() == true) return;
                 tempo = Fattoria + Segheria + CavaPietra + MinieraFerro + MinieraOro;
                 if (Variabili.tempo_Costruzione > 0)
                 {
@@ -548,7 +549,7 @@ namespace rts_2D
                     (Variabili.Coda.MinieraOro.quantità * Variabili.CostoCostruzione.MinieraOro.TempoCostruzione) - tempo);
             }
         }
-        Task Reclutamento()
+        async Task Reclutamento()
         {
             int Guerriero = 0;
             int Lanciere = 0;
@@ -557,6 +558,7 @@ namespace rts_2D
             int tempo = 0;
             while (true)
             {
+                if (await Pausa() == true) return;
                 tempo = Guerriero + Lanciere + Arciere + Catapulta;
                 if (Variabili.tempo_Reclutamento > 0)
                 {
@@ -624,7 +626,200 @@ namespace rts_2D
                     (Variabili.Coda.Catapulta.quantità * Variabili.CostoReclutamento.Catapulta.TempoReclutamento) - tempo);
             }
         }
+        async void Loop_Invasione()
+        {
+            int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0, a = 0;
+            int respawn = 0;
 
+            Variabili.EsercitoNemico.Guerriero.Quantità += 14;
+            Variabili.EsercitoNemico.Lanciere.Quantità += 8;
+            Variabili.EsercitoNemico.Arciere.Quantità += 6;
+            Variabili.EsercitoNemico.Catapulta.Quantità += 1;
+
+            while (true)
+            {
+                if (await Pausa() == true) return;
+
+                if (Invasione_Ondata > 7 && guerriero >= Variabili.EsercitoNemico.Guerriero.TempoReclutamento - 3) Variabili.EsercitoNemico.Guerriero.Quantità += 1;
+                if (Invasione_Ondata > 10 && lanciere >= Variabili.EsercitoNemico.Lanciere.TempoReclutamento - 3) Variabili.EsercitoNemico.Lanciere.Quantità += 1;
+                if (Invasione_Ondata > 18 && arciere >= Variabili.EsercitoNemico.Arciere.TempoReclutamento - 3) Variabili.EsercitoNemico.Arciere.Quantità += 1;
+                if (Invasione_Ondata > 25 && catapulta >= Variabili.EsercitoNemico.Catapulta.TempoReclutamento - 3) Variabili.EsercitoNemico.Catapulta.Quantità += 1;
+
+                if (guerriero >= Variabili.EsercitoNemico.Guerriero.TempoReclutamento)
+                {
+                    Variabili.EsercitoNemico.Guerriero.Quantità++;
+                    guerriero = 0;
+                }
+                if (lanciere >= Variabili.EsercitoNemico.Lanciere.TempoReclutamento && Invasione_Ondata >= 8)
+                {
+                    Variabili.EsercitoNemico.Lanciere.Quantità++;
+                    lanciere = 0;
+                }
+                if (arciere >= Variabili.EsercitoNemico.Arciere.TempoReclutamento && Invasione_Ondata >= 16)
+                {
+                    Variabili.EsercitoNemico.Arciere.Quantità++;
+                    arciere = 0;
+                }
+                if (catapulta >= Variabili.EsercitoNemico.Catapulta.TempoReclutamento && Invasione_Ondata >= 23)
+                {
+                    Variabili.EsercitoNemico.Catapulta.Quantità++;
+                    catapulta = 0;
+                }
+
+                Variabili.forza_Esercito_Att =
+                    Variabili.EsercitoNemico.Guerriero.Quantità * ((Variabili.EsercitoNemico.Guerriero.Salute * 0.33) + (Variabili.EsercitoNemico.Guerriero.Attacco * 0.72)) +
+                    Variabili.EsercitoNemico.Lanciere.Quantità * ((Variabili.EsercitoNemico.Lanciere.Salute * 0.33) + (Variabili.EsercitoNemico.Lanciere.Attacco * 0.72)) +
+                    Variabili.EsercitoNemico.Arciere.Quantità * ((Variabili.EsercitoNemico.Arciere.Salute * 0.33) + (Variabili.EsercitoNemico.Arciere.Attacco * 0.72)) +
+                    Variabili.EsercitoNemico.Catapulta.Quantità * ((Variabili.EsercitoNemico.Catapulta.Salute * 0.33) + (Variabili.EsercitoNemico.Catapulta.Attacco * 0.72));
+
+                if (Variabili.timer_Invasione == 0)
+                {
+                    await Battle.Battaglia();
+                    Invasione_Ondata++;
+                    Variabili.timer_Invasione = Variabili.timer_Invasione_Set + (17 * Invasione_Ondata);
+                    respawn = 0;
+                }
+                if (Invasione_Ondata > 5 && respawn == 19)
+                {
+                    Variabili.EsercitoNemico.Guerriero.Quantità += 1;
+                    Variabili.EsercitoNemico.Lanciere.Quantità += 1;
+                }
+
+                if (a >= 300)
+                {
+                    Variabili.token++;
+                    a = 0;
+                }
+
+                txt_Cibo.Invoke((Action)(async () => { Invasione(); }));
+                Variabili.timer_Invasione--;
+
+                Thread.Sleep(1000);
+                guerriero++;
+                lanciere++;
+                arciere++;
+                catapulta++;
+                respawn++;
+                a++;
+                Console.WriteLine("Token timer: " + a);
+                Console.WriteLine("Token " + Variabili.token);
+            }
+        }
+        async Task Loop_Riparazione()
+        {
+            while (true)
+            {
+                if (await Pausa() == true) return;
+                if (Variabili.Città.Mura.Salute < Variabili.Città.Mura.SaluteMax && Variabili.Riparazioni.Stato.Mura_Salute > 0)
+                {
+                    Variabili.Città.Mura.Salute += Variabili.Riparazioni.Valore.Riparazione;
+                    if (Variabili.Città.Mura.Salute > Variabili.Città.Mura.SaluteMax)
+                    {
+
+                        Variabili.Città.Mura.Salute = Variabili.Città.Mura.SaluteMax;
+                        Variabili.Riparazioni.Stato.Mura_Salute = 0;
+                    }
+                }
+                if (Variabili.Città.Mura.Salute < Variabili.Città.Mura.SaluteMax && Variabili.Riparazioni.Stato.Mura_Difesa > 0)
+                {
+                    Variabili.Città.Mura.Difesa += Variabili.Riparazioni.Valore.Riparazione;
+                    if (Variabili.Città.Mura.Difesa > Variabili.Città.Mura.DifesaMax)
+                    {
+                        Variabili.Città.Mura.Difesa = Variabili.Città.Mura.DifesaMax;
+                        Variabili.Riparazioni.Stato.Mura_Difesa = 0;
+                    }
+                }
+                if (Variabili.Città.Torre.Salute < Variabili.Città.Torre.SaluteMax && Variabili.Riparazioni.Stato.Torre_Salute > 0)
+                {
+                    Variabili.Città.Torre.Salute += Variabili.Riparazioni.Valore.Riparazione;
+                    if (Variabili.Città.Torre.Salute > Variabili.Città.Torre.SaluteMax)
+                    {
+
+                        Variabili.Città.Torre.Salute = Variabili.Città.Torre.SaluteMax;
+                        Variabili.Riparazioni.Stato.Torre_Salute = 0;
+                    }
+                }
+                if (Variabili.Città.Torre.Salute < Variabili.Città.Torre.SaluteMax && Variabili.Riparazioni.Stato.Torre_Difesa > 0)
+                {
+                    Variabili.Città.Torre.Difesa += Variabili.Riparazioni.Valore.Riparazione;
+                    if (Variabili.Città.Torre.Difesa > Variabili.Città.Torre.DifesaMax)
+                    {
+                        Variabili.Città.Torre.Difesa = Variabili.Città.Torre.DifesaMax;
+                        Variabili.Riparazioni.Stato.Torre_Difesa = 0;
+                    }
+                }
+
+                if (Variabili.Città.Castello.Salute < Variabili.Città.Castello.SaluteMax && Variabili.Riparazioni.Stato.Castello_Salute > 0)
+                {
+                    Variabili.Città.Castello.Salute += Variabili.Riparazioni.Valore.Riparazione;
+                    if (Variabili.Città.Castello.Salute > Variabili.Città.Castello.SaluteMax)
+                    {
+
+                        Variabili.Città.Castello.Salute = Variabili.Città.Castello.SaluteMax;
+                        Variabili.Riparazioni.Stato.Castello_Salute = 0;
+                    }
+                }
+                if (Variabili.Città.Castello.Salute < Variabili.Città.Castello.SaluteMax && Variabili.Riparazioni.Stato.Castello_Difesa > 0)
+                {
+                    Variabili.Città.Castello.Difesa += Variabili.Riparazioni.Valore.Riparazione;
+                    if (Variabili.Città.Castello.Difesa > Variabili.Città.Castello.DifesaMax)
+                    {
+                        Variabili.Città.Castello.Difesa = Variabili.Città.Castello.DifesaMax;
+                        Variabili.Riparazioni.Stato.Castello_Difesa = 0;
+                    }
+                }
+                Thread.Sleep(1000);
+            }
+
+        }
+
+        static async Task<bool> Pausa()
+        {
+            if (pausa == true) return true;
+            return false;
+        }
+
+        private async Task<double> Cibo()
+        {
+            double cibo = 0;
+
+            cibo += Variabili.Esercito.Guerriero.Quantità * Variabili.Esercito.Guerriero.Cibo;
+            cibo += Variabili.Esercito.Lanciere.Quantità * Variabili.Esercito.Lanciere.Cibo;
+            cibo += Variabili.Esercito.Arciere.Quantità * Variabili.Esercito.Arciere.Cibo;
+            cibo += Variabili.Esercito.Catapulta.Quantità * Variabili.Esercito.Catapulta.Cibo;
+
+            return cibo;
+        }
+        private async Task<double> Oro()
+        {
+            double oro = 0;
+
+            oro += Variabili.Esercito.Guerriero.Quantità * Variabili.Esercito.Guerriero.Salario;
+            oro += Variabili.Esercito.Lanciere.Quantità * Variabili.Esercito.Lanciere.Salario;
+            oro += Variabili.Esercito.Arciere.Quantità * Variabili.Esercito.Arciere.Salario;
+            oro += Variabili.Esercito.Catapulta.Quantità * Variabili.Esercito.Catapulta.Salario;
+
+            return oro;
+        }
+        private void Invasione()
+        {
+            txt_Esercito_Invasore.Text = $"" +
+                    $"Guerriero:      {Variabili.EsercitoNemico.Guerriero.Quantità}\r\n" +
+                    $"Lanciere:       {Variabili.EsercitoNemico.Lanciere.Quantità}\r\n" +
+                    $"Arceri:           {Variabili.EsercitoNemico.Arciere.Quantità}\r\n" +
+                    $"Catapulte:      {Variabili.EsercitoNemico.Catapulta.Quantità}\r\n" +
+                    $"Forza Esercito: {Variabili.forza_Esercito_Att.ToString("0.00")}";
+            txt_Timer_Invasione.Text = Variabili.timer_Invasione.ToString();
+            txt_Numero_Ondata.Text = Invasione_Ondata.ToString();
+        }
+        static string ConvertSeconds(int totalSeconds)
+        {
+            int hours = totalSeconds / 3600;
+            int minutes = (totalSeconds % 3600) / 60;
+            int seconds = totalSeconds % 60;
+
+            return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+        }
         public async Task<bool> Load_Gui_Città()
         {
             txt_Cibo.Invoke((Action)(async () =>
@@ -846,110 +1041,6 @@ namespace rts_2D
             }
             return true;
         }
-        private void Invasione()
-        {
-            txt_Esercito_Invasore.Text = $"" +
-                    $"Guerriero:      {Variabili.EsercitoNemico.Guerriero.Quantità}\r\n" +
-                    $"Lanciere:       {Variabili.EsercitoNemico.Lanciere.Quantità}\r\n" +
-                    $"Arceri:           {Variabili.EsercitoNemico.Arciere.Quantità}\r\n" +
-                    $"Catapulte:      {Variabili.EsercitoNemico.Catapulta.Quantità}\r\n" +
-                    $"Forza Esercito: {Variabili.forza_Esercito_Att.ToString("0.00")}";
-            txt_Timer_Invasione.Text = Variabili.timer_Invasione.ToString();
-            txt_Numero_Ondata.Text = Invasione_Ondata.ToString();
-        }
-        async void Loop_Invasione()
-        {
-            int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0, a = 0;
-            int respawn = 0;
-
-            Variabili.EsercitoNemico.Guerriero.Quantità += 14;
-            Variabili.EsercitoNemico.Lanciere.Quantità += 8;
-            Variabili.EsercitoNemico.Arciere.Quantità += 6;
-            Variabili.EsercitoNemico.Catapulta.Quantità += 1;
-
-            while (true)
-            {
-                if (Invasione_Ondata > 7 && guerriero >= Variabili.EsercitoNemico.Guerriero.TempoReclutamento - 3) Variabili.EsercitoNemico.Guerriero.Quantità += 1;
-                if (Invasione_Ondata > 10 && lanciere >= Variabili.EsercitoNemico.Lanciere.TempoReclutamento - 3) Variabili.EsercitoNemico.Lanciere.Quantità += 1;
-                if (Invasione_Ondata > 18 && arciere >= Variabili.EsercitoNemico.Arciere.TempoReclutamento - 3) Variabili.EsercitoNemico.Arciere.Quantità += 1;
-                if (Invasione_Ondata > 25 && catapulta >= Variabili.EsercitoNemico.Catapulta.TempoReclutamento - 3) Variabili.EsercitoNemico.Catapulta.Quantità += 1;
-
-                if (guerriero >= Variabili.EsercitoNemico.Guerriero.TempoReclutamento)
-                {
-                    Variabili.EsercitoNemico.Guerriero.Quantità++;
-                    guerriero = 0;
-                }
-                if (lanciere >= Variabili.EsercitoNemico.Lanciere.TempoReclutamento && Invasione_Ondata >= 8)
-                {
-                    Variabili.EsercitoNemico.Lanciere.Quantità++;
-                    lanciere = 0;
-                }
-                if (arciere >= Variabili.EsercitoNemico.Arciere.TempoReclutamento && Invasione_Ondata >= 16)
-                {
-                    Variabili.EsercitoNemico.Arciere.Quantità++;
-                    arciere = 0;
-                }
-                if (catapulta >= Variabili.EsercitoNemico.Catapulta.TempoReclutamento && Invasione_Ondata >= 23)
-                {
-                    Variabili.EsercitoNemico.Catapulta.Quantità++;
-                    catapulta = 0;
-                }
-
-                Variabili.forza_Esercito_Att =
-                    Variabili.EsercitoNemico.Guerriero.Quantità * ((Variabili.EsercitoNemico.Guerriero.Salute * 0.33) + (Variabili.EsercitoNemico.Guerriero.Attacco * 0.72)) +
-                    Variabili.EsercitoNemico.Lanciere.Quantità * ((Variabili.EsercitoNemico.Lanciere.Salute * 0.33) + (Variabili.EsercitoNemico.Lanciere.Attacco * 0.72)) +
-                    Variabili.EsercitoNemico.Arciere.Quantità * ((Variabili.EsercitoNemico.Arciere.Salute * 0.33) + (Variabili.EsercitoNemico.Arciere.Attacco * 0.72)) +
-                    Variabili.EsercitoNemico.Catapulta.Quantità * ((Variabili.EsercitoNemico.Catapulta.Salute * 0.33) + (Variabili.EsercitoNemico.Catapulta.Attacco * 0.72));
-
-                if (Variabili.timer_Invasione == 0)
-                {
-                    await Battle.Battaglia();
-                    Invasione_Ondata++;
-                    Variabili.timer_Invasione = Variabili.timer_Invasione_Set + (17 * Invasione_Ondata);
-                    respawn = 0;
-                }
-                if (Invasione_Ondata > 5 && respawn == 19)
-                {
-                    Variabili.EsercitoNemico.Guerriero.Quantità += 1;
-                    Variabili.EsercitoNemico.Lanciere.Quantità += 1;
-                }
-
-                if (a >= 10 * 60)
-                {
-                    Variabili.token++;
-                    a = 0;
-                }
-
-                txt_Cibo.Invoke((Action)(async () => { Invasione(); }));
-                Variabili.timer_Invasione--;
-
-                Thread.Sleep(1000);
-                guerriero++;
-                lanciere++;
-                arciere++;
-                catapulta++;
-                respawn++;
-            }
-        }
-        private async Task<double> Oro()
-        {
-            double oro = 0;
-
-            oro += Variabili.Esercito.Guerriero.Quantità * Variabili.Esercito.Guerriero.Salario;
-            oro += Variabili.Esercito.Lanciere.Quantità * Variabili.Esercito.Lanciere.Salario;
-            oro += Variabili.Esercito.Arciere.Quantità * Variabili.Esercito.Arciere.Salario;
-            oro += Variabili.Esercito.Catapulta.Quantità * Variabili.Esercito.Catapulta.Salario;
-
-            return oro;
-        }
-        static string ConvertSeconds(int totalSeconds)
-        {
-            int hours = totalSeconds / 3600;
-            int minutes = (totalSeconds % 3600) / 60;
-            int seconds = totalSeconds % 60;
-
-            return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
-        }
 
         // btn Ricerche
         private void btn_Invasioni_Click(object sender, EventArgs e)
@@ -1064,7 +1155,6 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Produzione_III.Oro;
 
                         btn_Risorse_Produzione.Text = "Produzione IV";
-                        btn_Risorse_Produzione.Enabled = false;
                         Variabili.CostoCostruzione.Fattoria.Produzione += 0.26;
                         Variabili.CostoCostruzione.Segheria.Produzione += 0.24;
                         Variabili.CostoCostruzione.CavaPietra.Produzione += 0.21;
@@ -1072,6 +1162,53 @@ namespace rts_2D
                         Variabili.CostoCostruzione.MinieraOro.Produzione += 0.17;
                     }
                     else txt_Cose.Text = "Ricerca Produzione III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
+                    break;
+                case "Produzione IV":
+                    if (Variabili.Cibo >= Variabili.Ricerca.Produzione_IV.Cibo &&
+                        Variabili.Legno >= Variabili.Ricerca.Produzione_IV.Legno &&
+                        Variabili.Pietra >= Variabili.Ricerca.Produzione_IV.Pietra &&
+                        Variabili.Ferro >= Variabili.Ricerca.Produzione_IV.Ferro &&
+                        Variabili.Oro >= Variabili.Ricerca.Produzione_IV.Oro &&
+                        btn_Risorse_Produzione.Text == "Produzione IV")
+                    {
+                        Variabili.Cibo -= Variabili.Ricerca.Produzione_IV.Cibo;
+                        Variabili.Legno -= Variabili.Ricerca.Produzione_IV.Legno;
+                        Variabili.Pietra -= Variabili.Ricerca.Produzione_IV.Pietra;
+                        Variabili.Ferro -= Variabili.Ricerca.Produzione_IV.Ferro;
+                        Variabili.Oro -= Variabili.Ricerca.Produzione_IV.Oro;
+
+                        btn_Risorse_Produzione.Text = "Produzione V";
+                        Variabili.CostoCostruzione.Fattoria.Produzione += 0.29;
+                        Variabili.CostoCostruzione.Segheria.Produzione += 0.27;
+                        Variabili.CostoCostruzione.CavaPietra.Produzione += 0.24;
+                        Variabili.CostoCostruzione.MinieraFerro.Produzione += 0.23;
+                        Variabili.CostoCostruzione.MinieraOro.Produzione += 0.20;
+                    }
+                    else txt_Cose.Text = "Ricerca Produzione IV fallita, risorse insufficienti\r\n" + txt_Cose.Text;
+                    break;
+                case "Produzione V":
+                    if (Variabili.Cibo >= Variabili.Ricerca.Produzione_V.Cibo &&
+                        Variabili.Legno >= Variabili.Ricerca.Produzione_V.Legno &&
+                        Variabili.Pietra >= Variabili.Ricerca.Produzione_V.Pietra &&
+                        Variabili.Ferro >= Variabili.Ricerca.Produzione_V.Ferro &&
+                        Variabili.Oro >= Variabili.Ricerca.Produzione_V.Oro &&
+                        btn_Risorse_Produzione.Text == "Produzione V")
+                    {
+                        Variabili.Cibo -= Variabili.Ricerca.Produzione_V.Cibo;
+                        Variabili.Legno -= Variabili.Ricerca.Produzione_V.Legno;
+                        Variabili.Pietra -= Variabili.Ricerca.Produzione_V.Pietra;
+                        Variabili.Ferro -= Variabili.Ricerca.Produzione_V.Ferro;
+                        Variabili.Oro -= Variabili.Ricerca.Produzione_V.Oro;
+
+                        btn_Risorse_Produzione.Text = "Produzione VI";
+                        btn_Risorse_Produzione.Enabled = false;
+                        Variabili.CostoCostruzione.Fattoria.Produzione += 0.33;
+                        Variabili.CostoCostruzione.Segheria.Produzione += 0.31;
+                        Variabili.CostoCostruzione.CavaPietra.Produzione += 0.28;
+                        Variabili.CostoCostruzione.MinieraFerro.Produzione += 0.27;
+                        Variabili.CostoCostruzione.MinieraOro.Produzione += 0.24;
+                    }
+                    else txt_Cose.Text = "Ricerca Produzione V fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
             }
         }
@@ -1139,7 +1276,6 @@ namespace rts_2D
                         Variabili.Oro -= Variabili.Ricerca.Costruzione_III.Oro;
 
                         btn_Risorse_Costruzione.Text = "Costruzione IV";
-                        btn_Risorse_Costruzione.Enabled = false;
                         Variabili.CostoCostruzione.Fattoria.TempoCostruzione -= 3;
                         Variabili.CostoCostruzione.Segheria.TempoCostruzione -= 3;
                         Variabili.CostoCostruzione.CavaPietra.TempoCostruzione -= 3;
@@ -1147,6 +1283,55 @@ namespace rts_2D
                         Variabili.CostoCostruzione.MinieraOro.TempoCostruzione -= 4;
                     }
                     else txt_Cose.Text = "Ricerca Costruzione III fallita, risorse insufficienti\r\n" + txt_Cose.Text;
+                    break;
+
+                case "Costruzione IV":
+                    if (Variabili.Cibo >= Variabili.Ricerca.Costruzione_IV.Cibo &&
+                        Variabili.Legno >= Variabili.Ricerca.Costruzione_IV.Legno &&
+                        Variabili.Pietra >= Variabili.Ricerca.Costruzione_IV.Pietra &&
+                        Variabili.Ferro >= Variabili.Ricerca.Costruzione_IV.Ferro &&
+                        Variabili.Oro >= Variabili.Ricerca.Costruzione_IV.Oro &&
+                        btn_Risorse_Costruzione.Text == "Costruzione IV")
+                    {
+                        Variabili.Cibo -= Variabili.Ricerca.Costruzione_IV.Cibo;
+                        Variabili.Legno -= Variabili.Ricerca.Costruzione_IV.Legno;
+                        Variabili.Pietra -= Variabili.Ricerca.Costruzione_IV.Pietra;
+                        Variabili.Ferro -= Variabili.Ricerca.Costruzione_IV.Ferro;
+                        Variabili.Oro -= Variabili.Ricerca.Costruzione_IV.Oro;
+
+                        btn_Risorse_Costruzione.Text = "Costruzione V";
+                        Variabili.CostoCostruzione.Fattoria.TempoCostruzione -= 2;
+                        Variabili.CostoCostruzione.Segheria.TempoCostruzione -= 2;
+                        Variabili.CostoCostruzione.CavaPietra.TempoCostruzione -= 2;
+                        Variabili.CostoCostruzione.MinieraFerro.TempoCostruzione -= 3;
+                        Variabili.CostoCostruzione.MinieraOro.TempoCostruzione -= 4;
+                    }
+                    else txt_Cose.Text = "Ricerca Costruzione IV fallita, risorse insufficienti\r\n" + txt_Cose.Text;
+                    break;
+
+                case "Costruzione V":
+                    if (Variabili.Cibo >= Variabili.Ricerca.Costruzione_V.Cibo &&
+                        Variabili.Legno >= Variabili.Ricerca.Costruzione_V.Legno &&
+                        Variabili.Pietra >= Variabili.Ricerca.Costruzione_V.Pietra &&
+                        Variabili.Ferro >= Variabili.Ricerca.Costruzione_V.Ferro &&
+                        Variabili.Oro >= Variabili.Ricerca.Costruzione_V.Oro &&
+                        btn_Risorse_Costruzione.Text == "Costruzione V")
+                    {
+                        Variabili.Cibo -= Variabili.Ricerca.Costruzione_V.Cibo;
+                        Variabili.Legno -= Variabili.Ricerca.Costruzione_V.Legno;
+                        Variabili.Pietra -= Variabili.Ricerca.Costruzione_V.Pietra;
+                        Variabili.Ferro -= Variabili.Ricerca.Costruzione_V.Ferro;
+                        Variabili.Oro -= Variabili.Ricerca.Costruzione_V.Oro;
+
+                        btn_Risorse_Costruzione.Text = "Costruzione VI";
+                        btn_Risorse_Costruzione.Enabled = false;
+                        Variabili.CostoCostruzione.Fattoria.TempoCostruzione -= 3;
+                        Variabili.CostoCostruzione.Segheria.TempoCostruzione -= 3;
+                        Variabili.CostoCostruzione.CavaPietra.TempoCostruzione -= 3;
+                        Variabili.CostoCostruzione.MinieraFerro.TempoCostruzione -= 4;
+                        Variabili.CostoCostruzione.MinieraOro.TempoCostruzione -= 6;
+                    }
+                    else txt_Cose.Text = "Ricerca Costruzione V fallita, risorse insufficienti\r\n" + txt_Cose.Text;
                     break;
             }
         }
@@ -1914,6 +2099,22 @@ namespace rts_2D
                     $"Pietra: {Variabili.Ricerca.Costruzione_III.Pietra}\r\n" +
                     $"Ferro:  {Variabili.Ricerca.Costruzione_III.Ferro}\r\n" +
                     $"Oro:    {Variabili.Ricerca.Costruzione_III.Oro}\r\n";
+
+            if (btn_Risorse_Costruzione.Text == "Costruzione IV")
+                txt_Log.Text = $"Costruzione IV\r\n" +
+                    $"Cibo:   {Variabili.Ricerca.Costruzione_IV.Cibo}\r\n" +
+                    $"Legno:  {Variabili.Ricerca.Costruzione_IV.Legno}\r\n" +
+                    $"Pietra: {Variabili.Ricerca.Costruzione_IV.Pietra}\r\n" +
+                    $"Ferro:  {Variabili.Ricerca.Costruzione_IV.Ferro}\r\n" +
+                    $"Oro:    {Variabili.Ricerca.Costruzione_IV.Oro}\r\n";
+
+            if (btn_Risorse_Costruzione.Text == "Costruzione V")
+                txt_Log.Text = $"Costruzione V\r\n" +
+                    $"Cibo:   {Variabili.Ricerca.Costruzione_V.Cibo}\r\n" +
+                    $"Legno:  {Variabili.Ricerca.Costruzione_V.Legno}\r\n" +
+                    $"Pietra: {Variabili.Ricerca.Costruzione_V.Pietra}\r\n" +
+                    $"Ferro:  {Variabili.Ricerca.Costruzione_V.Ferro}\r\n" +
+                    $"Oro:    {Variabili.Ricerca.Costruzione_V.Oro}\r\n";
         }
         private void btn_Risorse_Produzione_MouseHover(object sender, EventArgs e)
         {
@@ -1940,6 +2141,22 @@ namespace rts_2D
                     $"Pietra: {Variabili.Ricerca.Produzione_III.Pietra}\r\n" +
                     $"Ferro:  {Variabili.Ricerca.Produzione_III.Ferro}\r\n" +
                     $"Oro:    {Variabili.Ricerca.Produzione_III.Oro}\r\n";
+
+            if (btn_Risorse_Produzione.Text == "Produzione IV")
+                txt_Log.Text = $"Produzione IV\r\n" +
+                    $"Cibo:   {Variabili.Ricerca.Produzione_IV.Cibo}\r\n" +
+                    $"Legno:  {Variabili.Ricerca.Produzione_IV.Legno}\r\n" +
+                    $"Pietra: {Variabili.Ricerca.Produzione_IV.Pietra}\r\n" +
+                    $"Ferro:  {Variabili.Ricerca.Produzione_IV.Ferro}\r\n" +
+                    $"Oro:    {Variabili.Ricerca.Produzione_IV.Oro}\r\n";
+
+            if (btn_Risorse_Produzione.Text == "Produzione V")
+                txt_Log.Text = $"Produzione V\r\n" +
+                    $"Cibo:   {Variabili.Ricerca.Produzione_V.Cibo}\r\n" +
+                    $"Legno:  {Variabili.Ricerca.Produzione_V.Legno}\r\n" +
+                    $"Pietra: {Variabili.Ricerca.Produzione_V.Pietra}\r\n" +
+                    $"Ferro:  {Variabili.Ricerca.Produzione_V.Ferro}\r\n" +
+                    $"Oro:    {Variabili.Ricerca.Produzione_V.Oro}\r\n";
         }
         private void btn_Risorse_Popolazione_MouseHover(object sender, EventArgs e)
         {
@@ -1992,6 +2209,20 @@ namespace rts_2D
                     $"Pietra: {Variabili.Ricerca.Reclutamento_III.Pietra}\r\n" +
                     $"Ferro:  {Variabili.Ricerca.Reclutamento_III.Ferro}\r\n" +
                     $"Oro:    {Variabili.Ricerca.Reclutamento_III.Oro}\r\n";
+            if (btn_Esercito_Reclutamento.Text == "Reclutamento IV")
+                txt_Log.Text = $"Reclutamento IV\r\n" +
+                    $"Cibo:   {Variabili.Ricerca.Reclutamento_IV.Cibo}\r\n" +
+                    $"Legno:  {Variabili.Ricerca.Reclutamento_IV.Legno}\r\n" +
+                    $"Pietra: {Variabili.Ricerca.Reclutamento_IV.Pietra}\r\n" +
+                    $"Ferro:  {Variabili.Ricerca.Reclutamento_IV.Ferro}\r\n" +
+                    $"Oro:    {Variabili.Ricerca.Reclutamento_IV.Oro}\r\n";
+            if (btn_Esercito_Reclutamento.Text == "Reclutamento V")
+                txt_Log.Text = $"Reclutamento V\r\n" +
+                    $"Cibo:   {Variabili.Ricerca.Reclutamento_V.Cibo}\r\n" +
+                    $"Legno:  {Variabili.Ricerca.Reclutamento_V.Legno}\r\n" +
+                    $"Pietra: {Variabili.Ricerca.Reclutamento_V.Pietra}\r\n" +
+                    $"Ferro:  {Variabili.Ricerca.Reclutamento_V.Ferro}\r\n" +
+                    $"Oro:    {Variabili.Ricerca.Reclutamento_V.Oro}\r\n";
         }
         private void btn_Esercito_Salute_MouseHover(object sender, EventArgs e)
         {
@@ -2418,72 +2649,6 @@ namespace rts_2D
             txt_Catapulta.Text = "0";
         }
         #endregion
-        async Task Loop_Riparazione()
-        {
-            while (true)
-            {
-                if (Variabili.Città.Mura.Salute < Variabili.Città.Mura.SaluteMax && Variabili.Riparazioni.Stato.Mura_Salute > 0)
-                {
-                    Variabili.Città.Mura.Salute += Variabili.Riparazioni.Valore.Riparazione;
-                    if (Variabili.Città.Mura.Salute > Variabili.Città.Mura.SaluteMax)
-                    {
-
-                        Variabili.Città.Mura.Salute = Variabili.Città.Mura.SaluteMax;
-                        Variabili.Riparazioni.Stato.Mura_Salute = 0;
-                    }
-                }
-                if (Variabili.Città.Mura.Salute < Variabili.Città.Mura.SaluteMax && Variabili.Riparazioni.Stato.Mura_Difesa > 0)
-                {
-                    Variabili.Città.Mura.Difesa += Variabili.Riparazioni.Valore.Riparazione;
-                    if (Variabili.Città.Mura.Difesa > Variabili.Città.Mura.DifesaMax)
-                    {
-                        Variabili.Città.Mura.Difesa = Variabili.Città.Mura.DifesaMax;
-                        Variabili.Riparazioni.Stato.Mura_Difesa = 0;
-                    }
-                }
-                if (Variabili.Città.Torre.Salute < Variabili.Città.Torre.SaluteMax && Variabili.Riparazioni.Stato.Torre_Salute > 0)
-                {
-                    Variabili.Città.Torre.Salute += Variabili.Riparazioni.Valore.Riparazione;
-                    if (Variabili.Città.Torre.Salute > Variabili.Città.Torre.SaluteMax)
-                    {
-
-                        Variabili.Città.Torre.Salute = Variabili.Città.Torre.SaluteMax;
-                        Variabili.Riparazioni.Stato.Torre_Salute = 0;
-                    }
-                }
-                if (Variabili.Città.Torre.Salute < Variabili.Città.Torre.SaluteMax && Variabili.Riparazioni.Stato.Torre_Difesa > 0)
-                {
-                    Variabili.Città.Torre.Difesa += Variabili.Riparazioni.Valore.Riparazione;
-                    if (Variabili.Città.Torre.Difesa > Variabili.Città.Torre.DifesaMax)
-                    {
-                        Variabili.Città.Torre.Difesa = Variabili.Città.Torre.DifesaMax;
-                        Variabili.Riparazioni.Stato.Torre_Difesa = 0;
-                    }
-                }
-
-                if (Variabili.Città.Castello.Salute < Variabili.Città.Castello.SaluteMax && Variabili.Riparazioni.Stato.Castello_Salute > 0)
-                {
-                    Variabili.Città.Castello.Salute += Variabili.Riparazioni.Valore.Riparazione;
-                    if (Variabili.Città.Castello.Salute > Variabili.Città.Castello.SaluteMax)
-                    {
-
-                        Variabili.Città.Castello.Salute = Variabili.Città.Castello.SaluteMax;
-                        Variabili.Riparazioni.Stato.Castello_Salute = 0;
-                    }
-                }
-                if (Variabili.Città.Castello.Salute < Variabili.Città.Castello.SaluteMax && Variabili.Riparazioni.Stato.Castello_Difesa > 0)
-                {
-                    Variabili.Città.Castello.Difesa += Variabili.Riparazioni.Valore.Riparazione;
-                    if (Variabili.Città.Castello.Difesa > Variabili.Città.Castello.DifesaMax)
-                    {
-                        Variabili.Città.Castello.Difesa = Variabili.Città.Castello.DifesaMax;
-                        Variabili.Riparazioni.Stato.Castello_Difesa = 0;
-                    }
-                }
-                Thread.Sleep(1000);
-            }
-
-        }
 
         // Riparazione strutture città
         private void progressBar_Salute_Mura_Click(object sender, EventArgs e)
@@ -2673,19 +2838,22 @@ namespace rts_2D
             switch (comboBox_Effetto_Abilità.SelectedItem)
             {
                 case "Rinforzo Esercito":
-                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Rinforzo_Esercito.Descrizione;
+                    txt_Descrizione_Abilità.Text = $"Un manipolo di soldati sul campo 110 Guerrieri 110 Lancieri 80 Arcieri 30 Catapulte | Costo: {Abilità.Rinforzo_Esercito.Costo_Token} Token";
                     break;                           
-                //case "Rinforzo Città":               
-                //    txt_Descrizione_Abilità.Text = Variabili.Abilità.Rinforzo_Città.Descrizione;
-                //    break;
+                case "Rinforzo Città":
+                    txt_Descrizione_Abilità.Text = $"Aggiunge a tutte le strutture della città 80 Guerrieri 80 Lancieri 40 Arcieri 20 Catapulte | Costo: {Abilità.Rinforzo_Città.Costo_Token} Token";
+                    break;
                 case "Guerrieri":
-                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Guerrieri.Descrizione;
+                    txt_Descrizione_Abilità.Text = $"Aggiunge all'esercito sul campo 200 Guerrieri | Costo: {Abilità.Guerrieri.Costo_Token} Token";
                     break;
                 case "Lancieri":
-                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Lancieri.Descrizione;
+                    txt_Descrizione_Abilità.Text = $"Aggiunge all'esercito sul campo 170 Lancieri | Costo: {Abilità.Lancieri.Costo_Token} Token";
                     break;
                 case "Arcieri":
-                    txt_Descrizione_Abilità.Text = Variabili.Abilità.Arcieri.Descrizione;
+                    txt_Descrizione_Abilità.Text = $"Aggiunge all'esercito sul campo 130 Arcieri | Costo: {Abilità.Arcieri.Costo_Token} Token";
+                    break;
+                case "Popolani":
+                    txt_Descrizione_Abilità.Text = $"Richiama da terre lontane 400 popolani al tuo servizio | Costo: {Abilità.Popolani.Costo_Token} Token";
                     break;
             }
         }
@@ -2705,12 +2873,31 @@ namespace rts_2D
                     }
                     break;
                 case "Rinforzo Città":
+                    if (Variabili.token >= Variabili.Abilità.Rinforzo_Città.Costo_Token)
+                    {
+                        Variabili.token -= Variabili.Abilità.Rinforzo_Città.Costo_Token;
+
+                        Variabili.Città.Mura.Guerrieri += 90;
+                        Variabili.Città.Mura.Lancieri += 65;
+                        Variabili.Città.Mura.Arceri += 30;
+                        Variabili.Città.Mura.Catapulte += 15;
+
+                        Variabili.Città.Torre.Guerrieri += 90;
+                        Variabili.Città.Torre.Lancieri += 65;
+                        Variabili.Città.Torre.Arceri += 30;
+                        Variabili.Città.Torre.Catapulte += 15;
+
+                        Variabili.Città.Castello.Guerrieri += 90;
+                        Variabili.Città.Castello.Lancieri += 65;
+                        Variabili.Città.Castello.Arceri += 30;
+                        Variabili.Città.Castello.Catapulte += 15;
+                    }
 
                     break;
                 case "Guerrieri":
                     if (Variabili.token >= Variabili.Abilità.Guerrieri.Costo_Token)
                     {
-
+                        Variabili.token -= Variabili.Abilità.Guerrieri.Costo_Token;
                         Variabili.Esercito.Guerriero.Quantità += 200;
                     }
                     break;
@@ -2729,6 +2916,339 @@ namespace rts_2D
                     }
                     break;
             }
+        }
+
+        private void btn_Pausa_Click(object sender, EventArgs e)
+        {
+            if (pausa == false)
+                pausa = true;
+            else if (pausa == true)
+            {
+                pausa = false;
+                _ = Task.Run(() => Loop());
+                _ = Task.Run(() => Reclutamento());
+                _ = Task.Run(() => Costruzione());
+                if (txt_Esercito_Invasore.Visible == true)
+                {
+                    _ = Task.Run(() => Loop_Invasione());
+                    _ = Task.Run(() => Loop_Riparazione());
+                }
+            }
+            Console.WriteLine($"Pausa: {pausa}");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Creare un nuovo documento XML
+            XDocument xmlDoc = new XDocument(
+                new XElement("Gioco",
+                    new XElement("Risorse",
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Cibo"),
+                            new XAttribute("quantita", Variabili.Cibo)),
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Legna"),
+                            new XAttribute("quantita", Variabili.Legno)),
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Pietra"),
+                            new XAttribute("quantita", Variabili.Pietra)),
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Ferro"),
+                            new XAttribute("quantita", Variabili.Ferro)),
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Oro"),
+                            new XAttribute("quantita", Variabili.Oro)),
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Popolazione"),
+                            new XAttribute("quantita", Variabili.Popolazione)),
+                        new XElement("Risorsa",
+                            new XAttribute("tipo", "Token"),
+                            new XAttribute("quantita", Variabili.token)
+                            ) 
+                    ),
+
+                    new XElement("Esercito",
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Guerrieri"),
+                            new XAttribute("quantita", Variabili.Esercito.Guerriero.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Lancieri"),
+                            new XAttribute("quantita", Variabili.Esercito.Lanciere.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Arcieri"),
+                            new XAttribute("quantita", Variabili.Esercito.Arciere.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Catapulte"),
+                            new XAttribute("quantita", Variabili.Esercito.Catapulta.Quantità) 
+                            )
+                    ),
+
+                    new XElement("Strutture",
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Fattoria"),
+                            new XAttribute("quantita", Variabili.fattoria)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Segheria"),
+                            new XAttribute("quantita", Variabili.segheria)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Cava_Pietra"),
+                            new XAttribute("quantita", Variabili.cava_Pietra)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Miniera_Ferro"),
+                            new XAttribute("quantita", Variabili.miniera_Ferro)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Miniera_Oro"),
+                            new XAttribute("quantita", Variabili.miniera_Oro)
+                            )
+                    ),
+
+                    new XElement("Esercito_Reclutamento",
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Guerrieri"),
+                            new XAttribute("quantita", Variabili.Coda.Guerriero.quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Lancieri"),
+                            new XAttribute("quantita", Variabili.Coda.Lanciere.quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Arcieri"),
+                            new XAttribute("quantita", Variabili.Coda.Arciere.quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Catapulte"),
+                            new XAttribute("quantita", Variabili.Coda.Catapulta.quantità)
+                            )
+                    ),
+
+                    new XElement("Strutture_Costruzione",
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Fattoria"),
+                            new XAttribute("quantita", Variabili.Coda.Fattoria.quantità)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Segheria"),
+                            new XAttribute("quantita", Variabili.Coda.Segheria.quantità)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Cava_Pietra"),
+                            new XAttribute("quantita", Variabili.Coda.CavaPietra.quantità)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Miniera_Ferro"),
+                            new XAttribute("quantita", Variabili.Coda.MinieraFerro.quantità)),
+                        new XElement("Struttura",
+                            new XAttribute("tipo", "Miniera_Oro"),
+                            new XAttribute("quantita", Variabili.Coda.MinieraOro.quantità)
+                            )
+                    ),
+
+                    new XElement("Esercito_Mura",
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Guerrieri"),
+                            new XAttribute("quantita", Variabili.Città.Mura.Guerrieri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Lancieri"),
+                            new XAttribute("quantita", Variabili.Città.Mura.Lancieri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Arcieri"),
+                            new XAttribute("quantita", Variabili.Città.Mura.Arceri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Catapulte"),
+                            new XAttribute("quantita", Variabili.Città.Mura.Catapulte)
+                            )
+                    ),
+
+                    new XElement("Esercito_Torre",
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Guerrieri"),
+                            new XAttribute("quantita", Variabili.Città.Torre.Guerrieri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Lancieri"),
+                            new XAttribute("quantita", Variabili.Città.Torre.Lancieri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Arcieri"),
+                            new XAttribute("quantita", Variabili.Città.Torre.Arceri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Catapulte"),
+                            new XAttribute("quantita", Variabili.Città.Torre.Catapulte)
+                            )
+                    ),
+
+                    new XElement("Esercito_Castello",
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Guerrieri"),
+                            new XAttribute("quantita", Variabili.Città.Castello.Guerrieri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Lancieri"),
+                            new XAttribute("quantita", Variabili.Città.Castello.Lancieri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Arcieri"),
+                            new XAttribute("quantita", Variabili.Città.Castello.Arceri)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Catapulte"),
+                            new XAttribute("quantita", Variabili.Città.Castello.Catapulte)
+                            )
+                    ),
+
+                    new XElement("Esercito_Invasore",
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Guerrieri"),
+                            new XAttribute("quantita", Variabili.EsercitoNemico.Guerriero.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Lancieri"),
+                            new XAttribute("quantita", Variabili.EsercitoNemico.Lanciere.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Arcieri"),
+                            new XAttribute("quantita", Variabili.EsercitoNemico.Arciere.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Catapulte"),
+                            new XAttribute("quantita", Variabili.EsercitoNemico.Catapulta.Quantità)),
+                        new XElement("Unita",
+                            new XAttribute("tipo", "Ondata Invasione"),
+                            new XAttribute("quantita", Invasione_Ondata)
+                            )
+                    ),
+
+                    new XElement("Ricerca",
+                        new XElement("Strutture",
+                            new XAttribute("tipo", "Produzione"),
+                            new XAttribute("quantita", btn_Risorse_Produzione.Text)),
+                        new XElement("Strutture",
+                            new XAttribute("tipo", "Costruzione"),
+                            new XAttribute("quantita", btn_Risorse_Costruzione.Text)),
+                        new XElement("Strutture",
+                            new XAttribute("tipo", "Popolazione"),
+                            new XAttribute("quantita", btn_Risorse_Popolazione.Text)),
+
+                        new XElement("Esercito",
+                            new XAttribute("tipo", "Attacco"),
+                            new XAttribute("quantita", btn_Esercito_Attacco.Text)),
+                        new XElement("Esercito",
+                            new XAttribute("tipo", "Difesa"),
+                            new XAttribute("quantita", btn_Esercito_Difesa.Text)),
+                        new XElement("Esercito",
+                            new XAttribute("tipo", "Salute"),
+                            new XAttribute("quantita", btn_Esercito_Salute.Text)),
+                        new XElement("Esercito",
+                            new XAttribute("tipo", "Reclutamento")),
+                            new XAttribute("quantita", btn_Esercito_Reclutamento.Text)),
+
+                        new XElement("Città",
+                            new XAttribute("tipo", "Riparazione"),
+                            new XAttribute("quantita", btn_Citta_Riparazioni.Text)),
+                        new XElement("Città",
+                            new XAttribute("tipo", "Difesa"),
+                            new XAttribute("quantita", btn_Citta_Difesa.Text)),
+                        new XElement("Città",
+                            new XAttribute("tipo", "Salute"),
+                            new XAttribute("quantita", btn_Citta_Salute.Text)),
+                        new XElement("Città",
+                            new XAttribute("tipo", "Guarnigione"),
+                            new XAttribute("quantita", btn_Citta_Guarnigione.Text)
+                    )
+                    
+                )
+            );
+
+            // Salvare il file XML
+            xmlDoc.Save("gioco.xml");
+
+            Console.WriteLine("File XML creato e salvato con successo.");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Carica il documento XML
+            XDocument xmlDoc = XDocument.Load("gioco.xml");
+
+            // Estrai e assegna le risorse a variabili specifiche
+            Variabili.Cibo = double.Parse(xmlDoc.Descendants("Risorsa")
+                                      .First(r => r.Attribute("tipo").Value == "Cibo")
+                                      .Attribute("quantita").Value.Replace(".", ","));
+
+            Variabili.Legno = double.Parse(xmlDoc.Descendants("Risorsa")
+                                       .First(r => r.Attribute("tipo").Value == "Legna")
+                                       .Attribute("quantita").Value.Replace(".", ","));
+
+            Variabili.Pietra = double.Parse(xmlDoc.Descendants("Risorsa")
+                                       .First(r => r.Attribute("tipo").Value == "Ferro")
+                                       .Attribute("quantita").Value.Replace(".", ","));
+
+            Variabili.Ferro = double.Parse(xmlDoc.Descendants("Risorsa")
+                                        .First(r => r.Attribute("tipo").Value == "Pietra")
+                                        .Attribute("quantita").Value.Replace(".", ","));
+
+            Variabili.Oro = double.Parse(xmlDoc.Descendants("Risorsa")
+                                     .First(r => r.Attribute("tipo").Value == "Oro")
+                                     .Attribute("quantita").Value.Replace(".", ","));
+
+            Variabili.Popolazione = double.Parse(xmlDoc.Descendants("Risorsa")
+                                     .First(r => r.Attribute("tipo").Value == "Popolazione")
+                                     .Attribute("quantita").Value.Replace(".", ","));
+
+            Variabili.token = int.Parse(xmlDoc.Descendants("Risorsa")
+                                     .First(r => r.Attribute("tipo").Value == "Token")
+                                     .Attribute("quantita").Value);
+
+            int GetUnitCount2(string parentName, string unitType)
+            {
+                return int.Parse(xmlDoc.Descendants("Struttura")
+                                       .First(u => u.Parent.Name == parentName && u.Attribute("tipo").Value == unitType)
+                                       .Attribute("quantita").Value);
+            }
+
+            // Estrazione dei dati per "Esercito_Reclutamento"
+            Variabili.Coda.Fattoria.quantità = GetUnitCount2("Strutture_Costruzione", "Fattoria");
+            Variabili.Coda.Segheria.quantità = GetUnitCount2("Strutture_Costruzione", "Segheria");
+            Variabili.Coda.CavaPietra.quantità = GetUnitCount2("Strutture_Costruzione", "Cava_Pietra");
+            Variabili.Coda.MinieraFerro.quantità = GetUnitCount2("Strutture_Costruzione", "Miniera_Ferro");
+            Variabili.Coda.MinieraOro.quantità = GetUnitCount2("Strutture_Costruzione", "Miniera_Oro");
+
+            Variabili.fattoria = GetUnitCount2("Strutture", "Fattoria");
+            Variabili.segheria = GetUnitCount2("Strutture", "Segheria");
+            Variabili.cava_Pietra = GetUnitCount2("Strutture", "Cava_Pietra");
+            Variabili.miniera_Ferro = GetUnitCount2("Strutture", "Miniera_Ferro");
+            Variabili.miniera_Oro = GetUnitCount2("Strutture", "Miniera_Oro");
+
+            int GetUnitCount(string parentName, string unitType)
+            {
+                return int.Parse(xmlDoc.Descendants("Unita")
+                                       .First(u => u.Parent.Name == parentName && u.Attribute("tipo").Value == unitType)
+                                       .Attribute("quantita").Value);
+            }
+
+
+            // Estrazione dei dati per "Esercito"
+            Variabili.Esercito.Guerriero.Quantità = GetUnitCount("Esercito", "Guerrieri");
+            Variabili.Esercito.Lanciere.Quantità = GetUnitCount("Esercito", "Lancieri");
+            Variabili.Esercito.Arciere.Quantità = GetUnitCount("Esercito", "Arcieri");
+            Variabili.Esercito.Catapulta.Quantità = GetUnitCount("Esercito", "Catapulte");
+
+            // Estrazione dei dati per "Esercito_Reclutamento"
+            Variabili.Coda.Guerriero.quantità = GetUnitCount("Esercito_Reclutamento", "Guerrieri");
+            Variabili.Coda.Lanciere.quantità = GetUnitCount("Esercito_Reclutamento", "Lancieri");
+            Variabili.Coda.Arciere.quantità = GetUnitCount("Esercito_Reclutamento", "Arcieri");
+            Variabili.Coda.Catapulta.quantità = GetUnitCount("Esercito_Reclutamento", "Catapulte");
+
+            // Estrazione dei dati per "Esercito_Mura"
+            Variabili.Città.Mura.Guerrieri  = GetUnitCount("Esercito_Mura", "Guerrieri");
+            Variabili.Città.Mura.Lancieri   = GetUnitCount("Esercito_Mura", "Lancieri");
+            Variabili.Città.Mura.Arceri     = GetUnitCount("Esercito_Mura", "Arcieri");
+            Variabili.Città.Mura.Catapulte  = GetUnitCount("Esercito_Mura", "Catapulte");
+
+            // Estrazione dei dati per "Esercito_Torre"
+            Variabili.Città.Torre.Guerrieri  = GetUnitCount("Esercito_Torre", "Guerrieri");
+            Variabili.Città.Torre.Lancieri   = GetUnitCount("Esercito_Torre", "Lancieri");
+            Variabili.Città.Torre.Arceri     = GetUnitCount("Esercito_Torre", "Arcieri");
+            Variabili.Città.Torre.Catapulte  = GetUnitCount("Esercito_Torre", "Catapulte");
+
+            // Estrazione dei dati per "Esercito_Castello"
+            Variabili.Città.Castello.Guerrieri  = GetUnitCount("Esercito_Castello", "Guerrieri");
+            Variabili.Città.Castello.Lancieri   = GetUnitCount("Esercito_Castello", "Lancieri");
+            Variabili.Città.Castello.Arceri     = GetUnitCount("Esercito_Castello", "Arcieri");
+            Variabili.Città.Castello.Catapulte  = GetUnitCount("Esercito_Castello", "Catapulte");
+
+            // Estrazione dei dati per "Esercito_Invasore"
+            Variabili.EsercitoNemico.Guerriero.Quantità  = GetUnitCount("Esercito_Invasore", "Guerrieri");
+            Variabili.EsercitoNemico.Lanciere.Quantità = GetUnitCount("Esercito_Invasore", "Lancieri");
+            Variabili.EsercitoNemico.Arciere.Quantità = GetUnitCount("Esercito_Invasore", "Arcieri");
+            Variabili.EsercitoNemico.Catapulta.Quantità = GetUnitCount("Esercito_Invasore", "Catapulte");
+            Invasione_Ondata = GetUnitCount("Esercito_Invasore", "Ondata Invasione");
         }
     }
 }

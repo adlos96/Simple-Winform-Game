@@ -188,15 +188,18 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.Blocco_Abilità = new System.Windows.Forms.GroupBox();
+            this.txt_Descrizione_Abilità = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBox_Effetto_Abilità = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.btn_Applica_Effetto_Abilità = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.txt_Totale_Token_Abilità = new System.Windows.Forms.TextBox();
-            this.btn_Applica_Effetto_Abilità = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.comboBox_Effetto_Abilità = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txt_Descrizione_Abilità = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.txt_Resoconto = new System.Windows.Forms.TextBox();
+            this.btn_Pausa = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Blocco_Costruzione.SuspendLayout();
             this.Blocco_Reclutamento.SuspendLayout();
             this.Blocco_Produzione.SuspendLayout();
@@ -2084,6 +2087,63 @@
             this.Blocco_Abilità.Text = "Abilità";
             this.Blocco_Abilità.Visible = false;
             // 
+            // txt_Descrizione_Abilità
+            // 
+            this.txt_Descrizione_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Descrizione_Abilità.Location = new System.Drawing.Point(7, 55);
+            this.txt_Descrizione_Abilità.Multiline = true;
+            this.txt_Descrizione_Abilità.Name = "txt_Descrizione_Abilità";
+            this.txt_Descrizione_Abilità.ReadOnly = true;
+            this.txt_Descrizione_Abilità.Size = new System.Drawing.Size(335, 48);
+            this.txt_Descrizione_Abilità.TabIndex = 118;
+            this.txt_Descrizione_Abilità.Text = "0";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(4, 40);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 13);
+            this.label27.TabIndex = 120;
+            this.label27.Text = "Descrizione";
+            // 
+            // comboBox_Effetto_Abilità
+            // 
+            this.comboBox_Effetto_Abilità.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_Effetto_Abilità.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox_Effetto_Abilità.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Effetto_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.comboBox_Effetto_Abilità.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBox_Effetto_Abilità.FormattingEnabled = true;
+            this.comboBox_Effetto_Abilità.Location = new System.Drawing.Point(115, 16);
+            this.comboBox_Effetto_Abilità.Name = "comboBox_Effetto_Abilità";
+            this.comboBox_Effetto_Abilità.Size = new System.Drawing.Size(163, 21);
+            this.comboBox_Effetto_Abilità.TabIndex = 118;
+            this.comboBox_Effetto_Abilità.SelectedIndexChanged += new System.EventHandler(this.comboBox_Effetto_Abilità_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(72, 20);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 13);
+            this.label22.TabIndex = 111;
+            this.label22.Text = "Effetto:";
+            // 
+            // btn_Applica_Effetto_Abilità
+            // 
+            this.btn_Applica_Effetto_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Applica_Effetto_Abilità.Location = new System.Drawing.Point(284, 15);
+            this.btn_Applica_Effetto_Abilità.Name = "btn_Applica_Effetto_Abilità";
+            this.btn_Applica_Effetto_Abilità.Size = new System.Drawing.Size(58, 24);
+            this.btn_Applica_Effetto_Abilità.TabIndex = 110;
+            this.btn_Applica_Effetto_Abilità.Text = "Applica";
+            this.btn_Applica_Effetto_Abilità.UseVisualStyleBackColor = true;
+            this.btn_Applica_Effetto_Abilità.Click += new System.EventHandler(this.btn_Applica_Effetto_Abilità_Click);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -2105,63 +2165,6 @@
             this.txt_Totale_Token_Abilità.TabIndex = 107;
             this.txt_Totale_Token_Abilità.Text = "0";
             this.txt_Totale_Token_Abilità.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btn_Applica_Effetto_Abilità
-            // 
-            this.btn_Applica_Effetto_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Applica_Effetto_Abilità.Location = new System.Drawing.Point(284, 15);
-            this.btn_Applica_Effetto_Abilità.Name = "btn_Applica_Effetto_Abilità";
-            this.btn_Applica_Effetto_Abilità.Size = new System.Drawing.Size(58, 24);
-            this.btn_Applica_Effetto_Abilità.TabIndex = 110;
-            this.btn_Applica_Effetto_Abilità.Text = "Applica";
-            this.btn_Applica_Effetto_Abilità.UseVisualStyleBackColor = true;
-            this.btn_Applica_Effetto_Abilità.Click += new System.EventHandler(this.btn_Applica_Effetto_Abilità_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(72, 20);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 13);
-            this.label22.TabIndex = 111;
-            this.label22.Text = "Effetto:";
-            // 
-            // comboBox_Effetto_Abilità
-            // 
-            this.comboBox_Effetto_Abilità.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_Effetto_Abilità.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBox_Effetto_Abilità.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Effetto_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox_Effetto_Abilità.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox_Effetto_Abilità.FormattingEnabled = true;
-            this.comboBox_Effetto_Abilità.Location = new System.Drawing.Point(115, 16);
-            this.comboBox_Effetto_Abilità.Name = "comboBox_Effetto_Abilità";
-            this.comboBox_Effetto_Abilità.Size = new System.Drawing.Size(163, 21);
-            this.comboBox_Effetto_Abilità.TabIndex = 118;
-            this.comboBox_Effetto_Abilità.SelectedIndexChanged += new System.EventHandler(this.comboBox_Effetto_Abilità_SelectedIndexChanged);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(4, 40);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 13);
-            this.label27.TabIndex = 120;
-            this.label27.Text = "Descrizione";
-            // 
-            // txt_Descrizione_Abilità
-            // 
-            this.txt_Descrizione_Abilità.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Descrizione_Abilità.Location = new System.Drawing.Point(7, 55);
-            this.txt_Descrizione_Abilità.Multiline = true;
-            this.txt_Descrizione_Abilità.Name = "txt_Descrizione_Abilità";
-            this.txt_Descrizione_Abilità.ReadOnly = true;
-            this.txt_Descrizione_Abilità.Size = new System.Drawing.Size(335, 48);
-            this.txt_Descrizione_Abilità.TabIndex = 118;
-            this.txt_Descrizione_Abilità.Text = "0";
             // 
             // groupBox8
             // 
@@ -2185,11 +2188,45 @@
             this.txt_Resoconto.TabIndex = 118;
             this.txt_Resoconto.Text = "0";
             // 
+            // btn_Pausa
+            // 
+            this.btn_Pausa.Location = new System.Drawing.Point(856, 26);
+            this.btn_Pausa.Name = "btn_Pausa";
+            this.btn_Pausa.Size = new System.Drawing.Size(75, 32);
+            this.btn_Pausa.TabIndex = 119;
+            this.btn_Pausa.Text = "Pausa";
+            this.btn_Pausa.UseVisualStyleBackColor = true;
+            this.btn_Pausa.Visible = false;
+            this.btn_Pausa.Click += new System.EventHandler(this.btn_Pausa_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(480, 465);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.TabIndex = 120;
+            this.button1.Text = "Salvataggio";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(560, 465);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 32);
+            this.button3.TabIndex = 121;
+            this.button3.Text = "Caricamento";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1316, 661);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Pausa);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.Blocco_Abilità);
             this.Controls.Add(this.label20);
@@ -2415,6 +2452,9 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.TextBox txt_Resoconto;
+        private System.Windows.Forms.Button btn_Pausa;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }
 
