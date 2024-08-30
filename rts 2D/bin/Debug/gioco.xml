@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Gioco>
+  <Risorse>
+    <Risorsa tipo="Cibo" quantita="1779851.6067999594" />
+    <Risorsa tipo="Legna" quantita="1183339.8399997868" />
+    <Risorsa tipo="Pietra" quantita="1011990.1300000062" />
+    <Risorsa tipo="Ferro" quantita="1009567.8399999405" />
+    <Risorsa tipo="Oro" quantita="164621.67839999741" />
+    <Risorsa tipo="Popolazione" quantita="2557.4600000003516" />
+    <Risorsa tipo="Timer_Token" quantita="135" />
+    <Risorsa tipo="Token" quantita="4" />
+  </Risorse>
+  <Esercito>
+    <Unita tipo="Guerrieri" quantita="458" />
+    <Unita tipo="Lancieri" quantita="258" />
+    <Unita tipo="Arcieri" quantita="182" />
+    <Unita tipo="Catapulte" quantita="89" />
+  </Esercito>
+  <Strutture>
+    <Struttura tipo="Fattoria" quantita="491" />
+    <Struttura tipo="Segheria" quantita="194" />
+    <Struttura tipo="Cava_Pietra" quantita="179" />
+    <Struttura tipo="Miniera_Ferro" quantita="197" />
+    <Struttura tipo="Miniera_Oro" quantita="351" />
+  </Strutture>
+  <Esercito_Reclutamento>
+    <Unita tipo="Guerrieri" quantita="118" />
+    <Unita tipo="Lancieri" quantita="168" />
+    <Unita tipo="Arcieri" quantita="179" />
+    <Unita tipo="Catapulte" quantita="18" />
+  </Esercito_Reclutamento>
+  <Strutture_Costruzione>
+    <Struttura tipo="Fattoria" quantita="14" />
+    <Struttura tipo="Segheria" quantita="45" />
+    <Struttura tipo="Cava_Pietra" quantita="46" />
+    <Struttura tipo="Miniera_Ferro" quantita="41" />
+    <Struttura tipo="Miniera_Oro" quantita="149" />
+  </Strutture_Costruzione>
+  <Esercito_Mura>
+    <Unita tipo="Guerrieri" quantita="160" />
+    <Unita tipo="Lancieri" quantita="100" />
+    <Unita tipo="Arcieri" quantita="40" />
+    <Unita tipo="Catapulte" quantita="20" />
+  </Esercito_Mura>
+  <Esercito_Torre>
+    <Unita tipo="Guerrieri" quantita="155" />
+    <Unita tipo="Lancieri" quantita="105" />
+    <Unita tipo="Arcieri" quantita="80" />
+    <Unita tipo="Catapulte" quantita="20" />
+  </Esercito_Torre>
+  <Esercito_Castello>
+    <Unita tipo="Guerrieri" quantita="185" />
+    <Unita tipo="Lancieri" quantita="135" />
+    <Unita tipo="Arcieri" quantita="90" />
+    <Unita tipo="Catapulte" quantita="30" />
+  </Esercito_Castello>
+  <Esercito_Invasore>
+    <Unita tipo="Guerrieri" quantita="18" />
+    <Unita tipo="Lancieri" quantita="4" />
+    <Unita tipo="Arcieri" quantita="0" />
+    <Unita tipo="Catapulte" quantita="0" />
+    <Unita tipo="Ondata Invasione" quantita="8" />
+  </Esercito_Invasore>
+  <Ricerca>
+    <Strutture tipo="Produzione" quantita="Produzione VI" />
+    <Strutture tipo="Costruzione" quantita="Costruzione VI" />
+    <Strutture tipo="Popolazione" quantita="Popolazione IV" />
+    <Esercito tipo="Attacco" quantita="Attacco I" />
+    <Esercito tipo="Difesa" quantita="Difesa I" />
+    <Esercito tipo="Salute" quantita="Salute I" />
+    <Esercito tipo="Reclutamento" quantita="Reclutamento VI" />
+    <Città tipo="Riparazione" quantita="Riparazione I" />
+    <Città tipo="Difesa" quantita="Difesa I" />
+    <Città tipo="Salute" quantita="Salute I" />
+    <Città tipo="Guarnigione" quantita="Guarnigione I" />
+  </Ricerca>
+</Gioco>
