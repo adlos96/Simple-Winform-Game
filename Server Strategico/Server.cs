@@ -10,6 +10,8 @@ namespace Server_Strategico
 {
     internal class Server
     {
+        public static List<Guid> Client_Connessi = new List<Guid>();
+
         private string? serverIp = null; // "null" will open the tcp server on addr 0.0.0.0 on windows (127.0.0.1 on linux)
         private const int serverPort = 8443;
         private static Guid lastGuid = Guid.Empty;
@@ -24,7 +26,7 @@ namespace Server_Strategico
 
         private CancellationTokenSource cts;
         private Task gameLoopTask;
-        private GameServer servers_ = new GameServer();
+        static public GameServer servers_ = new GameServer();
 
         private Server()
         {
@@ -77,31 +79,42 @@ namespace Server_Strategico
                         Console.WriteLine("");
                         Console.WriteLine("                         *** Command ***");
                         Console.WriteLine("----------------------------------------------------------------------");
-                        Console.WriteLine("Comando vuoto:                 []");                      // 
+                        Console.WriteLine("Comando vuoto:                 [Player]");                      // 
+                        Console.WriteLine("Comando vuoto:                 [Client]");                      // 
 
                         Console.WriteLine("----------------------------------------------------------------------");
+                        break;
+                    case "Player":
+                        Server.servers_.Get_User_and_Password();
+                        break;
+                    case "Client":
+                        ClientConnessi();
                         break;
 
                     default: Console.WriteLine("[Server] >> Comando sconosciuto"); break;
                 }
             }
         }
+        void ClientConnessi()
+        {
+            foreach (var item in Client_Connessi)
+                Console.WriteLine($"Client: {item}");
+        }
         private async Task StartGame()
         {
-            servers_.AddPlayer("Player1");
-            servers_.AddPlayer("Player2");
-            await NewPlayer("Player1");
-            await NewPlayer("Player2");
-            var player1 = servers_.GetPlayer("Player1");
-            var player2 = servers_.GetPlayer("Player2");
-
-            player1.QueueBuildConstruction("Fattoria", 1); // Costruisci 10 fattorie
-            player1.QueueTrainUnits("Arciere", 1); // Avvia l'addestramento di 5 arcieri
-
-            player2.QueueBuildConstruction("Fattoria", 1); // Costruisci 10 fattorie,
-            player2.QueueTrainUnits("Arciere", 1); // Avvia l'addestramento di 5 arcieri
+            //servers_.AddPlayer("Player1", "Password1");
+            //servers_.AddPlayer("Player2", "Password2");
+            //var player1 = servers_.GetPlayer("Player1", "Password1");
+            //var player2 = servers_.GetPlayer("Player2", "Password2");
+            //
+            //player1.QueueBuildConstruction("Fattoria", 1); // Costruisci 10 fattorie
+            //player1.QueueTrainUnits("Arciere", 1); // Avvia l'addestramento di 5 arcieri
+            //
+            //player2.QueueBuildConstruction("Fattoria", 1); // Costruisci 10 fattorie,
+            //player2.QueueTrainUnits("Arciere", 1); // Avvia l'addestramento di 5 arcieri
 
             // Simula il passare del tempo sul server
+            Task.Run(() => Barbari.Barbari_PVE());
             cts = new CancellationTokenSource();
             gameLoopTask = servers_.RunGameLoopAsync(cts.Token);
         }
@@ -117,16 +130,20 @@ namespace Server_Strategico
                 Console.WriteLine("Il gioco non è attualmente in esecuzione.");
             
         }
-
-        private async Task NewPlayer(string player)
+        public static void Send(Guid guid, string msg)
         {
-            var player1 = servers_.GetPlayer(player);
-            player1.Cibo = 4000;
-            player1.Legno = 4000;
-            player1.Pietra = 4000;
-            player1.Ferro = 4000;
-            player1.Oro = 4000;
-            player1.Popolazione = 20;
+            server.SendAsync(guid, msg);
+        }
+
+        public static async Task NewPlayer(string player, string password)
+        {
+            var player1 = servers_.GetPlayer(player, password);
+            player1.Cibo = 40000;
+            player1.Legno = 40000;
+            player1.Pietra = 40000;
+            player1.Ferro = 40000;
+            player1.Oro = 40000;
+            player1.Popolazione = 200;
         }
         // ----------------------- Client Connessione --------------------------
         static void ClientConnected(object? sender, ConnectionEventArgs args)
@@ -134,12 +151,16 @@ namespace Server_Strategico
             lastGuid = args.Client.Guid;
             string lasIpPort = args.Client.IpPort;
             Console.WriteLine("[SERVER|LOG] > Client connesso: " + args.Client.ToString());
+            if (!Client_Connessi.Contains(lastGuid))
+                Client_Connessi.Add(lastGuid);
 
             var ciao = lasIpPort.Split(":");
         }
         static void ClientDisconnected(object? sender, DisconnectionEventArgs args)
         {
+            lastGuid = args.Client.Guid;
             Console.WriteLine("[SERVER|LOG] > Client disconnesso: " + args.Client.ToString() + ": " + args.Reason.ToString());
+            Client_Connessi.Remove(lastGuid);
         }
         private static void ExceptionEncountered(object sender, ExceptionEventArgs e)
         {

@@ -99,7 +99,6 @@
             // 
             // txt_Password
             // 
-            this.txt_Password.Enabled = false;
             this.txt_Password.Location = new System.Drawing.Point(73, 76);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(144, 20);

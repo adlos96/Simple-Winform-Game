@@ -5,10 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using static Server_Strategico.Variabili;
 
+
 namespace Server_Strategico
 {
+    internal class dati
+    {
+        public static string Difficoltà = "1";
+        public static string Versione = "0.1.0";
+        public static string Server = "Italy";
+
+        public static int tipi_Di_Unità = 0;
+        public static int tipi_Di_Unità_Att = 0;
+    }
+
     internal class Variabili
     {
+        public class Barbari
+        {
+            public int Guerrieri { get; set; }
+            public int Lancieri { get; set; }
+            public int Arceri { get; set; }
+            public int Catapulte { get; set; }
+            public static Barbari PVE = new Barbari
+            {
+                Guerrieri = 0,
+                Lancieri = 0,
+                Arceri = 0,
+                Catapulte = 0
+            };
+            public static Barbari PVP = new Barbari
+            {
+                Guerrieri = 0,
+                Lancieri = 0,
+                Arceri = 0,
+                Catapulte = 0
+            };
+        }
         public class Edifici
         {
             public int Cibo { get; set; }
@@ -131,6 +163,26 @@ namespace Server_Strategico
                 Produzione = 0.09,
                 TempoCostruzione = 49
             };
+            public static Edifici ProduzioneArmature = new Edifici
+            {
+                Cibo = 250,
+                Legno = 250,
+                Pietra = 250,
+                Ferro = 250,
+                Oro = 250,
+                Produzione = 0.09,
+                TempoCostruzione = 49
+            };
+            public static Edifici ProduzioneFrecce = new Edifici
+            {
+                Cibo = 250,
+                Legno = 250,
+                Pietra = 250,
+                Ferro = 250,
+                Oro = 250,
+                Produzione = 0.09,
+                TempoCostruzione = 49
+            };
         }
         public class CostoReclutamento
         {
@@ -151,6 +203,8 @@ namespace Server_Strategico
             public static CostoReclutamento Guerriero = new CostoReclutamento
             {
                 Spade = 1,
+                Lance = 0,
+                Archi = 0,
                 Scudi = 0,
                 Armature = 1,
 
@@ -211,22 +265,127 @@ namespace Server_Strategico
                 Popolazione = 5
             };
         }
+        public class EsercitoNemico
+        {
+            public static Esercito Guerriero = new Esercito
+            {
+                Salute = 6,
+                Attacco = 3,
+                Difesa = 3,
+                Distanza = 1,
+                Salario = 1,
+                Cibo = 1,
+                Quantità = 0,
+                TempoReclutamento = 19
+            };
+            public static Esercito Lanciere = new Esercito
+            {
+                Salute = 7,
+                Attacco = 4,
+                Difesa = 4,
+                Distanza = 2,
+                Salario = 1,
+                Cibo = 1,
+                Quantità = 0,
+                TempoReclutamento = 24
+            };
+            public static Esercito Arciere = new Esercito
+            {
+                Salute = 5,
+                Attacco = 6,
+                Difesa = 2,
+                Distanza = 6,
+                Salario = 1,
+                Cibo = 1,
+                Quantità = 0,
+                TempoReclutamento = 32
+            };
+            public static Esercito Catapulta = new Esercito
+            {
+                Salute = Guerriero.Salute * 0.71 * CostoReclutamento.Guerriero.Popolazione,
+                Attacco = 18,
+                Difesa = Guerriero.Salute * 0.71 * CostoReclutamento.Guerriero.Popolazione,
+                Distanza = 18,
+                Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
+                Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
+                Quantità = 0,
+                TempoReclutamento = 61
+            };
+        }
+        public class Esercito
+        {
+            public double Salute { get; set; }
+            public double Attacco { get; set; }
+            public double Difesa { get; set; }
+            public double Distanza { get; set; }
+            public double Salario { get; set; }
+            public double Cibo { get; set; }
+            public int Quantità { get; set; }
+            public int TempoReclutamento { get; set; }
 
+            public static Esercito Guerriero = new Esercito
+            {
+                Salute = 5,
+                Attacco = 3,
+                Difesa = 3,
+                Distanza = 1,
+                Salario = 0.16,
+                Cibo = 0.32,
+                Quantità = 0
+            };
+            public static Esercito Lanciere = new Esercito
+            {
+                Salute = 6,
+                Attacco = 4,
+                Difesa = 4,
+                Distanza = 2,
+                Salario = 0.20,
+                Cibo = 0.35,
+                Quantità = 0
+            };
+            public static Esercito Arciere = new Esercito
+            {
+                Salute = 4,
+                Attacco = 8,
+                Difesa = 3,
+                Distanza = 6,
+                Salario = 0.25,
+                Cibo = 0.41,
+                Quantità = 0
+            };
+            public static Esercito Catapulta = new Esercito
+            {
+                Salute = Guerriero.Salute * 0.75 * CostoReclutamento.Catapulta.Popolazione,
+                Attacco = 18,
+                Difesa = Guerriero.Salute * 0.75 * CostoReclutamento.Catapulta.Popolazione,
+                Distanza = 18,
+                Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.749,
+                Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.699,
+                Quantità = 0
+            };
+        }
         public class Player
         {
             public string Username { get; set; }
+            public string Password { get; set; }
+            public Guid guid_Player { get; set; }
+
+            public int Esperienza { get; set; }
+            public int Livello { get; set; }
+
             public int Fattoria { get; private set; }
             public int Segheria { get; private set; }
             public int CavaPietra { get; private set; }
             public int MinieraFerro { get; private set; }
             public int MinieraOro { get; private set; }
 
-            public int Case { get; private set; }
+            public int Abitazioni { get; private set; }
             public int ProduzioneSpade { get; private set; }
             public int ProduzioneLance { get; private set; }
             public int ProduzioneArchi { get; private set; }
             public int ProduzioneScudi { get; private set; }
             public int ProduzioneArmature { get; private set; }
+            public int ProduzioneFrecce { get; private set; }
 
             public double Cibo { get; set; }
             public double Legno { get; set; }
@@ -254,22 +413,29 @@ namespace Server_Strategico
             private Dictionary<string, Queue<RecruitTask>> recruitQueues;  // Dizionario per memorizzare le code di reclutamento per ogni tipo di unità
             private Dictionary<string, RecruitTask> currentRecruitTasks;  // Dizionario per memorizzare il task di reclutamento attuale per ogni tipo di unità
 
-            public Player(string username)
+            public Player(string username, string password, Guid guid_Client)
             {
                 Username = username;
+                Password = password;
+                guid_Player = guid_Client;
+
+                Esperienza = 0;
+                Livello = 0;
+
                 //Strutture Civile
                 Fattoria = 0;
                 Segheria = 0;
                 CavaPietra = 0;
                 MinieraFerro = 0;
                 MinieraOro = 0;
+                Abitazioni = 0;
                 //Strutture Militare
-                Case = 0;
                 ProduzioneSpade = 0;
                 ProduzioneLance = 0;
                 ProduzioneArchi = 0;
                 ProduzioneScudi = 0;
                 ProduzioneArmature = 0;
+                ProduzioneFrecce = 0;
                 //Risorse Civile
                 Cibo = 0;
                 Legno = 0;
@@ -296,7 +462,10 @@ namespace Server_Strategico
                 recruitQueues = new Dictionary<string, Queue<RecruitTask>>();
                 currentRecruitTasks = new Dictionary<string, RecruitTask>();
             }
-
+            public bool ValidatePassword(string password)
+            {
+                return Password == password;
+            }
             public void ProduceResources() //produzione risorse
             {
                 Cibo += Fattoria * Variabili.Edifici.Fattoria.Produzione;
@@ -304,12 +473,16 @@ namespace Server_Strategico
                 Pietra += CavaPietra * Variabili.Edifici.CavaPietra.Produzione;
                 Ferro += MinieraFerro * Variabili.Edifici.MinieraFerro.Produzione;
                 Oro += MinieraOro * Variabili.Edifici.MinieraOro.Produzione;
-                Popolazione += Case * Variabili.Edifici.Case.Produzione;
+                Popolazione += Abitazioni * Variabili.Edifici.Case.Produzione;
 
-                Console.WriteLine($"{Username} ha prodotto: Cibo={Cibo.ToString("0.00")}, Legno={Legno.ToString("0.00")}, Pietra={Pietra.ToString("0.00")}, Ferro={Ferro.ToString("0.00")}, Oro={Oro.ToString("0.00")}, Popolazione={Popolazione.ToString("0.00")}");
+                Spade += ProduzioneSpade * Variabili.Edifici.ProduzioneSpade.Produzione;
+                Lance += ProduzioneLance * Variabili.Edifici.ProduzioneLance.Produzione;
+                Archi += ProduzioneArchi * Variabili.Edifici.ProduzioneArchi.Produzione;
+                Scudi += ProduzioneScudi * Variabili.Edifici.ProduzioneScudi.Produzione;
+                Armature += ProduzioneArmature * Variabili.Edifici.ProduzioneArmature.Produzione;
+                Frecce += ProduzioneFrecce * Variabili.Edifici.ProduzioneFrecce.Produzione;
             }
-
-            public void QueueBuildConstruction(string buildingType, int count)
+            public void QueueBuildConstruction(string buildingType, int count, Guid clientGuid)
             {
                 // Ottieni i costi di costruzione dell'edificio
                 var buildingCost = GetBuildingCost(buildingType);
@@ -328,35 +501,29 @@ namespace Server_Strategico
                     Ferro -= buildingCost.Ferro * count;
                     Oro -= buildingCost.Oro * count;
 
+                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per {count} costruzione/i di {buildingType}: Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}");
                     Console.WriteLine($"Risorse consumate per {count} costruzione/i di {buildingType}: Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}");
 
                     // Verifica se la coda di costruzione esiste per questo tipo di edificio, altrimenti creala
                     if (!constructionQueues.ContainsKey(buildingType))
-                    {
                         constructionQueues[buildingType] = new Queue<ConstructionTask>();
-                    }
 
                     // Aggiungi i task di costruzione alla coda
                     int tempoCostruzioneInSecondi = Convert.ToInt32(buildingCost.TempoCostruzione);
                     for (int i = 0; i < count; i++)
-                    {
                         constructionQueues[buildingType].Enqueue(new ConstructionTask(buildingType, tempoCostruzioneInSecondi));
-                    }
-
+                    
                     // Inizializza l'entry in currentTasks se non esiste
                     if (!currentTasks.ContainsKey(buildingType))
-                    {
                         currentTasks[buildingType] = null;
-                    }
-
+                    
                     // Se non c'è nessuna costruzione in corso per questo tipo, inizia la prima
                     if (currentTasks[buildingType] == null)
-                    {
                         StartNextConstruction(buildingType);
-                    }
                 }
                 else
                 {
+                    Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per costruire {count} {buildingType}.");
                     Console.WriteLine($"Risorse insufficienti per costruire {count} {buildingType}.");
                 }
             }
@@ -371,11 +538,17 @@ namespace Server_Strategico
                     "MinieraFerro" => Variabili.Edifici.MinieraFerro,
                     "MinieraOro" => Variabili.Edifici.MinieraOro,
                     "Case" => Variabili.Edifici.Case,
+
+                    "ProduzioneSpade" => Variabili.Edifici.ProduzioneSpade,
+                    "ProduzioneLancie" => Variabili.Edifici.ProduzioneLance,
+                    "ProduzioneArchi" => Variabili.Edifici.ProduzioneArchi,
+                    "ProduzioneScudi" => Variabili.Edifici.ProduzioneScudi,
+                    "ProduzioneArmature" => Variabili.Edifici.Armature,
+                    "ProduzioneFrecce" => Variabili.Edifici.ProduzioneFrecce,
                     // Aggiungi altri edifici se necessario
                     _ => null,
                 };
             }
-
             private void StartNextConstruction(string buildingType) // Metodo per avviare la prossima costruzione per un tipo specifico di edificio
             {
                 if (constructionQueues[buildingType].Count > 0)
@@ -388,8 +561,7 @@ namespace Server_Strategico
                     currentTasks[buildingType] = null; // Nessuna costruzione in corso
 
             }
-
-            public void CompleteBuilds() // Metodo per completare le costruzioni in corso
+            public void CompleteBuilds(Guid clientGuid) // Metodo per completare le costruzioni in corso
             {
                 foreach (var buildingType in currentTasks.Keys)
                 {
@@ -406,30 +578,58 @@ namespace Server_Strategico
                                 Segheria++;
                                 Console.WriteLine($"Costruzione completata {buildingType} costruita!");
                                 break;
-                            case "Cava di pietra":
+                            case "CavaPietra":
                                 CavaPietra++;
                                 Console.WriteLine($"Costruzione completata {buildingType} costruita!");
                                 break;
-                            case "Miniera di ferro":
+                            case "MinieraFerro":
                                 MinieraFerro++;
                                 Console.WriteLine($"Costruzione completata {buildingType} costruita!");
                                 break;
-                            case "Miniera D'oro":
+                            case "MinieraOro":
                                 MinieraOro++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "Case":
+                                Abitazioni++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "ProduzioneSpade":
+                                ProduzioneSpade++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "ProduzioneLancie":
+                                ProduzioneLance++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "ProduzioneArchi":
+                                ProduzioneArchi++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "ProduzioneScudi":
+                                ProduzioneScudi++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "ProduzioneArmature":
+                                ProduzioneArmature++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "ProduzioneFrecce":
+                                ProduzioneFrecce++;
                                 Console.WriteLine($"Costruzione completata {buildingType} costruita!");
                                 break;
                             // Aggiungi case per altri tipi di costruzioni
                             default:
-                                Console.WriteLine($"Costruzione {buildingType} Annullata!!");
+                                Console.WriteLine($"Costruzione {buildingType} non valida!");
                                 break;
                         }
 
                         // Avvia la prossima costruzione per questo tipo di edificio
+                        Server.Send(clientGuid, $"Log_Server|Costruzione completata {buildingType} costruita!\n\r");
                         StartNextConstruction(buildingType);
                     }
                 }
             }
-
             public bool IsBuilding() // Metodo per verificare se ci sono costruzioni in corso
             {
                 foreach (var task in currentTasks.Values)
@@ -482,7 +682,7 @@ namespace Server_Strategico
                 }
             }
 
-            public void QueueTrainUnits(string unitType, int count)
+            public async void QueueTrainUnits(string unitType, int count, Guid clientGuid)
             {
                 var unitCost = GetUnitCost(unitType);
 
@@ -491,7 +691,12 @@ namespace Server_Strategico
                     Pietra >= unitCost.Pietra * count &&
                     Ferro >= unitCost.Ferro * count &&
                     Oro >= unitCost.Oro * count &&
-                    Popolazione >= unitCost.Popolazione * count)
+                    Popolazione >= unitCost.Popolazione * count &&
+                    Spade >= unitCost.Spade * count &&
+                    Lance >= unitCost.Lance * count &&
+                    Archi >= unitCost.Archi * count &&
+                    Scudi >= unitCost.Scudi * count &&
+                    Armature >= unitCost.Armature * count)
                 {
                     Cibo -= unitCost.Cibo * count;
                     Legno -= unitCost.Legno * count;
@@ -499,8 +704,34 @@ namespace Server_Strategico
                     Ferro -= unitCost.Ferro * count;
                     Oro -= unitCost.Oro * count;
                     Popolazione -= unitCost.Popolazione * count;
+                    Spade -= unitCost.Spade * count;
+                    Lance -= unitCost.Lance * count;
+                    Archi -= unitCost.Archi * count;
+                    Scudi -= unitCost.Scudi * count;
+                    Armature -= unitCost.Armature * count;
 
-                    Console.WriteLine($"Risorse consumate per l'addestramento di {count} {unitType}: Cibo={unitCost.Cibo * count}, Legno={unitCost.Legno * count}, Pietra={unitCost.Pietra * count}, Ferro={unitCost.Ferro * count}, Oro={unitCost.Oro * count}");
+                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per l'addestramento di {count} {unitType}: " +
+                        $"Cibo={unitCost.Cibo * count}, " +
+                        $"Legno={unitCost.Legno * count}, " +
+                        $"Pietra={unitCost.Pietra * count}, " +
+                        $"Ferro={unitCost.Ferro * count}, " +
+                        $"Oro={unitCost.Oro * count}, " +
+                        $"Spade={unitCost.Spade * count}, " +
+                        $"Lance={unitCost.Lance * count}, " +
+                        $"Archi={unitCost.Archi * count}, " +
+                        $"Scudi={unitCost.Scudi * count}, " +
+                        $"Armature={unitCost.Armature * count}");
+                    Console.WriteLine($"Risorse consumate per l'addestramento di {count} {unitType}: " +
+                        $"Cibo={unitCost.Cibo * count}, " +
+                        $"Legno={unitCost.Legno * count}, " +
+                        $"Pietra={unitCost.Pietra * count}, " +
+                        $"Ferro={unitCost.Ferro * count}, " +
+                        $"Oro={unitCost.Oro * count}, " +
+                        $"Spade={unitCost.Spade * count}, " +
+                        $"Lance={unitCost.Lance * count}, " +
+                        $"Archi={unitCost.Archi * count}, " +
+                        $"Scudi={unitCost.Scudi * count}, " +
+                        $"Armature={unitCost.Armature * count}");
 
                     if (!recruitQueues.ContainsKey(unitType))
                     {
@@ -525,23 +756,23 @@ namespace Server_Strategico
                 }
                 else
                 {
+                    Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per addestrare {count} {unitType}.");
                     Console.WriteLine($"Risorse insufficienti per addestrare {count} {unitType}.");
                 }
+                
             }
-
             private void StartNextRecruitment(string unitType)
             {
                 if (recruitQueues[unitType].Count > 0)
                 {
                     currentRecruitTasks[unitType] = recruitQueues[unitType].Dequeue();
                     currentRecruitTasks[unitType].Start();
-                    Console.WriteLine($"Addestramento di un'unità {unitType} iniziato, completamento previsto in {currentRecruitTasks[unitType].DurationInSeconds} secondi.");
+                    //Console.WriteLine($"Addestramento di un'unità {unitType} iniziato, completamento previsto in {currentRecruitTasks[unitType].DurationInSeconds} secondi.");
                 }
                 else
                     currentRecruitTasks[unitType] = null;
             }
-
-            public void CompleteRecruitment()
+            public void CompleteRecruitment(Guid clientGuid)
             {
                 foreach (var unitType in currentRecruitTasks.Keys)
                 {
@@ -566,17 +797,15 @@ namespace Server_Strategico
                                 Console.WriteLine($"{unitType} addestrato!");
                                 break;
                         }
-
+                        Server.Send(clientGuid, $"Log_Server|{unitType} addestrato!\n\r");
                         StartNextRecruitment(unitType);
                     }
                 }
             }
-
             public bool IsRecruiting()
             {
                 return currentRecruitTasks.Values.Any(task => task != null);
             }
-
             private CostoReclutamento GetUnitCost(string unitType)
             {
                 return unitType switch
@@ -589,39 +818,88 @@ namespace Server_Strategico
                 };
             }
         }
-
-
         public class GameServer
         {
             private Dictionary<string, Player> players = new Dictionary<string, Player>();
-
-            public void AddPlayer(string username)
+            public async Task<bool> AddPlayer(string username, string password, Guid guid)
             {
                 if (!players.ContainsKey(username))
                 {
-                    players.Add(username, new Player(username));
+                    players.Add(username, new Player(username, password, guid));
+                    await Server.NewPlayer(username, password);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                    throw new ArgumentException($"Player già presente con questo username {username} e password {password}.");
+                }
+            }
+            public async Task<bool> AddFakePlayer(string username, string password)
+            {
+                if (!players.ContainsKey(username))
+                {
+                    //players.Add(username, new Player(username, password, null));
+                    await Server.NewPlayer(username, password);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                    throw new ArgumentException($"Fake Player già presente con questo username {username} e password {password}.");
                 }
             }
 
-            public Player GetPlayer(string username)
+            public Player GetPlayer(string username, string password)
             {
-                players.TryGetValue(username, out Player player);
-                return player;
+                if (players.TryGetValue(username, out Player player))
+                {
+                    if (player.ValidatePassword(password))
+                        return player;
+                    else
+                        throw new UnauthorizedAccessException("Invalid password.");
+                }
+                else
+                {
+                    return null;
+                    throw new KeyNotFoundException("Player not found.");
+                }
+                
             }
+            public void Get_User_and_Password()
+            {
+                Console.WriteLine($"Numero Giocatori: {players.Count()}");
+                foreach (var item in players)
+                    Console.WriteLine($"Giocatore: {item.Value.Username} Guid: {item.Value.guid_Player}");
+            }
+            public void Get_User_Sync_Data()
+            {
+                foreach (var item in players)
+                    if (true)
+                        Console.WriteLine($"Giocatore: {item.Value.Username} Guid: {item.Value.guid_Player}");
+            }
+            public void Auto_Update_Clients()
+            {
+                foreach (var client in Server.Client_Connessi)
+                    foreach (var item in players)
+                        if (item.Value.guid_Player == client)
+                            ServerConnection.Update_Data(item.Value.guid_Player, item.Value.Username, item.Value.Password);
 
+
+            }
             public async Task RunGameLoopAsync(CancellationToken cancellationToken)
             {
                 while (!cancellationToken.IsCancellationRequested)
                 {
                     foreach (var player in players.Values)
                     {
-                        player.CompleteBuilds();
-                        player.CompleteRecruitment();
+                        player.CompleteBuilds(player.guid_Player);
+                        player.CompleteRecruitment(player.guid_Player);
                         player.ProduceResources();
 
+                        Auto_Update_Clients();
                         // Puoi aggiungere altri metodi per gestire battaglie, commercio, ecc.
                     }
-                    Console.WriteLine("");
                     await Task.Delay(1000); // Ciclo ogni secondo, o regola il ritardo come necessario
                 }
             }

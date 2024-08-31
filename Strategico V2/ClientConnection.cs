@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace Strategico_V2
             private static bool _DebugMessages = true;
             private static bool _AcceptInvalidCerts = false;
             private static bool _MutualAuth = false;
-            private static WatsonTcpClient _Client = null;
+            public static WatsonTcpClient _Client = null;
             private static string _PresharedKey = null;
 
 
@@ -91,7 +92,12 @@ namespace Strategico_V2
 
                     _Client.Connect();
                     client_Connesso = true;
+                    Send("Connesso");
                 });
+            }
+            public static void Send(string messaggio)
+            {
+                _Client.SendAsync(messaggio);
             }
             private static void ExceptionEncountered(object sender, ExceptionEventArgs e)
             {
@@ -151,7 +157,10 @@ namespace Strategico_V2
 
                 switch (msgArgs[0])
                 {
-                    case "simulazione": Console.WriteLine("Prova"); break;
+                    case "Login": if (msgArgs[1] == "true") Variabili_Client.login = true; else Variabili_Client.login = false; break;
+                    case "Update_Data": Update_Data(msgArgs); break;
+                    case "Log_Server": Update_Log(msgArgs[1]); break;
+
 
                     default: Console.WriteLine($"[Errore] >> [{messaggio_Ricevuto}] Comando non riconosciuto"); break;
                 }
@@ -162,12 +171,64 @@ namespace Strategico_V2
                 Console.WriteLine($"Comando:        {comando}");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine("");
+            }
 
-                switch (comando)
-                {
-                    //case "plotSwap": Message_Recived_PlotSwap(msgArgs); break;      // Risposta prezzo per plot
-                    //case "statusPayment": Message_Recived_StatusPayment(msgArgs); break; // Risposta timer payment usdt
-                }
+            static void Update_Data(string[] mess)
+            {
+                Variabili_Client.Cibo = mess[1];          //Risorse
+                Variabili_Client.Legno = mess[2];         //Risorse
+                Variabili_Client.Pietra = mess[3];        //Risorse
+                Variabili_Client.Ferro = mess[4];         //Risorse
+                Variabili_Client.Oro = mess[5];           //Risorse
+                Variabili_Client.Popolazione = mess[6];   //Risorse
+
+                Variabili_Client.Risorse_s_Cibo = mess[7];           //Risorse al S
+                Variabili_Client.Risorse_s_Legno = mess[8];          //Risorse al S
+                Variabili_Client.Risorse_s_Pietra = mess[9];         //Risorse al S
+                Variabili_Client.Risorse_s_Ferro = mess[10];         //Risorse al S
+                Variabili_Client.Risorse_s_Oro = mess[11];           //Risorse al S
+                Variabili_Client.Risorse_s_Popolazione = mess[12];   //Risorse al S
+
+                Variabili_Client.Fattoria = mess[13];                //Edifici
+                Variabili_Client.Segheria = mess[14];                //Edifici
+                Variabili_Client.CavaPietra = mess[15];              //Edifici
+                Variabili_Client.MinieraFerro = mess[16];            //Edifici
+                Variabili_Client.MinieraOro = mess[17];              //Edifici
+                Variabili_Client.Case = mess[18];                    //Edifici
+
+                Variabili_Client.ProduzioneSpade = mess[19];
+                Variabili_Client.ProduzioneLance = mess[20];
+                Variabili_Client.ProduzioneArchi = mess[21];
+                Variabili_Client.ProduzioneScudi = mess[22];
+                Variabili_Client.ProduzioneArmature = mess[23];
+                Variabili_Client.ProduzioneFrecce = mess[24];
+
+                Variabili_Client.Spade = mess[25];                   //Edifici
+                Variabili_Client.Lance = mess[26];                   //Edifici
+                Variabili_Client.Archi = mess[27];                   //Edifici
+                Variabili_Client.Scudi = mess[28];                   //Edifici
+                Variabili_Client.Armature = mess[29];                //Edifici
+                Variabili_Client.Frecce = mess[30];                  //Edifici
+
+                Variabili_Client.Risorse_s_Spade = mess[31];       //Consumabili
+                Variabili_Client.Risorse_s_Lance = mess[32];       //Consumabili
+                Variabili_Client.Risorse_s_Archi = mess[33];       //Consumabili
+                Variabili_Client.Risorse_s_Scudi = mess[34];      //Consumabili
+                Variabili_Client.Risorse_s_Armature = mess[35];   //Consumabili
+                Variabili_Client.Risorse_s_Frecce = mess[36];     //Consumabili
+
+                Variabili_Client.Guerrieri = mess[37];
+                Variabili_Client.Lancieri = mess[38];
+                Variabili_Client.Arceri = mess[39];
+                Variabili_Client.Catapulte = mess[40];
+
+                Variabili_Client.Server = mess[41];
+                Variabili_Client.Versione = mess[42];
+                Variabili_Client.Difficoltà = mess[43];
+            }
+            static void Update_Log(string mes)
+            {
+                Home.Log_Update(mes);
             }
         }
 
