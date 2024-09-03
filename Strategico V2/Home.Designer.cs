@@ -30,6 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.panel65 = new System.Windows.Forms.Panel();
+            this.panel61 = new System.Windows.Forms.Panel();
+            this.txt_Frecce = new System.Windows.Forms.TextBox();
+            this.txt_Archi = new System.Windows.Forms.TextBox();
+            this.panel60 = new System.Windows.Forms.Panel();
+            this.panel63 = new System.Windows.Forms.Panel();
+            this.txt_Produzione_Archi = new System.Windows.Forms.TextBox();
+            this.txt_Lancie = new System.Windows.Forms.TextBox();
+            this.txt_Produzione_Frecce = new System.Windows.Forms.TextBox();
+            this.txt_Produzione_Lancie = new System.Windows.Forms.TextBox();
+            this.panel59 = new System.Windows.Forms.Panel();
+            this.txt_Armature = new System.Windows.Forms.TextBox();
+            this.txt_Spade = new System.Windows.Forms.TextBox();
+            this.txt_Produzione_Spade = new System.Windows.Forms.TextBox();
+            this.txt_Produzione_Armature = new System.Windows.Forms.TextBox();
+            this.panel58 = new System.Windows.Forms.Panel();
+            this.txt_Esperienza = new System.Windows.Forms.TextBox();
+            this.panel64 = new System.Windows.Forms.Panel();
+            this.txt_Scudi = new System.Windows.Forms.TextBox();
+            this.panel57 = new System.Windows.Forms.Panel();
+            this.txt_Produzione_Scudi = new System.Windows.Forms.TextBox();
+            this.txt_Livello = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_Popolazione = new System.Windows.Forms.TextBox();
@@ -49,6 +72,7 @@
             this.txt_Cibo = new System.Windows.Forms.TextBox();
             this.txt_Produzione_Cibo = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_Costruisci = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_Reclutamento = new System.Windows.Forms.Button();
             this.panel37 = new System.Windows.Forms.Panel();
@@ -143,7 +167,6 @@
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.lbl_Produzione_Spade_X5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_Costruisci = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.lbl_Case_X0 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
@@ -202,7 +225,8 @@
             txt_Log = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_Forza_Esercito_PVE_Barbari = new System.Windows.Forms.TextBox();
+            this.btn_Accampameto_Barbaro_PVE_Attacco = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -220,7 +244,8 @@
             this.panel48 = new System.Windows.Forms.Panel();
             this.txt_Guerrieri_Acc_Barbaro_PVE = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txt_Forza_Esercito_PVP_Barbari = new System.Windows.Forms.TextBox();
+            this.btn_Accampameto_Barbaro_PVP_Attacco = new System.Windows.Forms.Button();
             this.panel49 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
@@ -237,6 +262,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel56 = new System.Windows.Forms.Panel();
             this.txt_Guerrieri_Acc_Barbaro_PVP = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.panel72 = new System.Windows.Forms.Panel();
+            this.comboBox_PVP = new System.Windows.Forms.ComboBox();
+            this.btn_PVP_Attacco = new System.Windows.Forms.Button();
+            this.panel73 = new System.Windows.Forms.Panel();
+            this.btn_Giocatori = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -269,11 +300,36 @@
             this.panel51.SuspendLayout();
             this.panel53.SuspendLayout();
             this.panel55.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.panel72.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel1.Controls.Add(this.panel62);
+            this.panel1.Controls.Add(this.panel65);
+            this.panel1.Controls.Add(this.panel61);
+            this.panel1.Controls.Add(this.txt_Frecce);
+            this.panel1.Controls.Add(this.txt_Archi);
+            this.panel1.Controls.Add(this.panel60);
+            this.panel1.Controls.Add(this.panel63);
+            this.panel1.Controls.Add(this.txt_Produzione_Archi);
+            this.panel1.Controls.Add(this.txt_Lancie);
+            this.panel1.Controls.Add(this.txt_Produzione_Frecce);
+            this.panel1.Controls.Add(this.txt_Produzione_Lancie);
+            this.panel1.Controls.Add(this.panel59);
+            this.panel1.Controls.Add(this.txt_Armature);
+            this.panel1.Controls.Add(this.txt_Spade);
+            this.panel1.Controls.Add(this.txt_Produzione_Spade);
+            this.panel1.Controls.Add(this.txt_Produzione_Armature);
+            this.panel1.Controls.Add(this.panel58);
+            this.panel1.Controls.Add(this.txt_Esperienza);
+            this.panel1.Controls.Add(this.panel64);
+            this.panel1.Controls.Add(this.txt_Scudi);
+            this.panel1.Controls.Add(this.panel57);
+            this.panel1.Controls.Add(this.txt_Produzione_Scudi);
+            this.panel1.Controls.Add(this.txt_Livello);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.txt_Popolazione);
@@ -294,6 +350,202 @@
             this.panel1.Controls.Add(this.txt_Produzione_Cibo);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // panel62
+            // 
+            this.panel62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel62.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_arciere_48_1_;
+            resources.ApplyResources(this.panel62, "panel62");
+            this.panel62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel62.Name = "panel62";
+            // 
+            // panel65
+            // 
+            this.panel65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.panel65, "panel65");
+            this.panel65.Name = "panel65";
+            // 
+            // panel61
+            // 
+            this.panel61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel61.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_arciere_48;
+            resources.ApplyResources(this.panel61, "panel61");
+            this.panel61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel61.Name = "panel61";
+            // 
+            // txt_Frecce
+            // 
+            this.txt_Frecce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Frecce.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Frecce, "txt_Frecce");
+            this.txt_Frecce.ForeColor = System.Drawing.Color.White;
+            this.txt_Frecce.Name = "txt_Frecce";
+            this.txt_Frecce.ReadOnly = true;
+            // 
+            // txt_Archi
+            // 
+            this.txt_Archi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Archi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Archi, "txt_Archi");
+            this.txt_Archi.ForeColor = System.Drawing.Color.White;
+            this.txt_Archi.Name = "txt_Archi";
+            this.txt_Archi.ReadOnly = true;
+            // 
+            // panel60
+            // 
+            this.panel60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel60.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_16851_0_71599_spear_common_48;
+            resources.ApplyResources(this.panel60, "panel60");
+            this.panel60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel60.Name = "panel60";
+            // 
+            // panel63
+            // 
+            this.panel63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel63.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_armor_48;
+            resources.ApplyResources(this.panel63, "panel63");
+            this.panel63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel63.Name = "panel63";
+            // 
+            // txt_Produzione_Archi
+            // 
+            this.txt_Produzione_Archi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Produzione_Archi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Produzione_Archi, "txt_Produzione_Archi");
+            this.txt_Produzione_Archi.ForeColor = System.Drawing.Color.LightGreen;
+            this.txt_Produzione_Archi.Name = "txt_Produzione_Archi";
+            this.txt_Produzione_Archi.ReadOnly = true;
+            // 
+            // txt_Lancie
+            // 
+            this.txt_Lancie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Lancie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Lancie, "txt_Lancie");
+            this.txt_Lancie.ForeColor = System.Drawing.Color.White;
+            this.txt_Lancie.Name = "txt_Lancie";
+            this.txt_Lancie.ReadOnly = true;
+            // 
+            // txt_Produzione_Frecce
+            // 
+            this.txt_Produzione_Frecce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Produzione_Frecce.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Produzione_Frecce, "txt_Produzione_Frecce");
+            this.txt_Produzione_Frecce.ForeColor = System.Drawing.Color.LightGreen;
+            this.txt_Produzione_Frecce.Name = "txt_Produzione_Frecce";
+            this.txt_Produzione_Frecce.ReadOnly = true;
+            // 
+            // txt_Produzione_Lancie
+            // 
+            this.txt_Produzione_Lancie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Produzione_Lancie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Produzione_Lancie, "txt_Produzione_Lancie");
+            this.txt_Produzione_Lancie.ForeColor = System.Drawing.Color.LightGreen;
+            this.txt_Produzione_Lancie.Name = "txt_Produzione_Lancie";
+            this.txt_Produzione_Lancie.ReadOnly = true;
+            // 
+            // panel59
+            // 
+            this.panel59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel59.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_spada_48;
+            resources.ApplyResources(this.panel59, "panel59");
+            this.panel59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel59.Name = "panel59";
+            // 
+            // txt_Armature
+            // 
+            this.txt_Armature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Armature.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Armature, "txt_Armature");
+            this.txt_Armature.ForeColor = System.Drawing.Color.White;
+            this.txt_Armature.Name = "txt_Armature";
+            this.txt_Armature.ReadOnly = true;
+            // 
+            // txt_Spade
+            // 
+            this.txt_Spade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Spade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Spade, "txt_Spade");
+            this.txt_Spade.ForeColor = System.Drawing.Color.White;
+            this.txt_Spade.Name = "txt_Spade";
+            this.txt_Spade.ReadOnly = true;
+            // 
+            // txt_Produzione_Spade
+            // 
+            this.txt_Produzione_Spade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Produzione_Spade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Produzione_Spade, "txt_Produzione_Spade");
+            this.txt_Produzione_Spade.ForeColor = System.Drawing.Color.LightGreen;
+            this.txt_Produzione_Spade.Name = "txt_Produzione_Spade";
+            this.txt_Produzione_Spade.ReadOnly = true;
+            // 
+            // txt_Produzione_Armature
+            // 
+            this.txt_Produzione_Armature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Produzione_Armature.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Produzione_Armature, "txt_Produzione_Armature");
+            this.txt_Produzione_Armature.ForeColor = System.Drawing.Color.LightGreen;
+            this.txt_Produzione_Armature.Name = "txt_Produzione_Armature";
+            this.txt_Produzione_Armature.ReadOnly = true;
+            // 
+            // panel58
+            // 
+            this.panel58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel58.BackgroundImage = global::Strategico_V2.Properties.Resources.arrow;
+            resources.ApplyResources(this.panel58, "panel58");
+            this.panel58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel58.Name = "panel58";
+            // 
+            // txt_Esperienza
+            // 
+            this.txt_Esperienza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Esperienza.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Esperienza, "txt_Esperienza");
+            this.txt_Esperienza.ForeColor = System.Drawing.Color.White;
+            this.txt_Esperienza.Name = "txt_Esperienza";
+            this.txt_Esperienza.ReadOnly = true;
+            // 
+            // panel64
+            // 
+            this.panel64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel64.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_scudo_48_1_;
+            resources.ApplyResources(this.panel64, "panel64");
+            this.panel64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel64.Name = "panel64";
+            // 
+            // txt_Scudi
+            // 
+            this.txt_Scudi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Scudi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Scudi, "txt_Scudi");
+            this.txt_Scudi.ForeColor = System.Drawing.Color.White;
+            this.txt_Scudi.Name = "txt_Scudi";
+            this.txt_Scudi.ReadOnly = true;
+            // 
+            // panel57
+            // 
+            this.panel57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.panel57.BackgroundImage = global::Strategico_V2.Properties.Resources.game;
+            resources.ApplyResources(this.panel57, "panel57");
+            this.panel57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel57.Name = "panel57";
+            // 
+            // txt_Produzione_Scudi
+            // 
+            this.txt_Produzione_Scudi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Produzione_Scudi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Produzione_Scudi, "txt_Produzione_Scudi");
+            this.txt_Produzione_Scudi.ForeColor = System.Drawing.Color.LightGreen;
+            this.txt_Produzione_Scudi.Name = "txt_Produzione_Scudi";
+            this.txt_Produzione_Scudi.ReadOnly = true;
+            // 
+            // txt_Livello
+            // 
+            this.txt_Livello.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(164)))));
+            this.txt_Livello.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Livello, "txt_Livello");
+            this.txt_Livello.ForeColor = System.Drawing.Color.White;
+            this.txt_Livello.Name = "txt_Livello";
+            this.txt_Livello.ReadOnly = true;
             // 
             // panel5
             // 
@@ -318,6 +570,7 @@
             resources.ApplyResources(this.txt_Popolazione, "txt_Popolazione");
             this.txt_Popolazione.ForeColor = System.Drawing.Color.White;
             this.txt_Popolazione.Name = "txt_Popolazione";
+            this.txt_Popolazione.ReadOnly = true;
             // 
             // txt_Pietra
             // 
@@ -326,6 +579,7 @@
             resources.ApplyResources(this.txt_Pietra, "txt_Pietra");
             this.txt_Pietra.ForeColor = System.Drawing.Color.White;
             this.txt_Pietra.Name = "txt_Pietra";
+            this.txt_Pietra.ReadOnly = true;
             // 
             // panel6
             // 
@@ -350,6 +604,7 @@
             resources.ApplyResources(this.txt_Produzione_Popolazione, "txt_Produzione_Popolazione");
             this.txt_Produzione_Popolazione.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_Produzione_Popolazione.Name = "txt_Produzione_Popolazione";
+            this.txt_Produzione_Popolazione.ReadOnly = true;
             // 
             // txt_Produzione_Pietra
             // 
@@ -358,6 +613,7 @@
             resources.ApplyResources(this.txt_Produzione_Pietra, "txt_Produzione_Pietra");
             this.txt_Produzione_Pietra.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_Produzione_Pietra.Name = "txt_Produzione_Pietra";
+            this.txt_Produzione_Pietra.ReadOnly = true;
             // 
             // txt_Oro
             // 
@@ -366,6 +622,7 @@
             resources.ApplyResources(this.txt_Oro, "txt_Oro");
             this.txt_Oro.ForeColor = System.Drawing.Color.White;
             this.txt_Oro.Name = "txt_Oro";
+            this.txt_Oro.ReadOnly = true;
             // 
             // txt_Legno
             // 
@@ -374,6 +631,7 @@
             resources.ApplyResources(this.txt_Legno, "txt_Legno");
             this.txt_Legno.ForeColor = System.Drawing.Color.White;
             this.txt_Legno.Name = "txt_Legno";
+            this.txt_Legno.ReadOnly = true;
             // 
             // txt_Produzione_Oro
             // 
@@ -382,6 +640,7 @@
             resources.ApplyResources(this.txt_Produzione_Oro, "txt_Produzione_Oro");
             this.txt_Produzione_Oro.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_Produzione_Oro.Name = "txt_Produzione_Oro";
+            this.txt_Produzione_Oro.ReadOnly = true;
             // 
             // txt_Produzione_Legno
             // 
@@ -390,6 +649,7 @@
             resources.ApplyResources(this.txt_Produzione_Legno, "txt_Produzione_Legno");
             this.txt_Produzione_Legno.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_Produzione_Legno.Name = "txt_Produzione_Legno";
+            this.txt_Produzione_Legno.ReadOnly = true;
             // 
             // panel7
             // 
@@ -406,6 +666,7 @@
             resources.ApplyResources(this.txt_Ferro, "txt_Ferro");
             this.txt_Ferro.ForeColor = System.Drawing.Color.White;
             this.txt_Ferro.Name = "txt_Ferro";
+            this.txt_Ferro.ReadOnly = true;
             // 
             // panel2
             // 
@@ -422,6 +683,7 @@
             resources.ApplyResources(this.txt_Produzione_Ferro, "txt_Produzione_Ferro");
             this.txt_Produzione_Ferro.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_Produzione_Ferro.Name = "txt_Produzione_Ferro";
+            this.txt_Produzione_Ferro.ReadOnly = true;
             // 
             // txt_Cibo
             // 
@@ -430,6 +692,7 @@
             resources.ApplyResources(this.txt_Cibo, "txt_Cibo");
             this.txt_Cibo.ForeColor = System.Drawing.Color.White;
             this.txt_Cibo.Name = "txt_Cibo";
+            this.txt_Cibo.ReadOnly = true;
             // 
             // txt_Produzione_Cibo
             // 
@@ -438,15 +701,27 @@
             resources.ApplyResources(this.txt_Produzione_Cibo, "txt_Produzione_Cibo");
             this.txt_Produzione_Cibo.ForeColor = System.Drawing.Color.LightGreen;
             this.txt_Produzione_Cibo.Name = "txt_Produzione_Cibo";
+            this.txt_Produzione_Cibo.ReadOnly = true;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel8.Controls.Add(this.btn_Costruisci);
             this.panel8.Controls.Add(this.groupBox3);
             this.panel8.Controls.Add(this.groupBox2);
             this.panel8.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Name = "panel8";
+            // 
+            // btn_Costruisci
+            // 
+            this.btn_Costruisci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Costruisci.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Costruisci.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(this.btn_Costruisci, "btn_Costruisci");
+            this.btn_Costruisci.Name = "btn_Costruisci";
+            this.btn_Costruisci.UseVisualStyleBackColor = false;
+            this.btn_Costruisci.Click += new System.EventHandler(this.btn_Costruisci_Click);
             // 
             // groupBox3
             // 
@@ -515,7 +790,6 @@
             // txt_Catapulta_Reclutamento
             // 
             this.txt_Catapulta_Reclutamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Catapulta_Reclutamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Catapulta_Reclutamento, "txt_Catapulta_Reclutamento");
             this.txt_Catapulta_Reclutamento.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Catapulta_Reclutamento.Name = "txt_Catapulta_Reclutamento";
@@ -531,7 +805,7 @@
             // textBox42
             // 
             this.textBox42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox42, "textBox42");
             this.textBox42.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox42.Name = "textBox42";
@@ -589,7 +863,6 @@
             // txt_Arciere_Reclutamento
             // 
             this.txt_Arciere_Reclutamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Arciere_Reclutamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Arciere_Reclutamento, "txt_Arciere_Reclutamento");
             this.txt_Arciere_Reclutamento.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Arciere_Reclutamento.Name = "txt_Arciere_Reclutamento";
@@ -605,7 +878,7 @@
             // textBox44
             // 
             this.textBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox44.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox44, "textBox44");
             this.textBox44.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox44.Name = "textBox44";
@@ -663,7 +936,6 @@
             // txt_Lanciere_Reclutamento
             // 
             this.txt_Lanciere_Reclutamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Lanciere_Reclutamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Lanciere_Reclutamento, "txt_Lanciere_Reclutamento");
             this.txt_Lanciere_Reclutamento.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Lanciere_Reclutamento.Name = "txt_Lanciere_Reclutamento";
@@ -679,7 +951,7 @@
             // textBox46
             // 
             this.textBox46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox46, "textBox46");
             this.textBox46.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox46.Name = "textBox46";
@@ -737,7 +1009,6 @@
             // txt_Guerriero_Reclutamento
             // 
             this.txt_Guerriero_Reclutamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Guerriero_Reclutamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Guerriero_Reclutamento, "txt_Guerriero_Reclutamento");
             this.txt_Guerriero_Reclutamento.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Guerriero_Reclutamento.Name = "txt_Guerriero_Reclutamento";
@@ -753,7 +1024,7 @@
             // textBox48
             // 
             this.textBox48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox48, "textBox48");
             this.textBox48.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox48.Name = "textBox48";
@@ -826,7 +1097,6 @@
             // txt_Frecce_Costruzione
             // 
             this.txt_Frecce_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Frecce_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Frecce_Costruzione, "txt_Frecce_Costruzione");
             this.txt_Frecce_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Frecce_Costruzione.Name = "txt_Frecce_Costruzione";
@@ -842,7 +1112,7 @@
             // textBox26
             // 
             this.textBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox26.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox26, "textBox26");
             this.textBox26.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox26.Name = "textBox26";
@@ -900,7 +1170,6 @@
             // txt_Armatura_Costruzione
             // 
             this.txt_Armatura_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Armatura_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Armatura_Costruzione, "txt_Armatura_Costruzione");
             this.txt_Armatura_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Armatura_Costruzione.Name = "txt_Armatura_Costruzione";
@@ -916,7 +1185,7 @@
             // textBox28
             // 
             this.textBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox28.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox28, "textBox28");
             this.textBox28.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox28.Name = "textBox28";
@@ -974,7 +1243,6 @@
             // txt_Scudi_Costruzione
             // 
             this.txt_Scudi_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Scudi_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Scudi_Costruzione, "txt_Scudi_Costruzione");
             this.txt_Scudi_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Scudi_Costruzione.Name = "txt_Scudi_Costruzione";
@@ -990,7 +1258,7 @@
             // textBox30
             // 
             this.textBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox30, "textBox30");
             this.textBox30.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox30.Name = "textBox30";
@@ -1048,7 +1316,6 @@
             // txt_Archi_Costruzione
             // 
             this.txt_Archi_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Archi_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Archi_Costruzione, "txt_Archi_Costruzione");
             this.txt_Archi_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Archi_Costruzione.Name = "txt_Archi_Costruzione";
@@ -1064,7 +1331,7 @@
             // textBox32
             // 
             this.textBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox32.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox32, "textBox32");
             this.textBox32.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox32.Name = "textBox32";
@@ -1122,7 +1389,6 @@
             // txt_Lancie_Costruzione
             // 
             this.txt_Lancie_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Lancie_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Lancie_Costruzione, "txt_Lancie_Costruzione");
             this.txt_Lancie_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Lancie_Costruzione.Name = "txt_Lancie_Costruzione";
@@ -1138,7 +1404,7 @@
             // textBox34
             // 
             this.textBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox34.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox34, "textBox34");
             this.textBox34.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox34.Name = "textBox34";
@@ -1196,7 +1462,6 @@
             // txt_Spade_Costruzione
             // 
             this.txt_Spade_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Spade_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Spade_Costruzione, "txt_Spade_Costruzione");
             this.txt_Spade_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Spade_Costruzione.Name = "txt_Spade_Costruzione";
@@ -1212,7 +1477,7 @@
             // textBox36
             // 
             this.textBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox36.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox36, "textBox36");
             this.textBox36.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox36.Name = "textBox36";
@@ -1228,7 +1493,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.groupBox1.Controls.Add(this.btn_Costruisci);
             this.groupBox1.Controls.Add(this.panel19);
             this.groupBox1.Controls.Add(this.panel17);
             this.groupBox1.Controls.Add(this.panel15);
@@ -1239,15 +1503,6 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            // 
-            // btn_Costruisci
-            // 
-            this.btn_Costruisci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.btn_Costruisci.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            resources.ApplyResources(this.btn_Costruisci, "btn_Costruisci");
-            this.btn_Costruisci.Name = "btn_Costruisci";
-            this.btn_Costruisci.UseVisualStyleBackColor = false;
-            this.btn_Costruisci.Click += new System.EventHandler(this.btn_Costruisci_Click);
             // 
             // panel19
             // 
@@ -1294,7 +1549,6 @@
             // txt_Case_Costruzione
             // 
             this.txt_Case_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Case_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Case_Costruzione, "txt_Case_Costruzione");
             this.txt_Case_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Case_Costruzione.Name = "txt_Case_Costruzione";
@@ -1310,7 +1564,7 @@
             // textBox24
             // 
             this.textBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox24.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox24, "textBox24");
             this.textBox24.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox24.Name = "textBox24";
@@ -1368,7 +1622,6 @@
             // txt_MinieraOro_Costruzione
             // 
             this.txt_MinieraOro_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_MinieraOro_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_MinieraOro_Costruzione, "txt_MinieraOro_Costruzione");
             this.txt_MinieraOro_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_MinieraOro_Costruzione.Name = "txt_MinieraOro_Costruzione";
@@ -1384,7 +1637,7 @@
             // textBox22
             // 
             this.textBox22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox22.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox22, "textBox22");
             this.textBox22.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox22.Name = "textBox22";
@@ -1442,7 +1695,6 @@
             // txt_MinieraFerro_Costruzione
             // 
             this.txt_MinieraFerro_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_MinieraFerro_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_MinieraFerro_Costruzione, "txt_MinieraFerro_Costruzione");
             this.txt_MinieraFerro_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_MinieraFerro_Costruzione.Name = "txt_MinieraFerro_Costruzione";
@@ -1458,7 +1710,7 @@
             // textBox20
             // 
             this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox20, "textBox20");
             this.textBox20.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox20.Name = "textBox20";
@@ -1516,7 +1768,6 @@
             // txt_CavaPietra_Costruzione
             // 
             this.txt_CavaPietra_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_CavaPietra_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_CavaPietra_Costruzione, "txt_CavaPietra_Costruzione");
             this.txt_CavaPietra_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_CavaPietra_Costruzione.Name = "txt_CavaPietra_Costruzione";
@@ -1532,7 +1783,7 @@
             // textBox18
             // 
             this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox18, "textBox18");
             this.textBox18.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox18.Name = "textBox18";
@@ -1590,7 +1841,6 @@
             // txt_Segheria_Costruzione
             // 
             this.txt_Segheria_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Segheria_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Segheria_Costruzione, "txt_Segheria_Costruzione");
             this.txt_Segheria_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Segheria_Costruzione.Name = "txt_Segheria_Costruzione";
@@ -1606,7 +1856,7 @@
             // textBox16
             // 
             this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox16, "textBox16");
             this.textBox16.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox16.Name = "textBox16";
@@ -1664,7 +1914,6 @@
             // txt_Fattoria_Costruzione
             // 
             this.txt_Fattoria_Costruzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Fattoria_Costruzione.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txt_Fattoria_Costruzione, "txt_Fattoria_Costruzione");
             this.txt_Fattoria_Costruzione.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_Fattoria_Costruzione.Name = "txt_Fattoria_Costruzione";
@@ -1680,7 +1929,7 @@
             // lbl_Fattoria_Coda
             // 
             this.lbl_Fattoria_Coda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.lbl_Fattoria_Coda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbl_Fattoria_Coda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.lbl_Fattoria_Coda, "lbl_Fattoria_Coda");
             this.lbl_Fattoria_Coda.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl_Fattoria_Coda.Name = "lbl_Fattoria_Coda";
@@ -1719,7 +1968,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.txt_Forza_Esercito_PVE_Barbari);
+            this.groupBox5.Controls.Add(this.btn_Accampameto_Barbaro_PVE_Attacco);
             this.groupBox5.Controls.Add(this.panel33);
             this.groupBox5.Controls.Add(this.panel35);
             this.groupBox5.Controls.Add(this.panel45);
@@ -1729,13 +1979,23 @@
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
-            // button1
+            // txt_Forza_Esercito_PVE_Barbari
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.txt_Forza_Esercito_PVE_Barbari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txt_Forza_Esercito_PVE_Barbari.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Forza_Esercito_PVE_Barbari, "txt_Forza_Esercito_PVE_Barbari");
+            this.txt_Forza_Esercito_PVE_Barbari.ForeColor = System.Drawing.SystemColors.Control;
+            this.txt_Forza_Esercito_PVE_Barbari.Name = "txt_Forza_Esercito_PVE_Barbari";
+            this.txt_Forza_Esercito_PVE_Barbari.ReadOnly = true;
+            // 
+            // btn_Accampameto_Barbaro_PVE_Attacco
+            // 
+            this.btn_Accampameto_Barbaro_PVE_Attacco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Accampameto_Barbaro_PVE_Attacco.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.btn_Accampameto_Barbaro_PVE_Attacco, "btn_Accampameto_Barbaro_PVE_Attacco");
+            this.btn_Accampameto_Barbaro_PVE_Attacco.Name = "btn_Accampameto_Barbaro_PVE_Attacco";
+            this.btn_Accampameto_Barbaro_PVE_Attacco.UseVisualStyleBackColor = false;
+            this.btn_Accampameto_Barbaro_PVE_Attacco.Click += new System.EventHandler(this.btn_Accampameto_Barbaro_PVE_Attacco_Click);
             // 
             // panel33
             // 
@@ -1868,7 +2128,8 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.txt_Forza_Esercito_PVP_Barbari);
+            this.groupBox6.Controls.Add(this.btn_Accampameto_Barbaro_PVP_Attacco);
             this.groupBox6.Controls.Add(this.panel49);
             this.groupBox6.Controls.Add(this.panel51);
             this.groupBox6.Controls.Add(this.panel53);
@@ -1878,13 +2139,23 @@
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
-            // button2
+            // txt_Forza_Esercito_PVP_Barbari
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.txt_Forza_Esercito_PVP_Barbari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txt_Forza_Esercito_PVP_Barbari.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_Forza_Esercito_PVP_Barbari, "txt_Forza_Esercito_PVP_Barbari");
+            this.txt_Forza_Esercito_PVP_Barbari.ForeColor = System.Drawing.SystemColors.Control;
+            this.txt_Forza_Esercito_PVP_Barbari.Name = "txt_Forza_Esercito_PVP_Barbari";
+            this.txt_Forza_Esercito_PVP_Barbari.ReadOnly = true;
+            // 
+            // btn_Accampameto_Barbaro_PVP_Attacco
+            // 
+            this.btn_Accampameto_Barbaro_PVP_Attacco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Accampameto_Barbaro_PVP_Attacco.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.btn_Accampameto_Barbaro_PVP_Attacco, "btn_Accampameto_Barbaro_PVP_Attacco");
+            this.btn_Accampameto_Barbaro_PVP_Attacco.Name = "btn_Accampameto_Barbaro_PVP_Attacco";
+            this.btn_Accampameto_Barbaro_PVP_Attacco.UseVisualStyleBackColor = false;
+            this.btn_Accampameto_Barbaro_PVP_Attacco.Click += new System.EventHandler(this.btn_Accampameto_Barbaro_PVP_Attacco_Click);
             // 
             // panel49
             // 
@@ -2014,11 +2285,66 @@
             this.txt_Guerrieri_Acc_Barbaro_PVP.Name = "txt_Guerrieri_Acc_Barbaro_PVP";
             this.txt_Guerrieri_Acc_Barbaro_PVP.ReadOnly = true;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.groupBox7.Controls.Add(this.panel72);
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            // 
+            // panel72
+            // 
+            this.panel72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel72.Controls.Add(this.comboBox_PVP);
+            this.panel72.Controls.Add(this.btn_PVP_Attacco);
+            this.panel72.Controls.Add(this.panel73);
+            this.panel72.Controls.Add(this.btn_Giocatori);
+            resources.ApplyResources(this.panel72, "panel72");
+            this.panel72.Name = "panel72";
+            // 
+            // comboBox_PVP
+            // 
+            resources.ApplyResources(this.comboBox_PVP, "comboBox_PVP");
+            this.comboBox_PVP.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox_PVP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_PVP.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBox_PVP.FormattingEnabled = true;
+            this.comboBox_PVP.Name = "comboBox_PVP";
+            // 
+            // btn_PVP_Attacco
+            // 
+            this.btn_PVP_Attacco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_PVP_Attacco.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.btn_PVP_Attacco, "btn_PVP_Attacco");
+            this.btn_PVP_Attacco.Name = "btn_PVP_Attacco";
+            this.btn_PVP_Attacco.UseVisualStyleBackColor = false;
+            this.btn_PVP_Attacco.Click += new System.EventHandler(this.btn_PVP_Attacco_Click);
+            // 
+            // panel73
+            // 
+            this.panel73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel73.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_guerriero_48;
+            resources.ApplyResources(this.panel73, "panel73");
+            this.panel73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel73.Name = "panel73";
+            // 
+            // btn_Giocatori
+            // 
+            this.btn_Giocatori.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Giocatori.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.btn_Giocatori, "btn_Giocatori");
+            this.btn_Giocatori.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_Giocatori.Name = "btn_Giocatori";
+            this.btn_Giocatori.ReadOnly = true;
+            // 
             // Home
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -2069,6 +2395,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
             this.panel35.ResumeLayout(false);
@@ -2078,6 +2405,7 @@
             this.panel47.ResumeLayout(false);
             this.panel47.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.panel49.ResumeLayout(false);
             this.panel49.PerformLayout();
             this.panel51.ResumeLayout(false);
@@ -2086,6 +2414,9 @@
             this.panel53.PerformLayout();
             this.panel55.ResumeLayout(false);
             this.panel55.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.panel72.ResumeLayout(false);
+            this.panel72.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2265,7 +2596,7 @@
         private System.Windows.Forms.Label lbl_Reclutamento_Lanciere_X0;
         private System.Windows.Forms.Label lbl_Reclutamento_Guerriero_X0;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Accampameto_Barbaro_PVE_Attacco;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel34;
@@ -2282,9 +2613,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel48;
         private System.Windows.Forms.TextBox txt_Guerrieri_Acc_Barbaro_PVE;
-        static private System.Windows.Forms.TextBox txt_Log;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Accampameto_Barbaro_PVP_Attacco;
         private System.Windows.Forms.Panel panel49;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel50;
@@ -2301,5 +2631,37 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel56;
         private System.Windows.Forms.TextBox txt_Guerrieri_Acc_Barbaro_PVP;
+        private System.Windows.Forms.Panel panel58;
+        private System.Windows.Forms.TextBox txt_Esperienza;
+        private System.Windows.Forms.Panel panel57;
+        private System.Windows.Forms.TextBox txt_Livello;
+        private System.Windows.Forms.Panel panel61;
+        private System.Windows.Forms.TextBox txt_Archi;
+        private System.Windows.Forms.Panel panel60;
+        private System.Windows.Forms.TextBox txt_Produzione_Archi;
+        private System.Windows.Forms.TextBox txt_Lancie;
+        private System.Windows.Forms.TextBox txt_Produzione_Lancie;
+        private System.Windows.Forms.Panel panel59;
+        private System.Windows.Forms.TextBox txt_Spade;
+        private System.Windows.Forms.TextBox txt_Produzione_Spade;
+        private System.Windows.Forms.Panel panel62;
+        private System.Windows.Forms.TextBox txt_Frecce;
+        private System.Windows.Forms.Panel panel63;
+        private System.Windows.Forms.TextBox txt_Produzione_Frecce;
+        private System.Windows.Forms.TextBox txt_Armature;
+        private System.Windows.Forms.TextBox txt_Produzione_Armature;
+        private System.Windows.Forms.Panel panel64;
+        private System.Windows.Forms.TextBox txt_Scudi;
+        private System.Windows.Forms.TextBox txt_Produzione_Scudi;
+        private System.Windows.Forms.Panel panel65;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Panel panel72;
+        private System.Windows.Forms.Button btn_PVP_Attacco;
+        private System.Windows.Forms.Panel panel73;
+        private System.Windows.Forms.TextBox btn_Giocatori;
+        private System.Windows.Forms.ComboBox comboBox_PVP;
+        private System.Windows.Forms.TextBox txt_Forza_Esercito_PVE_Barbari;
+        private System.Windows.Forms.TextBox txt_Forza_Esercito_PVP_Barbari;
+        static private System.Windows.Forms.TextBox txt_Log;
     }
 }

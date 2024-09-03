@@ -118,17 +118,650 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="panel62.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panel62.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1181, 4</value>
+  </data>
+  <data name="panel62.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel62.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;panel62.Name" xml:space="preserve">
+    <value>panel62</value>
+  </data>
+  <data name="&gt;&gt;panel62.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel62.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel62.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel65.Location" type="System.Drawing.Point, System.Drawing">
+    <value>659, 0</value>
+  </data>
+  <data name="panel65.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 40</value>
+  </data>
+  <data name="panel65.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;panel65.Name" xml:space="preserve">
+    <value>panel65</value>
+  </data>
+  <data name="&gt;&gt;panel65.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel65.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel65.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel61.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel61.Location" type="System.Drawing.Point, System.Drawing">
+    <value>875, 4</value>
+  </data>
+  <data name="panel61.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel61.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;panel61.Name" xml:space="preserve">
+    <value>panel61</value>
+  </data>
+  <data name="&gt;&gt;panel61.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel61.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel61.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txt_Frecce.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Frecce.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1218, 4</value>
+  </data>
+  <data name="txt_Frecce.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Frecce.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="txt_Frecce.Text" xml:space="preserve">
+    <value>0,00</value>
+  </data>
+  <data name="txt_Frecce.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Frecce.Name" xml:space="preserve">
+    <value>txt_Frecce</value>
+  </data>
+  <data name="&gt;&gt;txt_Frecce.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Frecce.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Frecce.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txt_Archi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Archi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>912, 4</value>
+  </data>
+  <data name="txt_Archi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Archi.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="txt_Archi.Text" xml:space="preserve">
+    <value>0,00</value>
+  </data>
+  <data name="txt_Archi.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Archi.Name" xml:space="preserve">
+    <value>txt_Archi</value>
+  </data>
+  <data name="&gt;&gt;txt_Archi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Archi.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Archi.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel60.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel60.Location" type="System.Drawing.Point, System.Drawing">
+    <value>773, 4</value>
+  </data>
+  <data name="panel60.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel60.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;panel60.Name" xml:space="preserve">
+    <value>panel60</value>
+  </data>
+  <data name="&gt;&gt;panel60.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel60.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel60.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel63.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel63.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1079, 4</value>
+  </data>
+  <data name="panel63.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel63.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;panel63.Name" xml:space="preserve">
+    <value>panel63</value>
+  </data>
+  <data name="&gt;&gt;panel63.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel63.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel63.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txt_Produzione_Archi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Produzione_Archi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>912, 21</value>
+  </data>
+  <data name="txt_Produzione_Archi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Produzione_Archi.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="txt_Produzione_Archi.Text" xml:space="preserve">
+    <value>+ 0,00</value>
+  </data>
+  <data name="txt_Produzione_Archi.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Archi.Name" xml:space="preserve">
+    <value>txt_Produzione_Archi</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Archi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Archi.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Archi.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txt_Lancie.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Lancie.Location" type="System.Drawing.Point, System.Drawing">
+    <value>810, 4</value>
+  </data>
+  <data name="txt_Lancie.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Lancie.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="txt_Lancie.Text" xml:space="preserve">
+    <value>0,00</value>
+  </data>
+  <data name="txt_Lancie.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancie.Name" xml:space="preserve">
+    <value>txt_Lancie</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancie.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancie.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txt_Produzione_Frecce.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Produzione_Frecce.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1218, 21</value>
+  </data>
+  <data name="txt_Produzione_Frecce.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Produzione_Frecce.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="txt_Produzione_Frecce.Text" xml:space="preserve">
+    <value>+ 0,00</value>
+  </data>
+  <data name="txt_Produzione_Frecce.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Frecce.Name" xml:space="preserve">
+    <value>txt_Produzione_Frecce</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Frecce.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Frecce.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Frecce.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txt_Produzione_Lancie.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Produzione_Lancie.Location" type="System.Drawing.Point, System.Drawing">
+    <value>810, 21</value>
+  </data>
+  <data name="txt_Produzione_Lancie.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Produzione_Lancie.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="txt_Produzione_Lancie.Text" xml:space="preserve">
+    <value>+ 0,00</value>
+  </data>
+  <data name="txt_Produzione_Lancie.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Lancie.Name" xml:space="preserve">
+    <value>txt_Produzione_Lancie</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Lancie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Lancie.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Lancie.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel59.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel59.Location" type="System.Drawing.Point, System.Drawing">
+    <value>671, 4</value>
+  </data>
+  <data name="panel59.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel59.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;panel59.Name" xml:space="preserve">
+    <value>panel59</value>
+  </data>
+  <data name="&gt;&gt;panel59.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel59.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel59.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="txt_Armature.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Armature.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 4</value>
+  </data>
+  <data name="txt_Armature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Armature.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="txt_Armature.Text" xml:space="preserve">
+    <value>0,00</value>
+  </data>
+  <data name="txt_Armature.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Armature.Name" xml:space="preserve">
+    <value>txt_Armature</value>
+  </data>
+  <data name="&gt;&gt;txt_Armature.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Armature.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Armature.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="txt_Spade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Spade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>708, 4</value>
+  </data>
+  <data name="txt_Spade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Spade.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="txt_Spade.Text" xml:space="preserve">
+    <value>0,00</value>
+  </data>
+  <data name="txt_Spade.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Spade.Name" xml:space="preserve">
+    <value>txt_Spade</value>
+  </data>
+  <data name="&gt;&gt;txt_Spade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Spade.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Spade.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="txt_Produzione_Spade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Produzione_Spade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>708, 21</value>
+  </data>
+  <data name="txt_Produzione_Spade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Produzione_Spade.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="txt_Produzione_Spade.Text" xml:space="preserve">
+    <value>+ 0,00</value>
+  </data>
+  <data name="txt_Produzione_Spade.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Spade.Name" xml:space="preserve">
+    <value>txt_Produzione_Spade</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Spade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Spade.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Spade.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txt_Produzione_Armature.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Produzione_Armature.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 21</value>
+  </data>
+  <data name="txt_Produzione_Armature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Produzione_Armature.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="txt_Produzione_Armature.Text" xml:space="preserve">
+    <value>+ 0,00</value>
+  </data>
+  <data name="txt_Produzione_Armature.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Armature.Name" xml:space="preserve">
+    <value>txt_Produzione_Armature</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Armature.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Armature.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Armature.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="panel58.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel58.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1349, 3</value>
+  </data>
+  <data name="panel58.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel58.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;panel58.Name" xml:space="preserve">
+    <value>panel58</value>
+  </data>
+  <data name="&gt;&gt;panel58.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel58.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel58.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="txt_Esperienza.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Esperienza.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1383, 12</value>
+  </data>
+  <data name="txt_Esperienza.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 14</value>
+  </data>
+  <data name="txt_Esperienza.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="txt_Esperienza.Text" xml:space="preserve">
+    <value>2500000</value>
+  </data>
+  <data name="txt_Esperienza.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Esperienza.Name" xml:space="preserve">
+    <value>txt_Esperienza</value>
+  </data>
+  <data name="&gt;&gt;txt_Esperienza.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Esperienza.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Esperienza.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="panel64.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel64.Location" type="System.Drawing.Point, System.Drawing">
+    <value>977, 4</value>
+  </data>
+  <data name="panel64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel64.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;panel64.Name" xml:space="preserve">
+    <value>panel64</value>
+  </data>
+  <data name="&gt;&gt;panel64.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel64.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel64.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="txt_Scudi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Scudi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1014, 4</value>
+  </data>
+  <data name="txt_Scudi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Scudi.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="txt_Scudi.Text" xml:space="preserve">
+    <value>0,00</value>
+  </data>
+  <data name="txt_Scudi.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Scudi.Name" xml:space="preserve">
+    <value>txt_Scudi</value>
+  </data>
+  <data name="&gt;&gt;txt_Scudi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Scudi.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Scudi.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="panel57.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel57.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1283, 3</value>
+  </data>
+  <data name="panel57.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 33</value>
+  </data>
+  <data name="panel57.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;panel57.Name" xml:space="preserve">
+    <value>panel57</value>
+  </data>
+  <data name="&gt;&gt;panel57.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel57.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel57.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txt_Produzione_Scudi.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Produzione_Scudi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1014, 21</value>
+  </data>
+  <data name="txt_Produzione_Scudi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="txt_Produzione_Scudi.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="txt_Produzione_Scudi.Text" xml:space="preserve">
+    <value>+ 0,00</value>
+  </data>
+  <data name="txt_Produzione_Scudi.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Scudi.Name" xml:space="preserve">
+    <value>txt_Produzione_Scudi</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Scudi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Scudi.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Produzione_Scudi.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="txt_Livello.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="txt_Livello.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1317, 12</value>
+  </data>
+  <data name="txt_Livello.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 14</value>
+  </data>
+  <data name="txt_Livello.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="txt_Livello.Text" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="txt_Livello.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_Livello.Name" xml:space="preserve">
+    <value>txt_Livello</value>
+  </data>
+  <data name="&gt;&gt;txt_Livello.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Livello.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;txt_Livello.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="panel5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
   <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>593, 4</value>
+    <value>550, 4</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 33</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
@@ -142,13 +775,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>23</value>
   </data>
   <data name="panel4.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 4</value>
+    <value>219, 4</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 33</value>
@@ -166,22 +799,22 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>24</value>
   </data>
   <data name="txt_Popolazione.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Popolazione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>627, 3</value>
+    <value>583, 6</value>
   </data>
   <data name="txt_Popolazione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 14</value>
+    <value>74, 14</value>
   </data>
   <data name="txt_Popolazione.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="txt_Popolazione.Text" xml:space="preserve">
-    <value>11258000,00</value>
+    <value>0,00</value>
   </data>
   <data name="txt_Popolazione.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -196,22 +829,22 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Popolazione.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>25</value>
   </data>
   <data name="txt_Pietra.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Pietra.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 3</value>
+    <value>252, 5</value>
   </data>
   <data name="txt_Pietra.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 14</value>
+    <value>74, 14</value>
   </data>
   <data name="txt_Pietra.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
   <data name="txt_Pietra.Text" xml:space="preserve">
-    <value>11258000,00</value>
+    <value>0,00</value>
   </data>
   <data name="txt_Pietra.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -226,13 +859,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Pietra.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>26</value>
   </data>
   <data name="panel6.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 4</value>
+    <value>439, 4</value>
   </data>
   <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 33</value>
@@ -250,13 +883,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>27</value>
   </data>
   <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 4</value>
+    <value>109, 4</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 33</value>
@@ -274,13 +907,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>28</value>
   </data>
   <data name="txt_Produzione_Popolazione.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Produzione_Popolazione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>650, 23</value>
+    <value>602, 23</value>
   </data>
   <data name="txt_Produzione_Popolazione.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 14</value>
@@ -289,7 +922,7 @@
     <value>37</value>
   </data>
   <data name="txt_Produzione_Popolazione.Text" xml:space="preserve">
-    <value>+ 11,23</value>
+    <value>+ 0,00</value>
   </data>
   <data name="txt_Produzione_Popolazione.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -304,13 +937,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Produzione_Popolazione.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>29</value>
   </data>
   <data name="txt_Produzione_Pietra.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Produzione_Pietra.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 23</value>
+    <value>271, 21</value>
   </data>
   <data name="txt_Produzione_Pietra.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 14</value>
@@ -319,7 +952,7 @@
     <value>28</value>
   </data>
   <data name="txt_Produzione_Pietra.Text" xml:space="preserve">
-    <value>+ 11,23</value>
+    <value>+ 0,00</value>
   </data>
   <data name="txt_Produzione_Pietra.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -334,22 +967,22 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Produzione_Pietra.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>30</value>
   </data>
   <data name="txt_Oro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Oro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 3</value>
+    <value>472, 5</value>
   </data>
   <data name="txt_Oro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 14</value>
+    <value>74, 14</value>
   </data>
   <data name="txt_Oro.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
   <data name="txt_Oro.Text" xml:space="preserve">
-    <value>11258000,00</value>
+    <value>0,00</value>
   </data>
   <data name="txt_Oro.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -364,22 +997,22 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Oro.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>31</value>
   </data>
   <data name="txt_Legno.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Legno.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 3</value>
+    <value>142, 5</value>
   </data>
   <data name="txt_Legno.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 14</value>
+    <value>74, 14</value>
   </data>
   <data name="txt_Legno.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="txt_Legno.Text" xml:space="preserve">
-    <value>11258000,00</value>
+    <value>0,00</value>
   </data>
   <data name="txt_Legno.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -394,13 +1027,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Legno.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>32</value>
   </data>
   <data name="txt_Produzione_Oro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Produzione_Oro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>532, 23</value>
+    <value>491, 21</value>
   </data>
   <data name="txt_Produzione_Oro.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 14</value>
@@ -409,7 +1042,7 @@
     <value>34</value>
   </data>
   <data name="txt_Produzione_Oro.Text" xml:space="preserve">
-    <value>+ 11,23</value>
+    <value>+ 0,00</value>
   </data>
   <data name="txt_Produzione_Oro.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -424,13 +1057,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Produzione_Oro.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>33</value>
   </data>
   <data name="txt_Produzione_Legno.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Produzione_Legno.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 23</value>
+    <value>161, 21</value>
   </data>
   <data name="txt_Produzione_Legno.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 14</value>
@@ -439,7 +1072,7 @@
     <value>25</value>
   </data>
   <data name="txt_Produzione_Legno.Text" xml:space="preserve">
-    <value>+ 11,23</value>
+    <value>+ 0,00</value>
   </data>
   <data name="txt_Produzione_Legno.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -454,13 +1087,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Produzione_Legno.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>34</value>
   </data>
   <data name="panel7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
   <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 4</value>
+    <value>329, 4</value>
   </data>
   <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 33</value>
@@ -478,22 +1111,22 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>35</value>
   </data>
   <data name="txt_Ferro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Ferro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 3</value>
+    <value>362, 5</value>
   </data>
   <data name="txt_Ferro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 14</value>
+    <value>74, 14</value>
   </data>
   <data name="txt_Ferro.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="txt_Ferro.Text" xml:space="preserve">
-    <value>11258000,00</value>
+    <value>0,00</value>
   </data>
   <data name="txt_Ferro.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -508,7 +1141,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Ferro.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>36</value>
   </data>
   <data name="panel2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -517,7 +1150,7 @@
     <value>NoControl</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>1, 4</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 33</value>
@@ -535,13 +1168,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>37</value>
   </data>
   <data name="txt_Produzione_Ferro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Produzione_Ferro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>414, 23</value>
+    <value>381, 21</value>
   </data>
   <data name="txt_Produzione_Ferro.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 14</value>
@@ -550,7 +1183,7 @@
     <value>31</value>
   </data>
   <data name="txt_Produzione_Ferro.Text" xml:space="preserve">
-    <value>+ 11,23</value>
+    <value>+ 0,00</value>
   </data>
   <data name="txt_Produzione_Ferro.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -565,22 +1198,22 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Produzione_Ferro.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>38</value>
   </data>
   <data name="txt_Cibo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Cibo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 3</value>
+    <value>34, 5</value>
   </data>
   <data name="txt_Cibo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 14</value>
+    <value>74, 14</value>
   </data>
   <data name="txt_Cibo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="txt_Cibo.Text" xml:space="preserve">
-    <value>11258000,00</value>
+    <value>0,00</value>
   </data>
   <data name="txt_Cibo.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -595,13 +1228,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Cibo.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>39</value>
   </data>
   <data name="txt_Produzione_Cibo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Produzione_Cibo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 23</value>
+    <value>51, 21</value>
   </data>
   <data name="txt_Produzione_Cibo.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 14</value>
@@ -610,7 +1243,7 @@
     <value>2</value>
   </data>
   <data name="txt_Produzione_Cibo.Text" xml:space="preserve">
-    <value>+ 11,23</value>
+    <value>+ 0,00</value>
   </data>
   <data name="txt_Produzione_Cibo.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -625,7 +1258,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txt_Produzione_Cibo.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>40</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -634,7 +1267,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1263, 46</value>
+    <value>1443, 40</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -649,13 +1282,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btn_Costruisci.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Costruisci.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 260</value>
+  </data>
+  <data name="btn_Costruisci.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
+  </data>
+  <data name="btn_Costruisci.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="btn_Costruisci.Text" xml:space="preserve">
+    <value>Costruisci</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.Name" xml:space="preserve">
+    <value>btn_Costruisci</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.Parent" xml:space="preserve">
+    <value>panel8</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_Reclutamento.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btn_Reclutamento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 169</value>
+    <value>35, 173</value>
   </data>
   <data name="btn_Reclutamento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 28</value>
+    <value>132, 28</value>
   </data>
   <data name="btn_Reclutamento.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -677,6 +1340,9 @@
   </data>
   <data name="lbl_Reclutamento_Catapulta_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Catapulta_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Catapulta_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -704,6 +1370,9 @@
   </data>
   <data name="label71.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label71.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label71.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -759,6 +1428,9 @@
   <data name="lbl_Reclutamento_Catapulta_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Reclutamento_Catapulta_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Reclutamento_Catapulta_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -787,10 +1459,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Catapulta_Reclutamento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 19</value>
+    <value>41, 17</value>
   </data>
   <data name="txt_Catapulta_Reclutamento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>48, 21</value>
   </data>
   <data name="txt_Catapulta_Reclutamento.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -815,6 +1487,9 @@
   </data>
   <data name="lbl_Reclutamento_Catapulta_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Catapulta_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Catapulta_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -844,10 +1519,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox42.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>117, 17</value>
   </data>
   <data name="textBox42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>80, 21</value>
   </data>
   <data name="textBox42.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -872,6 +1547,9 @@
   </data>
   <data name="lbl_Reclutamento_Catapulta_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Catapulta_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Catapulta_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -898,10 +1576,10 @@
     <value>7</value>
   </data>
   <data name="panel37.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 130</value>
+    <value>3, 129</value>
   </data>
   <data name="panel37.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 37</value>
+    <value>199, 41</value>
   </data>
   <data name="panel37.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -920,6 +1598,9 @@
   </data>
   <data name="lbl_Reclutamento_Arciere_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Arciere_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Arciere_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -947,6 +1628,9 @@
   </data>
   <data name="label76.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label76.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label76.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -1002,6 +1686,9 @@
   <data name="lbl_Reclutamento_Arciere_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Reclutamento_Arciere_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Reclutamento_Arciere_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -1030,10 +1717,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Arciere_Reclutamento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Arciere_Reclutamento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>48, 21</value>
   </data>
   <data name="txt_Arciere_Reclutamento.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1058,6 +1745,9 @@
   </data>
   <data name="lbl_Reclutamento_Arciere_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Arciere_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Arciere_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 4</value>
@@ -1087,10 +1777,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox44.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>117, 17</value>
   </data>
   <data name="textBox44.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>80, 21</value>
   </data>
   <data name="textBox44.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -1115,6 +1805,9 @@
   </data>
   <data name="lbl_Reclutamento_Arciere_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Arciere_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Arciere_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -1141,7 +1834,7 @@
     <value>7</value>
   </data>
   <data name="panel39.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 91</value>
+    <value>3, 90</value>
   </data>
   <data name="panel39.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 40</value>
@@ -1163,6 +1856,9 @@
   </data>
   <data name="lbl_Reclutamento_Lanciere_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Lanciere_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Lanciere_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -1190,6 +1886,9 @@
   </data>
   <data name="label81.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label81.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label81.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -1245,6 +1944,9 @@
   <data name="lbl_Reclutamento_Lanciere_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Reclutamento_Lanciere_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Reclutamento_Lanciere_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -1273,10 +1975,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Lanciere_Reclutamento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Lanciere_Reclutamento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>48, 21</value>
   </data>
   <data name="txt_Lanciere_Reclutamento.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1301,6 +2003,9 @@
   </data>
   <data name="lbl_Reclutamento_Lanciere_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Lanciere_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Lanciere_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 4</value>
@@ -1330,10 +2035,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox46.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>117, 17</value>
   </data>
   <data name="textBox46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>80, 21</value>
   </data>
   <data name="textBox46.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -1358,6 +2063,9 @@
   </data>
   <data name="lbl_Reclutamento_Lanciere_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Lanciere_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Lanciere_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -1384,7 +2092,7 @@
     <value>7</value>
   </data>
   <data name="panel41.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 52</value>
+    <value>3, 51</value>
   </data>
   <data name="panel41.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 40</value>
@@ -1406,6 +2114,9 @@
   </data>
   <data name="lbl_Reclutamento_Guerriero_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Guerriero_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Guerriero_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -1433,6 +2144,9 @@
   </data>
   <data name="label86.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label86.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label86.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -1488,6 +2202,9 @@
   <data name="lbl_Reclutamento_Guerriero_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Reclutamento_Guerriero_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Reclutamento_Guerriero_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -1516,10 +2233,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Guerriero_Reclutamento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 15</value>
   </data>
   <data name="txt_Guerriero_Reclutamento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>48, 21</value>
   </data>
   <data name="txt_Guerriero_Reclutamento.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1544,6 +2261,9 @@
   </data>
   <data name="lbl_Reclutamento_Guerriero_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Guerriero_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Guerriero_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -1573,10 +2293,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox48.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>117, 16</value>
   </data>
   <data name="textBox48.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>80, 21</value>
   </data>
   <data name="textBox48.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -1601,6 +2321,9 @@
   </data>
   <data name="lbl_Reclutamento_Guerriero_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Reclutamento_Guerriero_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Reclutamento_Guerriero_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -1630,7 +2353,7 @@
     <value>3, 13</value>
   </data>
   <data name="panel43.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 40</value>
+    <value>199, 39</value>
   </data>
   <data name="panel43.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1669,10 +2392,13 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lbl_Produzione_Frecce_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Frecce_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Frecce_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -1700,6 +2426,9 @@
   </data>
   <data name="label31.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label31.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -1755,6 +2484,9 @@
   <data name="lbl_Produzione_Frecce_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Frecce_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Frecce_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -1783,10 +2515,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Frecce_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Frecce_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>49, 21</value>
   </data>
   <data name="txt_Frecce_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1811,6 +2543,9 @@
   </data>
   <data name="lbl_Produzione_Frecce_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Frecce_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Frecce_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -1840,10 +2575,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>120, 17</value>
   </data>
   <data name="textBox26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>77, 21</value>
   </data>
   <data name="textBox26.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -1868,6 +2603,9 @@
   </data>
   <data name="lbl_Produzione_Frecce_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Frecce_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Frecce_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -1894,7 +2632,7 @@
     <value>7</value>
   </data>
   <data name="panel21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 206</value>
+    <value>3, 208</value>
   </data>
   <data name="panel21.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 40</value>
@@ -1916,6 +2654,9 @@
   </data>
   <data name="lbl_Produzione_Armature_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Armature_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Armature_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -1943,6 +2684,9 @@
   </data>
   <data name="label36.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label36.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label36.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -1998,6 +2742,9 @@
   <data name="lbl_Produzione_Armature_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Armature_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Armature_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -2026,10 +2773,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Armatura_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Armatura_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>49, 21</value>
   </data>
   <data name="txt_Armatura_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -2054,6 +2801,9 @@
   </data>
   <data name="lbl_Produzione_Armature_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Armature_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Armature_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -2083,10 +2833,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>120, 17</value>
   </data>
   <data name="textBox28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>77, 21</value>
   </data>
   <data name="textBox28.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2111,6 +2861,9 @@
   </data>
   <data name="lbl_Produzione_Armature_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Armature_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Armature_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -2137,10 +2890,10 @@
     <value>7</value>
   </data>
   <data name="panel23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 166</value>
+    <value>3, 169</value>
   </data>
   <data name="panel23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 41</value>
+    <value>199, 40</value>
   </data>
   <data name="panel23.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -2159,6 +2912,9 @@
   </data>
   <data name="lbl_Produzione_Scudi_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Scudi_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Scudi_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -2186,6 +2942,9 @@
   </data>
   <data name="label41.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label41.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label41.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -2241,6 +3000,9 @@
   <data name="lbl_Produzione_Scudi_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Scudi_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Scudi_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -2269,10 +3031,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Scudi_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 19</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Scudi_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>49, 21</value>
   </data>
   <data name="txt_Scudi_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -2297,6 +3059,9 @@
   </data>
   <data name="lbl_Produzione_Scudi_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Scudi_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Scudi_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -2326,10 +3091,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>120, 17</value>
   </data>
   <data name="textBox30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>77, 21</value>
   </data>
   <data name="textBox30.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2354,6 +3119,9 @@
   </data>
   <data name="lbl_Produzione_Scudi_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Scudi_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Scudi_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -2383,7 +3151,7 @@
     <value>3, 130</value>
   </data>
   <data name="panel25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 37</value>
+    <value>199, 40</value>
   </data>
   <data name="panel25.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -2402,6 +3170,9 @@
   </data>
   <data name="lbl_Produzione_Archi_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Archi_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Archi_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
@@ -2429,6 +3200,9 @@
   </data>
   <data name="label46.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label46.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label46.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -2484,6 +3258,9 @@
   <data name="lbl_Produzione_Archi_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Archi_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Archi_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 2</value>
   </data>
@@ -2512,10 +3289,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Archi_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Archi_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>49, 21</value>
   </data>
   <data name="txt_Archi_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -2540,6 +3317,9 @@
   </data>
   <data name="lbl_Produzione_Archi_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Archi_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Archi_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 2</value>
@@ -2569,10 +3349,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox32.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>120, 17</value>
   </data>
   <data name="textBox32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>77, 21</value>
   </data>
   <data name="textBox32.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2597,6 +3377,9 @@
   </data>
   <data name="lbl_Produzione_Archi_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Archi_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Archi_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 2</value>
@@ -2646,6 +3429,9 @@
   <data name="lbl_Produzione_Lancie_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Lancie_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Lancie_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
   </data>
@@ -2672,6 +3458,9 @@
   </data>
   <data name="label51.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label51.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -2727,6 +3516,9 @@
   <data name="lbl_Produzione_Lancie_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Lancie_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Lancie_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -2755,10 +3547,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Lancie_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Lancie_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>49, 21</value>
   </data>
   <data name="txt_Lancie_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -2783,6 +3575,9 @@
   </data>
   <data name="lbl_Produzione_Lancie_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Lancie_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Lancie_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -2812,10 +3607,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox34.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>120, 17</value>
   </data>
   <data name="textBox34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>77, 21</value>
   </data>
   <data name="textBox34.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2840,6 +3635,9 @@
   </data>
   <data name="lbl_Produzione_Lancie_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Lancie_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Lancie_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -2889,6 +3687,9 @@
   <data name="lbl_Produzione_Spade_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Spade_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Spade_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 3</value>
   </data>
@@ -2915,6 +3716,9 @@
   </data>
   <data name="label56.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label56.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -2970,6 +3774,9 @@
   <data name="lbl_Produzione_Spade_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Produzione_Spade_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Produzione_Spade_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 3</value>
   </data>
@@ -2998,10 +3805,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Spade_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 20</value>
+    <value>41, 16</value>
   </data>
   <data name="txt_Spade_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>49, 21</value>
   </data>
   <data name="txt_Spade_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3026,6 +3833,9 @@
   </data>
   <data name="lbl_Produzione_Spade_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Spade_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Spade_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 3</value>
@@ -3055,10 +3865,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox36.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 20</value>
+    <value>120, 17</value>
   </data>
   <data name="textBox36.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 14</value>
+    <value>77, 21</value>
   </data>
   <data name="textBox36.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -3083,6 +3893,9 @@
   </data>
   <data name="lbl_Produzione_Spade_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Produzione_Spade_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Produzione_Spade_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 3</value>
@@ -3133,7 +3946,7 @@
     <value>245, 1</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 285</value>
+    <value>208, 256</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3151,34 +3964,13 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btn_Costruisci.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 251</value>
-  </data>
-  <data name="btn_Costruisci.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 28</value>
-  </data>
-  <data name="btn_Costruisci.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btn_Costruisci.Text" xml:space="preserve">
-    <value>Costruisci</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Name" xml:space="preserve">
-    <value>btn_Costruisci</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lbl_Case_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Case_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Case_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 3</value>
@@ -3206,6 +3998,9 @@
   </data>
   <data name="lbl1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 3</value>
@@ -3261,6 +4056,9 @@
   <data name="lbl_Case_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Case_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Case_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 3</value>
   </data>
@@ -3289,10 +4087,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Case_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 20</value>
+    <value>43, 16</value>
   </data>
   <data name="txt_Case_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>44, 21</value>
   </data>
   <data name="txt_Case_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3317,6 +4115,9 @@
   </data>
   <data name="lbl_Case_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Case_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Case_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 3</value>
@@ -3346,10 +4147,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox24.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 20</value>
+    <value>157, 17</value>
   </data>
   <data name="textBox24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>75, 21</value>
   </data>
   <data name="textBox24.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -3374,6 +4175,9 @@
   </data>
   <data name="lbl_Case_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Case_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Case_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 3</value>
@@ -3400,7 +4204,7 @@
     <value>7</value>
   </data>
   <data name="panel19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 206</value>
+    <value>3, 208</value>
   </data>
   <data name="panel19.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 40</value>
@@ -3418,10 +4222,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;panel19.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lbl_Miniera_Oro_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Miniera_Oro_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Miniera_Oro_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 3</value>
@@ -3449,6 +4256,9 @@
   </data>
   <data name="lbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 3</value>
@@ -3504,6 +4314,9 @@
   <data name="lbl_Miniera_Oro_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Miniera_Oro_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Miniera_Oro_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 3</value>
   </data>
@@ -3532,10 +4345,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_MinieraOro_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 20</value>
+    <value>43, 16</value>
   </data>
   <data name="txt_MinieraOro_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>44, 21</value>
   </data>
   <data name="txt_MinieraOro_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3560,6 +4373,9 @@
   </data>
   <data name="lbl_Miniera_Oro_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Miniera_Oro_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Miniera_Oro_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 3</value>
@@ -3589,10 +4405,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 20</value>
+    <value>157, 17</value>
   </data>
   <data name="textBox22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>75, 21</value>
   </data>
   <data name="textBox22.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -3617,6 +4433,9 @@
   </data>
   <data name="lbl_Miniera_Oro_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Miniera_Oro_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Miniera_Oro_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 3</value>
@@ -3643,7 +4462,7 @@
     <value>7</value>
   </data>
   <data name="panel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 167</value>
+    <value>3, 169</value>
   </data>
   <data name="panel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 40</value>
@@ -3661,10 +4480,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;panel17.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lbl_Miniera_Ferro_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Miniera_Ferro_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Miniera_Ferro_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 3</value>
@@ -3692,6 +4514,9 @@
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 3</value>
@@ -3747,6 +4572,9 @@
   <data name="lbl_Miniera_Ferro_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Miniera_Ferro_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Miniera_Ferro_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 3</value>
   </data>
@@ -3775,10 +4603,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_MinieraFerro_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="txt_MinieraFerro_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 14</value>
+    <value>44, 21</value>
   </data>
   <data name="txt_MinieraFerro_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3803,6 +4631,9 @@
   </data>
   <data name="lbl_Miniera_Ferro_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Miniera_Ferro_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Miniera_Ferro_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 3</value>
@@ -3832,10 +4663,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 20</value>
+    <value>157, 17</value>
   </data>
   <data name="textBox20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>75, 21</value>
   </data>
   <data name="textBox20.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -3860,6 +4691,9 @@
   </data>
   <data name="lbl_Miniera_Ferro_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Miniera_Ferro_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Miniera_Ferro_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 3</value>
@@ -3889,7 +4723,7 @@
     <value>3, 130</value>
   </data>
   <data name="panel15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 37</value>
+    <value>234, 40</value>
   </data>
   <data name="panel15.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -3904,10 +4738,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;panel15.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lbl_CavaPietra_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_CavaPietra_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_CavaPietra_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 4</value>
@@ -3935,6 +4772,9 @@
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 3</value>
@@ -3990,6 +4830,9 @@
   <data name="lbl_CavaPietra_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_CavaPietra_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_CavaPietra_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 3</value>
   </data>
@@ -4018,10 +4861,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_CavaPietra_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 20</value>
+    <value>43, 16</value>
   </data>
   <data name="txt_CavaPietra_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>44, 21</value>
   </data>
   <data name="txt_CavaPietra_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -4046,6 +4889,9 @@
   </data>
   <data name="lbl_CavaPietra_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_CavaPietra_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_CavaPietra_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 3</value>
@@ -4075,10 +4921,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 20</value>
+    <value>157, 17</value>
   </data>
   <data name="textBox18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>75, 21</value>
   </data>
   <data name="textBox18.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -4103,6 +4949,9 @@
   </data>
   <data name="lbl_CavaPietra_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_CavaPietra_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_CavaPietra_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 3</value>
@@ -4147,10 +4996,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;panel13.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lbl_Seghera_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Seghera_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Seghera_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 3</value>
@@ -4178,6 +5030,9 @@
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 3</value>
@@ -4233,6 +5088,9 @@
   <data name="lbl_Seghera_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Seghera_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Seghera_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 3</value>
   </data>
@@ -4261,10 +5119,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Segheria_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 20</value>
+    <value>43, 16</value>
   </data>
   <data name="txt_Segheria_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>44, 21</value>
   </data>
   <data name="txt_Segheria_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -4289,6 +5147,9 @@
   </data>
   <data name="lbl_Seghera_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Seghera_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Seghera_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 3</value>
@@ -4318,10 +5179,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="textBox16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 18</value>
+    <value>157, 17</value>
   </data>
   <data name="textBox16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>75, 21</value>
   </data>
   <data name="textBox16.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -4346,6 +5207,9 @@
   </data>
   <data name="lbl_Seghera_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Seghera_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Seghera_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 3</value>
@@ -4390,10 +5254,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="lbl_Fattoria_X0.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Fattoria_X0.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Fattoria_X0.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 3</value>
@@ -4421,6 +5288,9 @@
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 3</value>
@@ -4476,6 +5346,9 @@
   <data name="lbl_Fattoria_X10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Fattoria_X10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Fattoria_X10.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 3</value>
   </data>
@@ -4504,10 +5377,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Fattoria_Costruzione.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="txt_Fattoria_Costruzione.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 14</value>
+    <value>44, 21</value>
   </data>
   <data name="txt_Fattoria_Costruzione.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -4532,6 +5405,9 @@
   </data>
   <data name="lbl_Fattoria_X1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Fattoria_X1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Fattoria_X1.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 3</value>
@@ -4561,10 +5437,10 @@
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="lbl_Fattoria_Coda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 20</value>
+    <value>157, 17</value>
   </data>
   <data name="lbl_Fattoria_Coda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
+    <value>75, 21</value>
   </data>
   <data name="lbl_Fattoria_Coda.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -4589,6 +5465,9 @@
   </data>
   <data name="lbl_Fattoria_X5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lbl_Fattoria_X5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lbl_Fattoria_X5.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 3</value>
@@ -4633,13 +5512,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;panel10.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 1</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 285</value>
+    <value>243, 256</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4657,13 +5536,13 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 46</value>
+    <value>184, 39</value>
   </data>
   <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>672, 296</value>
+    <value>672, 291</value>
   </data>
   <data name="panel8.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4678,19 +5557,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txt_Riepilogo_Utente.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
   <data name="txt_Riepilogo_Utente.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 47</value>
+    <value>0, 45</value>
   </data>
   <data name="txt_Riepilogo_Utente.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txt_Riepilogo_Utente.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 548</value>
+    <value>183, 355</value>
   </data>
   <data name="txt_Riepilogo_Utente.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4705,7 +5584,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_Riepilogo_Utente.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txt_Log.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
@@ -4720,7 +5599,7 @@
     <value>Vertical</value>
   </data>
   <data name="txt_Log.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 222</value>
+    <value>624, 222</value>
   </data>
   <data name="txt_Log.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -4738,10 +5617,10 @@
     <value>0</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 348</value>
+    <value>184, 330</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>413, 247</value>
+    <value>636, 247</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -4759,34 +5638,70 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 170</value>
+  <data name="txt_Forza_Esercito_PVE_Barbari.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 28</value>
+  <data name="txt_Forza_Esercito_PVE_Barbari.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 170</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+  <data name="txt_Forza_Esercito_PVE_Barbari.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 14</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Attacca</value>
+  <data name="txt_Forza_Esercito_PVE_Barbari.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="txt_Forza_Esercito_PVE_Barbari.Text" xml:space="preserve">
+    <value>Forza Esercito: 100.00</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txt_Forza_Esercito_PVE_Barbari.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.Name" xml:space="preserve">
+    <value>txt_Forza_Esercito_PVE_Barbari</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVE_Attacco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVE_Attacco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 189</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVE_Attacco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 28</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVE_Attacco.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVE_Attacco.Text" xml:space="preserve">
+    <value>Attacca</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.Name" xml:space="preserve">
+    <value>btn_Accampameto_Barbaro_PVE_Attacco</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -4888,10 +5803,13 @@
     <value>groupBox5</value>
   </data>
   <data name="&gt;&gt;panel33.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -4993,10 +5911,13 @@
     <value>groupBox5</value>
   </data>
   <data name="&gt;&gt;panel35.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -5098,10 +6019,13 @@
     <value>groupBox5</value>
   </data>
   <data name="&gt;&gt;panel45.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label21.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -5203,13 +6127,13 @@
     <value>groupBox5</value>
   </data>
   <data name="&gt;&gt;panel47.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>862, 47</value>
+    <value>1116, 45</value>
   </data>
   <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 207</value>
+    <value>159, 219</value>
   </data>
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -5227,34 +6151,70 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 170</value>
+  <data name="txt_Forza_Esercito_PVP_Barbari.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 28</value>
+  <data name="txt_Forza_Esercito_PVP_Barbari.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 170</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+  <data name="txt_Forza_Esercito_PVP_Barbari.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 14</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Attacca</value>
+  <data name="txt_Forza_Esercito_PVP_Barbari.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="txt_Forza_Esercito_PVP_Barbari.Text" xml:space="preserve">
+    <value>Forza Esercito: 100.00</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txt_Forza_Esercito_PVP_Barbari.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txt_Forza_Esercito_PVP_Barbari.Name" xml:space="preserve">
+    <value>txt_Forza_Esercito_PVP_Barbari</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVP_Barbari.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVP_Barbari.Parent" xml:space="preserve">
     <value>groupBox6</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txt_Forza_Esercito_PVP_Barbari.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVP_Attacco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVP_Attacco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 189</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVP_Attacco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 28</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVP_Attacco.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="btn_Accampameto_Barbaro_PVP_Attacco.Text" xml:space="preserve">
+    <value>Attacca</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVP_Attacco.Name" xml:space="preserve">
+    <value>btn_Accampameto_Barbaro_PVP_Attacco</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVP_Attacco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVP_Attacco.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVP_Attacco.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -5356,10 +6316,13 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;panel49.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -5461,10 +6424,13 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;panel51.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -5566,10 +6532,13 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;panel53.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 3</value>
@@ -5671,13 +6640,13 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;panel55.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1027, 47</value>
+    <value>1274, 45</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 207</value>
+    <value>159, 219</value>
   </data>
   <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -5695,19 +6664,172 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboBox_PVP.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="comboBox_PVP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="comboBox_PVP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 4</value>
+  </data>
+  <data name="comboBox_PVP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 21</value>
+  </data>
+  <data name="comboBox_PVP.TabIndex" type="System.Int32, mscorlib">
+    <value>119</value>
+  </data>
+  <data name="&gt;&gt;comboBox_PVP.Name" xml:space="preserve">
+    <value>comboBox_PVP</value>
+  </data>
+  <data name="&gt;&gt;comboBox_PVP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_PVP.Parent" xml:space="preserve">
+    <value>panel72</value>
+  </data>
+  <data name="&gt;&gt;comboBox_PVP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_PVP_Attacco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_PVP_Attacco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 40</value>
+  </data>
+  <data name="btn_PVP_Attacco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 28</value>
+  </data>
+  <data name="btn_PVP_Attacco.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="btn_PVP_Attacco.Text" xml:space="preserve">
+    <value>Attacca</value>
+  </data>
+  <data name="&gt;&gt;btn_PVP_Attacco.Name" xml:space="preserve">
+    <value>btn_PVP_Attacco</value>
+  </data>
+  <data name="&gt;&gt;btn_PVP_Attacco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_PVP_Attacco.Parent" xml:space="preserve">
+    <value>panel72</value>
+  </data>
+  <data name="&gt;&gt;btn_PVP_Attacco.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel73.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="panel73.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="panel73.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="panel73.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 31</value>
+  </data>
+  <data name="panel73.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;panel73.Name" xml:space="preserve">
+    <value>panel73</value>
+  </data>
+  <data name="&gt;&gt;panel73.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel73.Parent" xml:space="preserve">
+    <value>panel72</value>
+  </data>
+  <data name="&gt;&gt;panel73.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btn_Giocatori.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.25pt</value>
+  </data>
+  <data name="btn_Giocatori.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 46</value>
+  </data>
+  <data name="btn_Giocatori.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 14</value>
+  </data>
+  <data name="btn_Giocatori.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btn_Giocatori.Text" xml:space="preserve">
+    <value>Giocatori: 0</value>
+  </data>
+  <data name="btn_Giocatori.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;btn_Giocatori.Name" xml:space="preserve">
+    <value>btn_Giocatori</value>
+  </data>
+  <data name="&gt;&gt;btn_Giocatori.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Giocatori.Parent" xml:space="preserve">
+    <value>panel72</value>
+  </data>
+  <data name="&gt;&gt;btn_Giocatori.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel72.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 13</value>
+  </data>
+  <data name="panel72.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 76</value>
+  </data>
+  <data name="panel72.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel72.Name" xml:space="preserve">
+    <value>panel72</value>
+  </data>
+  <data name="&gt;&gt;panel72.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel72.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;panel72.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 263</value>
+  </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 97</value>
+  </data>
+  <data name="groupBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>PVP</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1263, 598</value>
+    <value>1443, 583</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Home</value>

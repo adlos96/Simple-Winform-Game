@@ -18,7 +18,7 @@ namespace Strategico_V2
         internal class TestClient
         {
             public static string _ServerIp = "127.1"; // adly.xed.im 185.229.236.183
-            //public static string _ServerIp = "185.229.236.183"; // adly.xed.im 185.229.236.183
+            //public static string _ServerIp = "79.51.196.208"; // adly.xed.im 185.229.236.183
             private static int _ServerPort = 8443;
             private static bool _Ssl = true;
             private static string _CertFile = "";
@@ -160,6 +160,7 @@ namespace Strategico_V2
                     case "Login": if (msgArgs[1] == "true") Variabili_Client.login = true; else Variabili_Client.login = false; break;
                     case "Update_Data": Update_Data(msgArgs); break;
                     case "Log_Server": Update_Log(msgArgs[1]); break;
+                    case "Update_PVP_Player": Update_PVP_List(msgArgs); break;
 
 
                     default: Console.WriteLine($"[Errore] >> [{messaggio_Ricevuto}] Comando non riconosciuto"); break;
@@ -210,12 +211,12 @@ namespace Strategico_V2
                 Variabili_Client.Armature = mess[29];                //Edifici
                 Variabili_Client.Frecce = mess[30];                  //Edifici
 
-                Variabili_Client.Risorse_s_Spade = mess[31];       //Consumabili
-                Variabili_Client.Risorse_s_Lance = mess[32];       //Consumabili
-                Variabili_Client.Risorse_s_Archi = mess[33];       //Consumabili
-                Variabili_Client.Risorse_s_Scudi = mess[34];      //Consumabili
-                Variabili_Client.Risorse_s_Armature = mess[35];   //Consumabili
-                Variabili_Client.Risorse_s_Frecce = mess[36];     //Consumabili
+                Variabili_Client.Risorse_s_Spade    = mess[31];       //Consumabili
+                Variabili_Client.Risorse_s_Lance    = mess[32];       //Consumabili
+                Variabili_Client.Risorse_s_Archi    = mess[33];       //Consumabili
+                Variabili_Client.Risorse_s_Scudi    = mess[34];       //Consumabili
+                Variabili_Client.Risorse_s_Armature = mess[35];       //Consumabili
+                Variabili_Client.Risorse_s_Frecce   = mess[36];       //Consumabili
 
                 Variabili_Client.Guerrieri = mess[37];
                 Variabili_Client.Lancieri = mess[38];
@@ -225,10 +226,37 @@ namespace Strategico_V2
                 Variabili_Client.Server = mess[41];
                 Variabili_Client.Versione = mess[42];
                 Variabili_Client.Difficoltà = mess[43];
+
+                Variabili_Client.Livello = mess[44];
+                Variabili_Client.Esperienza = mess[45];
+
+                Variabili_Client.Barbari.PVE.Guerrieri = mess[46];
+                Variabili_Client.Barbari.PVE.Lancieri = mess[47];
+                Variabili_Client.Barbari.PVE.Arceri = mess[48];
+                Variabili_Client.Barbari.PVE.Catapulte = mess[49];
+
+                Variabili_Client.Barbari.PVP.Guerrieri = mess[50];
+                Variabili_Client.Barbari.PVP.Lancieri = mess[51];
+                Variabili_Client.Barbari.PVP.Arceri = mess[52];
+                Variabili_Client.Barbari.PVP.Catapulte = mess[53];
+
+                Variabili_Client.Forza_Esercito = mess[54];
+                Variabili_Client.Forza_Esercito_PVE = mess[55];
+                Variabili_Client.Forza_Esercito_PVP = mess[56];
             }
             static void Update_Log(string mes)
             {
                 Home.Log_Update(mes);
+            }
+            static void Update_PVP_List(string[] mess)
+            {
+                if (mess[1] != "")
+                    for (int i = 2; i <= mess.Count() -1; i++)
+                    {
+                        if (!Variabili_Client.Giocatori_PVP.Contains(mess[i]) && !Variabili_Client.username.Contains(mess[i]))
+                            Variabili_Client.Giocatori_PVP.Add(mess[i]);
+                    }
+                
             }
         }
 

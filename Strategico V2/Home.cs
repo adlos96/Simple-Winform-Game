@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Strategico_V2
         {
             Login login = new Login();
             login.ShowDialog();
+            comboBox_PVP.Text = "Seleziona Giocatore";
             Task.Run(() => Gui_Update());
         }
 
@@ -94,18 +96,13 @@ namespace Strategico_V2
                     txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Produzione Scudi    {Variabili_Client.ProduzioneScudi} \r\n";
                     txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Produzione Armature {Variabili_Client.ProduzioneArmature} \r\n";
                     txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Produzione Frecce   {Variabili_Client.ProduzioneFrecce} \r\n";
-                                                
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"\r\nSpade    {Variabili_Client.Spade} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Lance    {Variabili_Client.Lance} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Archi    {Variabili_Client.Archi} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Scudi    {Variabili_Client.Scudi} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Armature {Variabili_Client.Armature} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Frecce   {Variabili_Client.Frecce} \r\n";
                                                
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"\r\nGuerrieri   {Variabili_Client.Guerrieri} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Lancieri    {Variabili_Client.Lancieri} \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Arcieri     {Variabili_Client.Arceri}  \r\n";
-                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Catapulte   {Variabili_Client.Catapulte}  \r\n";
+                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"\r\nGuerrieri     {Variabili_Client.Guerrieri} \r\n";
+                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Lancieri          {Variabili_Client.Lancieri} \r\n";
+                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Arcieri           {Variabili_Client.Arceri}  \r\n";
+                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Catapulte         {Variabili_Client.Catapulte}  \r\n";
+                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Forza Esercito:   {Variabili_Client.Forza_Esercito}  \r\n";
+
 
                     txt_Cibo.Text = Variabili_Client.Cibo;
                     txt_Legno.Text = Variabili_Client.Legno;
@@ -120,6 +117,47 @@ namespace Strategico_V2
                     txt_Produzione_Ferro.Text = Variabili_Client.Risorse_s_Ferro;
                     txt_Produzione_Oro.Text = Variabili_Client.Risorse_s_Oro;
                     txt_Produzione_Popolazione.Text = Variabili_Client.Risorse_s_Popolazione;
+
+                    txt_Produzione_Spade.Text = Variabili_Client.Risorse_s_Spade;
+                    txt_Produzione_Lancie.Text = Variabili_Client.Risorse_s_Lance;
+                    txt_Produzione_Archi.Text = Variabili_Client.Risorse_s_Archi;
+                    txt_Produzione_Scudi.Text = Variabili_Client.Risorse_s_Scudi;
+                    txt_Produzione_Armature.Text = Variabili_Client.Risorse_s_Armature;
+                    txt_Produzione_Frecce.Text = Variabili_Client.Risorse_s_Frecce;
+
+                    txt_Spade.Text      = Variabili_Client.Spade;
+                    txt_Lancie.Text     = Variabili_Client.Lance;
+                    txt_Archi.Text      = Variabili_Client.Archi;
+                    txt_Scudi.Text      = Variabili_Client.Scudi;
+                    txt_Armature.Text   = Variabili_Client.Armature;
+                    txt_Frecce.Text     = Variabili_Client.Frecce;
+
+                    txt_Guerrieri_Acc_Barbaro_PVE.Text = Variabili_Client.Barbari.PVE.Guerrieri;
+                    txt_Lancieri_Acc_Barbaro_PVE.Text = Variabili_Client.Barbari.PVE.Lancieri;
+                    txt_Arceri_Acc_Barbaro_PVE.Text = Variabili_Client.Barbari.PVE.Arceri;
+                    txt_Catapulte_Acc_Barbaro_PVE.Text = Variabili_Client.Barbari.PVE.Catapulte;
+
+                    txt_Guerrieri_Acc_Barbaro_PVP.Text = Variabili_Client.Barbari.PVP.Guerrieri;
+                    txt_Lancieri_Acc_Barbaro_PVP.Text = Variabili_Client.Barbari.PVP.Lancieri;
+                    txt_Arceri_Acc_Barbaro_PVP.Text = Variabili_Client.Barbari.PVP.Arceri;
+                    txt_Catapulte_Acc_Barbaro_PVP.Text = Variabili_Client.Barbari.PVP.Catapulte;
+
+                    txt_Livello.Text = Variabili_Client.Livello;
+                    txt_Esperienza.Text = Variabili_Client.Esperienza + " XP";
+
+                    txt_Forza_Esercito_PVE_Barbari.Text = "Forza Esercito: " + Variabili_Client.Forza_Esercito_PVE;
+                    txt_Forza_Esercito_PVP_Barbari.Text = "Forza Esercito: " + Variabili_Client.Forza_Esercito_PVP;
+
+                    btn_Giocatori.Text = "Giocatori: " + comboBox_PVP.Items.Count;
+
+                    comboBox_PVP.Text = "Seleziona Giocatore";
+
+                    var items = comboBox_PVP.Items;
+
+                    if (Variabili_Client.Giocatori_PVP.Count > 0)
+                        foreach (var a in Variabili_Client.Giocatori_PVP)
+                            if (!items.Contains(a) && !a.Contains(Variabili_Client.username))
+                                comboBox_PVP.Items.Add(a);
                 }));
             }
         }
@@ -396,6 +434,21 @@ namespace Strategico_V2
         private void lbl_Reclutamento_Catapulta_X10_Click(object sender, EventArgs e)
         {
             txt_Catapulta_Reclutamento.Text = (Convert.ToInt32(txt_Catapulta_Reclutamento.Text) + 10).ToString();
+        }
+
+        private void btn_Accampameto_Barbaro_PVE_Attacco_Click(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Battaglia|{Variabili_Client.username}|{Variabili_Client.password}|Barbari_PVE");
+        }
+
+        private void btn_Accampameto_Barbaro_PVP_Attacco_Click(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Battaglia|{Variabili_Client.username}|{Variabili_Client.password}|Barbari_PVP");
+        }
+
+        private void btn_PVP_Attacco_Click(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Battaglia|{Variabili_Client.username}|{Variabili_Client.password}|PVP|{comboBox_PVP.Text}");
         }
     }
 }

@@ -20,19 +20,28 @@ namespace Strategico_V2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.InitializeClient(); // Connessione server
         }
 
         private void btn_New_Game_Click(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Login|{txt_Username.Text}|{txt_Password.Text}");
             btn_New_Game.Enabled = false;
+            if(txt_IP.Text != "AUTO")
+                ClientConnection.TestClient._ServerIp = txt_IP.Text;
+
+            ClientConnection.TestClient.InitializeClient(); // Connessione server
             Thread.Sleep(1000);
+            ClientConnection.TestClient.Send($"Login|{txt_Username.Text}|{txt_Password.Text}");
+            Thread.Sleep(1500);
             if (Variabili_Client.login == true)
             {
                 Variabili_Client.username = txt_Username.Text;
                 Variabili_Client.password = txt_Password.Text;
                 Login.ActiveForm.Close();
+            }else
+            {
+                btn_New_Game.Enabled = true;
+                txt_Username.Text = "Username già presente";
+                txt_Password.Text = "";
             }
         }
         

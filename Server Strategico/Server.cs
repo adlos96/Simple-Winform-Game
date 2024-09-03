@@ -11,6 +11,7 @@ namespace Server_Strategico
     internal class Server
     {
         public static List<Guid> Client_Connessi = new List<Guid>();
+        public static List<string> Utenti_PVP = new List<string>();
 
         private string? serverIp = null; // "null" will open the tcp server on addr 0.0.0.0 on windows (127.0.0.1 on linux)
         private const int serverPort = 8443;
@@ -85,7 +86,7 @@ namespace Server_Strategico
                         Console.WriteLine("----------------------------------------------------------------------");
                         break;
                     case "Player":
-                        Server.servers_.Get_User_and_Password();
+                        Server.servers_.Lista_Player_manual();
                         break;
                     case "Client":
                         ClientConnessi();
@@ -114,7 +115,7 @@ namespace Server_Strategico
             //player2.QueueTrainUnits("Arciere", 1); // Avvia l'addestramento di 5 arcieri
 
             // Simula il passare del tempo sul server
-            Task.Run(() => Barbari.Barbari_PVE());
+
             cts = new CancellationTokenSource();
             gameLoopTask = servers_.RunGameLoopAsync(cts.Token);
         }
@@ -144,6 +145,17 @@ namespace Server_Strategico
             player1.Ferro = 40000;
             player1.Oro = 40000;
             player1.Popolazione = 200;
+
+            player1.Spade = 200;
+            player1.Lance = 200;
+            player1.Archi = 200;
+            player1.Scudi = 200;
+            player1.Armature = 200;
+            player1.Frecce = 200;
+
+            player1.Guerrieri = 20;
+            player1.Lancieri = 20;
+            player1.Arceri = 5;
         }
         // ----------------------- Client Connessione --------------------------
         static void ClientConnected(object? sender, ConnectionEventArgs args)

@@ -14,8 +14,16 @@ namespace Strategico_V2
         public static string Versione = "0";
         public static string Difficoltà = "0";
 
+        public static List<string> Giocatori_PVP = new List<string>();
+
+        public static string Forza_Esercito = "0";
+        public static string Forza_Esercito_PVE = "0";
+        public static string Forza_Esercito_PVP = "0";
+
         public static string username = "";
         public static string password = "";
+        public static string Livello = "";
+        public static string Esperienza = "";
 
         public static string Cibo               = "0";
         public static string Legno              = "0";
@@ -45,13 +53,6 @@ namespace Strategico_V2
         public static string ProduzioneArmature = "0";   //Edifici
         public static string ProduzioneFrecce   = "0";   //Edifici
 
-        public static string Spade              = "0";  //Consumabili
-        public static string Lance              = "0";  //Consumabili
-        public static string Archi              = "0";  //Consumabili
-        public static string Scudi              = "0";  //Consumabili
-        public static string Armature           = "0";  //Consumabili
-        public static string Frecce             = "0";  //Consumabili
-
         public static string Risorse_s_Spade              = "0";  //Consumabili
         public static string Risorse_s_Lance              = "0";  //Consumabili
         public static string Risorse_s_Archi              = "0";  //Consumabili
@@ -59,10 +60,40 @@ namespace Strategico_V2
         public static string Risorse_s_Armature           = "0";  //Consumabili
         public static string Risorse_s_Frecce = "0";  //Consumabili
 
+        public static string Spade              = "0";  //Consumabili
+        public static string Lance              = "0";  //Consumabili
+        public static string Archi              = "0";  //Consumabili
+        public static string Scudi              = "0";  //Consumabili
+        public static string Armature           = "0";  //Consumabili
+        public static string Frecce             = "0";  //Consumabili
+
+
         public static string Arceri             = "0";
         public static string Guerrieri          = "0";
         public static string Lancieri           = "0";
         public static string Catapulte          = "0";
+
+        public class Barbari
+        {
+            public string Guerrieri { get; set; }
+            public string Lancieri { get; set; }
+            public string Arceri { get; set; }
+            public string Catapulte { get; set; }
+            public static Barbari PVE = new Barbari
+            {
+                Guerrieri = "0",
+                Lancieri = "0",
+                Arceri = "0",
+                Catapulte = "0"
+            };
+            public static Barbari PVP = new Barbari
+            {
+                Guerrieri = "0",
+                Lancieri = "0",
+                Arceri = "0",
+                Catapulte = "0"
+            };
+        }
 
     }
 }

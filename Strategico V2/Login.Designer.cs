@@ -35,6 +35,8 @@
             this.btn_Load_User = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Password = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_IP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_New_Game
@@ -105,11 +107,30 @@
             this.txt_Password.TabIndex = 5;
             this.txt_Password.TextChanged += new System.EventHandler(this.txt_Password_TextChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "IP";
+            // 
+            // txt_IP
+            // 
+            this.txt_IP.Location = new System.Drawing.Point(73, 104);
+            this.txt_IP.Name = "txt_IP";
+            this.txt_IP.Size = new System.Drawing.Size(144, 20);
+            this.txt_IP.TabIndex = 7;
+            this.txt_IP.Text = "AUTO";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 133);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_IP);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.btn_Load_User);
@@ -134,6 +155,8 @@
         private System.Windows.Forms.Button btn_Load_User;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_IP;
     }
 }
 

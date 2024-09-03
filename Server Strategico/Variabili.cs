@@ -11,11 +11,12 @@ namespace Server_Strategico
     internal class dati
     {
         public static string Difficoltà = "1";
-        public static string Versione = "0.1.0";
+        public static string Versione = "0.1.12";
         public static string Server = "Italy";
 
-        public static int tipi_Di_Unità = 0;
-        public static int tipi_Di_Unità_Att = 0;
+        public static double forza_Esercito_Att_PVE = 0;
+        public static double forza_Esercito_Att_PVP = 0;
+
     }
 
     internal class Variabili
@@ -26,13 +27,6 @@ namespace Server_Strategico
             public int Lancieri { get; set; }
             public int Arceri { get; set; }
             public int Catapulte { get; set; }
-            public static Barbari PVE = new Barbari
-            {
-                Guerrieri = 0,
-                Lancieri = 0,
-                Arceri = 0,
-                Catapulte = 0
-            };
             public static Barbari PVP = new Barbari
             {
                 Guerrieri = 0,
@@ -276,7 +270,8 @@ namespace Server_Strategico
                 Salario = 1,
                 Cibo = 1,
                 Quantità = 0,
-                TempoReclutamento = 19
+                TempoReclutamento = 19,
+                Esperienza = 1
             };
             public static Esercito Lanciere = new Esercito
             {
@@ -287,7 +282,8 @@ namespace Server_Strategico
                 Salario = 1,
                 Cibo = 1,
                 Quantità = 0,
-                TempoReclutamento = 24
+                TempoReclutamento = 24,
+                Esperienza = 1
             };
             public static Esercito Arciere = new Esercito
             {
@@ -298,7 +294,8 @@ namespace Server_Strategico
                 Salario = 1,
                 Cibo = 1,
                 Quantità = 0,
-                TempoReclutamento = 32
+                TempoReclutamento = 32,
+                Esperienza = 2
             };
             public static Esercito Catapulta = new Esercito
             {
@@ -309,7 +306,8 @@ namespace Server_Strategico
                 Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
                 Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
                 Quantità = 0,
-                TempoReclutamento = 61
+                TempoReclutamento = 61,
+                Esperienza = 3
             };
         }
         public class Esercito
@@ -322,6 +320,7 @@ namespace Server_Strategico
             public double Cibo { get; set; }
             public int Quantità { get; set; }
             public int TempoReclutamento { get; set; }
+            public int Esperienza { get; set; }
 
             public static Esercito Guerriero = new Esercito
             {
@@ -331,7 +330,8 @@ namespace Server_Strategico
                 Distanza = 1,
                 Salario = 0.16,
                 Cibo = 0.32,
-                Quantità = 0
+                Quantità = 0,
+                Esperienza = 1
             };
             public static Esercito Lanciere = new Esercito
             {
@@ -341,7 +341,8 @@ namespace Server_Strategico
                 Distanza = 2,
                 Salario = 0.20,
                 Cibo = 0.35,
-                Quantità = 0
+                Quantità = 0,
+                Esperienza = 1
             };
             public static Esercito Arciere = new Esercito
             {
@@ -351,7 +352,8 @@ namespace Server_Strategico
                 Distanza = 6,
                 Salario = 0.25,
                 Cibo = 0.41,
-                Quantità = 0
+                Quantità = 0,
+                Esperienza = 2
             };
             public static Esercito Catapulta = new Esercito
             {
@@ -361,17 +363,21 @@ namespace Server_Strategico
                 Distanza = 18,
                 Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.749,
                 Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.699,
-                Quantità = 0
+                Quantità = 0,
+                Esperienza = 3
             };
         }
         public class Player
         {
+            public bool Player_Loop { get; set; }
+
             public string Username { get; set; }
             public string Password { get; set; }
             public Guid guid_Player { get; set; }
 
             public int Esperienza { get; set; }
             public int Livello { get; set; }
+            public double forza_Esercito { get; set; }
 
             public int Fattoria { get; private set; }
             public int Segheria { get; private set; }
@@ -401,10 +407,15 @@ namespace Server_Strategico
             public double Armature { get; set; }
             public double Frecce { get; set; }
 
-            public int Arceri { get; set; }
             public int Guerrieri { get; set; }
             public int Lancieri { get; set; }
+            public int Arceri { get; set; }
             public int Catapulte { get; set; }
+
+            public int Guerrieri_Barbari_PVE { get; set; }
+            public int Lancieri_Barbari_PVE { get; set; }
+            public int Arceri_Barbari_PVE { get; set; }
+            public int Catapulte_Barbari_PVE { get; set; }
 
 
             private Dictionary<string, Queue<ConstructionTask>> constructionQueues; // Dizionario per memorizzare le code di costruzione per ogni tipo di edificio
@@ -415,12 +426,15 @@ namespace Server_Strategico
 
             public Player(string username, string password, Guid guid_Client)
             {
+                Player_Loop = false;
+
                 Username = username;
                 Password = password;
                 guid_Player = guid_Client;
 
                 Esperienza = 0;
-                Livello = 0;
+                Livello = 1;
+                forza_Esercito = 0;
 
                 //Strutture Civile
                 Fattoria = 0;
@@ -451,10 +465,15 @@ namespace Server_Strategico
                 Armature = 0;
                 Frecce = 0;
                 //Esercito
-                Arceri = 0;
                 Guerrieri = 0;
                 Lancieri = 0;
+                Arceri = 0;
                 Catapulte = 0;
+
+                Guerrieri_Barbari_PVE = 0;
+                Lancieri_Barbari_PVE = 0;
+                Arceri_Barbari_PVE = 0;
+                Catapulte_Barbari_PVE = 0;
 
                 constructionQueues = new Dictionary<string, Queue<ConstructionTask>>();
                 currentTasks = new Dictionary<string, ConstructionTask>();
@@ -501,8 +520,8 @@ namespace Server_Strategico
                     Ferro -= buildingCost.Ferro * count;
                     Oro -= buildingCost.Oro * count;
 
-                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per {count} costruzione/i di {buildingType}: Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}");
-                    Console.WriteLine($"Risorse consumate per {count} costruzione/i di {buildingType}: Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}");
+                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per {count} costruzione/i di {buildingType}:\r\n Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}\r\n");
+                    Console.WriteLine($"Risorse consumate per {count} costruzione/i di {buildingType}:\r\n Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}\r\n");
 
                     // Verifica se la coda di costruzione esiste per questo tipo di edificio, altrimenti creala
                     if (!constructionQueues.ContainsKey(buildingType))
@@ -710,7 +729,7 @@ namespace Server_Strategico
                     Scudi -= unitCost.Scudi * count;
                     Armature -= unitCost.Armature * count;
 
-                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per l'addestramento di {count} {unitType}: " +
+                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per l'addestramento di {count} {unitType}:\r\n " +
                         $"Cibo={unitCost.Cibo * count}, " +
                         $"Legno={unitCost.Legno * count}, " +
                         $"Pietra={unitCost.Pietra * count}, " +
@@ -720,8 +739,8 @@ namespace Server_Strategico
                         $"Lance={unitCost.Lance * count}, " +
                         $"Archi={unitCost.Archi * count}, " +
                         $"Scudi={unitCost.Scudi * count}, " +
-                        $"Armature={unitCost.Armature * count}");
-                    Console.WriteLine($"Risorse consumate per l'addestramento di {count} {unitType}: " +
+                        $"Armature={unitCost.Armature * count}\r\n");
+                    Console.WriteLine($"Risorse consumate per l'addestramento di {count} {unitType}:\r\n " +
                         $"Cibo={unitCost.Cibo * count}, " +
                         $"Legno={unitCost.Legno * count}, " +
                         $"Pietra={unitCost.Pietra * count}, " +
@@ -731,7 +750,7 @@ namespace Server_Strategico
                         $"Lance={unitCost.Lance * count}, " +
                         $"Archi={unitCost.Archi * count}, " +
                         $"Scudi={unitCost.Scudi * count}, " +
-                        $"Armature={unitCost.Armature * count}");
+                        $"Armature={unitCost.Armature * count}\r\n");
 
                     if (!recruitQueues.ContainsKey(unitType))
                     {
@@ -857,26 +876,52 @@ namespace Server_Strategico
                     if (player.ValidatePassword(password))
                         return player;
                     else
+                    {
+                        return null;
                         throw new UnauthorizedAccessException("Invalid password.");
+                    }
                 }
                 else
                 {
                     return null;
                     throw new KeyNotFoundException("Player not found.");
                 }
-                
+
             }
-            public void Get_User_and_Password()
+            public Player GetPlayer_Data(string username)
+            {
+                if (players.TryGetValue(username, out Player player))
+                    return player;
+                else
+                {
+                    return null;
+                    throw new KeyNotFoundException("Player not found.");
+                }
+
+            }
+            public void Lista_Player_manual()
             {
                 Console.WriteLine($"Numero Giocatori: {players.Count()}");
                 foreach (var item in players)
-                    Console.WriteLine($"Giocatore: {item.Value.Username} Guid: {item.Value.guid_Player}");
+                {
+                    Console.WriteLine($"Giocatore: {item.Value.Username} Guid: {item.Value.guid_Player}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
+                    if(!Server.Utenti_PVP.Contains($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}"))
+                        Server.Utenti_PVP.Add($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
+                }
             }
-            public void Get_User_Sync_Data()
+            public void Lista_Player_Auto()
             {
                 foreach (var item in players)
-                    if (true)
-                        Console.WriteLine($"Giocatore: {item.Value.Username} Guid: {item.Value.guid_Player}");
+                    if (!Server.Utenti_PVP.Contains($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}"))
+                        Server.Utenti_PVP.Add($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
+            }
+            public async Task<bool> Check_Username_Player(string username)
+            {
+                foreach (var item in players)
+                    if (item.Value.Username.Contains(username))
+                        return false;
+                return true;
+
             }
             public void Auto_Update_Clients()
             {
@@ -884,11 +929,10 @@ namespace Server_Strategico
                     foreach (var item in players)
                         if (item.Value.guid_Player == client)
                             ServerConnection.Update_Data(item.Value.guid_Player, item.Value.Username, item.Value.Password);
-
-
             }
             public async Task RunGameLoopAsync(CancellationToken cancellationToken)
             {
+                int i = 0;
                 while (!cancellationToken.IsCancellationRequested)
                 {
                     foreach (var player in players.Values)
@@ -896,8 +940,33 @@ namespace Server_Strategico
                         player.CompleteBuilds(player.guid_Player);
                         player.CompleteRecruitment(player.guid_Player);
                         player.ProduceResources();
+                        if (i >= 1)
+                        {
+                            Server.servers_.Lista_Player_Auto();
+                            i = 0;
+                        }
+
+                        player.forza_Esercito =
+                        player.Guerrieri * ((Variabili.Esercito.Guerriero.Salute * 0.33) + (Variabili.Esercito.Guerriero.Attacco * 0.72)) +
+                        player.Lancieri * ((Variabili.Esercito.Lanciere.Salute * 0.33) + (Variabili.Esercito.Lanciere.Attacco * 0.72)) +
+                        player.Arceri * ((Variabili.Esercito.Arciere.Salute * 0.33) + (Variabili.Esercito.Arciere.Attacco * 0.72)) +
+                        player.Catapulte * ((Variabili.Esercito.Catapulta.Salute * 0.33) + (Variabili.Esercito.Catapulta.Attacco * 0.72));
 
                         Auto_Update_Clients();
+                        Esperienza.LevelUp(player);
+                        if (Server_Strategico.Barbari.start == false)
+                        {
+                            Server_Strategico.Barbari.start = true;
+                            Task.Run(() => Server_Strategico.Barbari.Barbari_PVP(players));
+                        }
+                        if (player.Player_Loop == false)
+                        {
+                            Task.Run(() => Server_Strategico.Barbari.Barbari_PVE(player));
+                            player.Player_Loop = true;
+
+                        }
+                        i++;
+
                         // Puoi aggiungere altri metodi per gestire battaglie, commercio, ecc.
                     }
                     await Task.Delay(1000); // Ciclo ogni secondo, o regola il ritardo come necessario
