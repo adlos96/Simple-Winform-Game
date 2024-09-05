@@ -14,6 +14,7 @@ namespace rts_2D
         int tokenCostruzione = 0;
         int tokenReclutamento = 0;
         int tokenRiparazione = 0;
+        int timer_Token = 0;
         public static int Invasione_Ondata = 0;
         static bool pausa = false;
         static bool avvio = false;
@@ -363,7 +364,7 @@ namespace rts_2D
             _ = Task.Run(() => Loop());
             comboBox_Effetto_Abilità.Text = "Seleziona abilità";
             comboBox_Effetto_Abilità.Items.Add("Rinforzo Esercito");
-            comboBox_Effetto_Abilità.Items.Add("Rinforzo Città");
+            //comboBox_Effetto_Abilità.Items.Add("Rinforzo Città");
             comboBox_Effetto_Abilità.Items.Add("Guerrieri");
             comboBox_Effetto_Abilità.Items.Add("Lancieri");
             comboBox_Effetto_Abilità.Items.Add("Arcieri");
@@ -628,7 +629,7 @@ namespace rts_2D
         }
         async void Loop_Invasione()
         {
-            int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0, a = 0;
+            int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0;
             int respawn = 0;
 
             Variabili.EsercitoNemico.Guerriero.Quantità += 14;
@@ -685,10 +686,10 @@ namespace rts_2D
                     Variabili.EsercitoNemico.Lanciere.Quantità += 1;
                 }
 
-                if (a >= 300)
+                if (timer_Token >= 300)
                 {
                     Variabili.token++;
-                    a = 0;
+                    timer_Token = 0;
                 }
 
                 txt_Cibo.Invoke((Action)(async () => { Invasione(); }));
@@ -700,8 +701,8 @@ namespace rts_2D
                 arciere++;
                 catapulta++;
                 respawn++;
-                a++;
-                Console.WriteLine("Token timer: " + a);
+                timer_Token++;
+                Console.WriteLine("Token timer: " + timer_Token);
                 Console.WriteLine("Token " + Variabili.token);
             }
         }
@@ -2962,6 +2963,9 @@ namespace rts_2D
                             new XAttribute("tipo", "Popolazione"),
                             new XAttribute("quantita", Variabili.Popolazione)),
                         new XElement("Risorsa",
+                            new XAttribute("tipo", "Timer_Token"),
+                            new XAttribute("quantita", timer_Token)),
+                        new XElement("Risorsa",
                             new XAttribute("tipo", "Token"),
                             new XAttribute("quantita", Variabili.token)
                             ) 
@@ -3125,7 +3129,7 @@ namespace rts_2D
                             new XAttribute("tipo", "Salute"),
                             new XAttribute("quantita", btn_Esercito_Salute.Text)),
                         new XElement("Esercito",
-                            new XAttribute("tipo", "Reclutamento")),
+                            new XAttribute("tipo", "Reclutamento"),
                             new XAttribute("quantita", btn_Esercito_Reclutamento.Text)),
 
                         new XElement("Città",
@@ -3139,10 +3143,51 @@ namespace rts_2D
                             new XAttribute("quantita", btn_Citta_Salute.Text)),
                         new XElement("Città",
                             new XAttribute("tipo", "Guarnigione"),
-                            new XAttribute("quantita", btn_Citta_Guarnigione.Text)
+                            new XAttribute("quantita", btn_Citta_Guarnigione.Text))
                     )
                     
                 )
+
+
+                //new XElement("Città",
+                //        new XElement("Mura",
+                //            new XAttribute("tipo", "Guranigione"),
+                //            new XAttribute("quantita", btn_Risorse_Produzione.Text)),
+                //        new XElement("Mura",
+                //            new XAttribute("tipo", "Costruzione"),
+                //            new XAttribute("quantita", btn_Risorse_Costruzione.Text)),
+                //        new XElement("Mura",
+                //            new XAttribute("tipo", "Popolazione"),
+                //            new XAttribute("quantita", btn_Risorse_Popolazione.Text)),
+                //
+                //        new XElement("Esercito",
+                //            new XAttribute("tipo", "Attacco"),
+                //            new XAttribute("quantita", btn_Esercito_Attacco.Text)),
+                //        new XElement("Esercito",
+                //            new XAttribute("tipo", "Difesa"),
+                //            new XAttribute("quantita", btn_Esercito_Difesa.Text)),
+                //        new XElement("Esercito",
+                //            new XAttribute("tipo", "Salute"),
+                //            new XAttribute("quantita", btn_Esercito_Salute.Text)),
+                //        new XElement("Esercito",
+                //            new XAttribute("tipo", "Reclutamento"),
+                //            new XAttribute("quantita", btn_Esercito_Reclutamento.Text)),
+                //
+                //        new XElement("Città",
+                //            new XAttribute("tipo", "Riparazione"),
+                //            new XAttribute("quantita", btn_Citta_Riparazioni.Text)),
+                //        new XElement("Città",
+                //            new XAttribute("tipo", "Difesa"),
+                //            new XAttribute("quantita", btn_Citta_Difesa.Text)),
+                //        new XElement("Città",
+                //            new XAttribute("tipo", "Salute"),
+                //            new XAttribute("quantita", btn_Citta_Salute.Text)),
+                //        new XElement("Città",
+                //            new XAttribute("tipo", "Guarnigione"),
+                //            new XAttribute("quantita", btn_Citta_Guarnigione.Text))
+                //    )
+                    
+                
             );
 
             // Salvare il file XML

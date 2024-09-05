@@ -453,7 +453,7 @@ namespace rts_2D
             int catapulte_Enemy = Variabili.EsercitoNemico.Catapulta.Quantità;
 
             int arcieri_Temp = arcieri * 3 / 4;
-            int catapulte_Temp = catapulte / 4;
+            int catapulte_Temp = catapulte * 3 / 4;
 
             int arcieri_Enemy_Temp = arcieri_Enemy * 3 / 4;
             int catapulte_Enemy_Temp = catapulte_Enemy * 3 / 4;
