@@ -1,0 +1,6 @@
+C:\Users\Adlos\Desktop\VS game\Server Strategico.exe
+C:\Users\Adlos\Desktop\VS game\Server Strategico.dll
+C:\Users\Adlos\Desktop\VS game\Server Strategico.deps.json
+C:\Users\Adlos\Desktop\VS game\Server Strategico.runtimeconfig.json
+C:\Users\Adlos\Desktop\VS game\Server Strategico.pdb
+C:\Users\Adlos\Desktop\VS game\WatsonTcp.dll

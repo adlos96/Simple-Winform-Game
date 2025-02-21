@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using WatsonTcp;
 
@@ -18,13 +15,13 @@ namespace Strategico_V2
         internal class TestClient
         {
             public static string _ServerIp = "127.1"; // adly.xed.im 185.229.236.183
-            //public static string _ServerIp = "79.51.196.208"; // adly.xed.im 185.229.236.183
+            //public static string _ServerIp = "79.44.11.166"; // adly.xed.im 185.229.236.183
             private static int _ServerPort = 8443;
-            private static bool _Ssl = true;
+            private static bool _Ssl = false;
             private static string _CertFile = "";
             private static string _CertPass = "Password1";
             private static bool _DebugMessages = true;
-            private static bool _AcceptInvalidCerts = false;
+            private static bool _AcceptInvalidCerts = true;
             private static bool _MutualAuth = false;
             public static WatsonTcpClient _Client = null;
             private static string _PresharedKey = null;
@@ -243,6 +240,25 @@ namespace Strategico_V2
                 Variabili_Client.Forza_Esercito = mess[54];
                 Variabili_Client.Forza_Esercito_PVE = mess[55];
                 Variabili_Client.Forza_Esercito_PVP = mess[56];
+
+                Variabili_Client.Fattoria_Coda = mess[57];
+                Variabili_Client.Segheria_Coda = mess[58];
+                Variabili_Client.CavaPietra_Coda = mess[59];
+                Variabili_Client.MinieraFerro_Coda = mess[60];
+                Variabili_Client.MinieraOro_Coda = mess[61];
+                Variabili_Client.Case_Coda = mess[62];
+
+                Variabili_Client.ProduzioneSpade_Coda = mess[63];
+                Variabili_Client.ProduzioneLance_Coda = mess[64];
+                Variabili_Client.ProduzioneArchi_Coda = mess[65];
+                Variabili_Client.ProduzioneScudi_Coda = mess[66];
+                Variabili_Client.ProduzioneArmature_Coda = mess[67];
+                Variabili_Client.ProduzioneFrecce_Coda = mess[68];
+
+                Variabili_Client.Guerrieri_Coda = mess[69];
+                Variabili_Client.Lancieri_Coda = mess[70];
+                Variabili_Client.Arceri_Coda = mess[71];
+                Variabili_Client.Catapulte_Coda = mess[72];
             }
             static void Update_Log(string mes)
             {

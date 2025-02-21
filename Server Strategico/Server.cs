@@ -21,8 +21,8 @@ namespace Server_Strategico
         private static string _CertFile = "";
         private static string _CertPass = "";
 
-        private static bool _Ssl = true;
-        private static bool _AcceptInvalidCerts = false;
+        private static bool _Ssl = false;
+        private static bool _AcceptInvalidCerts = true;
         private static bool _MutualAuth = false;
 
         private CancellationTokenSource cts;
@@ -37,11 +37,6 @@ namespace Server_Strategico
             if (!_Ssl) server = new WatsonTcpServer(serverIp, serverPort);
             else
             {
-                string OS = "Windosw";
-                if (OS == "Linux")
-                    _CertFile = Password.path;
-                else
-                    _CertFile = Password.path;
                 _CertPass = Password.pasword;
                 _AcceptInvalidCerts = true;
                 _MutualAuth = true;
@@ -172,6 +167,13 @@ namespace Server_Strategico
         {
             lastGuid = args.Client.Guid;
             Console.WriteLine("[SERVER|LOG] > Client disconnesso: " + args.Client.ToString() + ": " + args.Reason.ToString());
+            
+            // Trova il giocatore associato a questo GUID e salva i suoi dati
+            foreach (var player in servers_.GetAllPlayers())
+            {
+                GameSave.SavePlayer(player);
+            }
+            
             Client_Connessi.Remove(lastGuid);
         }
         private static void ExceptionEncountered(object sender, ExceptionEventArgs e)

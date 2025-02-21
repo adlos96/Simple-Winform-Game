@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Server_Strategico.Variabili;
-
-
-namespace Server_Strategico
+﻿namespace Server_Strategico
 {
     internal class dati
     {
@@ -14,9 +6,7 @@ namespace Server_Strategico
         public static string Versione = "0.1.12";
         public static string Server = "Italy";
 
-        public static double forza_Esercito_Att_PVE = 0;
         public static double forza_Esercito_Att_PVP = 0;
-
     }
 
     internal class Variabili
@@ -53,8 +43,8 @@ namespace Server_Strategico
                 Pietra = 100,
                 Ferro = 100,
                 Oro = 100,
-                Produzione = 1.62,
-                TempoCostruzione = 24
+                Produzione = 1.40,
+                TempoCostruzione = 27
             };
             public static Edifici Segheria = new Edifici
             {
@@ -63,8 +53,8 @@ namespace Server_Strategico
                 Pietra = 175,
                 Ferro = 175,
                 Oro = 175,
-                Produzione = 1.46,
-                TempoCostruzione = 27
+                Produzione = 1.24,
+                TempoCostruzione = 30
             };
             public static Edifici CavaPietra = new Edifici
             {
@@ -73,8 +63,8 @@ namespace Server_Strategico
                 Pietra = 250,
                 Ferro = 250,
                 Oro = 250,
-                Produzione = 1.22,
-                TempoCostruzione = 33
+                Produzione = 1.03,
+                TempoCostruzione = 35
             };
             public static Edifici MinieraFerro = new Edifici
             {
@@ -83,8 +73,8 @@ namespace Server_Strategico
                 Pietra = 325,
                 Ferro = 325,
                 Oro = 325,
-                Produzione = 1.04,
-                TempoCostruzione = 38
+                Produzione = 0.86,
+                TempoCostruzione = 39
             };
             public static Edifici MinieraOro = new Edifici
             {
@@ -93,89 +83,126 @@ namespace Server_Strategico
                 Pietra = 400,
                 Ferro = 400,
                 Oro = 400,
-                Produzione = 0.91,
+                Produzione = 0.73,
                 TempoCostruzione = 46
             };
             public static Edifici Case = new Edifici
             {
-                Cibo = 500,
-                Legno = 500,
-                Pietra = 500,
-                Ferro = 500,
-                Oro = 500,
-                Produzione = 0.03,
+                Cibo = 2500,
+                Legno = 2500,
+                Pietra = 2500,
+                Ferro = 2500,
+                Oro = 2500,
+                Produzione = 0.01,
                 TempoCostruzione = 54
             };
             // Edifici Militari
             public static Edifici Armature = new Edifici
             {
-                Cibo = 500,
-                Legno = 500,
-                Pietra = 500,
-                Ferro = 500,
-                Oro = 500,
-                Produzione = 0.09,
-                TempoCostruzione = 49
+                Cibo = 1500,
+                Legno = 1500,
+                Pietra = 1500,
+                Ferro = 5100,
+                Oro = 1500,
+                Produzione = 0.02,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneSpade = new Edifici
             {
-                Cibo = 500,
-                Legno = 500,
-                Pietra = 500,
-                Ferro = 500,
-                Oro = 500,
-                Produzione = 0.09,
-                TempoCostruzione = 49
+                Cibo = 1750,
+                Legno = 1750,
+                Pietra = 1750,
+                Ferro = 1750,
+                Oro = 1750,
+                Produzione = 0.02,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneLance = new Edifici
             {
-                Cibo = 250,
-                Legno = 250,
-                Pietra = 250,
-                Ferro = 250,
-                Oro = 250,
-                Produzione = 0.09,
-                TempoCostruzione = 49
+                Cibo = 2000,
+                Legno = 2000,
+                Pietra = 2000,
+                Ferro = 2000,
+                Oro = 2000,
+                Produzione = 0.02,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneArchi = new Edifici
             {
-                Cibo = 250,
-                Legno = 250,
-                Pietra = 250,
-                Ferro = 250,
-                Oro = 250,
-                Produzione = 0.09,
-                TempoCostruzione = 49
+                Cibo = 2250,
+                Legno = 2250,
+                Pietra = 2250,
+                Ferro = 2250,
+                Oro = 2250,
+                Produzione = 0.02,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneScudi = new Edifici
             {
-                Cibo = 250,
-                Legno = 250,
-                Pietra = 250,
-                Ferro = 250,
-                Oro = 250,
-                Produzione = 0.09,
-                TempoCostruzione = 49
+                Cibo = 2500,
+                Legno = 2500,
+                Pietra = 2500,
+                Ferro = 2500,
+                Oro = 2500,
+                Produzione = 0.02,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneArmature = new Edifici
             {
-                Cibo = 250,
-                Legno = 250,
-                Pietra = 250,
-                Ferro = 250,
-                Oro = 250,
-                Produzione = 0.09,
-                TempoCostruzione = 49
+                Cibo = 2750,
+                Legno = 2750,
+                Pietra = 2750,
+                Ferro = 2750,
+                Oro = 2750,
+                Produzione = 0.02,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneFrecce = new Edifici
             {
-                Cibo = 250,
-                Legno = 250,
-                Pietra = 250,
-                Ferro = 250,
-                Oro = 250,
+                Cibo = 3250,
+                Legno = 3250,
+                Pietra = 3250,
+                Ferro = 3250,
+                Oro = 3250,
                 Produzione = 0.09,
-                TempoCostruzione = 49
+                TempoCostruzione = 79
+            };
+
+            public static Edifici CasermaGuerrieri = new Edifici
+            {
+                Cibo = 1250,
+                Legno = 1250,
+                Pietra = 1250,
+                Ferro = 1250,
+                Oro = 1250,
+                TempoCostruzione = 98
+            };
+            public static Edifici CasermaLancieri = new Edifici
+            {
+                Cibo = 1450,
+                Legno = 1450,
+                Pietra = 1450,
+                Ferro = 1450,
+                Oro = 1450,
+                TempoCostruzione = 98
+            };
+            public static Edifici CasermaArcieri = new Edifici
+            {
+                Cibo = 1650,
+                Legno = 1650,
+                Pietra = 1650,
+                Ferro = 1650,
+                Oro = 1650,
+                TempoCostruzione = 98
+            };
+            public static Edifici CasermaCatapulte = new Edifici
+            {
+                Cibo = 1850,
+                Legno = 1850,
+                Pietra = 1850,
+                Ferro = 1850,
+                Oro = 1850,
+                TempoCostruzione = 98
             };
         }
         public class CostoReclutamento
@@ -299,10 +326,10 @@ namespace Server_Strategico
             };
             public static Esercito Catapulta = new Esercito
             {
-                Salute = Guerriero.Salute * 0.71 * CostoReclutamento.Guerriero.Popolazione,
-                Attacco = 18,
-                Difesa = Guerriero.Salute * 0.71 * CostoReclutamento.Guerriero.Popolazione,
-                Distanza = 18,
+                Salute = Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione,
+                Attacco = 14,
+                Difesa = Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione,
+                Distanza = 14,
                 Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
                 Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
                 Quantità = 0,
@@ -321,6 +348,7 @@ namespace Server_Strategico
             public int Quantità { get; set; }
             public int TempoReclutamento { get; set; }
             public int Esperienza { get; set; }
+            public int Componente_Lancio { get; set; }
 
             public static Esercito Guerriero = new Esercito
             {
@@ -328,8 +356,8 @@ namespace Server_Strategico
                 Attacco = 3,
                 Difesa = 3,
                 Distanza = 1,
-                Salario = 0.16,
-                Cibo = 0.32,
+                Salario = 0.14,
+                Cibo = 0.29,
                 Quantità = 0,
                 Esperienza = 1
             };
@@ -339,32 +367,34 @@ namespace Server_Strategico
                 Attacco = 4,
                 Difesa = 4,
                 Distanza = 2,
-                Salario = 0.20,
-                Cibo = 0.35,
+                Salario = 0.18,
+                Cibo = 0.32,
                 Quantità = 0,
                 Esperienza = 1
             };
             public static Esercito Arciere = new Esercito
             {
                 Salute = 4,
-                Attacco = 8,
+                Attacco = 7,
                 Difesa = 3,
                 Distanza = 6,
-                Salario = 0.25,
-                Cibo = 0.41,
+                Salario = 0.23,
+                Cibo = 0.38,
                 Quantità = 0,
-                Esperienza = 2
+                Esperienza = 2,
+                Componente_Lancio = 3
             };
             public static Esercito Catapulta = new Esercito
             {
-                Salute = Guerriero.Salute * 0.75 * CostoReclutamento.Catapulta.Popolazione,
-                Attacco = 18,
-                Difesa = Guerriero.Salute * 0.75 * CostoReclutamento.Catapulta.Popolazione,
-                Distanza = 18,
-                Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.749,
-                Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.699,
+                Salute = Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione,
+                Attacco = 14,
+                Difesa = Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione,
+                Distanza = 14,
+                Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.619,
+                Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.769,
                 Quantità = 0,
-                Esperienza = 3
+                Esperienza = 3,
+                Componente_Lancio = 5
             };
         }
         public class Player
@@ -378,6 +408,7 @@ namespace Server_Strategico
             public int Esperienza { get; set; }
             public int Livello { get; set; }
             public double forza_Esercito { get; set; }
+            public double forza_Esercito_PVE { get; set; }
 
             public int Fattoria { get; private set; }
             public int Segheria { get; private set; }
@@ -412,6 +443,25 @@ namespace Server_Strategico
             public int Arceri { get; set; }
             public int Catapulte { get; set; }
 
+            public int Caserma_Guerrieri { get; set; }
+            public int Caserma_Lancieri { get; set; }
+            public int Caserma_Arceri { get; set; }
+            public int Caserma_Catapulte { get; set; }
+
+            public int GuerrieriMax { get; set; }
+            public int LancieriMax { get; set; }
+            public int ArceriMax { get; set; }
+            public int CatapulteMax { get; set; }
+
+            public int SaluteCancello { get; set; }
+            public int SaluteCancelloMax { get; set; }
+            public int SaluteMura { get; set; }
+            public int SaluteMuraMax { get; set; }
+            public int SaluteTorri { get; set; }
+            public int SaluteTorriMax { get; set; }
+            public int SaluteCastello { get; set; }
+            public int SaluteCastelloMax { get; set; }
+
             public int Guerrieri_Barbari_PVE { get; set; }
             public int Lancieri_Barbari_PVE { get; set; }
             public int Arceri_Barbari_PVE { get; set; }
@@ -437,19 +487,26 @@ namespace Server_Strategico
                 forza_Esercito = 0;
 
                 //Strutture Civile
-                Fattoria = 0;
+                Fattoria = 0; //Produce cibo
                 Segheria = 0;
                 CavaPietra = 0;
                 MinieraFerro = 0;
                 MinieraOro = 0;
-                Abitazioni = 0;
+                Abitazioni = 0; //Aumenta il numero abitanti/s
+
                 //Strutture Militare
-                ProduzioneSpade = 0;
+                ProduzioneSpade = 0; //Produce Spade
                 ProduzioneLance = 0;
                 ProduzioneArchi = 0;
                 ProduzioneScudi = 0;
                 ProduzioneArmature = 0;
                 ProduzioneFrecce = 0;
+
+                Caserma_Guerrieri   = 0; //Numero Caserme
+                Caserma_Lancieri    = 0;
+                Caserma_Arceri      = 0;
+                Caserma_Catapulte   = 0;
+
                 //Risorse Civile
                 Cibo = 0;
                 Legno = 0;
@@ -457,6 +514,7 @@ namespace Server_Strategico
                 Ferro = 0;
                 Oro = 0;
                 Popolazione = 0;
+
                 //Risorse Militare
                 Spade = 0;
                 Lance = 0;
@@ -464,12 +522,19 @@ namespace Server_Strategico
                 Scudi = 0;
                 Armature = 0;
                 Frecce = 0;
+
                 //Esercito
                 Guerrieri = 0;
                 Lancieri = 0;
                 Arceri = 0;
                 Catapulte = 0;
 
+                GuerrieriMax    = 80; //Limite x caserma
+                LancieriMax     = 60;
+                ArceriMax       = 35;
+                CatapulteMax    = 10;
+
+                //Campo Barbaro
                 Guerrieri_Barbari_PVE = 0;
                 Lancieri_Barbari_PVE = 0;
                 Arceri_Barbari_PVE = 0;
@@ -500,6 +565,11 @@ namespace Server_Strategico
                 Scudi += ProduzioneScudi * Variabili.Edifici.ProduzioneScudi.Produzione;
                 Armature += ProduzioneArmature * Variabili.Edifici.ProduzioneArmature.Produzione;
                 Frecce += ProduzioneFrecce * Variabili.Edifici.ProduzioneFrecce.Produzione;
+            }
+            public void ManutenzioneEsercito() //produzione risorse
+            {
+                Cibo -= (Guerrieri * Variabili.Esercito.Guerriero.Cibo) + (Lancieri * Variabili.Esercito.Lanciere.Cibo) + (Arceri * Variabili.Esercito.Arciere.Cibo) + (Catapulte * Variabili.Esercito.Catapulta.Cibo);
+                Oro -= (Guerrieri * Variabili.Esercito.Guerriero.Salario) + (Lancieri * Variabili.Esercito.Lanciere.Salario) + (Arceri * Variabili.Esercito.Arciere.Salario) + (Catapulte * Variabili.Esercito.Catapulta.Salario);
             }
             public void QueueBuildConstruction(string buildingType, int count, Guid clientGuid)
             {
@@ -546,6 +616,25 @@ namespace Server_Strategico
                     Console.WriteLine($"Risorse insufficienti per costruire {count} {buildingType}.");
                 }
             }
+            public void LoadQueueBuildConstruction(string buildingType, int count, Guid clientGuid)
+            {
+                // Ottieni i costi di costruzione dell'edificio
+                var buildingCost = GetBuildingCost(buildingType);
+
+                if (!constructionQueues.ContainsKey(buildingType)) // Verifica se la coda di costruzione esiste per questo tipo di edificio, altrimenti creala
+                    constructionQueues[buildingType] = new Queue<ConstructionTask>();
+
+                // Aggiungi i task di costruzione alla coda
+                int tempoCostruzioneInSecondi = Convert.ToInt32(buildingCost.TempoCostruzione);
+                for (int i = 0; i < count; i++)
+                    constructionQueues[buildingType].Enqueue(new ConstructionTask(buildingType, tempoCostruzioneInSecondi));
+
+                if (!currentTasks.ContainsKey(buildingType)) // Inizializza l'entry in currentTasks se non esiste
+                    currentTasks[buildingType] = null;
+
+                if (currentTasks[buildingType] == null)  // Se non c'è nessuna costruzione in corso per questo tipo, inizia la prima
+                    StartNextConstruction(buildingType);
+            }
             private Variabili.Edifici GetBuildingCost(string buildingType)
             {
                 // Restituisci i costi dell'edificio in base al tipo
@@ -562,8 +651,13 @@ namespace Server_Strategico
                     "ProduzioneLancie" => Variabili.Edifici.ProduzioneLance,
                     "ProduzioneArchi" => Variabili.Edifici.ProduzioneArchi,
                     "ProduzioneScudi" => Variabili.Edifici.ProduzioneScudi,
-                    "ProduzioneArmature" => Variabili.Edifici.Armature,
+                    "ProduzioneArmature" => Variabili.Edifici.ProduzioneArmature,
                     "ProduzioneFrecce" => Variabili.Edifici.ProduzioneFrecce,
+
+                    "CasermaGuerrieri" => Variabili.Edifici.CasermaGuerrieri,
+                    "CasermaLancieri" => Variabili.Edifici.CasermaLancieri,
+                    "CasermaArcieri" => Variabili.Edifici.CasermaArcieri,
+                    "CasermaCatapulte" => Variabili.Edifici.CasermaCatapulte,
                     // Aggiungi altri edifici se necessario
                     _ => null,
                 };
@@ -637,6 +731,22 @@ namespace Server_Strategico
                                 ProduzioneFrecce++;
                                 Console.WriteLine($"Costruzione completata {buildingType} costruita!");
                                 break;
+                            case "CasermaGuerrieri":
+                                Caserma_Guerrieri++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "CasermaLancieri":
+                                Caserma_Lancieri++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "CasermaArcieri":
+                                Caserma_Arceri++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
+                            case "CasermaCatapulte":
+                                Caserma_Catapulte++;
+                                Console.WriteLine($"Costruzione completata {buildingType} costruita!");
+                                break;
                             // Aggiungi case per altri tipi di costruzioni
                             default:
                                 Console.WriteLine($"Costruzione {buildingType} non valida!");
@@ -701,9 +811,34 @@ namespace Server_Strategico
                 }
             }
 
-            public async void QueueTrainUnits(string unitType, int count, Guid clientGuid)
+            public async void QueueTrainUnits(string unitType, int count, Guid clientGuid, Variabili.Player player)
             {
                 var unitCost = GetUnitCost(unitType);
+
+                if (unitType == "Guerriero" && count + player.Guerrieri > player.GuerrieriMax * player.Caserma_Guerrieri)
+                {
+                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.GuerrieriMax * player.Caserma_Guerrieri}]");
+                    Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.GuerrieriMax * player.Caserma_Guerrieri}]");
+                    return;
+                }
+                else if (unitType == "Lanciere" && count + player.Lancieri > player.LancieriMax * player.Caserma_Lancieri)
+                {
+                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.LancieriMax * player.Caserma_Lancieri}]");
+                    Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}.[Limite: {player.LancieriMax * player.Caserma_Lancieri}]");
+                    return;
+                }
+                else if (unitType == "Arciere" && count + player.Arceri > player.ArceriMax * player.Caserma_Arceri)
+                {
+                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.ArceriMax * player.Caserma_Arceri}]");
+                    Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.ArceriMax * player.Caserma_Arceri}]");
+                    return;
+                }
+                else if (unitType == "Catapulta" && count + player.Catapulte > player.CatapulteMax * player.Caserma_Catapulte)
+                {
+                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.CatapulteMax * player.Caserma_Catapulte}]");
+                    Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.CatapulteMax * player.Caserma_Catapulte}]");
+                    return;
+                }
 
                 if (Cibo >= unitCost.Cibo * count &&
                     Legno >= unitCost.Legno * count &&
@@ -753,32 +888,39 @@ namespace Server_Strategico
                         $"Armature={unitCost.Armature * count}\r\n");
 
                     if (!recruitQueues.ContainsKey(unitType))
-                    {
                         recruitQueues[unitType] = new Queue<RecruitTask>();
-                    }
 
                     int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento);
                     for (int i = 0; i < count; i++)
-                    {
                         recruitQueues[unitType].Enqueue(new RecruitTask(unitType, tempoAddestramentoInSecondi));
-                    }
 
                     if (!currentRecruitTasks.ContainsKey(unitType))
-                    {
                         currentRecruitTasks[unitType] = null;
-                    }
-
+                    
                     if (currentRecruitTasks[unitType] == null)
-                    {
                         StartNextRecruitment(unitType);
-                    }
                 }
                 else
                 {
                     Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per addestrare {count} {unitType}.");
                     Console.WriteLine($"Risorse insufficienti per addestrare {count} {unitType}.");
                 }
+            }
+            public async void LoadQueueTrainUnits(string unitType, int count, Guid clientGuid)
+            {
+                var unitCost = GetUnitCost(unitType);
+                if (!recruitQueues.ContainsKey(unitType))
+                    recruitQueues[unitType] = new Queue<RecruitTask>();
                 
+                int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento);
+                for (int i = 0; i < count; i++)
+                    recruitQueues[unitType].Enqueue(new RecruitTask(unitType, tempoAddestramentoInSecondi));
+                
+                if (!currentRecruitTasks.ContainsKey(unitType))
+                    currentRecruitTasks[unitType] = null;
+
+                if (currentRecruitTasks[unitType] == null)
+                    StartNextRecruitment(unitType);
             }
             private void StartNextRecruitment(string unitType)
             {
@@ -835,6 +977,43 @@ namespace Server_Strategico
                     "Catapulta" => Variabili.CostoReclutamento.Catapulta,
                     _ => null,
                 };
+            }
+            public void SetBuildings(int fattoria, int segheria, int cavaPietra, int mineraFerro, int mineraOro, int abitazioni, int ProdSp, int ProdLan, int ProdArc, int ProdScud, int ProdArmat, int ProdFrecce, int cas_Gu, int cas_Lan, int cas_Arc, int cas_Cat)
+            {
+                this.Fattoria = fattoria;
+                this.Segheria = segheria;
+                this.CavaPietra = cavaPietra;
+                this.MinieraFerro = mineraFerro;
+                this.MinieraOro = mineraOro;
+                this.Abitazioni = abitazioni;
+                this.ProduzioneSpade = ProdSp;
+                this.ProduzioneLance = ProdLan;
+                this.ProduzioneArchi = ProdArc;
+                this.ProduzioneScudi = ProdScud;
+                this.ProduzioneArmature = ProdArmat;
+                this.ProduzioneFrecce = ProdFrecce;
+                this.Caserma_Guerrieri = cas_Gu;
+                this.Caserma_Lancieri = cas_Lan;
+                this.Caserma_Arceri = cas_Arc;
+                this.Caserma_Catapulte = cas_Cat;
+            }
+            public Dictionary<string, int> GetQueuedBuildings()
+            {
+                var queuedBuildings = new Dictionary<string, int>();
+                foreach (var queue in constructionQueues)
+                {
+                    queuedBuildings[queue.Key] = queue.Value.Count;
+                }
+                return queuedBuildings;
+            }
+            public Dictionary<string, int> GetQueuedUnits()
+            {
+                var queuedUnits = new Dictionary<string, int>();
+                foreach (var queue in recruitQueues)
+                {
+                    queuedUnits[queue.Key] = queue.Value.Count;
+                }
+                return queuedUnits;
             }
         }
         public class GameServer
@@ -912,7 +1091,7 @@ namespace Server_Strategico
             public void Lista_Player_Auto()
             {
                 foreach (var item in players)
-                    if (!Server.Utenti_PVP.Contains($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}"))
+                    if (!Server.Utenti_PVP.Contains($"{item.Value.Username}"))
                         Server.Utenti_PVP.Add($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
             }
             public async Task<bool> Check_Username_Player(string username)
@@ -927,12 +1106,15 @@ namespace Server_Strategico
             {
                 foreach (var client in Server.Client_Connessi)
                     foreach (var item in players)
+                    {
                         if (item.Value.guid_Player == client)
                             ServerConnection.Update_Data(item.Value.guid_Player, item.Value.Username, item.Value.Password);
+                    }
             }
             public async Task RunGameLoopAsync(CancellationToken cancellationToken)
             {
-                int i = 0;
+                int saveCounter = 0;  // Contatore per il salvataggio
+                
                 while (!cancellationToken.IsCancellationRequested)
                 {
                     foreach (var player in players.Values)
@@ -940,10 +1122,16 @@ namespace Server_Strategico
                         player.CompleteBuilds(player.guid_Player);
                         player.CompleteRecruitment(player.guid_Player);
                         player.ProduceResources();
-                        if (i >= 1)
+                        player.ManutenzioneEsercito();
+
+                        // Salva i dati ogni 60 secondi
+                        saveCounter++;
+                        if (saveCounter >= 60)
                         {
+                            await GameSave.SavePlayer(player);
+                            await GameSave.SaveBarbariPVP();
                             Server.servers_.Lista_Player_Auto();
-                            i = 0;
+                            saveCounter = 0;
                         }
 
                         player.forza_Esercito =
@@ -965,12 +1153,15 @@ namespace Server_Strategico
                             player.Player_Loop = true;
 
                         }
-                        i++;
 
                         // Puoi aggiungere altri metodi per gestire battaglie, commercio, ecc.
                     }
                     await Task.Delay(1000); // Ciclo ogni secondo, o regola il ritardo come necessario
                 }
+            }
+            public IEnumerable<Player> GetAllPlayers()
+            {
+                return players.Values;
             }
         }
     }

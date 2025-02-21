@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Server_Strategico.Variabili;
-
+﻿
 namespace Server_Strategico
 {
     internal class Battaglie
@@ -62,14 +56,17 @@ namespace Server_Strategico
             Server.Send(clientGuid, $"Log_Server|Danno inflitto dal giocatore: {(dannoInflitto * tipi_Di_Unità_Att++).ToString("0.00")}\r\n");
             Server.Send(clientGuid, $"Log_Server|Danno inflitto dal nemico: {(dannoInflittoDalNemico * tipi_Di_Unità++).ToString("0.00")}");
 
-            Server.Send(clientGuid, $"Log_Server|Guerrieri: {guerrieri - guerrieri_Temp}\r\n Lancieri: {picchieri - picchieri_Temp}\r\n Arcieri: {arcieri - arcieri_Temp}\r\n Catapulte: {catapulte - catapulte_Temp}\r\n");
+            Server.Send(clientGuid, $"Log_Server|Guerrieri: {guerrieri - guerrieri_Temp}/{guerrieri}\r\n Lancieri: {picchieri - picchieri_Temp}/{picchieri}\r\n Arcieri: {arcieri - arcieri_Temp}/{arcieri}\r\n Catapulte: {catapulte - catapulte_Temp}/{catapulte}\r\n");
             Server.Send(clientGuid, $"Log_Server|Soldati persi dal giocatore:");
 
-            Server.Send(clientGuid, $"Log_Server|Guerrieri: {guerrieri_Enemy - guerrieri_Enemy_Temp}\r\n Lancieri: {picchieri_Enemy - picchieri_Enemy_Temp}\r\n Arcieri: {arcieri_Enemy - arcieri_Enemy_Temp}\r\n Catapulte: {catapulte_Enemy - catapulte_Enemy_Temp}\r\n");
+            Server.Send(clientGuid, $"Log_Server|Guerrieri: {guerrieri_Enemy - guerrieri_Enemy_Temp}/{guerrieri_Enemy}\r\n Lancieri: {picchieri_Enemy - picchieri_Enemy_Temp}/{picchieri_Enemy}\r\n Arcieri: {arcieri_Enemy - arcieri_Enemy_Temp}/{arcieri_Enemy}\r\n Catapulte: {catapulte_Enemy - catapulte_Enemy_Temp}/{catapulte_Enemy}\r\n");
             Server.Send(clientGuid, $"Log_Server|Soldati persi dal nemico:");
             Server.Send(clientGuid, $"Log_Server|Battaglia PVE Completata\r\n");
 
-            player.Esperienza += (guerrieri_Enemy_Temp * Variabili.EsercitoNemico.Guerriero.Esperienza) + (picchieri_Enemy_Temp * Variabili.EsercitoNemico.Lanciere.Esperienza) + (arcieri_Enemy_Temp * Variabili.EsercitoNemico.Arciere.Esperienza) + (catapulte_Enemy_Temp * Variabili.EsercitoNemico.Arciere.Esperienza);
+            player.Esperienza += ((guerrieri_Enemy - guerrieri_Enemy_Temp) * Variabili.EsercitoNemico.Guerriero.Esperienza) + 
+                                 ((picchieri_Enemy - picchieri_Enemy_Temp) * Variabili.EsercitoNemico.Lanciere.Esperienza) + 
+                                 ((arcieri_Enemy - arcieri_Enemy_Temp) * Variabili.EsercitoNemico.Arciere.Esperienza) + 
+                                 ((catapulte_Enemy - catapulte_Enemy_Temp) * Variabili.EsercitoNemico.Arciere.Esperienza);
 
             Console.WriteLine($"Danno inflitto dal nemico: {(dannoInflittoDalNemico * tipi_Di_Unità++).ToString("0.00")}");
             Console.WriteLine($"Danno inflitto dal giocatore: {(dannoInflitto * tipi_Di_Unità_Att++).ToString("0.00")}");
@@ -155,7 +152,10 @@ namespace Server_Strategico
             Server.Send(clientGuid, $"Log_Server|Soldati persi dal nemico:");
             Server.Send(clientGuid, $"Log_Server|Battaglia PVP Completata\r\n");
 
-            player.Esperienza += (guerrieri_Enemy_Temp * Variabili.EsercitoNemico.Guerriero.Esperienza) + (picchieri_Enemy_Temp * Variabili.EsercitoNemico.Lanciere.Esperienza) + (arcieri_Enemy_Temp * Variabili.EsercitoNemico.Arciere.Esperienza) + (catapulte_Enemy_Temp * Variabili.EsercitoNemico.Arciere.Esperienza);
+            player.Esperienza += ((guerrieri_Enemy - guerrieri_Enemy_Temp) * Variabili.EsercitoNemico.Guerriero.Esperienza) +
+                                 ((picchieri_Enemy - picchieri_Enemy_Temp) * Variabili.EsercitoNemico.Lanciere.Esperienza) +
+                                 ((arcieri_Enemy - arcieri_Enemy_Temp) * Variabili.EsercitoNemico.Arciere.Esperienza) +
+                                 ((catapulte_Enemy - catapulte_Enemy_Temp) * Variabili.EsercitoNemico.Arciere.Esperienza);
 
             Console.WriteLine($"Danno inflitto dal giocatore: {(dannoInflitto * tipi_Di_Unità_Att++).ToString("0.00")}");
             Console.WriteLine($"Danno inflitto dal nemico: {(dannoInflittoDalNemico * tipi_Di_Unità++).ToString("0.00")}");
@@ -250,8 +250,14 @@ namespace Server_Strategico
             Server.Send(clientGuid2, $"Log_Server|Soldati persi dal giocatore [{player2.Username}]:");
             Server.Send(clientGuid2, $"Log_Server|Battaglia PVP Completata\r\n");
 
-            player.Esperienza += (guerrieri_Enemy_Temp * Variabili.Esercito.Guerriero.Esperienza) + (picchieri_Enemy_Temp * Variabili.Esercito.Lanciere.Esperienza) + (arcieri_Enemy_Temp * Variabili.Esercito.Arciere.Esperienza) + (catapulte_Enemy_Temp * Variabili.Esercito.Arciere.Esperienza);
-            player2.Esperienza += (guerrieri_Temp * Variabili.Esercito.Guerriero.Esperienza) + (picchieri_Temp * Variabili.Esercito.Lanciere.Esperienza) + (arcieri_Temp * Variabili.Esercito.Arciere.Esperienza) + (catapulte_Temp * Variabili.Esercito.Arciere.Esperienza);
+            player.Esperienza += ((guerrieri_Enemy - guerrieri_Enemy_Temp) * Variabili.Esercito.Guerriero.Esperienza) + 
+                                 ((picchieri_Enemy - picchieri_Enemy_Temp) * Variabili.Esercito.Lanciere.Esperienza) + 
+                                 ((arcieri_Enemy - arcieri_Enemy_Temp) * Variabili.Esercito.Arciere.Esperienza) + 
+                                 ((catapulte_Enemy - catapulte_Enemy_Temp) * Variabili.Esercito.Arciere.Esperienza);
+            player2.Esperienza += ((guerrieri - guerrieri_Temp) * Variabili.Esercito.Guerriero.Esperienza) + 
+                                  ((picchieri - picchieri_Temp) * Variabili.Esercito.Lanciere.Esperienza) + 
+                                  ((arcieri - arcieri_Temp) * Variabili.Esercito.Arciere.Esperienza) + 
+                                  ((catapulte - catapulte_Temp) * Variabili.Esercito.Arciere.Esperienza);
 
             Console.WriteLine($"Danno inflitto dal giocatore [{player.Username}]: {(dannoInflitto * tipi_Di_Unità_Att++).ToString("0.00")}");
             Console.WriteLine($"Danno inflitto dal giocatore [{player2.Username}]: {(dannoInflittoDalNemico * tipi_Di_Unità++).ToString("0.00")}");
@@ -340,19 +346,22 @@ namespace Server_Strategico
                 arcieri_Enemy = Variabili.Barbari.PVP.Arceri;
                 catapulte_Enemy = Variabili.Barbari.PVP.Catapulte;
             }
-            else if (struttura == "PVP")
+
+            int arcieri_Temp = arcieri * 2 / 3;
+            int catapulte_Temp = catapulte * 2 / 3;
+
+            int arcieri_Enemy_Temp = arcieri_Enemy * 2 / 3;
+            int catapulte_Enemy_Temp = catapulte_Enemy * 2 / 3;
+
+            if (player.Frecce < (arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio))
             {
-                guerrieri_Enemy = Variabili.Barbari.PVP.Guerrieri;
-                picchieri_Enemy = Variabili.Barbari.PVP.Lancieri;
-                arcieri_Enemy = Variabili.Barbari.PVP.Arceri;
-                catapulte_Enemy = Variabili.Barbari.PVP.Catapulte;
-            }
-
-            int arcieri_Temp = arcieri * 3 / 4;
-            int catapulte_Temp = catapulte / 4;
-
-            int arcieri_Enemy_Temp = arcieri_Enemy * 3 / 4;
-            int catapulte_Enemy_Temp = catapulte_Enemy * 3 / 4;
+                Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore subiscono una riduzione del danno per mancanza di frecce [{(arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio)}/{player.Frecce}]:");
+                arcieri_Temp = arcieri_Temp / 3;
+                catapulte_Temp = catapulte_Temp / 3;
+                player.Frecce = 0;
+            }else
+                player.Frecce -= (arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio);
+            
 
             #region Se poche unità a distanza e d'assedio
             if (arcieri <= 10) arcieri_Temp = arcieri * 2;
@@ -381,40 +390,51 @@ namespace Server_Strategico
                         guerrieri_Morti_Att = attacco / 3; //Danno 2/3 contro guerrieri
                         lancieri_Morti_Att = attacco * 2 / 3; //Danno 1/3 contro lancieri
                     }
-                    guerrieri_Enemy -= guerrieri_Morti_Att;
-                    picchieri_Enemy -= lancieri_Morti_Att;
-                }
+                }   
                 else if (guerrieri_Enemy > 0)
-                {
                     guerrieri_Morti_Att = attacco * 4 / 5;
-                    guerrieri_Enemy -= guerrieri_Morti_Att;
-                }
+                
                 else if (picchieri_Enemy > 0)
-                {
                     lancieri_Morti_Att = attacco * 4 / 5;
-                    picchieri_Enemy -= lancieri_Morti_Att;
-                }
 
-                if (guerrieri_Enemy < 0) guerrieri_Enemy = 0;
-                if (picchieri_Enemy < 0) picchieri_Enemy = 0;
-
-                if(struttura == "PVP")
+                if (guerrieri_Morti_Att > guerrieri_Enemy)
                 {
+                    guerrieri_Morti_Att = guerrieri_Enemy;
+                    guerrieri_Enemy = 0;
+                }
+                else
+                    guerrieri_Enemy -= guerrieri_Morti_Att;
+
+                if (lancieri_Morti_Att > picchieri_Enemy)
+                {
+                    lancieri_Morti_Att = picchieri_Enemy;
+                    picchieri_Enemy = 0;
+                }
+                else
+                    picchieri_Enemy -= lancieri_Morti_Att;
+
+                Console.WriteLine($"({struttura}) Gli arceri e le catapulte del giocatore hanno causato:");
+                Console.WriteLine($"({struttura}) Guerrieri morti: {guerrieri_Morti_Att} Lancieri morti:  {lancieri_Morti_Att}");
+
+                if (struttura == "Barbari_PVP")
+                {
+                    Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti_Att}/{Variabili.Barbari.PVP.Guerrieri} Lancieri morti:  {lancieri_Morti_Att}/{Variabili.Barbari.PVP.Lancieri}\r\n");
+                    Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore hanno causato:");
+                    Server.Send(clientGuid, $"Log_Server|Frecce utilizzate: {(arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio)}");
                     Variabili.Barbari.PVP.Guerrieri = guerrieri_Enemy;
                     Variabili.Barbari.PVP.Lancieri = picchieri_Enemy;
                 }
-                if(struttura == "PVE")
+                if (struttura == "Barbari_PVE")
                 {
+                    Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti_Att}/{player.Guerrieri_Barbari_PVE} Lancieri morti:  {lancieri_Morti_Att}/{player.Lancieri_Barbari_PVE}\r\n");
+                    Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore hanno causato:");
+                    Server.Send(clientGuid, $"Log_Server|Frecce utilizzate: {(arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio)}");
                     player.Guerrieri_Barbari_PVE = guerrieri_Enemy;
                     player.Lancieri_Barbari_PVE = picchieri_Enemy;
                 }
+                player.Esperienza += (guerrieri_Morti_Att * Variabili.EsercitoNemico.Guerriero.Esperienza) + (lancieri_Morti_Att * Variabili.EsercitoNemico.Lanciere.Esperienza);
             }
-            Console.WriteLine($"({struttura}) Gli arceri e le catapulte del giocatore hanno causato:");
-            Console.WriteLine($"({struttura}) Guerrieri morti: {guerrieri_Morti_Att} Lancieri morti:  {lancieri_Morti_Att}");
-            player.Esperienza += (guerrieri_Morti_Att * Variabili.EsercitoNemico.Guerriero.Esperienza) + (lancieri_Morti_Att * Variabili.EsercitoNemico.Lanciere.Esperienza);
 
-            Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti_Att} Lancieri morti:  {lancieri_Morti_Att}\r\n");
-            Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore hanno causato:");
             if (arcieri_Enemy > 0 || catapulte_Enemy > 0)
             {
                 int attacco = (catapulte_Enemy_Temp + arcieri_Enemy_Temp) * 4 / 5;
@@ -430,33 +450,33 @@ namespace Server_Strategico
                         guerrieri_Morti = attacco / 3;
                         lancieri_Morti = attacco * 2 / 3;
                     }
+                }
+                else if (guerrieri > 0) guerrieri_Morti = attacco * 4 / 5;
+                else if (picchieri > 0) lancieri_Morti = attacco * 4 / 5;
 
-                    guerrieri -= guerrieri_Morti;
-                    picchieri -= lancieri_Morti;
-                }
-                else if (guerrieri > 0)
+                if (guerrieri_Morti > guerrieri)
                 {
-                    guerrieri_Morti = attacco * 4 / 5;
-                    guerrieri -= guerrieri_Morti;
-                    picchieri -= lancieri_Morti;
+                    guerrieri_Morti = guerrieri;
+                    guerrieri = 0;
                 }
-                else if (picchieri > 0)
+                else guerrieri -= guerrieri_Morti;
+
+                if (lancieri_Morti > picchieri)
                 {
-                    lancieri_Morti = attacco * 4 / 5;
-                    picchieri -= lancieri_Morti;
-                    guerrieri -= guerrieri_Morti;
+                    lancieri_Morti = picchieri;
+                    picchieri = 0;
                 }
-                if (guerrieri < 0) guerrieri = 0;
-                if (picchieri < 0) picchieri = 0;
+                else picchieri -= lancieri_Morti;
+
+                Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti}/{player.Guerrieri} Lancieri morti:  {lancieri_Morti}/{player.Lancieri}\r\n");
+                Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte barbare hanno causato:");
+
+                Console.WriteLine($"({struttura})Gli arceri e le catapulte barbare hanno causato:");
+                Console.WriteLine($"({struttura})Guerrieri morti: {guerrieri_Morti}/{player.Guerrieri} Lancieri morti:  {lancieri_Morti}/{player.Lancieri}");
 
                 player.Guerrieri = guerrieri;
                 player.Lancieri = picchieri;
             }
-            Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti} Lancieri morti:  {lancieri_Morti}\r\n");
-            Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte barbare hanno causato:");
-
-            Console.WriteLine($"({struttura})Gli arceri e le catapulte barbare hanno causato:");
-            Console.WriteLine($"({struttura})Guerrieri morti: {guerrieri_Morti} Lancieri morti:  {lancieri_Morti}");
             return true;
         } // Arcieri e Mezzi d'assedio attaccano prima della battaglia
         public static async Task<bool> Battaglia_Distanza(Variabili.Player player, Guid clientGuid, Variabili.Player player2, Guid clientGuid2)
@@ -474,11 +494,31 @@ namespace Server_Strategico
             arcieri_Enemy = player2.Arceri;
             catapulte_Enemy = player2.Catapulte;
 
-            int arcieri_Temp = arcieri * 3 / 4;
-            int catapulte_Temp = catapulte / 4;
+            int arcieri_Temp = arcieri * 2 / 3;
+            int catapulte_Temp = catapulte * 2 / 3;
 
-            int arcieri_Enemy_Temp = arcieri_Enemy * 3 / 4;
-            int catapulte_Enemy_Temp = catapulte_Enemy * 3 / 4;
+            int arcieri_Enemy_Temp = arcieri_Enemy * 2 / 3;
+            int catapulte_Enemy_Temp = catapulte_Enemy * 2 / 3;
+
+            if (player.Frecce < (arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio))
+            {
+                Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore [{player.Username}] subiscono una riduzione del danno per mancanza di frecce [{(arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio)}/{player.Frecce}]:");
+                arcieri_Temp = arcieri_Temp / 3;
+                catapulte_Temp = catapulte_Temp / 3;
+                player.Frecce = 0;
+            }
+            else
+                player.Frecce -= (arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio);
+
+            if (player2.Frecce < (arcieri_Enemy * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte_Enemy * Variabili.Esercito.Catapulta.Componente_Lancio))
+            {
+                Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore [{player2.Username}] subiscono una riduzione del danno per mancanza di frecce [{(arcieri_Enemy * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte_Enemy * Variabili.Esercito.Catapulta.Componente_Lancio)}/{player.Frecce}]:");
+                arcieri_Enemy_Temp = arcieri_Enemy_Temp / 3;
+                catapulte_Enemy_Temp = catapulte_Enemy_Temp / 3;
+                player2.Frecce = 0;
+            }
+            else
+                player2.Frecce -= (arcieri_Enemy * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte_Enemy * Variabili.Esercito.Catapulta.Componente_Lancio);
 
             #region Se poche unità a distanza e d'assedio
             if (arcieri <= 10) arcieri_Temp = arcieri * 2;
@@ -507,30 +547,37 @@ namespace Server_Strategico
                         guerrieri_Morti_Att = attacco / 3; //Danno 2/3 contro guerrieri
                         lancieri_Morti_Att = attacco * 2 / 3; //Danno 1/3 contro lancieri
                     }
-                    guerrieri_Enemy -= guerrieri_Morti_Att;
-                    picchieri_Enemy -= lancieri_Morti_Att;
                 }
-                else if (guerrieri_Enemy > 0)
-                {
-                    guerrieri_Morti_Att = attacco * 4 / 5;
-                    guerrieri_Enemy -= guerrieri_Morti_Att;
-                }
-                else if (picchieri_Enemy > 0)
-                {
-                    lancieri_Morti_Att = attacco * 4 / 5;
-                    picchieri_Enemy -= lancieri_Morti_Att;
-                }
+                else if (guerrieri_Enemy > 0) guerrieri_Morti_Att = attacco * 4 / 5;
+                else if (picchieri_Enemy > 0) lancieri_Morti_Att = attacco * 4 / 5;
 
-                if (guerrieri_Enemy < 0) guerrieri_Enemy = 0;
-                if (picchieri_Enemy < 0) picchieri_Enemy = 0;
+                if (guerrieri_Morti_Att > guerrieri_Enemy)
+                {
+                    guerrieri_Morti_Att = guerrieri_Enemy;
+                    guerrieri_Enemy = 0;
+                }
+                else
+                    guerrieri_Enemy -= guerrieri_Morti_Att;
+
+                if (lancieri_Morti_Att > picchieri_Enemy)
+                {
+                    lancieri_Morti_Att = picchieri_Enemy;
+                    picchieri_Enemy = 0;
+                }
+                else
+                    picchieri_Enemy -= lancieri_Morti_Att;
+
+                Server.Send(clientGuid2, $"Log_Server|Guerrieri morti: {guerrieri_Morti}/{player2.Guerrieri} Lancieri morti:  {lancieri_Morti}/{player2.Lancieri}\r\n");
+                Server.Send(clientGuid2, $"Log_Server|Gli arceri e le catapulte del giocatore [{player2.Username}] hanno causato:");
+                Server.Send(clientGuid2, $"Log_Server|Frecce utilizzate: {(arcieri_Enemy * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte_Enemy * Variabili.Esercito.Catapulta.Componente_Lancio)}");
+                player.Esperienza += (guerrieri_Morti_Att * Variabili.Esercito.Guerriero.Esperienza) + (lancieri_Morti_Att * Variabili.Esercito.Lanciere.Esperienza);
 
                 player2.Guerrieri = guerrieri_Enemy;
-                player2.Lancieri= picchieri_Enemy;
+                player2.Lancieri = picchieri_Enemy;
 
             }
             Console.WriteLine($"Gli arceri e le catapulte del giocatore [{player.Username}] hanno causato:");
             Console.WriteLine($"Guerrieri morti: {guerrieri_Morti_Att} Lancieri morti:  {lancieri_Morti_Att}");
-            player.Esperienza += (guerrieri_Morti_Att * Variabili.Esercito.Guerriero.Esperienza) + (lancieri_Morti_Att * Variabili.Esercito.Lanciere.Esperienza);
 
             Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti_Att} Lancieri morti:  {lancieri_Morti_Att}\r\n");
             Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore [{player.Username}] hanno causato:");
@@ -552,34 +599,32 @@ namespace Server_Strategico
                         guerrieri_Morti = attacco / 3;
                         lancieri_Morti = attacco * 2 / 3;
                     }
+                }
+                else if (guerrieri > 0) guerrieri_Morti = attacco * 4 / 5;
+                else if (picchieri > 0) lancieri_Morti = attacco * 4 / 5;
 
-                    guerrieri -= guerrieri_Morti;
-                    picchieri -= lancieri_Morti;
-                }
-                else if (guerrieri > 0)
+                if (guerrieri_Morti > guerrieri)
                 {
-                    guerrieri_Morti = attacco * 4 / 5;
-                    guerrieri -= guerrieri_Morti;
-                    picchieri -= lancieri_Morti;
+                    guerrieri_Morti = guerrieri;
+                    guerrieri = 0;
                 }
-                else if (picchieri > 0)
+                else guerrieri -= guerrieri_Morti;
+
+                if (lancieri_Morti > picchieri)
                 {
-                    lancieri_Morti = attacco * 4 / 5;
-                    picchieri -= lancieri_Morti;
-                    guerrieri -= guerrieri_Morti;
+                    lancieri_Morti = picchieri;
+                    picchieri = 0;
                 }
-                if (guerrieri < 0) guerrieri = 0;
-                if (picchieri < 0) picchieri = 0;
+                else picchieri -= lancieri_Morti;
+
+                player2.Esperienza += (guerrieri_Morti * Variabili.Esercito.Guerriero.Esperienza) + (lancieri_Morti * Variabili.Esercito.Lanciere.Esperienza);
+                Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti}/{player.Guerrieri} Lancieri morti:  {lancieri_Morti}/{player.Lancieri}\r\n");
+                Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore [{player2.Username}] hanno causato:");
+                Server.Send(clientGuid, $"Log_Server|Frecce utilizzate: {(arcieri * Variabili.Esercito.Arciere.Componente_Lancio) + (catapulte * Variabili.Esercito.Catapulta.Componente_Lancio)}");
 
                 player.Guerrieri = guerrieri;
                 player.Lancieri = picchieri;
             }
-            player2.Esperienza += (guerrieri_Morti * Variabili.Esercito.Guerriero.Esperienza) + (lancieri_Morti * Variabili.Esercito.Lanciere.Esperienza);
-            Server.Send(clientGuid, $"Log_Server|Guerrieri morti: {guerrieri_Morti} Lancieri morti:  {lancieri_Morti}\r\n");
-            Server.Send(clientGuid, $"Log_Server|Gli arceri e le catapulte del giocatore [{player2.Username}] hanno causato:");
-
-            Server.Send(clientGuid2, $"Log_Server|Guerrieri morti: {guerrieri_Morti} Lancieri morti:  {lancieri_Morti}\r\n");
-            Server.Send(clientGuid2, $"Log_Server|Gli arceri e le catapulte del giocatore [{player2.Username}] hanno causato:");
 
             Console.WriteLine($"Gli arceri e le catapulte del giocatore [{player.Username}] hanno causato:");
             Console.WriteLine($"Guerrieri morti: {guerrieri_Morti} Lancieri morti:  {lancieri_Morti}");

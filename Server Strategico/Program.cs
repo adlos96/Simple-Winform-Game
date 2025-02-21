@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Server.GetInstance(); //Starta il server
+            GameSave.Initialize(); // Inizializza il sistema di salvataggio
+            Server.GetInstance(); // Starta il server
         }
     }
 }
