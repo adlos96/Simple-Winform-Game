@@ -22,7 +22,7 @@ namespace Strategico_V2
 
         private void btn_Costruisci_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            CostruzioneAddestramento form1 = new CostruzioneAddestramento();
             form1.ShowDialog();
             return;
         }

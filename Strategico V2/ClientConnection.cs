@@ -14,7 +14,7 @@ namespace Strategico_V2
 
         internal class TestClient
         {
-            public static string _ServerIp = "127.1"; // adly.xed.im 185.229.236.183
+            public static string _ServerIp = "79.51.195.120"; // adly.xed.im 185.229.236.183
             //public static string _ServerIp = "79.44.11.166"; // adly.xed.im 185.229.236.183
             private static int _ServerPort = 8443;
             private static bool _Ssl = false;
