@@ -5,8 +5,6 @@ namespace Server_Strategico
     {
         public static async Task<bool> Battaglia_Barbari_PVE(Variabili.Player player, Guid clientGuid)
         {
-            int tipi_Di_Unità = 0;
-            int tipi_Di_Unità_Att = 0;
             await Battaglia_Distanza("Barbari_PVE", player, clientGuid); //Pre battaglia, attaccano le unità a distanza ed i mezzi d'assedio
 
             int guerrieri   = player.Guerrieri;
@@ -19,23 +17,8 @@ namespace Server_Strategico
             int arcieri_Enemy   = player.Arceri_Barbari_PVE;
             int catapulte_Enemy = player.Catapulte_Barbari_PVE;
 
-            tipi_Di_Unità = 0;
-            tipi_Di_Unità_Att = 0;
-            //Cotrollo tipi di unità
-            if (guerrieri > 0) tipi_Di_Unità++;
-            if (picchieri > 0) tipi_Di_Unità++;
-            if (arcieri > 0) tipi_Di_Unità++;
-            if (catapulte > 0) tipi_Di_Unità++;
-
-            if (guerrieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (picchieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (arcieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (catapulte_Enemy > 0) tipi_Di_Unità_Att++;
-
-            if (guerrieri + picchieri + arcieri + catapulte == 0)
-                tipi_Di_Unità = 1;
-            if (guerrieri_Enemy + picchieri_Enemy + arcieri_Enemy + catapulte_Enemy == 0)
-                tipi_Di_Unità_Att = 1;
+            int tipi_Di_Unità = ContareTipiDiUnità(guerrieri, picchieri, arcieri, catapulte);
+            int tipi_Di_Unità_Att = ContareTipiDiUnità(guerrieri_Enemy, picchieri_Enemy, arcieri_Enemy, catapulte_Enemy);
 
             // Calcolo del danno per il giocatore e il nemico
             double dannoInflittoDalNemico = CalcolareDanno_Invasore(arcieri_Enemy, catapulte_Enemy, guerrieri_Enemy, picchieri_Enemy) / tipi_Di_Unità;
@@ -93,9 +76,6 @@ namespace Server_Strategico
         }
         public static async Task<bool> Battaglia_Barbari_PVP(Variabili.Player player, Guid clientGuid)
         {
-            int tipi_Di_Unità = 0;
-            int tipi_Di_Unità_Att = 0;
-
             await Battaglia_Distanza("Barbari_PVP", player, clientGuid); //Pre battaglia, attaccano le unità a distanza ed i mezzi d'assedio
 
             int guerrieri = player.Guerrieri;
@@ -108,23 +88,8 @@ namespace Server_Strategico
             int arcieri_Enemy = player.Arceri_Barbari_PVE;
             int catapulte_Enemy = player.Catapulte_Barbari_PVE;
 
-            tipi_Di_Unità = 0;
-            tipi_Di_Unità_Att = 0;
-            //Cotrollo tipi di unità
-            if (guerrieri > 0) tipi_Di_Unità++;
-            if (picchieri > 0) tipi_Di_Unità++;
-            if (arcieri > 0) tipi_Di_Unità++;
-            if (catapulte > 0) tipi_Di_Unità++;
-
-            if (guerrieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (picchieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (arcieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (catapulte_Enemy > 0) tipi_Di_Unità_Att++;
-
-            if (guerrieri + picchieri + arcieri + catapulte == 0)
-                tipi_Di_Unità = 1;
-            if (guerrieri_Enemy + picchieri_Enemy + arcieri_Enemy + catapulte_Enemy == 0)
-                tipi_Di_Unità_Att = 1;
+            int tipi_Di_Unità = ContareTipiDiUnità(guerrieri, picchieri, arcieri, catapulte);
+            int tipi_Di_Unità_Att = ContareTipiDiUnità(guerrieri_Enemy, picchieri_Enemy, arcieri_Enemy, catapulte_Enemy);
 
             // Calcolo del danno per il giocatore e il nemico
             double dannoInflittoDalNemico = CalcolareDanno_Invasore(arcieri_Enemy, catapulte_Enemy, guerrieri_Enemy, picchieri_Enemy) / tipi_Di_Unità;
@@ -181,9 +146,6 @@ namespace Server_Strategico
         }
         public static async Task<bool> Battaglia_PVP(Variabili.Player player, Guid clientGuid, Variabili.Player player2, Guid clientGuid2)
         {
-            int tipi_Di_Unità = 0;
-            int tipi_Di_Unità_Att = 0;
-
             await Battaglia_Distanza(player, clientGuid, player2, clientGuid2); //Pre battaglia, attaccano le unità a distanza ed i mezzi d'assedio
 
             int guerrieri = player.Guerrieri;                   //Giocatore attaccante
@@ -196,23 +158,8 @@ namespace Server_Strategico
             int arcieri_Enemy = player2.Arceri;          //GIcoatore in difesa
             int catapulte_Enemy = player2.Catapulte;     //GIcoatore in difesa
 
-            tipi_Di_Unità = 0;
-            tipi_Di_Unità_Att = 0;
-            //Cotrollo tipi di unità
-            if (guerrieri > 0)  tipi_Di_Unità++;
-            if (picchieri > 0)  tipi_Di_Unità++;
-            if (arcieri > 0)    tipi_Di_Unità++;
-            if (catapulte > 0)  tipi_Di_Unità++;
-
-            if (guerrieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (picchieri_Enemy > 0) tipi_Di_Unità_Att++;
-            if (arcieri_Enemy > 0)   tipi_Di_Unità_Att++;
-            if (catapulte_Enemy > 0) tipi_Di_Unità_Att++;
-
-            if (guerrieri + picchieri + arcieri + catapulte == 0)
-                tipi_Di_Unità = 1;
-            if (guerrieri_Enemy + picchieri_Enemy + arcieri_Enemy + catapulte_Enemy == 0)
-                tipi_Di_Unità_Att = 1;
+            int tipi_Di_Unità = ContareTipiDiUnità(guerrieri, picchieri, arcieri, catapulte);
+            int tipi_Di_Unità_Att = ContareTipiDiUnità(guerrieri_Enemy, picchieri_Enemy, arcieri_Enemy, catapulte_Enemy);
 
             // Calcolo del danno per il giocatore e il nemico
             double dannoInflittoDalNemico = CalcolareDanno_Invasore_Player(arcieri_Enemy, catapulte_Enemy, guerrieri_Enemy, picchieri_Enemy) / tipi_Di_Unità;
@@ -321,6 +268,18 @@ namespace Server_Strategico
             int soldatiPersi = Convert.ToInt32(dannoEffettivo / salutePerSoldato);
             numeroSoldati -= soldatiPersi;
             return numeroSoldati < 0 ? 0 : numeroSoldati;
+        }
+        private static int ContareTipiDiUnità(int guerrieri, int picchieri, int arcieri, int catapulte)
+        {
+            int tipiDiUnità = 0;
+
+            if (guerrieri > 0) tipiDiUnità++;
+            if (picchieri > 0) tipiDiUnità++;
+            if (arcieri > 0) tipiDiUnità++;
+            if (catapulte > 0) tipiDiUnità++;
+
+            // Se non ci sono unità, forza a 1 per evitare divisioni per zero
+            return tipiDiUnità == 0 ? 1 : tipiDiUnità;
         }
         public static async Task<bool> Battaglia_Distanza(string struttura, Variabili.Player player, Guid clientGuid)
         {
@@ -478,7 +437,7 @@ namespace Server_Strategico
                 player.Lancieri = picchieri;
             }
             return true;
-        } // Arcieri e Mezzi d'assedio attaccano prima della battaglia
+        } // Arcieri e Mezzi d'assedio attaccano prima della battaglia (giocatore-barbari)
         public static async Task<bool> Battaglia_Distanza(Variabili.Player player, Guid clientGuid, Variabili.Player player2, Guid clientGuid2)
         {
             int guerrieri_Morti = 0, lancieri_Morti = 0, guerrieri_Morti_Att = 0, lancieri_Morti_Att = 0;
@@ -629,6 +588,6 @@ namespace Server_Strategico
             Console.WriteLine($"Gli arceri e le catapulte del giocatore [{player.Username}] hanno causato:");
             Console.WriteLine($"Guerrieri morti: {guerrieri_Morti} Lancieri morti:  {lancieri_Morti}");
             return true;
-        } // Arcieri e Mezzi d'assedio attaccano prima della battaglia
+        } // Arcieri e Mezzi d'assedio attaccano prima della battaglia (giocatore-giocatore)
     }
 }
