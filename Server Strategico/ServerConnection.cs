@@ -122,8 +122,8 @@ namespace Server_Strategico
             var buildingsQueue = player.GetQueuedBuildings();
             var unitsQueue = player.GetQueuedUnits();
 
-            double Cibo = (player.Guerrieri * Variabili.Esercito.Guerriero.Cibo) + (player.Lancieri * Variabili.Esercito.Lanciere.Cibo) + (player.Arceri * Variabili.Esercito.Arciere.Cibo) + (player.Catapulte * Variabili.Esercito.Catapulta.Cibo);
-            double Oro = (player.Guerrieri * Variabili.Esercito.Guerriero.Salario) + (player.Lancieri * Variabili.Esercito.Lanciere.Salario) + (player.Arceri * Variabili.Esercito.Arciere.Salario) + (player.Catapulte * Variabili.Esercito.Catapulta.Salario);
+            double Cibo = (player.Guerrieri * Esercito.Unità.Guerriero.Cibo) + (player.Lancieri * Esercito.Unità.Lanciere.Cibo) + (player.Arceri * Esercito.Unità.Arciere.Cibo) + (player.Catapulte * Esercito.Unità.Catapulta.Cibo);
+            double Oro = (player.Guerrieri * Esercito.Unità.Guerriero.Salario) + (player.Lancieri * Esercito.Unità.Lanciere.Salario) + (player.Arceri * Esercito.Unità.Arciere.Salario) + (player.Catapulte * Esercito.Unità.Catapulta.Salario);
 
             Server.Send(guid, $"Update_Data|" +
                 $"{player.Cibo.ToString("#,0")}|" +
