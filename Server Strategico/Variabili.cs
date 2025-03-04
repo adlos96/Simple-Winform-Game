@@ -234,7 +234,7 @@
                 Pietra = 12,
                 Ferro = 82,
                 Oro = 32,
-                TempoReclutamento = 18, //55
+                TempoReclutamento = 38, //55
                 Popolazione = 1
             };
             public static CostoReclutamento Lanciere = new CostoReclutamento
@@ -250,7 +250,7 @@
                 Pietra = 28,
                 Ferro = 132,
                 Oro = 81,
-                TempoReclutamento = 23,
+                TempoReclutamento = 46,
                 Popolazione = 1
             };
             public static CostoReclutamento Arciere = new CostoReclutamento
@@ -258,7 +258,7 @@
                 Spade = 0,
                 Lance = 0,
                 Archi = 1,
-                Scudi = 1,
+                Scudi = 0,
                 Armature = 1,
 
                 Cibo = 219,
@@ -266,7 +266,7 @@
                 Pietra = 123,
                 Ferro = 183,
                 Oro = 162,
-                TempoReclutamento = 31,
+                TempoReclutamento = 54,
                 Popolazione = 1
             };
             public static CostoReclutamento Catapulta = new CostoReclutamento
@@ -274,7 +274,7 @@
                 Spade = 3,
                 Lance = 2,
                 Archi = 0,
-                Scudi = 0,
+                Scudi = 5,
                 Armature = 5,
 
                 Cibo = 311,
@@ -282,7 +282,7 @@
                 Pietra = 329,
                 Ferro = 247,
                 Oro = 256,
-                TempoReclutamento = 60,
+                TempoReclutamento = 84,
                 Popolazione = 5
             };
         }
@@ -462,6 +462,31 @@
             public int SaluteCastello { get; set; }
             public int SaluteCastelloMax { get; set; }
 
+            public double Ricerca_Produzione { get; set; }
+            public double Ricerca_Costruzione { get; set; }
+            public double Ricerca_Addestramento { get; set; }
+            public double Ricerca_Riparazione { get; set; }
+
+            public int Guerriero_Livello { get; set; }
+            public int Guerriero_Salute { get; set; }
+            public int Guerriero_Difesa { get; set; }
+            public int Guerriero_Attacco { get; set; }
+
+            public int Lanciere_Livello { get; set; }
+            public int Lanciere_Salute { get; set; }
+            public int Lanciere_Difesa { get; set; }
+            public int Lanciere_Attacco { get; set; }
+
+            public int Arciere_Livello { get; set; }
+            public int Arciere_Salute { get; set; }
+            public int Arciere_Difesa { get; set; }
+            public int Arciere_Attacco { get; set; }
+
+            public int catapulta_Livello { get; set; }
+            public int catapulta_Salute { get; set; }
+            public int catapulta_Difesa { get; set; }
+            public int catapulta_Attacco { get; set; }
+
             public int Guerrieri_Barbari_PVE { get; set; }
             public int Lancieri_Barbari_PVE { get; set; }
             public int Arceri_Barbari_PVE { get; set; }
@@ -529,10 +554,10 @@
                 Arceri = 0;
                 Catapulte = 0;
 
-                GuerrieriMax    = 80; //Limite x caserma
-                LancieriMax     = 60;
-                ArceriMax       = 35;
-                CatapulteMax    = 10;
+                GuerrieriMax    = 35; //Limite x caserma
+                LancieriMax     = 25;
+                ArceriMax       = 10;
+                CatapulteMax    = 5;
 
                 //Campo Barbaro
                 Guerrieri_Barbari_PVE = 0;
@@ -546,10 +571,12 @@
                 recruitQueues = new Dictionary<string, Queue<RecruitTask>>();
                 currentRecruitTasks = new Dictionary<string, RecruitTask>();
             }
+
             public bool ValidatePassword(string password)
             {
                 return Password == password;
             }
+
             public void ProduceResources() //produzione risorse
             {
                 Cibo += Fattoria * Variabili.Edifici.Fattoria.Produzione;
@@ -1135,10 +1162,10 @@
                         }
 
                         player.forza_Esercito =
-                        player.Guerrieri * ((Variabili.Esercito.Guerriero.Salute * 0.33) + (Variabili.Esercito.Guerriero.Attacco * 0.72)) +
-                        player.Lancieri * ((Variabili.Esercito.Lanciere.Salute * 0.33) + (Variabili.Esercito.Lanciere.Attacco * 0.72)) +
-                        player.Arceri * ((Variabili.Esercito.Arciere.Salute * 0.33) + (Variabili.Esercito.Arciere.Attacco * 0.72)) +
-                        player.Catapulte * ((Variabili.Esercito.Catapulta.Salute * 0.33) + (Variabili.Esercito.Catapulta.Attacco * 0.72));
+                        player.Guerrieri * ((Variabili.Esercito.Guerriero.Salute * 0.25) + (Variabili.Esercito.Guerriero.Attacco * 0.30)) +
+                        player.Lancieri * ((Variabili.Esercito.Lanciere.Salute * 0.25) + (Variabili.Esercito.Lanciere.Attacco * 0.30)) +
+                        player.Arceri * ((Variabili.Esercito.Arciere.Salute * 0.25) + (Variabili.Esercito.Arciere.Attacco * 0.30)) +
+                        player.Catapulte * ((Variabili.Esercito.Catapulta.Salute * 0.25) + (Variabili.Esercito.Catapulta.Attacco * 0.30));
 
                         Auto_Update_Clients();
                         Esperienza.LevelUp(player);

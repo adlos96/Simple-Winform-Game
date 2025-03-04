@@ -115,10 +115,10 @@ namespace Server_Strategico
                 }
 
                 Server_Strategico.dati.forza_Esercito_Att_PVP =
-                    Variabili.Barbari.PVP.Guerrieri * ((Variabili.EsercitoNemico.Guerriero.Salute * 0.33) + (Variabili.EsercitoNemico.Guerriero.Attacco * 0.72)) +
-                    Variabili.Barbari.PVP.Lancieri * ((Variabili.EsercitoNemico.Lanciere.Salute * 0.33) + (Variabili.EsercitoNemico.Lanciere.Attacco * 0.72)) +
-                    Variabili.Barbari.PVP.Arceri * ((Variabili.EsercitoNemico.Arciere.Salute * 0.33) + (Variabili.EsercitoNemico.Arciere.Attacco * 0.72)) +
-                    Variabili.Barbari.PVP.Catapulte * ((Variabili.EsercitoNemico.Catapulta.Salute * 0.33) + (Variabili.EsercitoNemico.Catapulta.Attacco * 0.72));
+                    Variabili.Barbari.PVP.Guerrieri * ((Variabili.EsercitoNemico.Guerriero.Salute * 0.25) + (Variabili.EsercitoNemico.Guerriero.Attacco * 0.30)) +
+                    Variabili.Barbari.PVP.Lancieri * ((Variabili.EsercitoNemico.Lanciere.Salute * 0.25) + (Variabili.EsercitoNemico.Lanciere.Attacco * 0.30)) +
+                    Variabili.Barbari.PVP.Arceri * ((Variabili.EsercitoNemico.Arciere.Salute * 0.25) + (Variabili.EsercitoNemico.Arciere.Attacco * 0.30)) +
+                    Variabili.Barbari.PVP.Catapulte * ((Variabili.EsercitoNemico.Catapulta.Salute * 0.25) + (Variabili.EsercitoNemico.Catapulta.Attacco * 0.30));
 
                 guerriero++;
                 lanciere++;
