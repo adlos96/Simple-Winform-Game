@@ -1,6 +1,0 @@
-C:\Users\Adlos\Desktop\VS game\Server\Server Strategico.exe
-C:\Users\Adlos\Desktop\VS game\Server\Server Strategico.dll
-C:\Users\Adlos\Desktop\VS game\Server\Server Strategico.deps.json
-C:\Users\Adlos\Desktop\VS game\Server\Server Strategico.runtimeconfig.json
-C:\Users\Adlos\Desktop\VS game\Server\Server Strategico.pdb
-C:\Users\Adlos\Desktop\VS game\Server\WatsonTcp.dll

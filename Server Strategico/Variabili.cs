@@ -27,186 +27,6 @@ namespace Server_Strategico
                 Catapulte = 0
             };
         }
-        public class Edifici
-        {
-            public int Cibo { get; set; }
-            public int Legno { get; set; }
-            public int Pietra { get; set; }
-            public int Ferro { get; set; }
-            public int Oro { get; set; }
-            public double Produzione { get; set; }
-            public double TempoCostruzione { get; set; }
-
-            // Edifici Civili
-            public static Edifici Fattoria = new Edifici
-            {
-                Cibo = 100,
-                Legno = 100,
-                Pietra = 100,
-                Ferro = 100,
-                Oro = 100,
-                Produzione = 1.40,
-                TempoCostruzione = 27
-            };
-            public static Edifici Segheria = new Edifici
-            {
-                Cibo = 175,
-                Legno = 175,
-                Pietra = 175,
-                Ferro = 175,
-                Oro = 175,
-                Produzione = 1.24,
-                TempoCostruzione = 30
-            };
-            public static Edifici CavaPietra = new Edifici
-            {
-                Cibo = 250,
-                Legno = 250,
-                Pietra = 250,
-                Ferro = 250,
-                Oro = 250,
-                Produzione = 1.03,
-                TempoCostruzione = 35
-            };
-            public static Edifici MinieraFerro = new Edifici
-            {
-                Cibo = 325,
-                Legno = 325,
-                Pietra = 325,
-                Ferro = 325,
-                Oro = 325,
-                Produzione = 0.86,
-                TempoCostruzione = 39
-            };
-            public static Edifici MinieraOro = new Edifici
-            {
-                Cibo = 400,
-                Legno = 400,
-                Pietra = 400,
-                Ferro = 400,
-                Oro = 400,
-                Produzione = 0.73,
-                TempoCostruzione = 46
-            };
-            public static Edifici Case = new Edifici
-            {
-                Cibo = 2500,
-                Legno = 2500,
-                Pietra = 2500,
-                Ferro = 2500,
-                Oro = 2500,
-                Produzione = 0.01,
-                TempoCostruzione = 54
-            };
-            // Edifici Militari
-            public static Edifici Armature = new Edifici
-            {
-                Cibo = 1500,
-                Legno = 1500,
-                Pietra = 1500,
-                Ferro = 5100,
-                Oro = 1500,
-                Produzione = 0.02,
-                TempoCostruzione = 69
-            };
-            public static Edifici ProduzioneSpade = new Edifici
-            {
-                Cibo = 1750,
-                Legno = 1750,
-                Pietra = 1750,
-                Ferro = 1750,
-                Oro = 1750,
-                Produzione = 0.02,
-                TempoCostruzione = 69
-            };
-            public static Edifici ProduzioneLance = new Edifici
-            {
-                Cibo = 2000,
-                Legno = 2000,
-                Pietra = 2000,
-                Ferro = 2000,
-                Oro = 2000,
-                Produzione = 0.02,
-                TempoCostruzione = 69
-            };
-            public static Edifici ProduzioneArchi = new Edifici
-            {
-                Cibo = 2250,
-                Legno = 2250,
-                Pietra = 2250,
-                Ferro = 2250,
-                Oro = 2250,
-                Produzione = 0.02,
-                TempoCostruzione = 69
-            };
-            public static Edifici ProduzioneScudi = new Edifici
-            {
-                Cibo = 2500,
-                Legno = 2500,
-                Pietra = 2500,
-                Ferro = 2500,
-                Oro = 2500,
-                Produzione = 0.02,
-                TempoCostruzione = 69
-            };
-            public static Edifici ProduzioneArmature = new Edifici
-            {
-                Cibo = 2750,
-                Legno = 2750,
-                Pietra = 2750,
-                Ferro = 2750,
-                Oro = 2750,
-                Produzione = 0.02,
-                TempoCostruzione = 69
-            };
-            public static Edifici ProduzioneFrecce = new Edifici
-            {
-                Cibo = 3250,
-                Legno = 3250,
-                Pietra = 3250,
-                Ferro = 3250,
-                Oro = 3250,
-                Produzione = 0.09,
-                TempoCostruzione = 79
-            };
-
-            public static Edifici CasermaGuerrieri = new Edifici
-            {
-                Cibo = 1250,
-                Legno = 1250,
-                Pietra = 1250,
-                Ferro = 1250,
-                Oro = 1250,
-                TempoCostruzione = 98
-            };
-            public static Edifici CasermaLancieri = new Edifici
-            {
-                Cibo = 1450,
-                Legno = 1450,
-                Pietra = 1450,
-                Ferro = 1450,
-                Oro = 1450,
-                TempoCostruzione = 98
-            };
-            public static Edifici CasermaArcieri = new Edifici
-            {
-                Cibo = 1650,
-                Legno = 1650,
-                Pietra = 1650,
-                Ferro = 1650,
-                Oro = 1650,
-                TempoCostruzione = 98
-            };
-            public static Edifici CasermaCatapulte = new Edifici
-            {
-                Cibo = 1850,
-                Legno = 1850,
-                Pietra = 1850,
-                Ferro = 1850,
-                Oro = 1850,
-                TempoCostruzione = 98
-            };
-        }
         public class Player
         {
             public bool Player_Loop { get; set; }
@@ -389,19 +209,19 @@ namespace Server_Strategico
 
             public void ProduceResources() //produzione risorse
             {
-                Cibo += Fattoria * Variabili.Edifici.Fattoria.Produzione;
-                Legno += Segheria * Variabili.Edifici.Segheria.Produzione;
-                Pietra += CavaPietra * Variabili.Edifici.CavaPietra.Produzione;
-                Ferro += MinieraFerro * Variabili.Edifici.MinieraFerro.Produzione;
-                Oro += MinieraOro * Variabili.Edifici.MinieraOro.Produzione;
-                Popolazione += Abitazioni * Variabili.Edifici.Case.Produzione;
+                Cibo += Fattoria * Strutture.Edifici.Fattoria.Produzione;
+                Legno += Segheria * Strutture.Edifici.Segheria.Produzione;
+                Pietra += CavaPietra * Strutture.Edifici.CavaPietra.Produzione;
+                Ferro += MinieraFerro * Strutture.Edifici.MinieraFerro.Produzione;
+                Oro += MinieraOro * Strutture.Edifici.MinieraOro.Produzione;
+                Popolazione += Abitazioni * Strutture.Edifici.Case.Produzione;
 
-                Spade += ProduzioneSpade * Variabili.Edifici.ProduzioneSpade.Produzione;
-                Lance += ProduzioneLance * Variabili.Edifici.ProduzioneLance.Produzione;
-                Archi += ProduzioneArchi * Variabili.Edifici.ProduzioneArchi.Produzione;
-                Scudi += ProduzioneScudi * Variabili.Edifici.ProduzioneScudi.Produzione;
-                Armature += ProduzioneArmature * Variabili.Edifici.ProduzioneArmature.Produzione;
-                Frecce += ProduzioneFrecce * Variabili.Edifici.ProduzioneFrecce.Produzione;
+                Spade += ProduzioneSpade * Strutture.Edifici.ProduzioneSpade.Produzione;
+                Lance += ProduzioneLance * Strutture.Edifici.ProduzioneLance.Produzione;
+                Archi += ProduzioneArchi * Strutture.Edifici.ProduzioneArchi.Produzione;
+                Scudi += ProduzioneScudi * Strutture.Edifici.ProduzioneScudi.Produzione;
+                Armature += ProduzioneArmature * Strutture.Edifici.ProduzioneArmature.Produzione;
+                Frecce += ProduzioneFrecce * Strutture.Edifici.ProduzioneFrecce.Produzione;
             }
             public void ManutenzioneEsercito() //produzione risorse
             {
@@ -472,29 +292,29 @@ namespace Server_Strategico
                 if (currentTasks[buildingType] == null)  // Se non c'è nessuna costruzione in corso per questo tipo, inizia la prima
                     StartNextConstruction(buildingType);
             }
-            private Variabili.Edifici GetBuildingCost(string buildingType)
+            private Strutture.Edifici GetBuildingCost(string buildingType)
             {
                 // Restituisci i costi dell'edificio in base al tipo
                 return buildingType switch
                 {
-                    "Fattoria" => Variabili.Edifici.Fattoria,
-                    "Segheria" => Variabili.Edifici.Segheria,
-                    "CavaPietra" => Variabili.Edifici.CavaPietra,
-                    "MinieraFerro" => Variabili.Edifici.MinieraFerro,
-                    "MinieraOro" => Variabili.Edifici.MinieraOro,
-                    "Case" => Variabili.Edifici.Case,
+                    "Fattoria" => Strutture.Edifici.Fattoria,
+                    "Segheria" => Strutture.Edifici.Segheria,
+                    "CavaPietra" => Strutture.Edifici.CavaPietra,
+                    "MinieraFerro" => Strutture.Edifici.MinieraFerro,
+                    "MinieraOro" => Strutture.Edifici.MinieraOro,
+                    "Case" => Strutture.Edifici.Case,
 
-                    "ProduzioneSpade" => Variabili.Edifici.ProduzioneSpade,
-                    "ProduzioneLancie" => Variabili.Edifici.ProduzioneLance,
-                    "ProduzioneArchi" => Variabili.Edifici.ProduzioneArchi,
-                    "ProduzioneScudi" => Variabili.Edifici.ProduzioneScudi,
-                    "ProduzioneArmature" => Variabili.Edifici.ProduzioneArmature,
-                    "ProduzioneFrecce" => Variabili.Edifici.ProduzioneFrecce,
+                    "ProduzioneSpade" => Strutture.Edifici.ProduzioneSpade,
+                    "ProduzioneLancie" => Strutture.Edifici.ProduzioneLance,
+                    "ProduzioneArchi" => Strutture.Edifici.ProduzioneArchi,
+                    "ProduzioneScudi" => Strutture.Edifici.ProduzioneScudi,
+                    "ProduzioneArmature" => Strutture.Edifici.ProduzioneArmature,
+                    "ProduzioneFrecce" => Strutture.Edifici.ProduzioneFrecce,
 
-                    "CasermaGuerrieri" => Variabili.Edifici.CasermaGuerrieri,
-                    "CasermaLancieri" => Variabili.Edifici.CasermaLancieri,
-                    "CasermaArcieri" => Variabili.Edifici.CasermaArcieri,
-                    "CasermaCatapulte" => Variabili.Edifici.CasermaCatapulte,
+                    "CasermaGuerrieri" => Strutture.Edifici.CasermaGuerrieri,
+                    "CasermaLancieri" => Strutture.Edifici.CasermaLancieri,
+                    "CasermaArcieri" => Strutture.Edifici.CasermaArcieri,
+                    "CasermaCatapulte" => Strutture.Edifici.CasermaCatapulte,
                     // Aggiungi altri edifici se necessario
                     _ => null,
                 };
@@ -614,12 +434,10 @@ namespace Server_Strategico
                     Type = type;
                     DurationInSeconds = durationInSeconds;
                 }
-
                 public void Start()
                 {
                     startTime = DateTime.Now;
                 }
-
                 public bool IsComplete()
                 {
                     return DateTime.Now >= startTime.AddSeconds(DurationInSeconds);
