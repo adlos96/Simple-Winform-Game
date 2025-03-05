@@ -158,7 +158,7 @@ namespace Strategico_V2
                     case "Update_Data": Update_Data(msgArgs); break;
                     case "Log_Server": Update_Log(msgArgs[1]); break;
                     case "Update_PVP_Player": Update_PVP_List(msgArgs); break;
-
+                    case "Descrizione": Update_Desc(msgArgs[1]); break;
 
                     default: Console.WriteLine($"[Errore] >> [{messaggio_Ricevuto}] Comando non riconosciuto"); break;
                 }
@@ -259,10 +259,39 @@ namespace Strategico_V2
                 Variabili_Client.Lancieri_Coda = mess[70];
                 Variabili_Client.Arceri_Coda = mess[71];
                 Variabili_Client.Catapulte_Coda = mess[72];
+
+                //Ricerca
+                Variabili_Client.Ricerca_Salute_Guerrieri = mess[73];
+                Variabili_Client.Ricerca_Difesa_Guerrieri = mess[74];
+                Variabili_Client.Ricerca_Attacco_Guerrieri = mess[75];
+                Variabili_Client.Ricerca_Livello_Guerrieri = mess[76];
+
+                Variabili_Client.Ricerca_Salute_Lancieri = mess[77];
+                Variabili_Client.Ricerca_Difesa_Lancieri = mess[78];
+                Variabili_Client.Ricerca_Attacco_Lancieri = mess[79];
+                Variabili_Client.Ricerca_Livello_Lancieri = mess[80];
+
+                Variabili_Client.Ricerca_Salute_Arcieri = mess[81];
+                Variabili_Client.Ricerca_Difesa_Arcieri = mess[82];
+                Variabili_Client.Ricerca_Attacco_Arcieri = mess[83];
+                Variabili_Client.Ricerca_Livello_Arcieri = mess[84];
+
+                Variabili_Client.Ricerca_Salute_Catapulte = mess[85];
+                Variabili_Client.Ricerca_Difesa_Catapulte = mess[86];
+                Variabili_Client.Ricerca_Attacco_Catapulte = mess[87];
+                Variabili_Client.Ricerca_Livello_Catapulte = mess[88];
+
+                Variabili_Client.Ricerca_Produzione = mess[89];
+                Variabili_Client.Ricerca_Costruzione = mess[90];
+                Variabili_Client.Ricerca_Addestramento = mess[91];
             }
             static void Update_Log(string mes)
             {
                 Home.Log_Update(mes);
+            }
+            static void Update_Desc(string mes)
+            {
+                Home.Desc_Update(mes);
             }
             static void Update_PVP_List(string[] mess)
             {
