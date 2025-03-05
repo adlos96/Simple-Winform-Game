@@ -34,7 +34,6 @@ namespace Server_Strategico
             var player = Server.servers_.GetPlayer(msgArgs[1], msgArgs[2]);
             switch (msgArgs[0])
             {
-
                 case "Update_Data": Update_Data(clientGuid, msgArgs[1], msgArgs[2]); break;
                 case "Login":
                     bool login = await Login(msgArgs[1], msgArgs[2], clientGuid);
@@ -44,24 +43,24 @@ namespace Server_Strategico
                     Update_Data(clientGuid, msgArgs[1], msgArgs[2]);
                     break;
                 case "Costruzione":
-                    if (Convert.ToInt32(msgArgs[3]) > 0) player.QueueBuildConstruction("Fattoria", Convert.ToInt32(msgArgs[3]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[4]) > 0) player.QueueBuildConstruction("Segheria", Convert.ToInt32(msgArgs[4]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[5]) > 0) player.QueueBuildConstruction("CavaPietra", Convert.ToInt32(msgArgs[5]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[6]) > 0) player.QueueBuildConstruction("MinieraFerro", Convert.ToInt32(msgArgs[6]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[7]) > 0) player.QueueBuildConstruction("MinieraOro", Convert.ToInt32(msgArgs[7]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[8]) > 0) player.QueueBuildConstruction("Case", Convert.ToInt32(msgArgs[8]), clientGuid); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[3]) > 0) player.QueueBuildConstruction("Fattoria", Convert.ToInt32(msgArgs[3]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[4]) > 0) player.QueueBuildConstruction("Segheria", Convert.ToInt32(msgArgs[4]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[5]) > 0) player.QueueBuildConstruction("CavaPietra", Convert.ToInt32(msgArgs[5]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[6]) > 0) player.QueueBuildConstruction("MinieraFerro", Convert.ToInt32(msgArgs[6]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[7]) > 0) player.QueueBuildConstruction("MinieraOro", Convert.ToInt32(msgArgs[7]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[8]) > 0) player.QueueBuildConstruction("Case", Convert.ToInt32(msgArgs[8]), clientGuid, player); // Costruisci fattorie
                     
-                    if (Convert.ToInt32(msgArgs[9]) > 0) player.QueueBuildConstruction("ProduzioneSpade", Convert.ToInt32(msgArgs[9]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[10]) > 0) player.QueueBuildConstruction("ProduzioneLancie", Convert.ToInt32(msgArgs[10]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[11]) > 0) player.QueueBuildConstruction("ProduzioneArchi", Convert.ToInt32(msgArgs[11]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[12]) > 0) player.QueueBuildConstruction("ProduzioneScudi", Convert.ToInt32(msgArgs[12]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[13]) > 0) player.QueueBuildConstruction("ProduzioneArmature", Convert.ToInt32(msgArgs[13]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[14]) > 0) player.QueueBuildConstruction("ProduzioneFrecce", Convert.ToInt32(msgArgs[14]), clientGuid); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[9]) > 0) player.QueueBuildConstruction("ProduzioneSpade", Convert.ToInt32(msgArgs[9]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[10]) > 0) player.QueueBuildConstruction("ProduzioneLancie", Convert.ToInt32(msgArgs[10]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[11]) > 0) player.QueueBuildConstruction("ProduzioneArchi", Convert.ToInt32(msgArgs[11]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[12]) > 0) player.QueueBuildConstruction("ProduzioneScudi", Convert.ToInt32(msgArgs[12]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[13]) > 0) player.QueueBuildConstruction("ProduzioneArmature", Convert.ToInt32(msgArgs[13]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[14]) > 0) player.QueueBuildConstruction("ProduzioneFrecce", Convert.ToInt32(msgArgs[14]), clientGuid, player); // Costruisci fattorie
 
-                    if (Convert.ToInt32(msgArgs[15]) > 0) player.QueueBuildConstruction("CasermaGuerrieri", Convert.ToInt32(msgArgs[15]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[16]) > 0) player.QueueBuildConstruction("CasermaLancieri", Convert.ToInt32(msgArgs[16]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[17]) > 0) player.QueueBuildConstruction("CasermaArcieri", Convert.ToInt32(msgArgs[17]), clientGuid); // Costruisci fattorie
-                    if (Convert.ToInt32(msgArgs[18]) > 0) player.QueueBuildConstruction("CasermaCatapulte", Convert.ToInt32(msgArgs[18]), clientGuid); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[15]) > 0) player.QueueBuildConstruction("CasermaGuerrieri", Convert.ToInt32(msgArgs[15]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[16]) > 0) player.QueueBuildConstruction("CasermaLancieri", Convert.ToInt32(msgArgs[16]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[17]) > 0) player.QueueBuildConstruction("CasermaArcieri", Convert.ToInt32(msgArgs[17]), clientGuid, player); // Costruisci fattorie
+                    if (Convert.ToInt32(msgArgs[18]) > 0) player.QueueBuildConstruction("CasermaCatapulte", Convert.ToInt32(msgArgs[18]), clientGuid, player); // Costruisci fattorie
                     break;
                 case "Reclutamento":
                     if (Convert.ToInt32(msgArgs[3]) > 0) player.QueueTrainUnits("Guerriero", Convert.ToInt32(msgArgs[3]), clientGuid, player); // Costruisci fattorie
@@ -80,10 +79,81 @@ namespace Server_Strategico
                     }
                     break;
                 case "Ricerca":
-                    if (msgArgs[1] == "Ricerca1") Battaglie.Battaglia_Barbari_PVE(player, clientGuid);
-                    if (msgArgs[1] == "Ricerca2") Battaglie.Battaglia_Barbari_PVP(player, clientGuid);
-                    if (msgArgs[1] == "Ricerca3") Battaglie.Battaglia_Barbari_PVP(player, clientGuid);
-                    
+                    if (msgArgs[3] == "Produzione") Ricerca.Ricerca_Produzione(player, clientGuid);
+                    if (msgArgs[3] == "Costruzione") Ricerca.Ricerca_Costruzione(player, clientGuid);
+                    if (msgArgs[3] == "Addestramento") Ricerca.Ricerca_Addestramento(player, clientGuid);
+                    if (msgArgs[3] == "Truppe") Ricerca.Ricerca_Truppe(player, clientGuid, msgArgs[4], msgArgs[5]);
+                    break;
+                case "Descrizione":
+                    switch (msgArgs[3])
+                    {
+                        case "Fattoria":
+                            Server.Send(clientGuid, $"Descrizione|La fattoria è indispensabile per la produzione di Cibo, fondamentale anche per la costruzione di strutture, " +
+                                $"l'addestramento delle unità militari ed il loro mantenimento. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Cibo: {Strutture.Edifici.Fattoria.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.Fattoria.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.Fattoria.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.Fattoria.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.Fattoria.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.Fattoria.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.Fattoria.Produzione.ToString()}");
+                            break;
+                        case "Segheria":
+                            Server.Send(clientGuid, $"Descrizione|La Segheria è indispensabile per la produzione di Legna, fondamentale per la costruzione di strutture e " +
+                                $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Cibo: {Strutture.Edifici.Segheria.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.Segheria.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.Segheria.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.Segheria.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.Segheria.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.Segheria.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.Segheria.Produzione.ToString()}");
+                            break;
+                        case "Cava Pietra":
+                            Server.Send(clientGuid, $"Descrizione|La cava di pietra è indispensabile per la produzione di Pietra, fondamentale per la costruzione di strutture e " +
+                                $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Cibo: {Strutture.Edifici.CavaPietra.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.CavaPietra.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.CavaPietra.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.CavaPietra.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.CavaPietra.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.CavaPietra.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.CavaPietra.Produzione.ToString()}");
+                            break;
+                        case "Miniera Ferro":
+                            Server.Send(clientGuid, $"Descrizione|La Miniera di ferro è indispensabile per la produzione di Ferro, fondamentale per la costruzione di strutture e " +
+                                $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Cibo: {Strutture.Edifici.MinieraFerro.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.MinieraFerro.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.MinieraFerro.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.MinieraFerro.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.MinieraFerro.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.MinieraFerro.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.MinieraFerro.Produzione.ToString()}");
+                            break;
+                        case "Miniera Oro":
+                            Server.Send(clientGuid, $"Descrizione|La miniera d'oro è indispensabile per la produzione dell'Oro, fondamentale per la costruzione di strutture e " +
+                                $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Cibo: {Strutture.Edifici.MinieraOro.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.MinieraOro.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.MinieraOro.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.MinieraOro.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.MinieraOro.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.MinieraOro.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.MinieraOro.Produzione.ToString()}");
+                            break;
+                        case "Case":
+                            Server.Send(clientGuid, $"Descrizione|Le Case sono necessarie per invogliare sempre più cittadini presso il vostro villaggio, " +
+                                $"sono fondamentali per addestrare le unità militari.\r\n \r\n" +
+                                $"Cibo: {Strutture.Edifici.Case.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.Case.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.Case.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.Case.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.Case.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.Case.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.Case.Produzione.ToString()}");
+                            break;
+                    }
                     break;
                 default: Console.WriteLine($"Messaggio: [{msgArgs}]"); break;
             }
@@ -133,12 +203,12 @@ namespace Server_Strategico
                 $"{player.Oro.ToString("#,0")}|" +
                 $"{player.Popolazione.ToString("#,0")}|" +
 
-                $"{((player.Fattoria * Variabili.Edifici.Fattoria.Produzione) - Cibo).ToString("#,0.00")}|" +
-                $"{(player.Segheria * Variabili.Edifici.Segheria.Produzione).ToString("#,0.00")}|" +
-                $"{(player.CavaPietra * Variabili.Edifici.CavaPietra.Produzione).ToString("#,0.00")}|" +
-                $"{(player.MinieraFerro * Variabili.Edifici.MinieraFerro.Produzione).ToString("#,0.00")}|" +
-                $"{((player.MinieraOro * Variabili.Edifici.MinieraOro.Produzione) - Oro).ToString("#,0.00")}|" +
-                $"{(player.Abitazioni * Variabili.Edifici.Case.Produzione).ToString("#,0.00")}|" +
+                $"{((player.Fattoria * (Strutture.Edifici.Fattoria.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Cibo)) - Cibo).ToString("#,0.00")}|" +
+                $"{(player.Segheria * (Strutture.Edifici.Segheria.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Legno)).ToString("#,0.00")}|" +
+                $"{(player.CavaPietra * (Strutture.Edifici.CavaPietra.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Pietra)).ToString("#,0.00")}|" +
+                $"{(player.MinieraFerro * (Strutture.Edifici.MinieraFerro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Ferro)).ToString("#,0.00")}|" +
+                $"{((player.MinieraOro * (Strutture.Edifici.MinieraOro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Oro)) - Oro).ToString("#,0.00")}|" +
+                $"{(player.Abitazioni * (Strutture.Edifici.Case.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Popolazione)).ToString("#,0.00")}|" +
 
                 $"{player.Fattoria.ToString("#,0")}|" +
                 $"{player.Segheria.ToString("#,0")}|" +
@@ -161,12 +231,12 @@ namespace Server_Strategico
                 $"{player.Armature.ToString("#,0.00")}|" +
                 $"{player.Frecce.ToString("#,0.00")}|" +
 
-                $"{(player.ProduzioneSpade * Variabili.Edifici.ProduzioneSpade.Produzione).ToString("#,0.00")}|" +
-                $"{(player.ProduzioneLance * Variabili.Edifici.ProduzioneLance.Produzione).ToString("#,0.00")}|" +
-                $"{(player.ProduzioneArchi * Variabili.Edifici.ProduzioneArchi.Produzione).ToString("#,0.00")}|" +
-                $"{(player.ProduzioneScudi * Variabili.Edifici.ProduzioneScudi.Produzione).ToString("#,0.00")}|" +
-                $"{(player.ProduzioneArmature * Variabili.Edifici.ProduzioneArmature.Produzione).ToString("#,0.00")}|" +
-                $"{(player.ProduzioneFrecce * Variabili.Edifici.ProduzioneFrecce.Produzione).ToString("#,0.00")}|" +
+                $"{(player.ProduzioneSpade * Strutture.Edifici.ProduzioneSpade.Produzione).ToString("#,0.00")}|" +
+                $"{(player.ProduzioneLance * Strutture.Edifici.ProduzioneLance.Produzione).ToString("#,0.00")}|" +
+                $"{(player.ProduzioneArchi * Strutture.Edifici.ProduzioneArchi.Produzione).ToString("#,0.00")}|" +
+                $"{(player.ProduzioneScudi * Strutture.Edifici.ProduzioneScudi.Produzione).ToString("#,0.00")}|" +
+                $"{(player.ProduzioneArmature * Strutture.Edifici.ProduzioneArmature.Produzione).ToString("#,0.00")}|" +
+                $"{(player.ProduzioneFrecce * Strutture.Edifici.ProduzioneFrecce.Produzione).ToString("#,0.00")}|" +
 
                 $"{player.Guerrieri.ToString("#,0")}/{player.Caserma_Guerrieri * player.GuerrieriMax}|" +
                 $"{player.Lancieri.ToString("#,0")}/{player.Caserma_Lancieri * player.LancieriMax}|" +
@@ -212,7 +282,31 @@ namespace Server_Strategico
                 $"{unitsQueue.GetValueOrDefault("Guerriero", 0)}|" +
                 $"{unitsQueue.GetValueOrDefault("Lanciere", 0)}|" +
                 $"{unitsQueue.GetValueOrDefault("Arciere", 0)}|" +
-                $"{unitsQueue.GetValueOrDefault("Catapulta", 0)}|");
+                $"{unitsQueue.GetValueOrDefault("Catapulta", 0)}|" +
+
+                $"{player.Guerriero_Salute.ToString("#,0")}|" +
+                $"{player.Guerriero_Difesa.ToString("#,0")}|" +
+                $"{player.Guerriero_Attacco.ToString("#,0")}|" +
+                $"{player.Guerriero_Livello.ToString("#,0")}|" +
+
+                $"{player.Lanciere_Salute.ToString("#,0")}|" +
+                $"{player.Lanciere_Difesa.ToString("#,0")}|" +
+                $"{player.Lanciere_Attacco.ToString("#,0")}|" +
+                $"{player.Lanciere_Livello.ToString("#,0")}|" +
+
+                $"{player.Arciere_Salute.ToString("#,0")}|" +
+                $"{player.Arciere_Difesa.ToString("#,0")}|" +
+                $"{player.Arciere_Attacco.ToString("#,0")}|" +
+                $"{player.Arciere_Livello.ToString("#,0")}|" +
+
+                $"{player.catapulta_Salute.ToString("#,0")}|" +
+                $"{player.catapulta_Difesa.ToString("#,0")}|" +
+                $"{player.catapulta_Attacco.ToString("#,0")}|" +
+                $"{player.catapulta_Livello.ToString("#,0")}|" +
+
+                $"{player.Ricerca_Produzione.ToString("#,0")}|" +
+                $"{player.Ricerca_Costruzione.ToString("#,0")}|" +
+                $"{player.Ricerca_Addestramento.ToString("#,0")}|");
 
             stringa_Base = "";
             stringa_Base = $"{Server.Utenti_PVP.Count}";
