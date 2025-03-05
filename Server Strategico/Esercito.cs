@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Server_Strategico
+﻿namespace Server_Strategico
 {
     internal class Esercito
     {
@@ -15,13 +9,13 @@ namespace Server_Strategico
             public int Archi { get; set; }
             public int Scudi { get; set; }
             public int Armature { get; set; }
-            public int Cibo { get; set; }
-            public int Legno { get; set; }
-            public int Pietra { get; set; }
-            public int Ferro { get; set; }
-            public int Oro { get; set; }
+            public double Cibo { get; set; }
+            public double Legno { get; set; }
+            public double Pietra { get; set; }
+            public double Ferro { get; set; }
+            public double Oro { get; set; }
             public double TempoReclutamento { get; set; }
-            public int Popolazione { get; set; }
+            public double Popolazione { get; set; }
 
             // Costruttore per inizializzare i costi
             public static CostoReclutamento Guerriero = new CostoReclutamento
@@ -129,9 +123,9 @@ namespace Server_Strategico
             };
             public static Unità Catapulta = new Unità
             {
-                Salute = Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione,
+                Salute = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione),
                 Attacco = 14,
-                Difesa = Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione,
+                Difesa = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione),
                 Distanza = 14,
                 Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
                 Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
@@ -142,10 +136,10 @@ namespace Server_Strategico
         }
         public class Unità
         {
-            public double Salute { get; set; }
-            public double Attacco { get; set; }
-            public double Difesa { get; set; }
-            public double Distanza { get; set; }
+            public int Salute { get; set; }
+            public int Attacco { get; set; }
+            public int Difesa { get; set; }
+            public int Distanza { get; set; }
             public double Salario { get; set; }
             public double Cibo { get; set; }
             public int Quantità { get; set; }
@@ -189,9 +183,9 @@ namespace Server_Strategico
             };
             public static Unità Catapulta = new Unità
             {
-                Salute = Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione,
+                Salute = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione),
                 Attacco = 14,
-                Difesa = Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione,
+                Difesa = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione),
                 Distanza = 14,
                 Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.619,
                 Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.769,
