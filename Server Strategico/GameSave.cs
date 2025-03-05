@@ -1,5 +1,3 @@
-using System.Text;
-using System;
 using System.Text.Json;
 using static Server_Strategico.Variabili;
 
@@ -71,12 +69,39 @@ namespace Server_Strategico
                     Arceri = player.Arceri,
                     Catapulte = player.Catapulte,
 
-                    // Nuovi dati da salvare
+                    // Caserme
                     GuerrieriMax = player.GuerrieriMax,
                     LancieriMax = player.LancieriMax,
                     ArceriMax = player.ArceriMax,
                     CatapulteMax = player.CatapulteMax,
 
+                    //Ricerche
+                    Ricerca_Produzione = player.Ricerca_Produzione,
+                    Ricerca_Costruzione = player.Ricerca_Costruzione,
+                    Ricerca_Riparazione = player.Ricerca_Riparazione,
+                    Ricerca_Addestramento = player.Ricerca_Addestramento,
+                
+                    Guerriero_Livello = player.Guerriero_Livello,
+                    Guerriero_Salute = player.Guerriero_Salute,
+                    Guerriero_Difesa = player.Guerriero_Difesa,
+                    Guerriero_Attacco = player.Guerriero_Attacco,
+
+                    Lanciere_Livello = player.Lanciere_Livello,
+                    Lanciere_Salute = player.Lanciere_Salute,
+                    Lanciere_Difesa = player.Lanciere_Difesa,
+                    Lanciere_Attacco = player.Lanciere_Attacco,
+
+                    Arciere_Livello = player.Arciere_Livello,
+                    Arciere_Salute = player.Arciere_Salute,
+                    Arciere_Difesa = player.Arciere_Difesa,
+                    Arciere_Attacco = player.Arciere_Attacco,
+
+                    catapulta_Livello = player.catapulta_Livello,
+                    catapulta_Salute = player.catapulta_Salute,
+                    catapulta_Difesa = player.catapulta_Difesa,
+                    catapulta_Attacco = player.catapulta_Attacco,
+
+                    //Castello
                     SaluteCancello = player.SaluteCancello,
                     SaluteCancelloMax = player.SaluteCancelloMax,
                     SaluteMura = player.SaluteMura,
@@ -177,12 +202,39 @@ namespace Server_Strategico
                     player.Arceri = playerData.Arceri;
                     player.Catapulte = playerData.Catapulte;
 
-                    // Ripristina i nuovi dati
+                    // Caserme
                     player.GuerrieriMax = playerData.GuerrieriMax;
                     player.LancieriMax = playerData.LancieriMax;
                     player.ArceriMax = playerData.ArceriMax;
                     player.CatapulteMax = playerData.CatapulteMax;
 
+                    //Ricerche
+                    player.Ricerca_Produzione = playerData.Ricerca_Produzione;
+                    player.Ricerca_Costruzione = playerData.Ricerca_Costruzione;
+                    player.Ricerca_Riparazione = playerData.Ricerca_Riparazione;
+                    player.Ricerca_Addestramento = playerData.Ricerca_Addestramento;
+
+                    player.Guerriero_Livello = playerData.Guerriero_Livello;
+                    player.Guerriero_Salute = playerData.Guerriero_Salute;
+                    player.Guerriero_Difesa = playerData.Guerriero_Difesa;
+                    player.Guerriero_Attacco = playerData.Guerriero_Attacco;
+
+                    player.Lanciere_Livello = playerData.Lanciere_Livello;
+                    player.Lanciere_Salute = playerData.Lanciere_Salute;
+                    player.Lanciere_Difesa = playerData.Lanciere_Difesa;
+                    player.Lanciere_Attacco = playerData.Lanciere_Attacco;
+
+                    player.Arciere_Livello = playerData.Arciere_Livello;
+                    player.Arciere_Salute = playerData.Arciere_Salute;
+                    player.Arciere_Difesa = playerData.Arciere_Difesa;
+                    player.Arciere_Attacco = playerData.Arciere_Attacco;
+
+                    player.catapulta_Livello = playerData.catapulta_Livello;
+                    player.catapulta_Salute = playerData.catapulta_Salute;
+                    player.catapulta_Difesa = playerData.catapulta_Difesa;
+                    player.catapulta_Attacco = playerData.catapulta_Attacco;
+
+                    //Castello
                     player.SaluteCancello = playerData.SaluteCancello;
                     player.SaluteCancelloMax = playerData.SaluteCancelloMax;
                     player.SaluteMura = playerData.SaluteMura;
@@ -198,7 +250,7 @@ namespace Server_Strategico
                     foreach (var building in playerData.BuildingQueues)
                     {
                         if (building.Value > 0)
-                            player.LoadQueueBuildConstruction(building.Key, building.Value, player.guid_Player);
+                            player.LoadQueueBuildConstruction(building.Key, building.Value, player);
                     }
                     if (playerData.BuildingQueues.Count() != 0)
                     {
@@ -209,7 +261,7 @@ namespace Server_Strategico
                     foreach (var unit in playerData.RecruitmentQueues)
                     {
                         if (unit.Value > 0)
-                            player.LoadQueueTrainUnits(unit.Key, unit.Value, player.guid_Player);
+                            player.LoadQueueTrainUnits(unit.Key, unit.Value, player);
                     }
                     if (playerData.RecruitmentQueues.Count() != 0)
                     {
@@ -298,6 +350,32 @@ namespace Server_Strategico
             public int Lancieri { get; set; }
             public int Arceri { get; set; }
             public int Catapulte { get; set; }
+
+            //Ricerca
+            public int Ricerca_Produzione { get; set; }
+            public int Ricerca_Costruzione { get; set; }
+            public int Ricerca_Addestramento { get; set; }
+            public int Ricerca_Riparazione { get; set; }
+
+            public int Guerriero_Livello { get; set; }
+            public int Guerriero_Salute { get; set; }
+            public int Guerriero_Difesa { get; set; }
+            public int Guerriero_Attacco { get; set; }
+
+            public int Lanciere_Livello { get; set; }
+            public int Lanciere_Salute { get; set; }
+            public int Lanciere_Difesa { get; set; }
+            public int Lanciere_Attacco { get; set; }
+
+            public int Arciere_Livello { get; set; }
+            public int Arciere_Salute { get; set; }
+            public int Arciere_Difesa { get; set; }
+            public int Arciere_Attacco { get; set; }
+
+            public int catapulta_Livello { get; set; }
+            public int catapulta_Salute { get; set; }
+            public int catapulta_Difesa { get; set; }
+            public int catapulta_Attacco { get; set; }
 
 
             // Nuovi dati da salvare
