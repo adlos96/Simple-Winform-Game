@@ -77,6 +77,30 @@ namespace Strategico_V2
         public static string Armature           = "0";  //Consumabili
         public static string Frecce             = "0";  //Consumabili
 
+        //Albero Ricerca
+        public static string Ricerca_Produzione = "1";  //Consumabili
+        public static string Ricerca_Costruzione = "1";  //Consumabili
+        public static string Ricerca_Addestramento = "1";  //Consumabili
+
+        public static string Ricerca_Salute_Guerrieri = "1";  //Consumabili
+        public static string Ricerca_Difesa_Guerrieri = "1";  //Consumabili
+        public static string Ricerca_Attacco_Guerrieri = "1";  //Consumabili
+        public static string Ricerca_Livello_Guerrieri = "1";  //Consumabili
+
+        public static string Ricerca_Salute_Lancieri = "1";  //Consumabili
+        public static string Ricerca_Difesa_Lancieri = "1";  //Consumabili
+        public static string Ricerca_Attacco_Lancieri = "1";  //Consumabili
+        public static string Ricerca_Livello_Lancieri = "1";  //Consumabili
+
+        public static string Ricerca_Salute_Arcieri = "1";  //Consumabili
+        public static string Ricerca_Difesa_Arcieri = "1";  //Consumabili
+        public static string Ricerca_Attacco_Arcieri = "1";  //Consumabili
+        public static string Ricerca_Livello_Arcieri = "1";  //Consumabili
+
+        public static string Ricerca_Salute_Catapulte = "1";  //Consumabili
+        public static string Ricerca_Difesa_Catapulte = "1";  //Consumabili
+        public static string Ricerca_Attacco_Catapulte = "1";  //Consumabili
+        public static string Ricerca_Livello_Catapulte = "1";  //Consumabili
 
         public static string Arceri             = "0";
         public static string Guerrieri          = "0";
