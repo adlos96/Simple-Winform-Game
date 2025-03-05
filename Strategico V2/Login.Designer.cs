@@ -37,6 +37,7 @@
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_IP = new System.Windows.Forms.TextBox();
+            this.txt_Log = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_New_Game
@@ -124,11 +125,24 @@
             this.txt_IP.TabIndex = 7;
             this.txt_IP.Text = "AUTO";
             // 
+            // txt_Log
+            // 
+            this.txt_Log.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Log.Location = new System.Drawing.Point(15, 140);
+            this.txt_Log.Multiline = true;
+            this.txt_Log.Name = "txt_Log";
+            this.txt_Log.Size = new System.Drawing.Size(301, 20);
+            this.txt_Log.TabIndex = 9;
+            this.txt_Log.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 133);
+            this.ClientSize = new System.Drawing.Size(343, 181);
+            this.Controls.Add(this.txt_Log);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_IP);
             this.Controls.Add(this.label3);
@@ -157,6 +171,7 @@
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_IP;
+        private System.Windows.Forms.TextBox txt_Log;
     }
 }
 
