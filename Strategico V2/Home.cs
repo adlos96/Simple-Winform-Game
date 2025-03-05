@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Strategico_V2.Interfacce;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -146,6 +147,10 @@ namespace Strategico_V2
         {
             _ = txt_Log.Invoke((Action)(() => txt_Log.Text = $"{msg}\r\n" + txt_Log.Text));
         }
+        public static void Desc_Update(string msg)
+        {
+            _ = txt_Descrizione.Invoke((Action)(() => txt_Descrizione.Text = $"{msg}\r\n"));
+        }
 
         private void btn_Accampameto_Barbaro_PVE_Attacco_Click(object sender, EventArgs e)
         {
@@ -165,6 +170,113 @@ namespace Strategico_V2
         private void button1_Click(object sender, EventArgs e)
         {
             _ = txt_Log.Invoke((Action)(() => txt_Log.Text = $""));
+        }
+
+        private void btn_Ricerca_Click(object sender, EventArgs e)
+        {
+            Ricerca_Guid form1 = new Ricerca_Guid();
+            form1.ShowDialog();
+            return;
+        }
+
+        private void panel_Fattoria_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Fattoria");
+        }
+
+        private void panel_Segheria_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Segheria");
+        }
+
+        private void panel_Cava_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Cava Pietra");
+        }
+
+        private void panel_Miniera_Ferro_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Miniera Ferro");
+        }
+
+        private void panel_Miniera_Oro_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Miniera Oro");
+        }
+
+        private void panel_Case_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Case");
+        }
+
+        private void panel_Pr_Spade_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Spade");
+        }
+
+        private void panel_Pr_Lancie_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Lancie");
+        }
+
+        private void panel_Pr_Archi_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Archi");
+        }
+
+        private void panel_Pr_Scudi_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Scudi");
+        }
+
+        private void panel_Pr_Armature_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Armature");
+        }
+
+        private void panel_Pr_Frecce_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Frecce");
+        }
+
+        private void panel_Guerriero_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Guerriero");
+        }
+
+        private void panel_Lanciere_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Lanciere");
+        }
+
+        private void panel_Arciere_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Arciere");
+        }
+
+        private void panel_Catapulta_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Catapulta");
+        }
+
+        private void panel48_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Guerriero_PVE");
+        }
+
+        private void panel46_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Lanciere_PVE");
+        }
+
+        private void panel36_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Arciere_PVE");
+        }
+
+        private void panel34_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Catapulta_PVE");
         }
     }
 }

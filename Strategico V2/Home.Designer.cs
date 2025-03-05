@@ -72,93 +72,94 @@
             this.txt_Cibo = new System.Windows.Forms.TextBox();
             this.txt_Produzione_Cibo = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_Ricerca = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Costruisci = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel37 = new System.Windows.Forms.Panel();
             this.label71 = new System.Windows.Forms.Label();
-            this.panel38 = new System.Windows.Forms.Panel();
+            this.panel_Catapulta = new System.Windows.Forms.Panel();
             this.txt_Catapulta_Reclutamento = new System.Windows.Forms.TextBox();
             this.lbl_Catapulta_Coda = new System.Windows.Forms.TextBox();
             this.panel39 = new System.Windows.Forms.Panel();
             this.label76 = new System.Windows.Forms.Label();
-            this.panel40 = new System.Windows.Forms.Panel();
+            this.panel_Arciere = new System.Windows.Forms.Panel();
             this.txt_Arciere_Reclutamento = new System.Windows.Forms.TextBox();
             this.lbl_Arciere_Coda = new System.Windows.Forms.TextBox();
             this.panel41 = new System.Windows.Forms.Panel();
             this.label81 = new System.Windows.Forms.Label();
-            this.panel42 = new System.Windows.Forms.Panel();
+            this.panel_Lanciere = new System.Windows.Forms.Panel();
             this.txt_Lanciere_Reclutamento = new System.Windows.Forms.TextBox();
             this.lbl_Lanciere_Coda = new System.Windows.Forms.TextBox();
             this.panel43 = new System.Windows.Forms.Panel();
             this.label86 = new System.Windows.Forms.Label();
-            this.panel44 = new System.Windows.Forms.Panel();
+            this.panel_Guerriero = new System.Windows.Forms.Panel();
             this.txt_Guerriero_Reclutamento = new System.Windows.Forms.TextBox();
             this.lbl_Guerriero_Coda = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel_Pr_Frecce = new System.Windows.Forms.Panel();
             this.txt_Frecce_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Freccie_Coda = new System.Windows.Forms.TextBox();
             this.panel23 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
-            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel_Pr_Armature = new System.Windows.Forms.Panel();
             this.txt_Armatura_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Armature_Coda = new System.Windows.Forms.TextBox();
             this.panel25 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
+            this.panel_Pr_Scudi = new System.Windows.Forms.Panel();
             this.txt_Scudi_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Scudi_Coda = new System.Windows.Forms.TextBox();
             this.panel27 = new System.Windows.Forms.Panel();
             this.label46 = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
+            this.panel_Pr_Archi = new System.Windows.Forms.Panel();
             this.txt_Archi_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Archi_Coda = new System.Windows.Forms.TextBox();
             this.panel29 = new System.Windows.Forms.Panel();
             this.label51 = new System.Windows.Forms.Label();
-            this.panel30 = new System.Windows.Forms.Panel();
+            this.panel_Pr_Lancie = new System.Windows.Forms.Panel();
             this.txt_Lancie_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Lancie_Coda = new System.Windows.Forms.TextBox();
             this.panel31 = new System.Windows.Forms.Panel();
             this.label56 = new System.Windows.Forms.Label();
-            this.panel32 = new System.Windows.Forms.Panel();
+            this.panel_Pr_Spade = new System.Windows.Forms.Panel();
             this.txt_Spade_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Spade_Coda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel_Case = new System.Windows.Forms.Panel();
             this.txt_Case_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Case_Coda = new System.Windows.Forms.TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.lbl = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel_Miniera_Oro = new System.Windows.Forms.Panel();
             this.txt_MinieraOro_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Miniera_Oro_Coda = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel_Miniera_Ferro = new System.Windows.Forms.Panel();
             this.txt_MinieraFerro_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Miniera_Ferro_Coda = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel_Cava = new System.Windows.Forms.Panel();
             this.txt_CavaPietra_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Cava_Pietra_Coda = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel_Segheria = new System.Windows.Forms.Panel();
             this.txt_Segheria_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Segheria_Coda = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel_Fattoria = new System.Windows.Forms.Panel();
             this.txt_Fattoria_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Fattoria_Coda = new System.Windows.Forms.TextBox();
             this.txt_Riepilogo_Utente = new System.Windows.Forms.TextBox();
-            txt_Log = new System.Windows.Forms.TextBox();
+            this.txt_Log = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txt_Forza_Esercito_PVE_Barbari = new System.Windows.Forms.TextBox();
@@ -204,6 +205,8 @@
             this.btn_PVP_Attacco = new System.Windows.Forms.Button();
             this.panel73 = new System.Windows.Forms.Panel();
             this.btn_Giocatori = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txt_Descrizione = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -238,6 +241,7 @@
             this.panel55.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel72.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -642,6 +646,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel8.Controls.Add(this.btn_Ricerca);
             this.panel8.Controls.Add(this.button1);
             this.panel8.Controls.Add(this.btn_Costruisci);
             this.panel8.Controls.Add(this.groupBox3);
@@ -649,6 +654,16 @@
             this.panel8.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Name = "panel8";
+            // 
+            // btn_Ricerca
+            // 
+            this.btn_Ricerca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Ricerca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Ricerca.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(this.btn_Ricerca, "btn_Ricerca");
+            this.btn_Ricerca.Name = "btn_Ricerca";
+            this.btn_Ricerca.UseVisualStyleBackColor = false;
+            this.btn_Ricerca.Click += new System.EventHandler(this.btn_Ricerca_Click);
             // 
             // button1
             // 
@@ -686,7 +701,7 @@
             // 
             this.panel37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel37.Controls.Add(this.label71);
-            this.panel37.Controls.Add(this.panel38);
+            this.panel37.Controls.Add(this.panel_Catapulta);
             this.panel37.Controls.Add(this.txt_Catapulta_Reclutamento);
             this.panel37.Controls.Add(this.lbl_Catapulta_Coda);
             resources.ApplyResources(this.panel37, "panel37");
@@ -698,13 +713,14 @@
             this.label71.ForeColor = System.Drawing.SystemColors.Control;
             this.label71.Name = "label71";
             // 
-            // panel38
+            // panel_Catapulta
             // 
-            this.panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel38.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_medieval_48;
-            resources.ApplyResources(this.panel38, "panel38");
-            this.panel38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel38.Name = "panel38";
+            this.panel_Catapulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Catapulta.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_medieval_48;
+            resources.ApplyResources(this.panel_Catapulta, "panel_Catapulta");
+            this.panel_Catapulta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Catapulta.Name = "panel_Catapulta";
+            this.panel_Catapulta.MouseHover += new System.EventHandler(this.panel_Catapulta_MouseHover);
             // 
             // txt_Catapulta_Reclutamento
             // 
@@ -727,7 +743,7 @@
             // 
             this.panel39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel39.Controls.Add(this.label76);
-            this.panel39.Controls.Add(this.panel40);
+            this.panel39.Controls.Add(this.panel_Arciere);
             this.panel39.Controls.Add(this.txt_Arciere_Reclutamento);
             this.panel39.Controls.Add(this.lbl_Arciere_Coda);
             resources.ApplyResources(this.panel39, "panel39");
@@ -739,13 +755,14 @@
             this.label76.ForeColor = System.Drawing.SystemColors.Control;
             this.label76.Name = "label76";
             // 
-            // panel40
+            // panel_Arciere
             // 
-            this.panel40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel40.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_tiro_con_l_arco_48_1_;
-            resources.ApplyResources(this.panel40, "panel40");
-            this.panel40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel40.Name = "panel40";
+            this.panel_Arciere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Arciere.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_tiro_con_l_arco_48_1_;
+            resources.ApplyResources(this.panel_Arciere, "panel_Arciere");
+            this.panel_Arciere.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Arciere.Name = "panel_Arciere";
+            this.panel_Arciere.MouseHover += new System.EventHandler(this.panel_Arciere_MouseHover);
             // 
             // txt_Arciere_Reclutamento
             // 
@@ -768,7 +785,7 @@
             // 
             this.panel41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel41.Controls.Add(this.label81);
-            this.panel41.Controls.Add(this.panel42);
+            this.panel41.Controls.Add(this.panel_Lanciere);
             this.panel41.Controls.Add(this.txt_Lanciere_Reclutamento);
             this.panel41.Controls.Add(this.lbl_Lanciere_Coda);
             resources.ApplyResources(this.panel41, "panel41");
@@ -780,13 +797,14 @@
             this.label81.ForeColor = System.Drawing.SystemColors.Control;
             this.label81.Name = "label81";
             // 
-            // panel42
+            // panel_Lanciere
             // 
-            this.panel42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel42.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_guerriero_dell__39_età_del_ferro_48;
-            resources.ApplyResources(this.panel42, "panel42");
-            this.panel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel42.Name = "panel42";
+            this.panel_Lanciere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Lanciere.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_guerriero_dell__39_età_del_ferro_48;
+            resources.ApplyResources(this.panel_Lanciere, "panel_Lanciere");
+            this.panel_Lanciere.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Lanciere.Name = "panel_Lanciere";
+            this.panel_Lanciere.MouseHover += new System.EventHandler(this.panel_Lanciere_MouseHover);
             // 
             // txt_Lanciere_Reclutamento
             // 
@@ -809,7 +827,7 @@
             // 
             this.panel43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel43.Controls.Add(this.label86);
-            this.panel43.Controls.Add(this.panel44);
+            this.panel43.Controls.Add(this.panel_Guerriero);
             this.panel43.Controls.Add(this.txt_Guerriero_Reclutamento);
             this.panel43.Controls.Add(this.lbl_Guerriero_Coda);
             resources.ApplyResources(this.panel43, "panel43");
@@ -821,13 +839,14 @@
             this.label86.ForeColor = System.Drawing.SystemColors.Control;
             this.label86.Name = "label86";
             // 
-            // panel44
+            // panel_Guerriero
             // 
-            this.panel44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel44.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_guerriero_48;
-            resources.ApplyResources(this.panel44, "panel44");
-            this.panel44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel44.Name = "panel44";
+            this.panel_Guerriero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Guerriero.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_guerriero_48;
+            resources.ApplyResources(this.panel_Guerriero, "panel_Guerriero");
+            this.panel_Guerriero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Guerriero.Name = "panel_Guerriero";
+            this.panel_Guerriero.MouseHover += new System.EventHandler(this.panel_Guerriero_MouseHover);
             // 
             // txt_Guerriero_Reclutamento
             // 
@@ -864,7 +883,7 @@
             // 
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel21.Controls.Add(this.label31);
-            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Controls.Add(this.panel_Pr_Frecce);
             this.panel21.Controls.Add(this.txt_Frecce_Costruzione);
             this.panel21.Controls.Add(this.lbl_Freccie_Coda);
             resources.ApplyResources(this.panel21, "panel21");
@@ -876,14 +895,15 @@
             this.label31.ForeColor = System.Drawing.SystemColors.Control;
             this.label31.Name = "label31";
             // 
-            // panel22
+            // panel_Pr_Frecce
             // 
-            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel22.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_freccia_di_arcieri_48;
-            resources.ApplyResources(this.panel22, "panel22");
-            this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel22.ForeColor = System.Drawing.Color.White;
-            this.panel22.Name = "panel22";
+            this.panel_Pr_Frecce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Pr_Frecce.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_freccia_di_arcieri_48;
+            resources.ApplyResources(this.panel_Pr_Frecce, "panel_Pr_Frecce");
+            this.panel_Pr_Frecce.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pr_Frecce.ForeColor = System.Drawing.Color.White;
+            this.panel_Pr_Frecce.Name = "panel_Pr_Frecce";
+            this.panel_Pr_Frecce.MouseHover += new System.EventHandler(this.panel_Pr_Frecce_MouseHover);
             // 
             // txt_Frecce_Costruzione
             // 
@@ -906,7 +926,7 @@
             // 
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel23.Controls.Add(this.label36);
-            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Controls.Add(this.panel_Pr_Armature);
             this.panel23.Controls.Add(this.txt_Armatura_Costruzione);
             this.panel23.Controls.Add(this.lbl_Armature_Coda);
             resources.ApplyResources(this.panel23, "panel23");
@@ -918,13 +938,14 @@
             this.label36.ForeColor = System.Drawing.SystemColors.Control;
             this.label36.Name = "label36";
             // 
-            // panel24
+            // panel_Pr_Armature
             // 
-            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel24.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_armor_48_1_;
-            resources.ApplyResources(this.panel24, "panel24");
-            this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel24.Name = "panel24";
+            this.panel_Pr_Armature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Pr_Armature.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_armor_48_1_;
+            resources.ApplyResources(this.panel_Pr_Armature, "panel_Pr_Armature");
+            this.panel_Pr_Armature.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pr_Armature.Name = "panel_Pr_Armature";
+            this.panel_Pr_Armature.MouseHover += new System.EventHandler(this.panel_Pr_Armature_MouseHover);
             // 
             // txt_Armatura_Costruzione
             // 
@@ -947,7 +968,7 @@
             // 
             this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel25.Controls.Add(this.label41);
-            this.panel25.Controls.Add(this.panel26);
+            this.panel25.Controls.Add(this.panel_Pr_Scudi);
             this.panel25.Controls.Add(this.txt_Scudi_Costruzione);
             this.panel25.Controls.Add(this.lbl_Scudi_Coda);
             resources.ApplyResources(this.panel25, "panel25");
@@ -959,13 +980,14 @@
             this.label41.ForeColor = System.Drawing.SystemColors.Control;
             this.label41.Name = "label41";
             // 
-            // panel26
+            // panel_Pr_Scudi
             // 
-            this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel26.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_scudo_48_2_;
-            resources.ApplyResources(this.panel26, "panel26");
-            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel26.Name = "panel26";
+            this.panel_Pr_Scudi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Pr_Scudi.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_scudo_48_2_;
+            resources.ApplyResources(this.panel_Pr_Scudi, "panel_Pr_Scudi");
+            this.panel_Pr_Scudi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pr_Scudi.Name = "panel_Pr_Scudi";
+            this.panel_Pr_Scudi.MouseHover += new System.EventHandler(this.panel_Pr_Scudi_MouseHover);
             // 
             // txt_Scudi_Costruzione
             // 
@@ -988,7 +1010,7 @@
             // 
             this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel27.Controls.Add(this.label46);
-            this.panel27.Controls.Add(this.panel28);
+            this.panel27.Controls.Add(this.panel_Pr_Archi);
             this.panel27.Controls.Add(this.txt_Archi_Costruzione);
             this.panel27.Controls.Add(this.lbl_Archi_Coda);
             resources.ApplyResources(this.panel27, "panel27");
@@ -1000,13 +1022,14 @@
             this.label46.ForeColor = System.Drawing.SystemColors.Control;
             this.label46.Name = "label46";
             // 
-            // panel28
+            // panel_Pr_Archi
             // 
-            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel28.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_emoji_con_arco_e_freccia_48;
-            resources.ApplyResources(this.panel28, "panel28");
-            this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel28.Name = "panel28";
+            this.panel_Pr_Archi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Pr_Archi.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_emoji_con_arco_e_freccia_48;
+            resources.ApplyResources(this.panel_Pr_Archi, "panel_Pr_Archi");
+            this.panel_Pr_Archi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pr_Archi.Name = "panel_Pr_Archi";
+            this.panel_Pr_Archi.MouseHover += new System.EventHandler(this.panel_Pr_Archi_MouseHover);
             // 
             // txt_Archi_Costruzione
             // 
@@ -1029,7 +1052,7 @@
             // 
             this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel29.Controls.Add(this.label51);
-            this.panel29.Controls.Add(this.panel30);
+            this.panel29.Controls.Add(this.panel_Pr_Lancie);
             this.panel29.Controls.Add(this.txt_Lancie_Costruzione);
             this.panel29.Controls.Add(this.lbl_Lancie_Coda);
             resources.ApplyResources(this.panel29, "panel29");
@@ -1041,13 +1064,14 @@
             this.label51.ForeColor = System.Drawing.SystemColors.Control;
             this.label51.Name = "label51";
             // 
-            // panel30
+            // panel_Pr_Lancie
             // 
-            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel30.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_16851_0_71599_spear_common_48_1_;
-            resources.ApplyResources(this.panel30, "panel30");
-            this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel30.Name = "panel30";
+            this.panel_Pr_Lancie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Pr_Lancie.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_16851_0_71599_spear_common_48_1_;
+            resources.ApplyResources(this.panel_Pr_Lancie, "panel_Pr_Lancie");
+            this.panel_Pr_Lancie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pr_Lancie.Name = "panel_Pr_Lancie";
+            this.panel_Pr_Lancie.MouseHover += new System.EventHandler(this.panel_Pr_Lancie_MouseHover);
             // 
             // txt_Lancie_Costruzione
             // 
@@ -1070,7 +1094,7 @@
             // 
             this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel31.Controls.Add(this.label56);
-            this.panel31.Controls.Add(this.panel32);
+            this.panel31.Controls.Add(this.panel_Pr_Spade);
             this.panel31.Controls.Add(this.txt_Spade_Costruzione);
             this.panel31.Controls.Add(this.lbl_Spade_Coda);
             resources.ApplyResources(this.panel31, "panel31");
@@ -1082,13 +1106,14 @@
             this.label56.ForeColor = System.Drawing.SystemColors.Control;
             this.label56.Name = "label56";
             // 
-            // panel32
+            // panel_Pr_Spade
             // 
-            this.panel32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel32.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_spade_incrociate_48;
-            resources.ApplyResources(this.panel32, "panel32");
-            this.panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel32.Name = "panel32";
+            this.panel_Pr_Spade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Pr_Spade.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_spade_incrociate_48;
+            resources.ApplyResources(this.panel_Pr_Spade, "panel_Pr_Spade");
+            this.panel_Pr_Spade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Pr_Spade.Name = "panel_Pr_Spade";
+            this.panel_Pr_Spade.MouseHover += new System.EventHandler(this.panel_Pr_Spade_MouseHover);
             // 
             // txt_Spade_Costruzione
             // 
@@ -1125,7 +1150,7 @@
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel19.Controls.Add(this.lbl1);
-            this.panel19.Controls.Add(this.panel20);
+            this.panel19.Controls.Add(this.panel_Case);
             this.panel19.Controls.Add(this.txt_Case_Costruzione);
             this.panel19.Controls.Add(this.lbl_Case_Coda);
             resources.ApplyResources(this.panel19, "panel19");
@@ -1137,13 +1162,14 @@
             this.lbl1.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl1.Name = "lbl1";
             // 
-            // panel20
+            // panel_Case
             // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel20.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_esterno_48;
-            resources.ApplyResources(this.panel20, "panel20");
-            this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel20.Name = "panel20";
+            this.panel_Case.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Case.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_esterno_48;
+            resources.ApplyResources(this.panel_Case, "panel_Case");
+            this.panel_Case.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Case.Name = "panel_Case";
+            this.panel_Case.MouseHover += new System.EventHandler(this.panel_Case_MouseHover);
             // 
             // txt_Case_Costruzione
             // 
@@ -1166,7 +1192,7 @@
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel17.Controls.Add(this.lbl);
-            this.panel17.Controls.Add(this.panel18);
+            this.panel17.Controls.Add(this.panel_Miniera_Oro);
             this.panel17.Controls.Add(this.txt_MinieraOro_Costruzione);
             this.panel17.Controls.Add(this.lbl_Miniera_Oro_Coda);
             resources.ApplyResources(this.panel17, "panel17");
@@ -1178,13 +1204,14 @@
             this.lbl.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl.Name = "lbl";
             // 
-            // panel18
+            // panel_Miniera_Oro
             // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel18.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_carrello_da_miniera_48_1_;
-            resources.ApplyResources(this.panel18, "panel18");
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Name = "panel18";
+            this.panel_Miniera_Oro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Miniera_Oro.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_carrello_da_miniera_48_1_;
+            resources.ApplyResources(this.panel_Miniera_Oro, "panel_Miniera_Oro");
+            this.panel_Miniera_Oro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Miniera_Oro.Name = "panel_Miniera_Oro";
+            this.panel_Miniera_Oro.MouseHover += new System.EventHandler(this.panel_Miniera_Oro_MouseHover);
             // 
             // txt_MinieraOro_Costruzione
             // 
@@ -1207,7 +1234,7 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel15.Controls.Add(this.label16);
-            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Controls.Add(this.panel_Miniera_Ferro);
             this.panel15.Controls.Add(this.txt_MinieraFerro_Costruzione);
             this.panel15.Controls.Add(this.lbl_Miniera_Ferro_Coda);
             resources.ApplyResources(this.panel15, "panel15");
@@ -1219,13 +1246,14 @@
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
             this.label16.Name = "label16";
             // 
-            // panel16
+            // panel_Miniera_Ferro
             // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel16.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_carrello_da_miniera_48_2_;
-            resources.ApplyResources(this.panel16, "panel16");
-            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel16.Name = "panel16";
+            this.panel_Miniera_Ferro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Miniera_Ferro.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_carrello_da_miniera_48_2_;
+            resources.ApplyResources(this.panel_Miniera_Ferro, "panel_Miniera_Ferro");
+            this.panel_Miniera_Ferro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Miniera_Ferro.Name = "panel_Miniera_Ferro";
+            this.panel_Miniera_Ferro.MouseHover += new System.EventHandler(this.panel_Miniera_Ferro_MouseHover);
             // 
             // txt_MinieraFerro_Costruzione
             // 
@@ -1248,7 +1276,7 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel13.Controls.Add(this.label11);
-            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.panel_Cava);
             this.panel13.Controls.Add(this.txt_CavaPietra_Costruzione);
             this.panel13.Controls.Add(this.lbl_Cava_Pietra_Coda);
             resources.ApplyResources(this.panel13, "panel13");
@@ -1260,13 +1288,14 @@
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
             this.label11.Name = "label11";
             // 
-            // panel14
+            // panel_Cava
             // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel14.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_carrello_da_miniera_48_3_;
-            resources.ApplyResources(this.panel14, "panel14");
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Name = "panel14";
+            this.panel_Cava.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Cava.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_carrello_da_miniera_48_3_;
+            resources.ApplyResources(this.panel_Cava, "panel_Cava");
+            this.panel_Cava.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Cava.Name = "panel_Cava";
+            this.panel_Cava.MouseHover += new System.EventHandler(this.panel_Cava_MouseHover);
             // 
             // txt_CavaPietra_Costruzione
             // 
@@ -1289,7 +1318,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel11.Controls.Add(this.label6);
-            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(this.panel_Segheria);
             this.panel11.Controls.Add(this.txt_Segheria_Costruzione);
             this.panel11.Controls.Add(this.lbl_Segheria_Coda);
             resources.ApplyResources(this.panel11, "panel11");
@@ -1301,13 +1330,14 @@
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Name = "label6";
             // 
-            // panel12
+            // panel_Segheria
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel12.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_log_48;
-            resources.ApplyResources(this.panel12, "panel12");
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Name = "panel12";
+            this.panel_Segheria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Segheria.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_log_48;
+            resources.ApplyResources(this.panel_Segheria, "panel_Segheria");
+            this.panel_Segheria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Segheria.Name = "panel_Segheria";
+            this.panel_Segheria.MouseHover += new System.EventHandler(this.panel_Segheria_MouseHover);
             // 
             // txt_Segheria_Costruzione
             // 
@@ -1330,7 +1360,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.panel10.Controls.Add(this.label5);
-            this.panel10.Controls.Add(this.panel9);
+            this.panel10.Controls.Add(this.panel_Fattoria);
             this.panel10.Controls.Add(this.txt_Fattoria_Costruzione);
             this.panel10.Controls.Add(this.lbl_Fattoria_Coda);
             resources.ApplyResources(this.panel10, "panel10");
@@ -1342,13 +1372,14 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Name = "label5";
             // 
-            // panel9
+            // panel_Fattoria
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel9.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_fattoria_48_1_;
-            resources.ApplyResources(this.panel9, "panel9");
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Name = "panel9";
+            this.panel_Fattoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.panel_Fattoria.BackgroundImage = global::Strategico_V2.Properties.Resources.icons8_fattoria_48_1_;
+            resources.ApplyResources(this.panel_Fattoria, "panel_Fattoria");
+            this.panel_Fattoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Fattoria.Name = "panel_Fattoria";
+            this.panel_Fattoria.MouseHover += new System.EventHandler(this.panel_Fattoria_MouseHover);
             // 
             // txt_Fattoria_Costruzione
             // 
@@ -1376,15 +1407,15 @@
             // 
             // txt_Log
             // 
-            resources.ApplyResources(txt_Log, "txt_Log");
-            txt_Log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            txt_Log.ForeColor = System.Drawing.SystemColors.Control;
-            txt_Log.Name = "txt_Log";
+            resources.ApplyResources(this.txt_Log, "txt_Log");
+            this.txt_Log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txt_Log.ForeColor = System.Drawing.SystemColors.Control;
+            this.txt_Log.Name = "txt_Log";
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.groupBox4.Controls.Add(txt_Log);
+            this.groupBox4.Controls.Add(this.txt_Log);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
@@ -1444,6 +1475,7 @@
             resources.ApplyResources(this.panel34, "panel34");
             this.panel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel34.Name = "panel34";
+            this.panel34.MouseHover += new System.EventHandler(this.panel34_MouseHover);
             // 
             // txt_Catapulte_Acc_Barbaro_PVE
             // 
@@ -1476,6 +1508,7 @@
             resources.ApplyResources(this.panel36, "panel36");
             this.panel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel36.Name = "panel36";
+            this.panel36.MouseHover += new System.EventHandler(this.panel36_MouseHover);
             // 
             // txt_Arceri_Acc_Barbaro_PVE
             // 
@@ -1508,6 +1541,7 @@
             resources.ApplyResources(this.panel46, "panel46");
             this.panel46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel46.Name = "panel46";
+            this.panel46.MouseHover += new System.EventHandler(this.panel46_MouseHover);
             // 
             // txt_Lancieri_Acc_Barbaro_PVE
             // 
@@ -1540,6 +1574,7 @@
             resources.ApplyResources(this.panel48, "panel48");
             this.panel48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel48.Name = "panel48";
+            this.panel48.MouseHover += new System.EventHandler(this.panel48_MouseHover);
             // 
             // txt_Guerrieri_Acc_Barbaro_PVE
             // 
@@ -1764,11 +1799,28 @@
             this.btn_Giocatori.Name = "btn_Giocatori";
             this.btn_Giocatori.ReadOnly = true;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.groupBox8.Controls.Add(this.txt_Descrizione);
+            this.groupBox8.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.groupBox8, "groupBox8");
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.TabStop = false;
+            // 
+            // txt_Descrizione
+            // 
+            resources.ApplyResources(this.txt_Descrizione, "txt_Descrizione");
+            this.txt_Descrizione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txt_Descrizione.ForeColor = System.Drawing.SystemColors.Control;
+            this.txt_Descrizione.Name = "txt_Descrizione";
+            // 
             // Home
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
@@ -1842,6 +1894,8 @@
             this.groupBox7.ResumeLayout(false);
             this.panel72.ResumeLayout(false);
             this.panel72.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1870,27 +1924,27 @@
         private System.Windows.Forms.TextBox txt_Produzione_Ferro;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel_Fattoria;
         private System.Windows.Forms.TextBox txt_Fattoria_Costruzione;
         private System.Windows.Forms.TextBox lbl_Fattoria_Coda;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel_Miniera_Oro;
         private System.Windows.Forms.TextBox txt_MinieraOro_Costruzione;
         private System.Windows.Forms.TextBox lbl_Miniera_Oro_Coda;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel_Miniera_Ferro;
         private System.Windows.Forms.TextBox txt_MinieraFerro_Costruzione;
         private System.Windows.Forms.TextBox lbl_Miniera_Ferro_Coda;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel_Cava;
         private System.Windows.Forms.TextBox txt_CavaPietra_Costruzione;
         private System.Windows.Forms.TextBox lbl_Cava_Pietra_Coda;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel_Segheria;
         private System.Windows.Forms.TextBox txt_Segheria_Costruzione;
         private System.Windows.Forms.TextBox lbl_Segheria_Coda;
         private System.Windows.Forms.Panel panel10;
@@ -1898,58 +1952,58 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel37;
         private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Panel panel_Catapulta;
         private System.Windows.Forms.TextBox txt_Catapulta_Reclutamento;
         private System.Windows.Forms.TextBox lbl_Catapulta_Coda;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.Panel panel_Arciere;
         private System.Windows.Forms.TextBox txt_Arciere_Reclutamento;
         private System.Windows.Forms.TextBox lbl_Arciere_Coda;
         private System.Windows.Forms.Panel panel41;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Panel panel_Lanciere;
         private System.Windows.Forms.TextBox txt_Lanciere_Reclutamento;
         private System.Windows.Forms.TextBox lbl_Lanciere_Coda;
         private System.Windows.Forms.Panel panel43;
         private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.Panel panel_Guerriero;
         private System.Windows.Forms.TextBox txt_Guerriero_Reclutamento;
         private System.Windows.Forms.TextBox lbl_Guerriero_Coda;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel_Pr_Frecce;
         private System.Windows.Forms.TextBox txt_Frecce_Costruzione;
         private System.Windows.Forms.TextBox lbl_Freccie_Coda;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel panel_Pr_Armature;
         private System.Windows.Forms.TextBox txt_Armatura_Costruzione;
         private System.Windows.Forms.TextBox lbl_Armature_Coda;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Panel panel_Pr_Scudi;
         private System.Windows.Forms.TextBox txt_Scudi_Costruzione;
         private System.Windows.Forms.TextBox lbl_Scudi_Coda;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Panel panel_Pr_Archi;
         private System.Windows.Forms.TextBox txt_Archi_Costruzione;
         private System.Windows.Forms.TextBox lbl_Archi_Coda;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Panel panel_Pr_Lancie;
         private System.Windows.Forms.TextBox txt_Lancie_Costruzione;
         private System.Windows.Forms.TextBox lbl_Lancie_Coda;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.Panel panel_Pr_Spade;
         private System.Windows.Forms.TextBox txt_Spade_Costruzione;
         private System.Windows.Forms.TextBox lbl_Spade_Coda;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel_Case;
         private System.Windows.Forms.TextBox txt_Case_Costruzione;
         private System.Windows.Forms.TextBox lbl_Case_Coda;
         private System.Windows.Forms.Button btn_Costruisci;
@@ -2023,6 +2077,9 @@
         private System.Windows.Forms.TextBox txt_Forza_Esercito_PVE_Barbari;
         private System.Windows.Forms.TextBox txt_Forza_Esercito_PVP_Barbari;
         private System.Windows.Forms.Button button1;
-        static private System.Windows.Forms.TextBox txt_Log;
+        private System.Windows.Forms.Button btn_Ricerca;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox txt_Descrizione;
+        private System.Windows.Forms.TextBox txt_Log;
     }
 }
