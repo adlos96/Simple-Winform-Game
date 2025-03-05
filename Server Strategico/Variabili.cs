@@ -1,4 +1,4 @@
-﻿using static Server_Strategico.Esercito;
+﻿using static Server_Strategico.Variabili;
 
 namespace Server_Strategico
 {
@@ -92,10 +92,10 @@ namespace Server_Strategico
             public int SaluteCastello { get; set; }
             public int SaluteCastelloMax { get; set; }
 
-            public double Ricerca_Produzione { get; set; }
-            public double Ricerca_Costruzione { get; set; }
-            public double Ricerca_Addestramento { get; set; }
-            public double Ricerca_Riparazione { get; set; }
+            public int Ricerca_Produzione { get; set; }
+            public int Ricerca_Costruzione { get; set; }
+            public int Ricerca_Addestramento { get; set; }
+            public int Ricerca_Riparazione { get; set; }
 
             public int Guerriero_Livello { get; set; }
             public int Guerriero_Salute { get; set; }
@@ -195,6 +195,32 @@ namespace Server_Strategico
                 Arceri_Barbari_PVE = 0;
                 Catapulte_Barbari_PVE = 0;
 
+                //Ricerche
+                Ricerca_Produzione = 0;
+                Ricerca_Costruzione = 0;
+                Ricerca_Riparazione = 0;
+                Ricerca_Addestramento = 0;
+
+                Guerriero_Livello = 0;
+                Guerriero_Salute = 0;
+                Guerriero_Difesa = 0;
+                Guerriero_Attacco = 0;
+
+                Lanciere_Livello = 0;
+                Lanciere_Salute = 0;
+                Lanciere_Difesa = 0;
+                Lanciere_Attacco = 0;
+
+                Arciere_Livello = 0;
+                Arciere_Salute = 0;
+                Arciere_Difesa = 0;
+                Arciere_Attacco = 0;
+
+                catapulta_Livello = 0;
+                catapulta_Salute = 0;
+                catapulta_Difesa = 0;
+                catapulta_Attacco = 0;
+
                 constructionQueues = new Dictionary<string, Queue<ConstructionTask>>();
                 currentTasks = new Dictionary<string, ConstructionTask>();
 
@@ -209,12 +235,12 @@ namespace Server_Strategico
 
             public void ProduceResources() //produzione risorse
             {
-                Cibo += Fattoria * Strutture.Edifici.Fattoria.Produzione;
-                Legno += Segheria * Strutture.Edifici.Segheria.Produzione;
-                Pietra += CavaPietra * Strutture.Edifici.CavaPietra.Produzione;
-                Ferro += MinieraFerro * Strutture.Edifici.MinieraFerro.Produzione;
-                Oro += MinieraOro * Strutture.Edifici.MinieraOro.Produzione;
-                Popolazione += Abitazioni * Strutture.Edifici.Case.Produzione;
+                Cibo += Fattoria * (Strutture.Edifici.Fattoria.Produzione + Ricerca_Produzione * Ricerca.Tipi.Incremento.Cibo);
+                Legno += Segheria * (Strutture.Edifici.Segheria.Produzione + Ricerca_Produzione * Ricerca.Tipi.Incremento.Legno);
+                Pietra += CavaPietra * (Strutture.Edifici.CavaPietra.Produzione + Ricerca_Produzione * Ricerca.Tipi.Incremento.Pietra);
+                Ferro += MinieraFerro * (Strutture.Edifici.MinieraFerro.Produzione + Ricerca_Produzione * Ricerca.Tipi.Incremento.Ferro);
+                Oro += MinieraOro * (Strutture.Edifici.MinieraOro.Produzione + Ricerca_Produzione * Ricerca.Tipi.Incremento.Oro);
+                Popolazione += Abitazioni * (Strutture.Edifici.Case.Produzione + Ricerca_Produzione * Ricerca.Tipi.Incremento.Popolazione);
 
                 Spade += ProduzioneSpade * Strutture.Edifici.ProduzioneSpade.Produzione;
                 Lance += ProduzioneLance * Strutture.Edifici.ProduzioneLance.Produzione;
@@ -228,7 +254,7 @@ namespace Server_Strategico
                 Cibo -= (Guerrieri * Esercito.Unità.Guerriero.Cibo) + (Lancieri * Esercito.Unità.Lanciere.Cibo) + (Arceri * Esercito.Unità.Arciere.Cibo) + (Catapulte * Esercito.Unità.Catapulta.Cibo);
                 Oro -= (Guerrieri * Esercito.Unità.Guerriero.Salario) + (Lancieri * Esercito.Unità.Lanciere.Salario) + (Arceri * Esercito.Unità.Arciere.Salario) + (Catapulte * Esercito.Unità.Catapulta.Salario);
             }
-            public void QueueBuildConstruction(string buildingType, int count, Guid clientGuid)
+            public void QueueBuildConstruction(string buildingType, int count, Guid clientGuid, Player player)
             {
                 // Ottieni i costi di costruzione dell'edificio
                 var buildingCost = GetBuildingCost(buildingType);
@@ -247,7 +273,12 @@ namespace Server_Strategico
                     Ferro -= buildingCost.Ferro * count;
                     Oro -= buildingCost.Oro * count;
 
-                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per {count} costruzione/i di {buildingType}:\r\n Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}\r\n");
+                    Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per {count} costruzione/i di {buildingType}:\r\n " +
+                        $"Cibo= {buildingCost.Cibo * count}, " +
+                        $"Legno= {buildingCost.Legno * count}, " +
+                        $"Pietra= {buildingCost.Pietra * count}, " +
+                        $"Ferro= {buildingCost.Ferro * count}, " +
+                        $"Oro= {buildingCost.Oro * count}\r\n");
                     Console.WriteLine($"Risorse consumate per {count} costruzione/i di {buildingType}:\r\n Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}\r\n");
 
                     // Verifica se la coda di costruzione esiste per questo tipo di edificio, altrimenti creala
@@ -255,7 +286,7 @@ namespace Server_Strategico
                         constructionQueues[buildingType] = new Queue<ConstructionTask>();
 
                     // Aggiungi i task di costruzione alla coda
-                    int tempoCostruzioneInSecondi = Convert.ToInt32(buildingCost.TempoCostruzione);
+                    int tempoCostruzioneInSecondi = Convert.ToInt32(buildingCost.TempoCostruzione - player.Ricerca_Costruzione);
                     for (int i = 0; i < count; i++)
                         constructionQueues[buildingType].Enqueue(new ConstructionTask(buildingType, tempoCostruzioneInSecondi));
                     
@@ -273,7 +304,7 @@ namespace Server_Strategico
                     Console.WriteLine($"Risorse insufficienti per costruire {count} {buildingType}.");
                 }
             }
-            public void LoadQueueBuildConstruction(string buildingType, int count, Guid clientGuid)
+            public void LoadQueueBuildConstruction(string buildingType, int count, Player player)
             {
                 // Ottieni i costi di costruzione dell'edificio
                 var buildingCost = GetBuildingCost(buildingType);
@@ -282,7 +313,7 @@ namespace Server_Strategico
                     constructionQueues[buildingType] = new Queue<ConstructionTask>();
 
                 // Aggiungi i task di costruzione alla coda
-                int tempoCostruzioneInSecondi = Convert.ToInt32(buildingCost.TempoCostruzione);
+                int tempoCostruzioneInSecondi = Convert.ToInt32(buildingCost.TempoCostruzione - player.Ricerca_Costruzione);
                 for (int i = 0; i < count; i++)
                     constructionQueues[buildingType].Enqueue(new ConstructionTask(buildingType, tempoCostruzioneInSecondi));
 
@@ -409,7 +440,6 @@ namespace Server_Strategico
                                 Console.WriteLine($"Costruzione {buildingType} non valida!");
                                 break;
                         }
-
                         // Avvia la prossima costruzione per questo tipo di edificio
                         Server.Send(clientGuid, $"Log_Server|Costruzione completata {buildingType} costruita!\n\r");
                         StartNextConstruction(buildingType);
@@ -459,7 +489,6 @@ namespace Server_Strategico
                 {
                     startTime = DateTime.Now;
                 }
-
                 public bool IsComplete()
                 {
                     return DateTime.Now >= startTime.AddSeconds(DurationInSeconds);
@@ -519,7 +548,7 @@ namespace Server_Strategico
                     Scudi -= unitCost.Scudi * count;
                     Armature -= unitCost.Armature * count;
 
-                    Server.Send(clientGuid, $"Log_Server|Risorse consumate per l'addestramento di {count} {unitType}:\r\n " +
+                    Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
                         $"Cibo={unitCost.Cibo * count}, " +
                         $"Legno={unitCost.Legno * count}, " +
                         $"Pietra={unitCost.Pietra * count}, " +
@@ -530,7 +559,7 @@ namespace Server_Strategico
                         $"Archi={unitCost.Archi * count}, " +
                         $"Scudi={unitCost.Scudi * count}, " +
                         $"Armature={unitCost.Armature * count}\r\n");
-                    Console.WriteLine($"Risorse consumate per l'addestramento di {count} {unitType}:\r\n " +
+                    Console.WriteLine($"Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
                         $"Cibo={unitCost.Cibo * count}, " +
                         $"Legno={unitCost.Legno * count}, " +
                         $"Pietra={unitCost.Pietra * count}, " +
@@ -545,7 +574,7 @@ namespace Server_Strategico
                     if (!recruitQueues.ContainsKey(unitType))
                         recruitQueues[unitType] = new Queue<RecruitTask>();
 
-                    int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento);
+                    int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento - player.Ricerca_Addestramento);
                     for (int i = 0; i < count; i++)
                         recruitQueues[unitType].Enqueue(new RecruitTask(unitType, tempoAddestramentoInSecondi));
 
@@ -561,13 +590,13 @@ namespace Server_Strategico
                     Console.WriteLine($"Risorse insufficienti per addestrare {count} {unitType}.");
                 }
             }
-            public async void LoadQueueTrainUnits(string unitType, int count, Guid clientGuid)
+            public async void LoadQueueTrainUnits(string unitType, int count, Player player)
             {
                 var unitCost = GetUnitCost(unitType);
                 if (!recruitQueues.ContainsKey(unitType))
                     recruitQueues[unitType] = new Queue<RecruitTask>();
                 
-                int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento);
+                int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento - player.Ricerca_Addestramento);
                 for (int i = 0; i < count; i++)
                     recruitQueues[unitType].Enqueue(new RecruitTask(unitType, tempoAddestramentoInSecondi));
                 
@@ -622,7 +651,7 @@ namespace Server_Strategico
             {
                 return currentRecruitTasks.Values.Any(task => task != null);
             }
-            private CostoReclutamento GetUnitCost(string unitType)
+            private Esercito.CostoReclutamento GetUnitCost(string unitType)
             {
                 return unitType switch
                 {
