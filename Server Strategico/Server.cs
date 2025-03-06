@@ -7,6 +7,7 @@ namespace Server_Strategico
     {
         public static List<Guid> Client_Connessi = new List<Guid>();
         public static List<string> Utenti_PVP = new List<string>();
+        public static List<string> Utenti_Online = new List<string>();
 
         private string? serverIp = null; // "null" will open the tcp server on addr 0.0.0.0 on windows (127.0.0.1 on linux)
         private const int serverPort = 8443;

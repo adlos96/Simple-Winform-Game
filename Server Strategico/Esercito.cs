@@ -117,9 +117,9 @@
             };
             public static Unità Catapulta = new Unità
             {
-                Salute = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Guerriero.Popolazione),
+                Salute = (int)(Guerriero.Salute * 0.58 * CostoReclutamento.Catapulta.Popolazione),
                 Attacco = 12,
-                Difesa = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Guerriero.Popolazione),
+                Difesa = (int)(Guerriero.Difesa * 0.58 * CostoReclutamento.Catapulta.Popolazione),
                 Distanza = 14,
                 Quantità = 0,
                 TempoReclutamento = 119,
@@ -177,7 +177,7 @@
             {
                 Salute = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Catapulta.Popolazione),
                 Attacco = 12,
-                Difesa = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Catapulta.Popolazione),
+                Difesa = (int)(Guerriero.Difesa * 0.60 * CostoReclutamento.Catapulta.Popolazione),
                 Distanza = 14,
                 Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.629,
                 Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.779,

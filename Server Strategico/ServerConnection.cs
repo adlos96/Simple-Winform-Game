@@ -285,33 +285,27 @@ namespace Server_Strategico
         }
         static async Task<bool> Login(string username, string password, Guid guid)
         {
-            // Controlla se il giocatore esiste già
             var existingPlayer = Server.servers_.GetPlayer(username, password);
-            if (existingPlayer != null)
+            if (existingPlayer != null) // Controlla se il giocatore esiste già
             {
+                existingPlayer.guid_Player = guid; //Assegna il guid aggiornato
                 Console.WriteLine("Login: Il giocatore già esiste");
                 return true;
             }
-
-            // Controlla se il nome utente è disponibile
-            if (await Server.servers_.Check_Username_Player(username))
+            if (await Server.servers_.Check_Username_Player(username)) // Controlla se il nome utente è disponibile
             {
-                
+                await Server.servers_.AddPlayer(username, password, guid);
                 // Poi prova a caricare i dati salvati
                 if (await GameSave.LoadPlayer(username, password))
-                {
                     return true;
-                }
             }
-
             return true;
         }
 
         public static async Task<bool> Load_User_Auto(string username, string password)
         {
-            // Controlla se il giocatore esiste già
             var existingPlayer = Server.servers_.GetPlayer_Data(username);
-            if (existingPlayer != null)
+            if (existingPlayer != null) // Controlla se il giocatore esiste già
             {
                 Console.WriteLine("Login: Il giocatore già esiste");
                 return true;
@@ -320,16 +314,10 @@ namespace Server_Strategico
             // Controlla se il nome utente è disponibile
             if (await Server.servers_.Check_Username_Player(username))
             {
-                // Prima crea il nuovo giocatore
-                await Server.servers_.AddPlayer(username, password, Guid.Empty);
-
-                // Poi prova a caricare i dati salvati
-                if (await GameSave.LoadPlayer(username, password))
-                {
+                await Server.servers_.AddPlayer(username, password, Guid.Empty); // Prima crea il nuovo giocatore
+                if (await GameSave.LoadPlayer(username, password)) // Poi prova a caricare i dati salvati
                     return true;
-                }
             }
-
             return true;
         }
 

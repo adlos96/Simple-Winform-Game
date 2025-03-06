@@ -765,6 +765,18 @@ namespace Server_Strategico
                 }
 
             }
+            public void Player_Online()
+            {
+                Console.WriteLine($"Numero Giocatori: {players.Count()}");
+                foreach (var item in players)
+                {
+                    if (item.Value.guid_Player != Guid.Empty)
+                    {
+                        if (!Server.Utenti_Online.Contains($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}"))
+                            Server.Utenti_Online.Add($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
+                    }
+                }
+            }
             public void Lista_Player_manual()
             {
                 Console.WriteLine($"Numero Giocatori: {players.Count()}");
@@ -784,7 +796,7 @@ namespace Server_Strategico
             public async Task<bool> Check_Username_Player(string username)
             {
                 foreach (var item in players)
-                    if (item.Value.Username.Contains(username))
+                    if (item.Value.Username == username)
                         return false;
                 return true;
 
@@ -807,6 +819,7 @@ namespace Server_Strategico
 
                 while (!cancellationToken.IsCancellationRequested)
                 {
+                    saveCounter++;
                     foreach (var player in players.Values)
                     {
                         player.CompleteBuilds(player.guid_Player);
@@ -815,13 +828,11 @@ namespace Server_Strategico
                         player.ManutenzioneEsercito();
 
                         // Salva i dati ogni 60 secondi
-                        saveCounter++;
                         if (saveCounter >= 60)
                         {
                             await GameSave.SavePlayer(player);
                             await GameSave.SaveBarbariPVP();
                             Server.servers_.Lista_Player_Auto();
-                            saveCounter = 0;
                         }
 
                         player.forza_Esercito =
@@ -846,6 +857,7 @@ namespace Server_Strategico
 
                         // Puoi aggiungere altri metodi per gestire battaglie, commercio, ecc.
                     }
+                    if (saveCounter >= 60) saveCounter = 0;
                     await Task.Delay(1000); // Ciclo ogni secondo, o regola il ritardo come necessario
                 }
             }

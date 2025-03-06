@@ -32,7 +32,7 @@ namespace Server_Strategico
                     respawn = 0;
                 }
                 int liv = player.Livello_Barbari_PVE + 1;
-                liv = player.Livello_Barbari_PVE * 3;
+                liv = liv * 3;
 
                 if (player.Livello > liv)
                     player.Livello_Barbari_PVE++;

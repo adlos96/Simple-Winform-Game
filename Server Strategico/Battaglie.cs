@@ -27,10 +27,10 @@ namespace Server_Strategico
             double dannoInflitto = CalcolareDanno_Giocatore(arcieri, catapulte, guerrieri, picchieri, player) / tipi_Di_Unità_Att;
 
             // Applicare il danno alle unità del giocatore
-            int guerrieri_Temp  = RidurreNumeroSoldati(guerrieri, dannoInflittoDalNemico, Esercito.Unità.Guerriero.Difesa + (Ricerca.Soldati.Incremento.Difesa * player.Guerriero_Difesa) * guerrieri, Esercito.Unità.Guerriero.Salute + (Ricerca.Soldati.Incremento.Salute * player.Guerriero_Salute));
-            int picchieri_Temp  = RidurreNumeroSoldati(picchieri, dannoInflittoDalNemico, Esercito.Unità.Lanciere.Difesa + (Ricerca.Soldati.Incremento.Difesa * player.Lanciere_Difesa) * picchieri, Esercito.Unità.Lanciere.Salute + (Ricerca.Soldati.Incremento.Salute * player.Lanciere_Salute));
-            int arcieri_Temp    = RidurreNumeroSoldati(arcieri, dannoInflittoDalNemico * 0.70, Esercito.Unità.Arciere.Difesa + (Ricerca.Soldati.Incremento.Difesa * player.Arciere_Difesa) * arcieri, Esercito.Unità.Arciere.Salute + (Ricerca.Soldati.Incremento.Salute * player.Arciere_Salute));
-            int catapulte_Temp  = RidurreNumeroSoldati(catapulte, dannoInflittoDalNemico, Esercito.Unità.Catapulta.Difesa + (Ricerca.Soldati.Incremento.Difesa * player.catapulta_Difesa) * catapulte, Esercito.Unità.Catapulta.Salute + (Ricerca.Soldati.Incremento.Salute * player.catapulta_Salute));
+            int guerrieri_Temp  = RidurreNumeroSoldati(guerrieri, dannoInflittoDalNemico, (Esercito.Unità.Guerriero.Difesa + Ricerca.Soldati.Incremento.Difesa * player.Guerriero_Difesa) * guerrieri, Esercito.Unità.Guerriero.Salute + (Ricerca.Soldati.Incremento.Salute * player.Guerriero_Salute));
+            int picchieri_Temp  = RidurreNumeroSoldati(picchieri, dannoInflittoDalNemico, (Esercito.Unità.Lanciere.Difesa + Ricerca.Soldati.Incremento.Difesa * player.Lanciere_Difesa) * picchieri, Esercito.Unità.Lanciere.Salute + (Ricerca.Soldati.Incremento.Salute * player.Lanciere_Salute));
+            int arcieri_Temp    = RidurreNumeroSoldati(arcieri, dannoInflittoDalNemico * 0.70, (Esercito.Unità.Arciere.Difesa + Ricerca.Soldati.Incremento.Difesa * player.Arciere_Difesa) * arcieri, Esercito.Unità.Arciere.Salute + (Ricerca.Soldati.Incremento.Salute * player.Arciere_Salute));
+            int catapulte_Temp  = RidurreNumeroSoldati(catapulte, dannoInflittoDalNemico, (Esercito.Unità.Catapulta.Difesa + Ricerca.Soldati.Incremento.Difesa * player.catapulta_Difesa) * catapulte, Esercito.Unità.Catapulta.Salute + (Ricerca.Soldati.Incremento.Salute * player.catapulta_Salute));
 
             // Applicare il danno alle unità nemiche
             int guerrieri_Enemy_Temp = RidurreNumeroSoldati(guerrieri_Enemy, dannoInflitto, (Esercito.EsercitoNemico.Guerriero.Difesa + player.Livello_Barbari_PVE) * guerrieri_Enemy, Esercito.EsercitoNemico.Guerriero.Salute + player.Livello_Barbari_PVE);
