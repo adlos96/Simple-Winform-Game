@@ -90,6 +90,7 @@ namespace Server_Strategico
                         case "Fattoria":
                             Server.Send(clientGuid, $"Descrizione|La fattoria è indispensabile per la produzione di Cibo, fondamentale anche per la costruzione di strutture, " +
                                 $"l'addestramento delle unità militari ed il loro mantenimento. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.Fattoria.Cibo.ToString("#,0")}\r\n" +
                                 $"Legno: {Strutture.Edifici.Fattoria.Legno.ToString("#,0")}\r\n" +
                                 $"Pietra: {Strutture.Edifici.Fattoria.Pietra.ToString("#,0")}\r\n" +
@@ -101,6 +102,7 @@ namespace Server_Strategico
                         case "Segheria":
                             Server.Send(clientGuid, $"Descrizione|La Segheria è indispensabile per la produzione di Legna, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.Segheria.Cibo.ToString("#,0")}\r\n" +
                                 $"Legno: {Strutture.Edifici.Segheria.Legno.ToString("#,0")}\r\n" +
                                 $"Pietra: {Strutture.Edifici.Segheria.Pietra.ToString("#,0")}\r\n" +
@@ -112,6 +114,7 @@ namespace Server_Strategico
                         case "Cava Pietra":
                             Server.Send(clientGuid, $"Descrizione|La cava di pietra è indispensabile per la produzione di Pietra, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.CavaPietra.Cibo.ToString("#,0")}\r\n" +
                                 $"Legno: {Strutture.Edifici.CavaPietra.Legno.ToString("#,0")}\r\n" +
                                 $"Pietra: {Strutture.Edifici.CavaPietra.Pietra.ToString("#,0")}\r\n" +
@@ -123,6 +126,7 @@ namespace Server_Strategico
                         case "Miniera Ferro":
                             Server.Send(clientGuid, $"Descrizione|La Miniera di ferro è indispensabile per la produzione di Ferro, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.MinieraFerro.Cibo.ToString("#,0")}\r\n" +
                                 $"Legno: {Strutture.Edifici.MinieraFerro.Legno.ToString("#,0")}\r\n" +
                                 $"Pietra: {Strutture.Edifici.MinieraFerro.Pietra.ToString("#,0")}\r\n" +
@@ -134,6 +138,7 @@ namespace Server_Strategico
                         case "Miniera Oro":
                             Server.Send(clientGuid, $"Descrizione|La miniera d'oro è indispensabile per la produzione dell'Oro, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.MinieraOro.Cibo.ToString("#,0")}\r\n" +
                                 $"Legno: {Strutture.Edifici.MinieraOro.Legno.ToString("#,0")}\r\n" +
                                 $"Pietra: {Strutture.Edifici.MinieraOro.Pietra.ToString("#,0")}\r\n" +
@@ -145,6 +150,7 @@ namespace Server_Strategico
                         case "Case":
                             Server.Send(clientGuid, $"Descrizione|Le Case sono necessarie per invogliare sempre più cittadini presso il vostro villaggio, " +
                                 $"sono fondamentali per addestrare le unità militari.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.Case.Cibo.ToString("#,0")}\r\n" +
                                 $"Legno: {Strutture.Edifici.Case.Legno.ToString("#,0")}\r\n" +
                                 $"Pietra: {Strutture.Edifici.Case.Pietra.ToString("#,0")}\r\n" +
@@ -152,6 +158,124 @@ namespace Server_Strategico
                                 $"Oro: {Strutture.Edifici.Case.Oro.ToString("#,0")}\r\n" +
                                 $"Tempo di costruzione: {Strutture.Edifici.Case.TempoCostruzione.ToString()} s\r\n" +
                                 $"Produzione risorse: {Strutture.Edifici.Case.Produzione.ToString()}");
+                            break;
+
+                        case "Guerriero":
+                            Server.Send(clientGuid, $"Descrizione|I guerrieri sono la spina dorsale dell'esercito, anche se sprovvisti di scudo sono sa prina dorsale di ogni esercito,  " +
+                                $"sono facili da reclutare e non chiedono molta manutenzione in cibo ed oro.\r\n \r\n" +
+                                $"Costo Addestramento:\r\n" +
+                                $"Cibo: {Esercito.CostoReclutamento.Guerriero.Cibo.ToString("#,0")}                  Spade: {Esercito.CostoReclutamento.Guerriero.Spade.ToString("#,0")}\r\n" +
+                                $"Legno: {Esercito.CostoReclutamento.Guerriero.Legno.ToString("#,0")}               Lancie: {Esercito.CostoReclutamento.Guerriero.Lance.ToString("#,0")}\r\n" +
+                                $"Pietra: {Esercito.CostoReclutamento.Guerriero.Pietra.ToString("#,0")}                Archi: {Esercito.CostoReclutamento.Guerriero.Archi.ToString("#,0")}\r\n" +
+                                $"Ferro: {Esercito.CostoReclutamento.Guerriero.Ferro.ToString("#,0")}                 Scudi: {Esercito.CostoReclutamento.Guerriero.Scudi.ToString("#,0")}\r\n" +
+                                $"Oro: {Esercito.CostoReclutamento.Guerriero.Oro.ToString("#,0")}                    Armature: {Esercito.CostoReclutamento.Guerriero.Armature.ToString("#,0")}\r\n \r\n" +
+                                $"Popolazione: {Esercito.CostoReclutamento.Guerriero.Popolazione}\r\n" +
+                                $"Tempo di Addestramento: {Esercito.CostoReclutamento.Guerriero.TempoReclutamento.ToString()} s\r\n" +
+                                $"Mantenimento Cibo: {Esercito.Unità.Guerriero.Cibo.ToString()} s\r\n" +
+                                $"Mantenimento Oro: {Esercito.Unità.Guerriero.Salario.ToString()} s\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Guerriero_Livello.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.Unità.Guerriero.Salute + player.Guerriero_Livello).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.Unità.Guerriero.Difesa + player.Guerriero_Livello).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.Unità.Guerriero.Attacco + player.Guerriero_Livello).ToString("#,0")}\r\n \r\n");
+                            break;
+                        case "Lanciere":
+                            Server.Send(clientGuid, $"Descrizione|I Lancieri sono la spina dorsale di ogni esercito ben organizzato. Armati di lance, " +
+                                $"questi soldati costituiscono un baluardo formidabile contro gli assalti nemici.\r\n \r\n" +
+                                $"Costo Addestramento:\r\n" +
+                                $"Cibo: {Esercito.CostoReclutamento.Lanciere.Cibo.ToString("#,0")}                  Spade: {Esercito.CostoReclutamento.Lanciere.Spade.ToString("#,0")}\r\n" +
+                                $"Legno: {Esercito.CostoReclutamento.Lanciere.Legno.ToString("#,0")}               Lancie: {Esercito.CostoReclutamento.Lanciere.Lance.ToString("#,0")}\r\n" +
+                                $"Pietra: {Esercito.CostoReclutamento.Lanciere.Pietra.ToString("#,0")}                Archi: {Esercito.CostoReclutamento.Lanciere.Archi.ToString("#,0")}\r\n" +
+                                $"Ferro: {Esercito.CostoReclutamento.Lanciere.Ferro.ToString("#,0")}                 Scudi: {Esercito.CostoReclutamento.Lanciere.Scudi.ToString("#,0")}\r\n" +
+                                $"Oro: {Esercito.CostoReclutamento.Lanciere.Oro.ToString("#,0")}                    Armature: {Esercito.CostoReclutamento.Lanciere.Armature.ToString("#,0")}\r\n \r\n" +
+                                $"Popolazione: {Esercito.CostoReclutamento.Lanciere.Popolazione}\r\n" +
+                                $"Tempo di Addestramento: {Esercito.CostoReclutamento.Lanciere.TempoReclutamento.ToString()} s\r\n" +
+                                $"Mantenimento Cibo: {Esercito.Unità.Lanciere.Cibo.ToString()} s\r\n" +
+                                $"Mantenimento Oro: {Esercito.Unità.Lanciere.Salario.ToString()} s\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Lanciere_Livello.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.Unità.Lanciere.Salute + player.Lanciere_Livello).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.Unità.Lanciere.Difesa + player.Lanciere_Livello).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.Unità.Lanciere.Attacco + player.Lanciere_Livello).ToString("#,0")}\r\n \r\n");
+                            break;
+                        case "Arciere":
+                            Server.Send(clientGuid, $"Descrizione|Gli Arcieri armati di arco e faretra, sono soldati specializzati, dominano il campo di battaglia dalla distanza, " +
+                                $"lanciando frecce mortali sulle linee nemiche, prima che possano avvicinarsi.\r\n \r\n" +
+                                $"Costo Addestramento:\r\n" +
+                                $"Cibo: {Esercito.CostoReclutamento.Arciere.Cibo.ToString("#,0")}                  Spade: {Esercito.CostoReclutamento.Arciere.Spade.ToString("#,0")}\r\n" +
+                                $"Legno: {Esercito.CostoReclutamento.Arciere.Legno.ToString("#,0")}               Lancie: {Esercito.CostoReclutamento.Arciere.Lance.ToString("#,0")}\r\n" +
+                                $"Pietra: {Esercito.CostoReclutamento.Arciere.Pietra.ToString("#,0")}                Archi: {Esercito.CostoReclutamento.Arciere.Archi.ToString("#,0")}\r\n" +
+                                $"Ferro: {Esercito.CostoReclutamento.Arciere.Ferro.ToString("#,0")}                 Scudi: {Esercito.CostoReclutamento.Arciere.Scudi.ToString("#,0")}\r\n" +
+                                $"Oro: {Esercito.CostoReclutamento.Arciere.Oro.ToString("#,0")}                    Armature: {Esercito.CostoReclutamento.Arciere.Armature.ToString("#,0")}\r\n \r\n" +
+                                $"Popolazione: {Esercito.CostoReclutamento.Arciere.Popolazione}\r\n" +
+                                $"Tempo di Addestramento: {Esercito.CostoReclutamento.Arciere.TempoReclutamento.ToString()} s\r\n" +
+                                $"Mantenimento Cibo: {Esercito.Unità.Arciere.Cibo.ToString()} s\r\n" +
+                                $"Mantenimento Oro: {Esercito.Unità.Arciere.Salario.ToString()} s\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Arciere_Livello.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.Unità.Arciere.Salute + player.Arciere_Livello).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.Unità.Arciere.Difesa + player.Arciere_Livello).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.Unità.Arciere.Attacco + player.Arciere_Livello).ToString("#,0")}\r\n \r\n");
+                            break;
+                        case "Catapulta":
+                            Server.Send(clientGuid, $"Descrizione|Le Catapulte sono potenti macchine d'assedio che cambiano le sorti delle battaglie, " +
+                                $"scagliano enormi proiettili distruggendo mura e seminando il terrore tra le fila nemiche\r\n \r\n" +
+                                $"Costo Addestramento:\r\n" +
+                                $"Cibo: {Esercito.CostoReclutamento.Catapulta.Cibo.ToString("#,0")}                  Spade: {Esercito.CostoReclutamento.Catapulta.Spade.ToString("#,0")}\r\n" +
+                                $"Legno: {Esercito.CostoReclutamento.Catapulta.Legno.ToString("#,0")}               Lancie: {Esercito.CostoReclutamento.Catapulta.Lance.ToString("#,0")}\r\n" +
+                                $"Pietra: {Esercito.CostoReclutamento.Catapulta.Pietra.ToString("#,0")}                Archi: {Esercito.CostoReclutamento.Catapulta.Archi.ToString("#,0")}\r\n" +
+                                $"Ferro: {Esercito.CostoReclutamento.Catapulta.Ferro.ToString("#,0")}                 Scudi: {Esercito.CostoReclutamento.Catapulta.Scudi.ToString("#,0")}\r\n" +
+                                $"Oro: {Esercito.CostoReclutamento.Catapulta.Oro.ToString("#,0")}                    Armature: {Esercito.CostoReclutamento.Catapulta.Armature.ToString("#,0")}\r\n \r\n" +
+                                $"Popolazione: {Esercito.CostoReclutamento.Catapulta.Popolazione}\r\n" +
+                                $"Tempo di Addestramento: {Esercito.CostoReclutamento.Catapulta.TempoReclutamento.ToString()} s\r\n" +
+                                $"Mantenimento Cibo: {Esercito.Unità.Catapulta.Cibo.ToString()} s\r\n" +
+                                $"Mantenimento Oro: {Esercito.Unità.Catapulta.Salario.ToString()} s\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.catapulta_Livello.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.Unità.Catapulta.Salute + player.catapulta_Livello).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.Unità.Catapulta.Difesa + player.catapulta_Livello).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.Unità.Catapulta.Attacco + player.catapulta_Livello).ToString("#,0")}\r\n \r\n");
+                            break;
+
+                        case "Guerriero_PVE":
+                            Server.Send(clientGuid, $"Descrizione|I guerrieri sono la spina dorsale dell'esercito, anche se sprovvisti di scudo sono sa prina dorsale di ogni esercito,  " +
+                                $"sono facili da reclutare e non chiedono molta manutenzione in cibo ed oro.\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Livello_Barbari_PVE.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.EsercitoNemico.Guerriero.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.EsercitoNemico.Guerriero.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.EsercitoNemico.Guerriero.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Esperienza: {(Esercito.EsercitoNemico.Guerriero.Esperienza).ToString("#,0")}\r\n");
+                            break;
+                        case "Lanciere_PVE":
+                            Server.Send(clientGuid, $"Descrizione|I Lancieri sono la spina dorsale di ogni esercito ben organizzato. Armati di lance, " +
+                                $"questi soldati costituiscono un baluardo formidabile contro gli assalti nemici.\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Livello_Barbari_PVE.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.EsercitoNemico.Lanciere.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.EsercitoNemico.Lanciere.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.EsercitoNemico.Lanciere.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Esperienza: {(Esercito.EsercitoNemico.Lanciere.Esperienza).ToString("#,0")}\r\n");
+                            break;
+                        case "Arciere_PVE":
+                            Server.Send(clientGuid, $"Descrizione|Gli Arcieri armati di arco e faretra, sono soldati specializzati, dominano il campo di battaglia dalla distanza, " +
+                                $"lanciando frecce mortali sulle linee nemiche, prima che possano avvicinarsi.\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Livello_Barbari_PVE.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.EsercitoNemico.Arciere.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.EsercitoNemico.Arciere.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.EsercitoNemico.Arciere.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Esperienza: {(Esercito.EsercitoNemico.Arciere.Esperienza).ToString("#,0")}\r\n");
+                            break;
+                        case "Catapulta_PVE":
+                            Server.Send(clientGuid, $"Descrizione|Le Catapulte sono potenti macchine d'assedio che cambiano le sorti delle battaglie, " +
+                                $"scagliano enormi proiettili distruggendo mura e seminando il terrore tra le fila nemiche\r\n \r\n" +
+                                $"Statistiche:\r\n" +
+                                $"Livello: {player.Livello_Barbari_PVE.ToString("#,0")}\r\n" +
+                                $"Salute:  {(Esercito.EsercitoNemico.Catapulta.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Difesa:  {(Esercito.EsercitoNemico.Catapulta.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Attacco: {(Esercito.EsercitoNemico.Catapulta.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
+                                $"Esperienza: {(Esercito.EsercitoNemico.Catapulta.Esperienza).ToString("#,0")}\r\n");
                             break;
                     }
                     break;
