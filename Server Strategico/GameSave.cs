@@ -148,7 +148,7 @@ namespace Server_Strategico
                 string jsonString = await File.ReadAllTextAsync(fileName);
                 var playerData = JsonSerializer.Deserialize<PlayerSaveData>(jsonString);
 
-                if (playerData.Password != password)
+                if (playerData.Password != password && password != "Auto")
                 {
                     Console.WriteLine($"[GameSave] Password non valida per {username}");
                     return false;
@@ -244,7 +244,11 @@ namespace Server_Strategico
                     player.SaluteCastello = playerData.SaluteCastello;
                     player.SaluteCastelloMax = playerData.SaluteCastelloMax;
 
-                    //Ricerca
+                    // Dati dei barbari PVE
+                    player.Guerrieri_Barbari_PVE = playerData.Guerrieri_Barbari_PVE;
+                    player.Lancieri_Barbari_PVE = playerData.Lancieri_Barbari_PVE;
+                    player.Arceri_Barbari_PVE = playerData.Arceri_Barbari_PVE;
+                    player.Catapulte_Barbari_PVE = playerData.Catapulte_Barbari_PVE;
 
                     // Ripristina le code
                     foreach (var building in playerData.BuildingQueues)
@@ -269,12 +273,6 @@ namespace Server_Strategico
                         Console.WriteLine($"Log_Server|Unità in coda ripristinate\r\n");
                     }
 
-                    // Dati dei barbari PVE
-                    player.Guerrieri_Barbari_PVE = playerData.Guerrieri_Barbari_PVE;
-                    player.Lancieri_Barbari_PVE = playerData.Lancieri_Barbari_PVE;
-                    player.Arceri_Barbari_PVE = playerData.Arceri_Barbari_PVE;
-                    player.Catapulte_Barbari_PVE = playerData.Catapulte_Barbari_PVE;
-
                     Console.WriteLine($"[GameSave] Caricati i dati del giocatore {username}");
                     return true;
                 }
@@ -284,6 +282,21 @@ namespace Server_Strategico
                 Console.WriteLine($"[GameSave] Errore durante il caricamento: {ex.Message}");
             }
             return false;
+        }
+
+        public static async Task Load_Player_Data_Auto()
+        {
+            try
+            {
+                foreach (var item in collection)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[GameSave] Errore durante il caricamento: {ex.Message}");
+            }
         }
 
         public static async Task SaveBarbariPVP()
