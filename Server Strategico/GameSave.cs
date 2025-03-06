@@ -119,7 +119,8 @@ namespace Server_Strategico
                     Guerrieri_Barbari_PVE = player.Guerrieri_Barbari_PVE,
                     Lancieri_Barbari_PVE = player.Lancieri_Barbari_PVE,
                     Arceri_Barbari_PVE = player.Arceri_Barbari_PVE,
-                    Catapulte_Barbari_PVE = player.Catapulte_Barbari_PVE
+                    Catapulte_Barbari_PVE = player.Catapulte_Barbari_PVE,
+                    Livello_Barbari_PVE = player.Livello_Barbari_PVE
                 };
 
                 string fileName = Path.Combine(SavePath, $"{player.Username}.json");
@@ -133,7 +134,6 @@ namespace Server_Strategico
                 Console.WriteLine($"[GameSave] Errore durante il salvataggio: {ex.Message}");
             }
         }
-
         public static async Task<bool> LoadPlayer(string username, string password)
         {
             try
@@ -249,6 +249,7 @@ namespace Server_Strategico
                     player.Lancieri_Barbari_PVE = playerData.Lancieri_Barbari_PVE;
                     player.Arceri_Barbari_PVE = playerData.Arceri_Barbari_PVE;
                     player.Catapulte_Barbari_PVE = playerData.Catapulte_Barbari_PVE;
+                    player.Livello_Barbari_PVE = playerData.Livello_Barbari_PVE;
 
                     // Ripristina le code
                     foreach (var building in playerData.BuildingQueues)
@@ -283,7 +284,6 @@ namespace Server_Strategico
             }
             return false;
         }
-
         public static async Task Load_Player_Data_Auto()
         {
             try
@@ -298,8 +298,7 @@ namespace Server_Strategico
 
                 foreach (string file in saveFiles)
                 {
-                    // Salta il file dei barbari PVP
-                    if (Path.GetFileName(file) == "BarbariPVP.json")
+                    if (Path.GetFileName(file) == "BarbariPVP.json") // Salta il file dei barbari PVP
                         continue;
 
                     string username = Path.GetFileNameWithoutExtension(file);
@@ -311,17 +310,13 @@ namespace Server_Strategico
                         string jsonString = await File.ReadAllTextAsync(file);
                         var playerData = JsonSerializer.Deserialize<PlayerSaveData>(jsonString);
 
-                        // Estrai la password e carica i dati del giocatore
-                        string password = playerData.Password;
+                        string password = playerData.Password; // Estrai la password e carica i dati del giocatore
                         Console.WriteLine($"[GameSave] Password estratta per {username}");
 
                         // Carica i dati del giocatore con la password estratta dal file
                         bool success = await ServerConnection.Load_User_Auto(username, password);
-
-                        if (success)
-                            Console.WriteLine($"[GameSave] Caricamento automatico completato per {username}");
-                        else
-                            Console.WriteLine($"[GameSave] Caricamento automatico fallito per {username}");
+                        if (success) Console.WriteLine($"[GameSave] Caricamento automatico completato per {username}");
+                        else Console.WriteLine($"[GameSave] Caricamento automatico fallito per {username}");
                     }
                     catch (Exception ex)
                     {
@@ -336,7 +331,6 @@ namespace Server_Strategico
                 Console.WriteLine($"[GameSave] Errore durante il caricamento automatico: {ex.Message}");
             }
         }
-
         public static async Task SaveBarbariPVP()
         {
             var barbariData = new
@@ -372,6 +366,7 @@ namespace Server_Strategico
                 Variabili.Barbari.PVP.Lancieri = barbariData.Lancieri;
                 Variabili.Barbari.PVP.Arceri = barbariData.Arceri;
                 Variabili.Barbari.PVP.Catapulte = barbariData.Catapulte;
+                Variabili.Barbari.PVP.Livello = barbariData.Livello;
 
                 Console.WriteLine("[GameSave] Dati dei barbari PVP caricati.");
                 return true;
@@ -388,6 +383,7 @@ namespace Server_Strategico
             public int Lancieri { get; set; }
             public int Arceri { get; set; }
             public int Catapulte { get; set; }
+            public int Livello { get; set; }
         }
 
         private class PlayerSaveData
@@ -489,6 +485,7 @@ namespace Server_Strategico
             public int Lancieri_Barbari_PVE { get; set; }
             public int Arceri_Barbari_PVE { get; set; }
             public int Catapulte_Barbari_PVE { get; set; }
+            public int Livello_Barbari_PVE { get; set; }
         }
 
     }
