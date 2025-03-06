@@ -12,12 +12,7 @@ namespace Server_Strategico
 
             int unità = player.Guerrieri_Barbari_PVE + player.Lancieri_Barbari_PVE + player.Arceri_Barbari_PVE + player.Catapulte_Barbari_PVE;
             if (unità < 22)
-            {
-                player.Guerrieri_Barbari_PVE += 14;
-                player.Lancieri_Barbari_PVE += 8;
-                player.Arceri_Barbari_PVE += 6;
-                player.Catapulte_Barbari_PVE += 1;
-            }
+                Add_Troops_PVE(14, 8, 6, 1, player);
 
             while (true)
             {
@@ -27,29 +22,32 @@ namespace Server_Strategico
                 if (player.Livello > 25 && catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2) player.Catapulte_Barbari_PVE += 1;
 
                 if (player.Livello > 5 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
+                    Add_Troops_PVE(1, 1, 0, 0, player);
+
+                if (respawn == 120)
                 {
-                    player.Guerrieri_Barbari_PVE += 1;
-                    player.Lancieri_Barbari_PVE += 1;
+                    Add_Troops_PVE(2, 2, 5, 0, player);
+                    respawn = 0;
                 }
 
                 if (guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                 {
-                    player.Guerrieri_Barbari_PVE++;
+                    Add_Troops_PVE(1, 0, 0, 0, player);
                     guerriero = 0;
                 }
                 if (lanciere >= Esercito.EsercitoNemico.Lanciere.TempoReclutamento * 2 && player.Livello >= 8)
                 {
-                    player.Lancieri_Barbari_PVE++;
+                    Add_Troops_PVE(0, 1, 0, 0, player);
                     lanciere = 0;
                 }
                 if (arciere >= Esercito.EsercitoNemico.Arciere.TempoReclutamento * 2 && player.Livello >= 16)
                 {
-                    player.Arceri_Barbari_PVE++;
+                    Add_Troops_PVE(0, 0, 1, 0, player);
                     arciere = 0;
                 }
                 if (catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2 && player.Livello >= 23)
                 {
-                    player.Catapulte_Barbari_PVE++;
+                    Add_Troops_PVE(0, 0, 0, 1, player);
                     catapulta = 0;
                 }
 
@@ -73,12 +71,7 @@ namespace Server_Strategico
             int respawn = 0;
             int unità = Variabili.Barbari.PVP.Guerrieri + Variabili.Barbari.PVP.Lancieri + Variabili.Barbari.PVP.Arceri + Variabili.Barbari.PVP.Catapulte;
             if (unità < 72)
-            {
-                Variabili.Barbari.PVP.Guerrieri += 52;
-                Variabili.Barbari.PVP.Lancieri += 38;
-                Variabili.Barbari.PVP.Arceri += 21;
-                Variabili.Barbari.PVP.Catapulte += 10;
-            }
+                Add_Troops_PVP(52,38,21,10);
 
             while (true)
             {
@@ -88,29 +81,32 @@ namespace Server_Strategico
                 if (players.Count > 16 && catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2) Variabili.Barbari.PVP.Catapulte += 1;
 
                 if (players.Count >= 2 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
+                    Add_Troops_PVP(1,1,0,0);
+
+                if (respawn == 120)
                 {
-                    Variabili.Barbari.PVP.Guerrieri += 1;
-                    Variabili.Barbari.PVP.Lancieri += 1;
+                    Add_Troops_PVP(1,1,3,0);
+                    respawn = 0;
                 }
 
                 if (guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                 {
-                    Variabili.Barbari.PVP.Guerrieri++;
+                    Add_Troops_PVP(1, 0, 0, 0);
                     guerriero = 0;
                 }
                 if (lanciere >= Esercito.EsercitoNemico.Lanciere.TempoReclutamento * 2 && players.Count >= 2)
                 {
-                    Variabili.Barbari.PVP.Lancieri++;
+                    Add_Troops_PVP(0, 1, 0, 0);
                     lanciere = 0;
                 }
                 if (arciere >= Esercito.EsercitoNemico.Arciere.TempoReclutamento * 2 && players.Count >= 3)
                 {
-                    Variabili.Barbari.PVP.Arceri++;
+                    Add_Troops_PVP(0, 0, 1, 0);
                     arciere = 0;
                 }
                 if (catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2 && players.Count >= 4)
                 {
-                    Variabili.Barbari.PVP.Catapulte++;
+                    Add_Troops_PVP(0, 0, 0, 1);
                     catapulta = 0;
                 }
 
@@ -127,6 +123,20 @@ namespace Server_Strategico
                 respawn++;
                 Thread.Sleep(1000);
             }
+        }
+        static void Add_Troops_PVP(int guerrieri, int lancieri, int arcieri, int catapulte)
+        {
+            Variabili.Barbari.PVP.Guerrieri += guerrieri;
+            Variabili.Barbari.PVP.Lancieri += lancieri;
+            Variabili.Barbari.PVP.Arceri += arcieri;
+            Variabili.Barbari.PVP.Catapulte += catapulte;
+        }
+        static void Add_Troops_PVE(int guerrieri, int lancieri, int arcieri, int catapulte, Variabili.Player player)
+        {
+            player.Guerrieri_Barbari_PVE += guerrieri;
+            player.Lancieri_Barbari_PVE += lancieri;
+            player.Arceri_Barbari_PVE += arcieri;
+            player.Catapulte_Barbari_PVE += catapulte;
         }
     }
 }
