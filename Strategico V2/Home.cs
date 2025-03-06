@@ -152,19 +152,28 @@ namespace Strategico_V2
             _ = txt_Descrizione.Invoke((Action)(() => txt_Descrizione.Text = $"{msg}\r\n"));
         }
 
-        private void btn_Accampameto_Barbaro_PVE_Attacco_Click(object sender, EventArgs e)
+        private async void btn_Accampameto_Barbaro_PVE_Attacco_Click(object sender, EventArgs e)
         {
+            btn_Accampameto_Barbaro_PVE_Attacco.Enabled = false;
             ClientConnection.TestClient.Send($"Battaglia|{Variabili_Client.username}|{Variabili_Client.password}|Barbari_PVE");
+            await Login.Sleep(20);
+            btn_Accampameto_Barbaro_PVE_Attacco.Enabled = true;
         }
 
-        private void btn_Accampameto_Barbaro_PVP_Attacco_Click(object sender, EventArgs e)
+        private async void btn_Accampameto_Barbaro_PVP_Attacco_Click(object sender, EventArgs e)
         {
+            btn_Accampameto_Barbaro_PVP_Attacco.Enabled = false;
             ClientConnection.TestClient.Send($"Battaglia|{Variabili_Client.username}|{Variabili_Client.password}|Barbari_PVP");
+            await Login.Sleep(20);
+            btn_Accampameto_Barbaro_PVP_Attacco.Enabled = true;
         }
 
-        private void btn_PVP_Attacco_Click(object sender, EventArgs e)
+        private async void btn_PVP_Attacco_Click(object sender, EventArgs e)
         {
+            btn_PVP_Attacco.Enabled = false;
             ClientConnection.TestClient.Send($"Battaglia|{Variabili_Client.username}|{Variabili_Client.password}|PVP|{comboBox_PVP.Text}");
+            await Login.Sleep(20);
+            btn_PVP_Attacco.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

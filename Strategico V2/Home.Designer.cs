@@ -159,7 +159,7 @@
             this.txt_Fattoria_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Fattoria_Coda = new System.Windows.Forms.TextBox();
             this.txt_Riepilogo_Utente = new System.Windows.Forms.TextBox();
-            this.txt_Log = new System.Windows.Forms.TextBox();
+            txt_Log = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txt_Forza_Esercito_PVE_Barbari = new System.Windows.Forms.TextBox();
@@ -206,7 +206,7 @@
             this.panel73 = new System.Windows.Forms.Panel();
             this.btn_Giocatori = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.txt_Descrizione = new System.Windows.Forms.TextBox();
+            txt_Descrizione = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1407,15 +1407,15 @@
             // 
             // txt_Log
             // 
-            resources.ApplyResources(this.txt_Log, "txt_Log");
-            this.txt_Log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Log.ForeColor = System.Drawing.SystemColors.Control;
-            this.txt_Log.Name = "txt_Log";
+            resources.ApplyResources(txt_Log, "txt_Log");
+            txt_Log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            txt_Log.ForeColor = System.Drawing.SystemColors.Control;
+            txt_Log.Name = "txt_Log";
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.groupBox4.Controls.Add(this.txt_Log);
+            this.groupBox4.Controls.Add(txt_Log);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
@@ -1802,7 +1802,7 @@
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.groupBox8.Controls.Add(this.txt_Descrizione);
+            this.groupBox8.Controls.Add(txt_Descrizione);
             this.groupBox8.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Name = "groupBox8";
@@ -1810,10 +1810,10 @@
             // 
             // txt_Descrizione
             // 
-            resources.ApplyResources(this.txt_Descrizione, "txt_Descrizione");
-            this.txt_Descrizione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txt_Descrizione.ForeColor = System.Drawing.SystemColors.Control;
-            this.txt_Descrizione.Name = "txt_Descrizione";
+            resources.ApplyResources(txt_Descrizione, "txt_Descrizione");
+            txt_Descrizione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            txt_Descrizione.ForeColor = System.Drawing.SystemColors.Control;
+            txt_Descrizione.Name = "txt_Descrizione";
             // 
             // Home
             // 
@@ -2079,7 +2079,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_Ricerca;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox txt_Descrizione;
-        private System.Windows.Forms.TextBox txt_Log;
+        static private System.Windows.Forms.TextBox txt_Descrizione;
+        static private System.Windows.Forms.TextBox txt_Log;
     }
 }
