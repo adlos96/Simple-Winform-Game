@@ -1,4 +1,6 @@
 ﻿
+using static Server_Strategico.Variabili;
+
 namespace Server_Strategico
 {
     internal class Barbari
@@ -16,10 +18,10 @@ namespace Server_Strategico
 
             while (true)
             {
-                if (player.Livello > 7 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2) player.Guerrieri_Barbari_PVE += 1;
+                if (player.Livello > 6 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2) player.Guerrieri_Barbari_PVE += 1;
                 if (player.Livello > 10 && lanciere >= Esercito.EsercitoNemico.Lanciere.TempoReclutamento * 2) player.Lancieri_Barbari_PVE += 1;
-                if (player.Livello > 18 && arciere >= Esercito.EsercitoNemico.Arciere.TempoReclutamento * 2) player.Arceri_Barbari_PVE += 1;
-                if (player.Livello > 25 && catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2) player.Catapulte_Barbari_PVE += 1;
+                if (player.Livello > 15 && arciere >= Esercito.EsercitoNemico.Arciere.TempoReclutamento * 2) player.Arceri_Barbari_PVE += 1;
+                if (player.Livello > 21 && catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2) player.Catapulte_Barbari_PVE += 1;
 
                 if (player.Livello > 5 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                     Add_Troops_PVE(1, 1, 0, 0, player);
@@ -29,6 +31,12 @@ namespace Server_Strategico
                     Add_Troops_PVE(2, 2, 5, 0, player);
                     respawn = 0;
                 }
+                int liv = player.Livello_Barbari_PVE + 1;
+                liv = player.Livello_Barbari_PVE * 3;
+
+                if (player.Livello > liv)
+                    player.Livello_Barbari_PVE++;
+                
 
                 if (guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                 {
@@ -88,6 +96,12 @@ namespace Server_Strategico
                     Add_Troops_PVP(1,1,3,0);
                     respawn = 0;
                 }
+                //int liv = Variabili.Barbari.PVP.Livello + 1; // Non mi convince... va fatto meglio
+                //liv = Variabili.Barbari.PVP.Livello * 3;
+                //
+                //if (Variabili.Barbari.PVP.Livello > liv)
+                //    Variabili.Barbari.PVP.Livello++;
+
 
                 if (guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                 {
