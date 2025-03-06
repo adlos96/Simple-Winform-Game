@@ -288,14 +288,35 @@ namespace Server_Strategico
         {
             try
             {
-                foreach (var item in collection)
+                if (!Directory.Exists(SavePath))
                 {
-
+                    Console.WriteLine("[GameSave] Directory dei salvataggi non trovata");
+                    return;
                 }
+
+                string[] saveFiles = Directory.GetFiles(SavePath, "*.json");
+
+                foreach (string file in saveFiles)
+                {
+                    // Salta il file dei barbari PVP
+                    if (Path.GetFileName(file) == "BarbariPVP.json")
+                        continue;
+
+                    string username = Path.GetFileNameWithoutExtension(file);
+                    Console.WriteLine($"[GameSave] Caricamento automatico per {username}");
+
+                    bool success = await ServerConnection.Load_User_Auto(username);
+                    if (success)
+                        Console.WriteLine($"[GameSave] Caricamento automatico completato per {username}");
+                    else
+                        Console.WriteLine($"[GameSave] Caricamento automatico fallito per {username}");
+                }
+
+                Console.WriteLine("[GameSave] Caricamento automatico completato per tutti i giocatori");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[GameSave] Errore durante il caricamento: {ex.Message}");
+                Console.WriteLine($"[GameSave] Errore durante il caricamento automatico: {ex.Message}");
             }
         }
 
@@ -314,6 +335,42 @@ namespace Server_Strategico
             await File.WriteAllTextAsync(fileName, jsonString);
 
             Console.WriteLine("[GameSave] Dati dei barbari PVP salvati.");
+        }
+        public static async Task<bool> LoadBarbariPVP()
+        {
+            try
+            {
+                string fileName = Path.Combine(SavePath, "BarbariPVP.json");
+                if (!File.Exists(fileName))
+                {
+                    Console.WriteLine("[GameSave] Nessun salvataggio trovato per i Barbari PVP");
+                    return false;
+                }
+
+                string jsonString = await File.ReadAllTextAsync(fileName);
+                var barbariData = JsonSerializer.Deserialize<BarbariPVPData>(jsonString);
+
+                // Aggiorna i dati dei barbari con i dati caricati
+                Variabili.Barbari.PVP.Guerrieri = barbariData.Guerrieri;
+                Variabili.Barbari.PVP.Lancieri = barbariData.Lancieri;
+                Variabili.Barbari.PVP.Arceri = barbariData.Arceri;
+                Variabili.Barbari.PVP.Catapulte = barbariData.Catapulte;
+
+                Console.WriteLine("[GameSave] Dati dei barbari PVP caricati.");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[GameSave] Errore durante il caricamento dei barbari PVP: {ex.Message}");
+            }
+            return false;
+        }
+        private class BarbariPVPData
+        {
+            public int Guerrieri { get; set; }
+            public int Lancieri { get; set; }
+            public int Arceri { get; set; }
+            public int Catapulte { get; set; }
         }
 
         private class PlayerSaveData
@@ -416,5 +473,6 @@ namespace Server_Strategico
             public int Arceri_Barbari_PVE { get; set; }
             public int Catapulte_Barbari_PVE { get; set; }
         }
+
     }
 } 
