@@ -165,6 +165,31 @@ namespace Server_Strategico
             var existingPlayer = Server.servers_.GetPlayer(username, password);
             if (existingPlayer != null)
             {
+                Console.WriteLine("Login: Il giocatore già esiste");
+                return true;
+            }
+
+            // Controlla se il nome utente è disponibile
+            if (await Server.servers_.Check_Username_Player(username))
+            {
+                
+                // Poi prova a caricare i dati salvati
+                if (await GameSave.LoadPlayer(username, password))
+                {
+                    return true;
+                }
+            }
+
+            return true;
+        }
+
+        public static async Task<bool> Load_User_Auto(string username, string password)
+        {
+            // Controlla se il giocatore esiste già
+            var existingPlayer = Server.servers_.GetPlayer_Data(username);
+            if (existingPlayer != null)
+            {
+                Console.WriteLine("Login: Il giocatore già esiste");
                 return true;
             }
 
@@ -172,20 +197,19 @@ namespace Server_Strategico
             if (await Server.servers_.Check_Username_Player(username))
             {
                 // Prima crea il nuovo giocatore
-                await Server.servers_.AddPlayer(username, password, guid);
-                
+                await Server.servers_.AddPlayer(username, password, Guid.Empty);
+
                 // Poi prova a caricare i dati salvati
                 if (await GameSave.LoadPlayer(username, password))
                 {
                     return true;
                 }
-                
-                // Se non ci sono dati salvati, il giocatore è già stato creato con i valori default
-                return true;
             }
 
-            return false;
+            return true;
         }
+
+
         public static async Task<bool> Update_Data(Guid guid, string username, string password)
         {
             var player = Server.servers_.GetPlayer(username, password);

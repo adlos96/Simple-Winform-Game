@@ -123,7 +123,9 @@ namespace Server_Strategico
         }
         public static void Send(Guid guid, string msg)
         {
-            server.SendAsync(guid, msg);
+
+            if (guid != Guid.Empty)
+                server.SendAsync(guid, msg);            
         }
 
         public static async Task NewPlayer(string player, string password)

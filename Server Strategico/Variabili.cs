@@ -721,7 +721,7 @@ namespace Server_Strategico
             {
                 if (!players.ContainsKey(username))
                 {
-                    //players.Add(username, new Player(username, password, null));
+                    players.Add(username, new Player(username, password, Guid.Empty));
                     await Server.NewPlayer(username, password);
                     return true;
                 }
@@ -798,7 +798,10 @@ namespace Server_Strategico
             public async Task RunGameLoopAsync(CancellationToken cancellationToken)
             {
                 int saveCounter = 0;  // Contatore per il salvataggio
-                
+
+                await GameSave.LoadBarbariPVP();
+                await GameSave.Load_Player_Data_Auto();
+
                 while (!cancellationToken.IsCancellationRequested)
                 {
                     foreach (var player in players.Values)

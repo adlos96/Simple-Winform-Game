@@ -305,11 +305,28 @@ namespace Server_Strategico
                     string username = Path.GetFileNameWithoutExtension(file);
                     Console.WriteLine($"[GameSave] Caricamento automatico per {username}");
 
-                    bool success = await ServerConnection.Load_User_Auto(username);
-                    if (success)
-                        Console.WriteLine($"[GameSave] Caricamento automatico completato per {username}");
-                    else
-                        Console.WriteLine($"[GameSave] Caricamento automatico fallito per {username}");
+                    try
+                    {
+                        // Leggi il file JSON per estrarre la password
+                        string jsonString = await File.ReadAllTextAsync(file);
+                        var playerData = JsonSerializer.Deserialize<PlayerSaveData>(jsonString);
+
+                        // Estrai la password e carica i dati del giocatore
+                        string password = playerData.Password;
+                        Console.WriteLine($"[GameSave] Password estratta per {username}");
+
+                        // Carica i dati del giocatore con la password estratta dal file
+                        bool success = await ServerConnection.Load_User_Auto(username, password);
+
+                        if (success)
+                            Console.WriteLine($"[GameSave] Caricamento automatico completato per {username}");
+                        else
+                            Console.WriteLine($"[GameSave] Caricamento automatico fallito per {username}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[GameSave] Errore durante l'estrazione della password per {username}: {ex.Message}");
+                    }
                 }
 
                 Console.WriteLine("[GameSave] Caricamento automatico completato per tutti i giocatori");
