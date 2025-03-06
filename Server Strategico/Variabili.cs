@@ -19,6 +19,7 @@ namespace Server_Strategico
             public int Lancieri { get; set; }
             public int Arceri { get; set; }
             public int Catapulte { get; set; }
+            public int Livello { get; set; }
             public static Barbari PVP = new Barbari
             {
                 Guerrieri = 0,
@@ -121,6 +122,7 @@ namespace Server_Strategico
             public int Lancieri_Barbari_PVE { get; set; }
             public int Arceri_Barbari_PVE { get; set; }
             public int Catapulte_Barbari_PVE { get; set; }
+            public int Livello_Barbari_PVE { get; set; }
 
 
             private Dictionary<string, Queue<ConstructionTask>> constructionQueues; // Dizionario per memorizzare le code di costruzione per ogni tipo di edificio
@@ -220,6 +222,7 @@ namespace Server_Strategico
                 catapulta_Salute = 0;
                 catapulta_Difesa = 0;
                 catapulta_Attacco = 0;
+                Livello_Barbari_PVE = 0;
 
                 constructionQueues = new Dictionary<string, Queue<ConstructionTask>>();
                 currentTasks = new Dictionary<string, ConstructionTask>();
