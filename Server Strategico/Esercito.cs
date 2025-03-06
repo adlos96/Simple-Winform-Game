@@ -26,12 +26,12 @@
                 Scudi = 0,
                 Armature = 1,
 
-                Cibo = 89,
-                Legno = 43,
-                Pietra = 12,
-                Ferro = 82,
-                Oro = 32,
-                TempoReclutamento = 38, //55
+                Cibo = 135,
+                Legno = 87,
+                Pietra = 64,
+                Ferro = 118,
+                Oro = 110,
+                TempoReclutamento = 55, //55
                 Popolazione = 1
             };
             public static CostoReclutamento Lanciere = new CostoReclutamento
@@ -42,12 +42,12 @@
                 Scudi = 1,
                 Armature = 1,
 
-                Cibo = 164,
-                Legno = 92,
-                Pietra = 28,
-                Ferro = 132,
-                Oro = 81,
-                TempoReclutamento = 46,
+                Cibo = 186,
+                Legno = 135,
+                Pietra = 107,
+                Ferro = 164,
+                Oro = 143,
+                TempoReclutamento = 69,
                 Popolazione = 1
             };
             public static CostoReclutamento Arciere = new CostoReclutamento
@@ -58,12 +58,12 @@
                 Scudi = 0,
                 Armature = 1,
 
-                Cibo = 219,
-                Legno = 194,
-                Pietra = 123,
-                Ferro = 183,
-                Oro = 162,
-                TempoReclutamento = 54,
+                Cibo = 259,
+                Legno = 234,
+                Pietra = 193,
+                Ferro = 213,
+                Oro = 202,
+                TempoReclutamento = 87,
                 Popolazione = 1
             };
             public static CostoReclutamento Catapulta = new CostoReclutamento
@@ -74,12 +74,12 @@
                 Scudi = 5,
                 Armature = 5,
 
-                Cibo = 311,
-                Legno = 327,
-                Pietra = 329,
-                Ferro = 247,
-                Oro = 256,
-                TempoReclutamento = 84,
+                Cibo = 344,
+                Legno = 357,
+                Pietra = 389,
+                Ferro = 276,
+                Oro = 313,
+                TempoReclutamento = 119,
                 Popolazione = 5
             };
         }
@@ -91,10 +91,8 @@
                 Attacco = 3,
                 Difesa = 3,
                 Distanza = 1,
-                Salario = 1,
-                Cibo = 1,
                 Quantità = 0,
-                TempoReclutamento = 19,
+                TempoReclutamento = 55,
                 Esperienza = 1
             };
             public static Unità Lanciere = new Unità
@@ -103,10 +101,8 @@
                 Attacco = 4,
                 Difesa = 4,
                 Distanza = 2,
-                Salario = 1,
-                Cibo = 1,
                 Quantità = 0,
-                TempoReclutamento = 24,
+                TempoReclutamento = 69,
                 Esperienza = 1
             };
             public static Unità Arciere = new Unità
@@ -115,22 +111,18 @@
                 Attacco = 6,
                 Difesa = 2,
                 Distanza = 6,
-                Salario = 1,
-                Cibo = 1,
                 Quantità = 0,
-                TempoReclutamento = 32,
+                TempoReclutamento = 87,
                 Esperienza = 2
             };
             public static Unità Catapulta = new Unità
             {
-                Salute = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione),
-                Attacco = 14,
-                Difesa = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Guerriero.Popolazione),
+                Salute = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Guerriero.Popolazione),
+                Attacco = 12,
+                Difesa = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Guerriero.Popolazione),
                 Distanza = 14,
-                Salario = CostoReclutamento.Guerriero.Popolazione * 1.525,
-                Cibo = 1 * CostoReclutamento.Guerriero.Popolazione,
                 Quantità = 0,
-                TempoReclutamento = 61,
+                TempoReclutamento = 119,
                 Esperienza = 3
             };
         }
@@ -153,8 +145,8 @@
                 Attacco = 3,
                 Difesa = 3,
                 Distanza = 1,
-                Salario = 0.14,
-                Cibo = 0.29,
+                Salario = 0.15,
+                Cibo = 0.31,
                 Quantità = 0,
                 Esperienza = 1
             };
@@ -164,8 +156,8 @@
                 Attacco = 4,
                 Difesa = 4,
                 Distanza = 2,
-                Salario = 0.18,
-                Cibo = 0.32,
+                Salario = 0.19,
+                Cibo = 0.36,
                 Quantità = 0,
                 Esperienza = 1
             };
@@ -175,23 +167,23 @@
                 Attacco = 7,
                 Difesa = 3,
                 Distanza = 6,
-                Salario = 0.23,
-                Cibo = 0.38,
+                Salario = 0.24,
+                Cibo = 0.43,
                 Quantità = 0,
                 Esperienza = 2,
-                Componente_Lancio = 3
+                Componente_Lancio = 4
             };
             public static Unità Catapulta = new Unità
             {
-                Salute = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione),
-                Attacco = 14,
-                Difesa = (int)(Guerriero.Salute * 0.65 * CostoReclutamento.Catapulta.Popolazione),
+                Salute = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Catapulta.Popolazione),
+                Attacco = 12,
+                Difesa = (int)(Guerriero.Salute * 0.60 * CostoReclutamento.Catapulta.Popolazione),
                 Distanza = 14,
-                Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.619,
-                Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.769,
+                Salario = CostoReclutamento.Catapulta.Popolazione * Guerriero.Salario * 0.629,
+                Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.779,
                 Quantità = 0,
                 Esperienza = 3,
-                Componente_Lancio = 5
+                Componente_Lancio = 8
             };
         }
     }
