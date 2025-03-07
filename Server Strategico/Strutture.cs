@@ -20,8 +20,8 @@
                 Pietra = 100,
                 Ferro = 100,
                 Oro = 100,
-                Produzione = 1.20,
-                TempoCostruzione = 37
+                Produzione = 1.12,
+                TempoCostruzione = 57
             };
             public static Edifici Segheria = new Edifici
             {
@@ -30,8 +30,8 @@
                 Pietra = 175,
                 Ferro = 175,
                 Oro = 175,
-                Produzione = 1.04,
-                TempoCostruzione = 40
+                Produzione = 0.96,
+                TempoCostruzione = 63
             };
             public static Edifici CavaPietra = new Edifici
             {
@@ -40,8 +40,8 @@
                 Pietra = 250,
                 Ferro = 250,
                 Oro = 250,
-                Produzione = 1.03,
-                TempoCostruzione = 45
+                Produzione = 0.83,
+                TempoCostruzione = 68
             };
             public static Edifici MinieraFerro = new Edifici
             {
@@ -50,8 +50,8 @@
                 Pietra = 325,
                 Ferro = 325,
                 Oro = 325,
-                Produzione = 0.76,
-                TempoCostruzione = 49
+                Produzione = 0.70,
+                TempoCostruzione = 72
             };
             public static Edifici MinieraOro = new Edifici
             {
@@ -60,8 +60,8 @@
                 Pietra = 400,
                 Ferro = 400,
                 Oro = 400,
-                Produzione = 0.63,
-                TempoCostruzione = 56
+                Produzione = 0.57,
+                TempoCostruzione = 79
             };
             public static Edifici Case = new Edifici
             {
@@ -70,8 +70,8 @@
                 Pietra = 2500,
                 Ferro = 2500,
                 Oro = 2500,
-                Produzione = 0.01,
-                TempoCostruzione = 64
+                Produzione = 0.001,
+                TempoCostruzione = 87
             };
             // Edifici Militari
             public static Edifici Armature = new Edifici
@@ -81,8 +81,8 @@
                 Pietra = 1500,
                 Ferro = 5100,
                 Oro = 1500,
-                Produzione = 0.02,
-                TempoCostruzione = 49
+                Produzione = 0.01,
+                TempoCostruzione = 69
             };
             public static Edifici ProduzioneSpade = new Edifici
             {
@@ -91,8 +91,8 @@
                 Pietra = 1750,
                 Ferro = 1750,
                 Oro = 1750,
-                Produzione = 0.02,
-                TempoCostruzione = 56
+                Produzione = 0.01,
+                TempoCostruzione = 76
             };
             public static Edifici ProduzioneLance = new Edifici
             {
@@ -101,8 +101,8 @@
                 Pietra = 2000,
                 Ferro = 2000,
                 Oro = 2000,
-                Produzione = 0.02,
-                TempoCostruzione = 72
+                Produzione = 0.01,
+                TempoCostruzione = 92
             };
             public static Edifici ProduzioneArchi = new Edifici
             {
@@ -111,8 +111,8 @@
                 Pietra = 2250,
                 Ferro = 2250,
                 Oro = 2250,
-                Produzione = 0.02,
-                TempoCostruzione = 88
+                Produzione = 0.01,
+                TempoCostruzione = 108
             };
             public static Edifici ProduzioneScudi = new Edifici
             {
@@ -121,8 +121,8 @@
                 Pietra = 2500,
                 Ferro = 2500,
                 Oro = 2500,
-                Produzione = 0.02,
-                TempoCostruzione = 94
+                Produzione = 0.01,
+                TempoCostruzione = 114
             };
             public static Edifici ProduzioneArmature = new Edifici
             {
@@ -131,55 +131,55 @@
                 Pietra = 2750,
                 Ferro = 2750,
                 Oro = 2750,
-                Produzione = 0.02,
-                TempoCostruzione = 100
+                Produzione = 0.01,
+                TempoCostruzione = 120
             };
             public static Edifici ProduzioneFrecce = new Edifici
             {
-                Cibo = 3250,
-                Legno = 3250,
-                Pietra = 3250,
-                Ferro = 3250,
-                Oro = 3250,
-                Produzione = 0.09,
-                TempoCostruzione = 106
+                Cibo = 3750,
+                Legno = 3750,
+                Pietra = 3750,
+                Ferro = 3750,
+                Oro = 3750,
+                Produzione = 0.06,
+                TempoCostruzione = 126
             };
 
             public static Edifici CasermaGuerrieri = new Edifici
             {
-                Cibo = 1450,
-                Legno = 1450,
-                Pietra = 1450,
-                Ferro = 1450,
-                Oro = 1450,
-                TempoCostruzione = 98
+                Cibo = 2450,
+                Legno = 2450,
+                Pietra = 2450,
+                Ferro = 2450,
+                Oro = 2450,
+                TempoCostruzione = 118
             };
             public static Edifici CasermaLancieri = new Edifici
             {
-                Cibo = 1650,
-                Legno = 1650,
-                Pietra = 1650,
-                Ferro = 1650,
-                Oro = 1650,
-                TempoCostruzione = 111
+                Cibo = 2650,
+                Legno = 2650,
+                Pietra = 2650,
+                Ferro = 2650,
+                Oro = 2650,
+                TempoCostruzione = 131
             };
             public static Edifici CasermaArcieri = new Edifici
             {
-                Cibo = 1850,
-                Legno = 1850,
-                Pietra = 1850,
-                Ferro = 1850,
-                Oro = 1850,
-                TempoCostruzione = 124
+                Cibo = 3850,
+                Legno = 3850,
+                Pietra = 3850,
+                Ferro = 3850,
+                Oro = 3850,
+                TempoCostruzione = 144
             };
             public static Edifici CasermaCatapulte = new Edifici
             {
-                Cibo = 2050,
-                Legno = 2050,
-                Pietra = 2050,
-                Ferro = 2050,
-                Oro = 2050,
-                TempoCostruzione = 137
+                Cibo = 4550,
+                Legno = 4550,
+                Pietra = 4550,
+                Ferro = 4550,
+                Oro = 4550,
+                TempoCostruzione = 157
             };
         }
     }
