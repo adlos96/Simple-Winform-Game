@@ -10,37 +10,37 @@ namespace Server_Strategico
         {
             public static CostoReclutamento Produzione = new CostoReclutamento
             {
-                Cibo = 3000,
-                Legno = 2750,
-                Pietra = 2500,
-                Ferro = 2250,
-                Oro = 2000,
+                Cibo = 4500,
+                Legno = 4250,
+                Pietra = 4000,
+                Ferro = 3750,
+                Oro = 3500,
             };
             public static CostoReclutamento Costruzione = new CostoReclutamento
             {
-                Cibo = 2000,
-                Legno = 1750,
-                Pietra = 1500,
-                Ferro = 1500,
-                Oro = 1250,
+                Cibo = 3500,
+                Legno = 3250,
+                Pietra = 3000,
+                Ferro = 2750,
+                Oro = 2550,
             };
             public static CostoReclutamento Addestramento = new CostoReclutamento
             {
-                Cibo = 4000,
-                Legno = 3500,
-                Pietra = 3000,
-                Ferro = 2750,
-                Oro = 2500,
+                Cibo = 5500,
+                Legno = 5000,
+                Pietra = 4500,
+                Ferro = 4250,
+                Oro = 4000,
             };
 
             public static CostoReclutamento Incremento = new CostoReclutamento
             {
-                Cibo = 0.15,
-                Legno = 0.13,
-                Pietra = 0.11,
-                Ferro = 0.09,
-                Oro = 0.07,
-                Popolazione = 0.01
+                Cibo = 0.12,
+                Legno = 0.10,
+                Pietra = 0.08,
+                Ferro = 0.06,
+                Oro = 0.04,
+                Popolazione = 0.001
             };
 
         }
@@ -48,35 +48,35 @@ namespace Server_Strategico
         {
             public static CostoReclutamento Salute = new CostoReclutamento
             {
-                Cibo = 3000,
-                Legno = 2750,
-                Pietra = 2500,
-                Ferro = 2250,
-                Oro = 2000,
+                Cibo = 4000,
+                Legno = 3750,
+                Pietra = 3500,
+                Ferro = 3250,
+                Oro = 3000,
             };
             public static CostoReclutamento Difesa = new CostoReclutamento
             {
-                Cibo = 2000,
-                Legno = 1750,
-                Pietra = 1500,
-                Ferro = 1500,
-                Oro = 1250,
+                Cibo = 3000,
+                Legno = 2750,
+                Pietra = 2500,
+                Ferro = 2500,
+                Oro = 2250,
             };
             public static CostoReclutamento Attacco = new CostoReclutamento
             {
-                Cibo = 4000,
-                Legno = 3500,
-                Pietra = 3000,
-                Ferro = 2750,
-                Oro = 2500,
+                Cibo = 5000,
+                Legno = 4500,
+                Pietra = 4000,
+                Ferro = 3750,
+                Oro = 3500,
             };
             public static CostoReclutamento Livello = new CostoReclutamento
             {
-                Cibo = 4000,
-                Legno = 3500,
-                Pietra = 3000,
-                Ferro = 2750,
-                Oro = 2500,
+                Cibo = 6000,
+                Legno = 5750,
+                Pietra = 5500,
+                Ferro = 5250,
+                Oro = 5000,
             };
 
             public static Unità Incremento = new Unità
