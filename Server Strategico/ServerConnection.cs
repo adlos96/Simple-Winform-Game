@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text;
 using WatsonTcp;
 
@@ -34,13 +35,11 @@ namespace Server_Strategico
             var player = Server.servers_.GetPlayer(msgArgs[1], msgArgs[2]);
             switch (msgArgs[0])
             {
-                case "Update_Data": Update_Data(clientGuid, msgArgs[1], msgArgs[2]); break;
                 case "Login":
                     bool login = await Login(msgArgs[1], msgArgs[2], clientGuid);
                     if (login == true) Server.Send(clientGuid, "Login|true");
                     else
                         Server.Send(clientGuid, "Login|false");
-                    Update_Data(clientGuid, msgArgs[1], msgArgs[2]);
                     break;
                 case "Costruzione":
                     if (Convert.ToInt32(msgArgs[3]) > 0) player.QueueBuildConstruction("Fattoria", Convert.ToInt32(msgArgs[3]), clientGuid, player); // Costruisci fattorie
@@ -160,6 +159,79 @@ namespace Server_Strategico
                                 $"Produzione risorse: {Strutture.Edifici.Case.Produzione.ToString()}");
                             break;
 
+                        case "Produzione Spade":
+                            Server.Send(clientGuid, $"Descrizione|Questa struttura è attrezzata in modo da produrre equipaggiamento militare specifico, " +
+                                $"essenziali per l'addestramento di unità militari, questa struttura produce Spade.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
+                                $"Cibo: {Strutture.Edifici.ProduzioneSpade.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.ProduzioneSpade.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.ProduzioneSpade.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.ProduzioneSpade.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.ProduzioneSpade.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.ProduzioneSpade.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.ProduzioneSpade.Produzione.ToString()}");
+                            break;
+                        case "Produzione Lance":
+                            Server.Send(clientGuid, $"Descrizione|Questa struttura è attrezzata in modo da produrre equipaggiamento militare specifico, " +
+                                $"essenziali per l'addestramento di unità militari, questa struttura produce Lance.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
+                                $"Cibo: {Strutture.Edifici.ProduzioneLance.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.ProduzioneLance.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.ProduzioneLance.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.ProduzioneLance.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.ProduzioneLance.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.ProduzioneLance.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.ProduzioneLance.Produzione.ToString()}");
+                            break;
+                        case "Produzione Archi":
+                            Server.Send(clientGuid, $"Descrizione|Questa struttura è attrezzata in modo da produrre equipaggiamento militare specifico, " +
+                                $"essenziali per l'addestramento di unità militari, questa struttura produce Archi.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
+                                $"Cibo: {Strutture.Edifici.ProduzioneArchi.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.ProduzioneArchi.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.ProduzioneArchi.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.ProduzioneArchi.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.ProduzioneArchi.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.ProduzioneArchi.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.ProduzioneArchi.Produzione.ToString()}");
+                            break;
+                        case "Produzione Scudi":
+                            Server.Send(clientGuid, $"Descrizione|Questa struttura è attrezzata in modo da produrre equipaggiamento militare specifico, " +
+                                $"essenziali per l'addestramento di unità militari, questa struttura produce Scudi.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
+                                $"Cibo: {Strutture.Edifici.ProduzioneScudi.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.ProduzioneScudi.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.ProduzioneScudi.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.ProduzioneScudi.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.ProduzioneScudi.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.ProduzioneScudi.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.ProduzioneScudi.Produzione.ToString()}");
+                            break;
+                        case "Produzione Armature":
+                            Server.Send(clientGuid, $"Descrizione|Questa struttura è attrezzata in modo da produrre equipaggiamento militare specifico, " +
+                                $"essenziali per l'addestramento di unità militari, questa struttura produce Armature.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
+                                $"Cibo: {Strutture.Edifici.ProduzioneArmature.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.ProduzioneArmature.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.ProduzioneArmature.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.ProduzioneArmature.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.ProduzioneArmature.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.ProduzioneArmature.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.ProduzioneArmature.Produzione.ToString()}");
+                            break;
+                        case "Produzione Frecce":
+                            Server.Send(clientGuid, $"Descrizione|Questa struttura è attrezzata in modo da produrre equipaggiamento militare specifico, " +
+                                $"essenziali per l'addestramento di unità militari, questa struttura produce Frecce.\r\n \r\n" +
+                                $"Costo Costruzione:\r\n" +
+                                $"Cibo: {Strutture.Edifici.ProduzioneFrecce.Cibo.ToString("#,0")}\r\n" +
+                                $"Legno: {Strutture.Edifici.ProduzioneFrecce.Legno.ToString("#,0")}\r\n" +
+                                $"Pietra: {Strutture.Edifici.ProduzioneFrecce.Pietra.ToString("#,0")}\r\n" +
+                                $"Ferro: {Strutture.Edifici.ProduzioneFrecce.Ferro.ToString("#,0")}\r\n" +
+                                $"Oro: {Strutture.Edifici.ProduzioneFrecce.Oro.ToString("#,0")}\r\n" +
+                                $"Tempo di costruzione: {Strutture.Edifici.ProduzioneFrecce.TempoCostruzione.ToString()} s\r\n" +
+                                $"Produzione risorse: {Strutture.Edifici.ProduzioneFrecce.Produzione.ToString()}");
+                            break;
+
                         case "Guerriero":
                             Server.Send(clientGuid, $"Descrizione|I guerrieri sono la spina dorsale dell'esercito, anche se sprovvisti di scudo sono sa prina dorsale di ogni esercito,  " +
                                 $"sono facili da reclutare e non chiedono molta manutenzione in cibo ed oro.\r\n \r\n" +
@@ -228,8 +300,8 @@ namespace Server_Strategico
                                 $"Oro: {Esercito.CostoReclutamento.Catapulta.Oro.ToString("#,0")}                    Armature: {Esercito.CostoReclutamento.Catapulta.Armature.ToString("#,0")}\r\n \r\n" +
                                 $"Popolazione: {Esercito.CostoReclutamento.Catapulta.Popolazione}\r\n" +
                                 $"Tempo di Addestramento: {Esercito.CostoReclutamento.Catapulta.TempoReclutamento.ToString()} s\r\n" +
-                                $"Mantenimento Cibo: {Esercito.Unità.Catapulta.Cibo.ToString()} s\r\n" +
-                                $"Mantenimento Oro: {Esercito.Unità.Catapulta.Salario.ToString()} s\r\n \r\n" +
+                                $"Mantenimento Cibo: {Esercito.Unità.Catapulta.Cibo.ToString("0.00")} s\r\n" +
+                                $"Mantenimento Oro: {Esercito.Unità.Catapulta.Salario.ToString("0.00")} s\r\n \r\n" +
                                 $"Statistiche:\r\n" +
                                 $"Livello: {player.catapulta_Livello.ToString("#,0")}\r\n" +
                                 $"Salute:  {(Esercito.Unità.Catapulta.Salute + player.catapulta_Livello).ToString("#,0")}\r\n" +
@@ -277,7 +349,27 @@ namespace Server_Strategico
                                 $"Attacco: {(Esercito.EsercitoNemico.Catapulta.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Esperienza: {(Esercito.EsercitoNemico.Catapulta.Esperienza).ToString("#,0")}\r\n");
                             break;
+
+                        case "Raduno":
+                            Server.Send(clientGuid, $"Descrizione|Il Raduno ti permette di creare e gestire attacchi coordinati con altri giocatori, " +
+                                $"verso il barbaro PVP disponibile. Essendo che il barbaro riesce a reclutare molte unità nel suo campo, può essere saggio " +
+                                $"chiedere aiuto ad altri giocatori nell'impresa.\r\n \r\n" +
+                                $"- Solo colui che crea il raduno potrà iniziare l'attacco.\r\n" +
+                                $"- Gli attacchi aperti sono pubblici e chiunque potra partecipare\r\n" +
+                                $"- Nel caso in cui il tempo disponibile termina, il raduno verrà annullato e le unità dei giocatori partecipanti torneranno indietro\r\n" +
+                                $"- Il livello delle unità non verrà mantenuto, perciò sia i giocatori che il barbaro avranno unità LV 0");
+                            break;
+                        case "Costruzione":
+                            Server.Send(clientGuid, $"Descrizione|Permette la costruzione di strutture militari, civili, caserme ed unità militari");
+                            break;
+                        case "Ricerca":
+                            Server.Send(clientGuid, $"Descrizione|La Ricerca è fondamentale per ogni città... Per il miglioramento delle strutture, la loro produzione, fino " +
+                                $"al reclutamento delle unità. Le stesse possono subire un miglioramento delle loro caratteristiche e del loro livello.");
+                            break;
                     }
+                    break;
+                case "AttaccoCooperativo":
+                    await AttacchiCooperativi.GestisciComando(msgArgs, clientGuid, player);
                     break;
                 default: Console.WriteLine($"Messaggio: [{msgArgs}]"); break;
             }
@@ -344,7 +436,7 @@ namespace Server_Strategico
                 $"{(player.CavaPietra * (Strutture.Edifici.CavaPietra.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Pietra)).ToString("#,0.00")}|" +
                 $"{(player.MinieraFerro * (Strutture.Edifici.MinieraFerro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Ferro)).ToString("#,0.00")}|" +
                 $"{((player.MinieraOro * (Strutture.Edifici.MinieraOro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Oro)) - Oro).ToString("#,0.00")}|" +
-                $"{(player.Abitazioni * (Strutture.Edifici.Case.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Popolazione)).ToString("#,0.00")}|" +
+                $"{(player.Abitazioni * (Strutture.Edifici.Case.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Popolazione)).ToString("#,0.000")}|" +
 
                 $"{player.Fattoria.ToString("#,0")}|" +
                 $"{player.Segheria.ToString("#,0")}|" +
@@ -365,7 +457,7 @@ namespace Server_Strategico
                 $"{player.Archi.ToString("#,0.00")}|" +
                 $"{player.Scudi.ToString("#,0.00")}|" +
                 $"{player.Armature.ToString("#,0.00")}|" +
-                $"{player.Frecce.ToString("#,0.00")}|" +
+                $"{player.Frecce.ToString("#,0")}|" +
 
                 $"{(player.ProduzioneSpade * Strutture.Edifici.ProduzioneSpade.Produzione).ToString("#,0.00")}|" +
                 $"{(player.ProduzioneLance * Strutture.Edifici.ProduzioneLance.Produzione).ToString("#,0.00")}|" +
@@ -379,9 +471,9 @@ namespace Server_Strategico
                 $"{player.Arceri.ToString("#,0")}/{player.Caserma_Arceri * player.ArceriMax}|" +
                 $"{player.Catapulte.ToString("#,0")}/{player.Caserma_Catapulte * player.CatapulteMax}|" +
 
-                $"{Server_Strategico.dati.Server}|" +
-                $"{Server_Strategico.dati.Versione}|" +
-                $"{Server_Strategico.dati.Difficoltà}|" +
+                $"{Server_Strategico.Dati.Server}|" +
+                $"{Server_Strategico.Dati.Versione}|" +
+                $"{Server_Strategico.Dati.Difficoltà}|" +
 
                 $"{player.Livello}|" +
                 $"{player.Esperienza.ToString("#,0")}|" +
@@ -398,7 +490,7 @@ namespace Server_Strategico
 
                 $"{player.forza_Esercito.ToString("#,0.00")}|" +
                 $"{player.forza_Esercito_PVE.ToString("#,0.00")}|" +
-                $"{dati.forza_Esercito_Att_PVP.ToString("#,0.00")}|" +
+                $"{Dati.forza_Esercito_Att_PVP.ToString("#,0.00")}|" +
                 
                 // Code edifici
                 $"{buildingsQueue.GetValueOrDefault("Fattoria", 0)}|" +
@@ -444,14 +536,42 @@ namespace Server_Strategico
                 $"{player.Ricerca_Costruzione.ToString("#,0")}|" +
                 $"{player.Ricerca_Addestramento.ToString("#,0")}|");
 
+            string testo = $"Raduno|";
+            string testo2 = $"Raduni_Player|";
+            if (AttacchiCooperativi.AttacchiInCorso.Keys.Count() > 0)
+                foreach (string idAttacco in AttacchiCooperativi.AttacchiInCorso.Keys)
+                {
+                    var attacco = AttacchiCooperativi.AttacchiInCorso[idAttacco];
+                    testo += $"{attacco.CreatoreUsername}|{idAttacco}|{attacco.TempoRimanente / 60}-";
+                }
+
+            if (AttacchiCooperativi.AttacchiInPlayer.Keys.Count() > 0)
+                foreach (string idAttacco in AttacchiCooperativi.AttacchiInPlayer.Keys)
+                {
+                    var attacco = AttacchiCooperativi.AttacchiInPlayer[idAttacco];
+                    var user = attacco.GiocatoriPartecipanti.Keys;
+                    var users = attacco.GiocatoriPartecipanti.Values;
+
+                    foreach (var item in attacco.GiocatoriPartecipanti.Keys)
+                    {
+                        if (player.Username == item)
+                            foreach (var items in attacco.GiocatoriPartecipanti.Values)
+                                if (items.Player == player.Username)
+                                    testo2 += $"{item}|{idAttacco}|{attacco.TempoRimanente / 60}|{items.Guerrieri}|{items.Lancieri}|{items.Arcieri}|{items.Catapulte}-";
+                    }
+                }
+            Server.Send(guid, testo); //Invia i raduni aperti
+            Server.Send(guid, testo2); //Invia i raduni aperti
+
+
             stringa_Base = "";
             stringa_Base = $"{Server.Utenti_PVP.Count}";
             string stringa = "";
             foreach (var item in Server.Utenti_PVP)
                 stringa = await costruisci_stringa(item);
-            
-            Server.Send(guid, $"Update_PVP_Player|" +
-                $"{stringa}|");
+            if (stringa != "")
+                Server.Send(guid, $"Update_PVP_Player|" +
+                    $"{stringa}|");
             return true;
         }
         static async Task<string> costruisci_stringa (string dato)

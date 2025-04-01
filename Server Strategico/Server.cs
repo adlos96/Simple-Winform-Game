@@ -331,17 +331,13 @@ namespace Server_Strategico
 
                         // Salva i dati ogni 60 secondi
                         if (saveCounter >= 60)
-                        {
                             await GameSave.SavePlayer(player);
-                            await GameSave.SaveBarbariPVP();
-                            Server.servers_.Lista_Player_Auto();
-                        }
 
                         player.forza_Esercito =
-                        player.Guerrieri * ((Esercito.Unità.Guerriero.Salute * 0.25) + (Esercito.Unità.Guerriero.Attacco * 0.30)) +
-                        player.Lancieri * ((Esercito.Unità.Lanciere.Salute * 0.25) + (Esercito.Unità.Lanciere.Attacco * 0.30)) +
-                        player.Arceri * ((Esercito.Unità.Arciere.Salute * 0.25) + (Esercito.Unità.Arciere.Attacco * 0.30)) +
-                        player.Catapulte * ((Esercito.Unità.Catapulta.Salute * 0.25) + (Esercito.Unità.Catapulta.Attacco * 0.30));
+                        player.Guerrieri * ((Esercito.Unità.Guerriero.Salute * 0.20) + (Esercito.Unità.Guerriero.Attacco * 0.25)) +
+                        player.Lancieri * ((Esercito.Unità.Lanciere.Salute * 0.20) + (Esercito.Unità.Lanciere.Attacco * 0.25)) +
+                        player.Arceri * ((Esercito.Unità.Arciere.Salute * 0.20) + (Esercito.Unità.Arciere.Attacco * 0.25)) +
+                        player.Catapulte * ((Esercito.Unità.Catapulta.Salute * 0.20) + (Esercito.Unità.Catapulta.Attacco * 0.25));
 
                         await Auto_Update_Clients();
                         await Esperienza.LevelUp(player);
@@ -352,8 +348,15 @@ namespace Server_Strategico
                             Task.Run(() => Server_Strategico.Barbari.Barbari_PVE(player));
                         }
                     }
-                    if (saveCounter >= 60) saveCounter = 0;
+                    if (saveCounter >= 60)
+                    {
+                        saveCounter = 0;
+                        await GameSave.SaveBarbariPVP();
+                        Server.servers_.Lista_Player_Auto();
+                    }
                     await Task.Delay(1000); // Ciclo ogni secondo, o regola il ritardo come necessario
+
+                    AttacchiCooperativi.AggiornaAttacchi();
                 }
             }
             public IEnumerable<Player> GetAllPlayers()

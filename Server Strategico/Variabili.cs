@@ -2,16 +2,16 @@
 
 namespace Server_Strategico
 {
-    internal class dati
+    internal class Dati
     {
         public static string Difficoltà = "1";
-        public static string Versione = "0.1.12";
+        public static string Versione = "0.1.22";
         public static string Server = "Italy";
 
         public static double forza_Esercito_Att_PVP = 0;
     }
 
-    internal class Variabili
+    public class Variabili
     {
         public class Barbari
         {
@@ -256,6 +256,8 @@ namespace Server_Strategico
             {
                 Cibo -= (Guerrieri * Esercito.Unità.Guerriero.Cibo) + (Lancieri * Esercito.Unità.Lanciere.Cibo) + (Arceri * Esercito.Unità.Arciere.Cibo) + (Catapulte * Esercito.Unità.Catapulta.Cibo);
                 Oro -= (Guerrieri * Esercito.Unità.Guerriero.Salario) + (Lancieri * Esercito.Unità.Lanciere.Salario) + (Arceri * Esercito.Unità.Arciere.Salario) + (Catapulte * Esercito.Unità.Catapulta.Salario);
+                if (Cibo <= 0) Cibo = 0;
+                if (Oro <= 0) Oro = 0;
             }
             public void QueueBuildConstruction(string buildingType, int count, Guid clientGuid, Player player)
             {

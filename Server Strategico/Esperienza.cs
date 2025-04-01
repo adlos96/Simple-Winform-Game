@@ -12,7 +12,7 @@ namespace Server_Strategico
         public static int cosa = 0;
         public static double moltiplicatore = 0.62;
 
-        public static void LevelUp(Variabili.Player player)
+        public static async Task<bool> LevelUp(Variabili.Player player)
         {
             Moltiplicatore(player);
 
@@ -50,6 +50,7 @@ namespace Server_Strategico
                     }
                     break;
             }
+            return true;
         }
         public static void Moltiplicatore(Variabili.Player player)
         {

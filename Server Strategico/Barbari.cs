@@ -26,17 +26,14 @@ namespace Server_Strategico
                 if (player.Livello > 5 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                     Add_Troops_PVE(1, 1, 0, 0, player);
 
-                if (respawn == 120)
+                if (respawn == 360)
                 {
-                    Add_Troops_PVE(2, 2, 5, 0, player);
+                    Add_Troops_PVE(1, 1, 2, 0, player);
                     respawn = 0;
                 }
-                int liv = player.Livello_Barbari_PVE + 1;
-                liv = liv * 3;
 
-                if (player.Livello > liv)
-                    player.Livello_Barbari_PVE++;
-                
+                int liv = player.Livello_Barbari_PVE + 1;
+                if (player.Livello > liv * 3) player.Livello_Barbari_PVE++;
 
                 if (guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                 {
@@ -60,10 +57,10 @@ namespace Server_Strategico
                 }
 
                 player.forza_Esercito_PVE =
-                    player.Guerrieri_Barbari_PVE * ((Esercito.EsercitoNemico.Guerriero.Salute * 0.33) + (Esercito.EsercitoNemico.Guerriero.Attacco * 0.72)) +
-                    player.Lancieri_Barbari_PVE * ((Esercito.EsercitoNemico.Lanciere.Salute * 0.33) + (Esercito.EsercitoNemico.Lanciere.Attacco * 0.72)) +
-                    player.Arceri_Barbari_PVE * ((Esercito.EsercitoNemico.Arciere.Salute * 0.33) + (Esercito.EsercitoNemico.Arciere.Attacco * 0.72)) +
-                    player.Catapulte_Barbari_PVE * ((Esercito.EsercitoNemico.Catapulta.Salute * 0.33) + (Esercito.EsercitoNemico.Catapulta.Attacco * 0.72));
+                    player.Guerrieri_Barbari_PVE * ((Esercito.EsercitoNemico.Guerriero.Salute * 0.25) + (Esercito.EsercitoNemico.Guerriero.Attacco * 0.30)) +
+                    player.Lancieri_Barbari_PVE * ((Esercito.EsercitoNemico.Lanciere.Salute * 0.25) + (Esercito.EsercitoNemico.Lanciere.Attacco * 0.30)) +
+                    player.Arceri_Barbari_PVE * ((Esercito.EsercitoNemico.Arciere.Salute * 0.25) + (Esercito.EsercitoNemico.Arciere.Attacco * 0.30)) +
+                    player.Catapulte_Barbari_PVE * ((Esercito.EsercitoNemico.Catapulta.Salute * 0.25) + (Esercito.EsercitoNemico.Catapulta.Attacco * 0.30));
 
                 guerriero++;
                 lanciere++;
@@ -124,7 +121,7 @@ namespace Server_Strategico
                     catapulta = 0;
                 }
 
-                Server_Strategico.dati.forza_Esercito_Att_PVP =
+                Server_Strategico.Dati.forza_Esercito_Att_PVP =
                     Variabili.Barbari.PVP.Guerrieri * ((Esercito.EsercitoNemico.Guerriero.Salute * 0.25) + (Esercito.EsercitoNemico.Guerriero.Attacco * 0.30)) +
                     Variabili.Barbari.PVP.Lancieri * ((Esercito.EsercitoNemico.Lanciere.Salute * 0.25) + (Esercito.EsercitoNemico.Lanciere.Attacco * 0.30)) +
                     Variabili.Barbari.PVP.Arceri * ((Esercito.EsercitoNemico.Arciere.Salute * 0.25) + (Esercito.EsercitoNemico.Arciere.Attacco * 0.30)) +

@@ -69,10 +69,10 @@
             public static CostoReclutamento Catapulta = new CostoReclutamento
             {
                 Spade = 3,
-                Lance = 2,
+                Lance = 3,
                 Archi = 0,
-                Scudi = 5,
-                Armature = 5,
+                Scudi = 6,
+                Armature = 6,
 
                 Cibo = 344,
                 Legno = 357,
@@ -80,7 +80,7 @@
                 Ferro = 276,
                 Oro = 313,
                 TempoReclutamento = 119,
-                Popolazione = 5
+                Popolazione = 6
             };
         }
         public class EsercitoNemico
@@ -138,6 +138,7 @@
             public int TempoReclutamento { get; set; }
             public int Esperienza { get; set; }
             public int Componente_Lancio { get; set; }
+            public int Trasporto { get; set; }
 
             public static Unità Guerriero = new Unità
             {
@@ -148,7 +149,8 @@
                 Salario = 0.15,
                 Cibo = 0.31,
                 Quantità = 0,
-                Esperienza = 1
+                Esperienza = 1,
+                Trasporto = 100
             };
             public static Unità Lanciere = new Unità
             {
@@ -159,7 +161,8 @@
                 Salario = 0.19,
                 Cibo = 0.36,
                 Quantità = 0,
-                Esperienza = 1
+                Esperienza = 1,
+                Trasporto = 150
             };
             public static Unità Arciere = new Unità
             {
@@ -171,7 +174,8 @@
                 Cibo = 0.43,
                 Quantità = 0,
                 Esperienza = 2,
-                Componente_Lancio = 4
+                Componente_Lancio = 4,
+                Trasporto = 200
             };
             public static Unità Catapulta = new Unità
             {
@@ -183,7 +187,32 @@
                 Cibo = CostoReclutamento.Catapulta.Popolazione * Guerriero.Cibo * 0.779,
                 Quantità = 0,
                 Esperienza = 3,
-                Componente_Lancio = 8
+                Componente_Lancio = 8,
+                Trasporto = 300
+            };
+            public static Unità Saccheggiatore = new Unità
+            {
+                Salute = 2,
+                Attacco = 0,
+                Difesa = 0,
+                Distanza = 0,
+                Salario = 0.18,
+                Cibo = 0.23,
+                Quantità = 0,
+                Esperienza = 1,
+                Trasporto = 500
+            };
+            public static Unità Carretto = new Unità
+            {
+                Salute = 5,
+                Attacco = 0,
+                Difesa = 2,
+                Distanza = 0,
+                Salario = 0.26,
+                Cibo = 0.29,
+                Quantità = 0,
+                Esperienza = 2,
+                Trasporto = 1500
             };
         }
     }
