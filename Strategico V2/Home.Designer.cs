@@ -72,9 +72,7 @@
             this.txt_Cibo = new System.Windows.Forms.TextBox();
             this.txt_Produzione_Cibo = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_Ricerca = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_Costruisci = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel37 = new System.Windows.Forms.Panel();
             this.label71 = new System.Windows.Forms.Label();
@@ -158,6 +156,8 @@
             this.panel_Fattoria = new System.Windows.Forms.Panel();
             this.txt_Fattoria_Costruzione = new System.Windows.Forms.TextBox();
             this.lbl_Fattoria_Coda = new System.Windows.Forms.TextBox();
+            this.btn_Ricerca = new System.Windows.Forms.Button();
+            this.btn_Costruisci = new System.Windows.Forms.Button();
             this.txt_Riepilogo_Utente = new System.Windows.Forms.TextBox();
             txt_Log = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -207,6 +207,7 @@
             this.btn_Giocatori = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             txt_Descrizione = new System.Windows.Forms.TextBox();
+            this.Btn_Raduno = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -646,24 +647,12 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.panel8.Controls.Add(this.btn_Ricerca);
             this.panel8.Controls.Add(this.button1);
-            this.panel8.Controls.Add(this.btn_Costruisci);
             this.panel8.Controls.Add(this.groupBox3);
             this.panel8.Controls.Add(this.groupBox2);
             this.panel8.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Name = "panel8";
-            // 
-            // btn_Ricerca
-            // 
-            this.btn_Ricerca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.btn_Ricerca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.btn_Ricerca.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.btn_Ricerca, "btn_Ricerca");
-            this.btn_Ricerca.Name = "btn_Ricerca";
-            this.btn_Ricerca.UseVisualStyleBackColor = false;
-            this.btn_Ricerca.Click += new System.EventHandler(this.btn_Ricerca_Click);
             // 
             // button1
             // 
@@ -674,16 +663,6 @@
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_Costruisci
-            // 
-            this.btn_Costruisci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.btn_Costruisci.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.btn_Costruisci.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.btn_Costruisci, "btn_Costruisci");
-            this.btn_Costruisci.Name = "btn_Costruisci";
-            this.btn_Costruisci.UseVisualStyleBackColor = false;
-            this.btn_Costruisci.Click += new System.EventHandler(this.btn_Costruisci_Click);
             // 
             // groupBox3
             // 
@@ -1398,6 +1377,28 @@
             this.lbl_Fattoria_Coda.Name = "lbl_Fattoria_Coda";
             this.lbl_Fattoria_Coda.ReadOnly = true;
             // 
+            // btn_Ricerca
+            // 
+            this.btn_Ricerca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Ricerca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.btn_Ricerca, "btn_Ricerca");
+            this.btn_Ricerca.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Ricerca.Name = "btn_Ricerca";
+            this.btn_Ricerca.UseVisualStyleBackColor = false;
+            this.btn_Ricerca.Click += new System.EventHandler(this.btn_Ricerca_Click);
+            this.btn_Ricerca.MouseHover += new System.EventHandler(this.btn_Ricerca_MouseHover);
+            // 
+            // btn_Costruisci
+            // 
+            this.btn_Costruisci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btn_Costruisci.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.btn_Costruisci, "btn_Costruisci");
+            this.btn_Costruisci.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btn_Costruisci.Name = "btn_Costruisci";
+            this.btn_Costruisci.UseVisualStyleBackColor = false;
+            this.btn_Costruisci.Click += new System.EventHandler(this.btn_Costruisci_Click);
+            this.btn_Costruisci.MouseHover += new System.EventHandler(this.btn_Costruisci_MouseHover);
+            // 
             // txt_Riepilogo_Utente
             // 
             this.txt_Riepilogo_Utente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
@@ -1815,13 +1816,27 @@
             txt_Descrizione.ForeColor = System.Drawing.SystemColors.Control;
             txt_Descrizione.Name = "txt_Descrizione";
             // 
+            // Btn_Raduno
+            // 
+            this.Btn_Raduno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.Btn_Raduno.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.Btn_Raduno, "Btn_Raduno");
+            this.Btn_Raduno.ForeColor = System.Drawing.Color.Silver;
+            this.Btn_Raduno.Name = "Btn_Raduno";
+            this.Btn_Raduno.UseVisualStyleBackColor = false;
+            this.Btn_Raduno.Click += new System.EventHandler(this.Btn_Raduno_Click);
+            this.Btn_Raduno.MouseHover += new System.EventHandler(this.Btn_Raduno_MouseHover);
+            // 
             // Home
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.Controls.Add(this.Btn_Raduno);
+            this.Controls.Add(this.btn_Ricerca);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.btn_Costruisci);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -2079,6 +2094,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_Ricerca;
         private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button Btn_Raduno;
         static private System.Windows.Forms.TextBox txt_Descrizione;
         static private System.Windows.Forms.TextBox txt_Log;
     }

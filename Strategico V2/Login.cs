@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -34,7 +33,7 @@ namespace Strategico_V2
             {
                 Variabili_Client.username = txt_Username.Text;
                 Variabili_Client.password = txt_Password.Text;
-                Login.ActiveForm.Close();
+                this.Close();
             }else btn_New_Game.Enabled = true;
         }
         public static async Task<bool> Sleep(int secondi)

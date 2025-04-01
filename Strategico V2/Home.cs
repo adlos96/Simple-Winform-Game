@@ -35,7 +35,9 @@ namespace Strategico_V2
                 Thread.Sleep(1000);
                 txt_Cibo.Invoke((Action)(async () =>
                 {
+
                     txt_Riepilogo_Utente.Text = $"Server         {Variabili_Client.Server}\r\n";
+                    txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Username:   {Variabili_Client.username}  \r\n";
                     txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Versione         {Variabili_Client.Versione}\r\n";
                     txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Difficoltà       {Variabili_Client.Difficoltà}\r\n";                 
                     txt_Riepilogo_Utente.Text = txt_Riepilogo_Utente.Text + $"Forza Esercito:   {Variabili_Client.Forza_Esercito}  \r\n";
@@ -220,32 +222,32 @@ namespace Strategico_V2
 
         private void panel_Pr_Spade_MouseHover(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Spade");
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Produzione Spade");
         }
 
         private void panel_Pr_Lancie_MouseHover(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Lancie");
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Produzione Lance");
         }
 
         private void panel_Pr_Archi_MouseHover(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Archi");
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Produzione Archi");
         }
 
         private void panel_Pr_Scudi_MouseHover(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Scudi");
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Produzione Scudi");
         }
 
         private void panel_Pr_Armature_MouseHover(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Armature");
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Produzione Armature");
         }
 
         private void panel_Pr_Frecce_MouseHover(object sender, EventArgs e)
         {
-            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Frecce");
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Produzione Frecce");
         }
 
         private void panel_Guerriero_MouseHover(object sender, EventArgs e)
@@ -286,6 +288,27 @@ namespace Strategico_V2
         private void panel34_MouseHover(object sender, EventArgs e)
         {
             ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Catapulta_PVE");
+        }
+
+        private void Btn_Raduno_Click(object sender, EventArgs e)
+        {
+            AttaccoCoordinato test = new AttaccoCoordinato();
+            test.Show();
+        }
+
+        private void Btn_Raduno_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Raduno");
+        }
+
+        private void btn_Ricerca_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Ricerca");
+        }
+
+        private void btn_Costruisci_MouseHover(object sender, EventArgs e)
+        {
+            ClientConnection.TestClient.Send($"Descrizione|{Variabili_Client.username}|{Variabili_Client.password}|Costruzione");
         }
     }
 }

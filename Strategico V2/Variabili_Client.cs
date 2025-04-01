@@ -11,6 +11,8 @@ namespace Strategico_V2
         public static string Difficoltà = "0";
 
         public static List<string> Giocatori_PVP = new List<string>();
+        public static List<string> Raduni_Creati = new List<string>(); //Raduni pubblici
+        public static List<string> Raduni_InCorso = new List<string>(); //Raduni a cui si partecipa inviando truppe
 
         public static string Forza_Esercito = "0";
         public static string Forza_Esercito_PVE = "0";
@@ -132,6 +134,105 @@ namespace Strategico_V2
                 Arceri = "0",
                 Catapulte = "0"
             };
+        }
+
+        public class AttaccoInfo
+        {
+            public string Creatore { get; set; }
+            public string ID { get; set; }
+            public int TempoRimanente { get; set; }
+            
+            public override string ToString()
+            {
+                return $"ID: {ID} - Creato da: {Creatore}  - {TempoRimanente} min";
+            }
+            
+            public static AttaccoInfo FromString(string data)
+            {
+                string[] parts = data.Replace(" ", "").Split('-');
+                if (parts.Length >= 3)
+                {
+                    return new AttaccoInfo
+                    {
+                        Creatore = parts[0],
+                        ID = parts[1],
+                        TempoRimanente = int.Parse(parts[2])
+                    };
+                }
+                return null;
+            }
+        }
+        public class PartecipanteAttacco
+        {
+            public string Giocatore { get; set; }
+            public string ID { get; set; }
+            public string Guerrieri { get; set; }
+            public string Lancieri { get; set; }
+            public string Arcieri { get; set; }
+            public string Catapulte { get; set; }
+            public int TempoRimanente { get; set; }
+
+            public override string ToString()
+            {
+                return $"ID: {ID} - Creato da: {Giocatore}  - {TempoRimanente} min";
+            }
+
+            public static PartecipanteAttacco FromString(string data)
+            {
+                string[] parts = data.Replace(" ", "").Split('-');
+                if (parts.Length >= 3)
+                {
+                    return new PartecipanteAttacco
+                    {
+                        //"adlos - 30e2fb60 - 29 - 1 - 1 - 1 - 1"
+                        Giocatore = parts[0],
+                        ID = parts[1],
+                        TempoRimanente = int.Parse(parts[2]),
+                        Guerrieri = parts[3],
+                        Lancieri = parts[4],
+                        Arcieri = parts[5],
+                        Catapulte = parts[6]
+                    };
+                }
+                return null;
+            }
+        }
+
+        public class AttaccoPartecipazione
+        {
+            public string Creatore { get; set; }
+            public string ID { get; set; }
+            public int NumPartecipanti { get; set; }
+            public int MieiGuerrieri { get; set; }
+            public int MieiLancieri { get; set; }
+            public int MieiArcieri { get; set; }
+            public int MieiCatapulte { get; set; }
+            public int TempoRimanente { get; set; }
+            
+            public override string ToString()
+            {
+                return $"ID: {ID} - Creato da: {Creatore} - Le mie truppe: G:{MieiGuerrieri} L:{MieiLancieri} A:{MieiArcieri} C:{MieiCatapulte} - {TempoRimanente} min";
+            }
+            
+            public static AttaccoPartecipazione FromString(string data)
+            {
+                string[] parts = data.Split('|');
+                if (parts.Length >= 8)
+                {
+                    return new AttaccoPartecipazione
+                    {
+                        Creatore = parts[0],
+                        ID = parts[1],
+                        NumPartecipanti = int.Parse(parts[2]),
+                        MieiGuerrieri = int.Parse(parts[3]),
+                        MieiLancieri = int.Parse(parts[4]),
+                        MieiArcieri = int.Parse(parts[5]),
+                        MieiCatapulte = int.Parse(parts[6]),
+                        TempoRimanente = int.Parse(parts[7])
+                    };
+                }
+                return null;
+            }
         }
 
     }

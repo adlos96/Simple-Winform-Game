@@ -634,7 +634,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="panel62.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1776,18 +1776,6 @@
   <data name="&gt;&gt;txt_Produzione_Cibo.ZOrder" xml:space="preserve">
     <value>40</value>
   </data>
-  <data name="&gt;&gt;btn_Ricerca.Name" xml:space="preserve">
-    <value>btn_Ricerca</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
@@ -1798,19 +1786,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Name" xml:space="preserve">
-    <value>btn_Costruisci</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
@@ -1822,7 +1798,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
@@ -1834,7 +1810,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -1846,7 +1822,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 39</value>
@@ -1867,43 +1843,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btn_Ricerca.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_Ricerca.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 203</value>
-  </data>
-  <data name="btn_Ricerca.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 28</value>
-  </data>
-  <data name="btn_Ricerca.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="btn_Ricerca.Text" xml:space="preserve">
-    <value>Ricerca</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.Name" xml:space="preserve">
-    <value>btn_Ricerca</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;btn_Ricerca.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>9</value>
   </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 232</value>
+    <value>394, 195</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 28</value>
+    <value>124, 46</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1921,34 +1870,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btn_Costruisci.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_Costruisci.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 174</value>
-  </data>
-  <data name="btn_Costruisci.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 28</value>
-  </data>
-  <data name="btn_Costruisci.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btn_Costruisci.Text" xml:space="preserve">
-    <value>Costruisci - Recluta</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Name" xml:space="preserve">
-    <value>btn_Costruisci</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;btn_Costruisci.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;panel37.Name" xml:space="preserve">
     <value>panel37</value>
@@ -2020,7 +1942,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;label71.Name" xml:space="preserve">
     <value>label71</value>
@@ -2860,7 +2782,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;label31.Name" xml:space="preserve">
     <value>label31</value>
@@ -4072,7 +3994,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lbl1.Name" xml:space="preserve">
     <value>lbl1</value>
@@ -5190,6 +5112,66 @@
   <data name="&gt;&gt;lbl_Fattoria_Coda.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btn_Ricerca.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="btn_Ricerca.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Ricerca.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 451</value>
+  </data>
+  <data name="btn_Ricerca.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 58</value>
+  </data>
+  <data name="btn_Ricerca.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btn_Ricerca.Text" xml:space="preserve">
+    <value>Ricerca</value>
+  </data>
+  <data name="&gt;&gt;btn_Ricerca.Name" xml:space="preserve">
+    <value>btn_Ricerca</value>
+  </data>
+  <data name="&gt;&gt;btn_Ricerca.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Ricerca.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Ricerca.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_Costruisci.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="btn_Costruisci.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Costruisci.Location" type="System.Drawing.Point, System.Drawing">
+    <value>324, 451</value>
+  </data>
+  <data name="btn_Costruisci.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 58</value>
+  </data>
+  <data name="btn_Costruisci.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btn_Costruisci.Text" xml:space="preserve">
+    <value>Costruisci - Recluta</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.Name" xml:space="preserve">
+    <value>btn_Costruisci</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Costruisci.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="txt_Riepilogo_Utente.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
   </data>
@@ -5215,7 +5197,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_Riepilogo_Utente.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="txt_Log.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -5272,7 +5254,103 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.Name" xml:space="preserve">
+    <value>txt_Forza_Esercito_PVE_Barbari</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;txt_Forza_Esercito_PVE_Barbari.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.Name" xml:space="preserve">
+    <value>btn_Accampameto_Barbaro_PVE_Attacco</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel33.Name" xml:space="preserve">
+    <value>panel33</value>
+  </data>
+  <data name="&gt;&gt;panel33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel33.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel33.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel35.Name" xml:space="preserve">
+    <value>panel35</value>
+  </data>
+  <data name="&gt;&gt;panel35.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel35.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel35.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel45.Name" xml:space="preserve">
+    <value>panel45</value>
+  </data>
+  <data name="&gt;&gt;panel45.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel45.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel45.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel47.Name" xml:space="preserve">
+    <value>panel47</value>
+  </data>
+  <data name="&gt;&gt;panel47.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel47.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel47.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 303</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 219</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Accampamento Barbaro PVE</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="txt_Forza_Esercito_PVE_Barbari.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
@@ -5330,6 +5408,63 @@
   </data>
   <data name="&gt;&gt;btn_Accampameto_Barbaro_PVE_Attacco.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel33</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel34.Name" xml:space="preserve">
+    <value>panel34</value>
+  </data>
+  <data name="&gt;&gt;panel34.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel34.Parent" xml:space="preserve">
+    <value>panel33</value>
+  </data>
+  <data name="&gt;&gt;panel34.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txt_Catapulte_Acc_Barbaro_PVE.Name" xml:space="preserve">
+    <value>txt_Catapulte_Acc_Barbaro_PVE</value>
+  </data>
+  <data name="&gt;&gt;txt_Catapulte_Acc_Barbaro_PVE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Catapulte_Acc_Barbaro_PVE.Parent" xml:space="preserve">
+    <value>panel33</value>
+  </data>
+  <data name="&gt;&gt;txt_Catapulte_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 130</value>
+  </data>
+  <data name="panel33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 37</value>
+  </data>
+  <data name="panel33.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;panel33.Name" xml:space="preserve">
+    <value>panel33</value>
+  </data>
+  <data name="&gt;&gt;panel33.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel33.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel33.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5418,27 +5553,6 @@
   <data name="&gt;&gt;txt_Catapulte_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel33.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 130</value>
-  </data>
-  <data name="panel33.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 37</value>
-  </data>
-  <data name="panel33.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;panel33.Name" xml:space="preserve">
-    <value>panel33</value>
-  </data>
-  <data name="&gt;&gt;panel33.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel33.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;panel33.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
   </data>
@@ -5495,144 +5609,6 @@
   </data>
   <data name="&gt;&gt;panel35.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>panel45</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel46.Name" xml:space="preserve">
-    <value>panel46</value>
-  </data>
-  <data name="&gt;&gt;panel46.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel46.Parent" xml:space="preserve">
-    <value>panel45</value>
-  </data>
-  <data name="&gt;&gt;panel46.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.Name" xml:space="preserve">
-    <value>txt_Lancieri_Acc_Barbaro_PVE</value>
-  </data>
-  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.Parent" xml:space="preserve">
-    <value>panel45</value>
-  </data>
-  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel45.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 52</value>
-  </data>
-  <data name="panel45.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 40</value>
-  </data>
-  <data name="panel45.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel45.Name" xml:space="preserve">
-    <value>panel45</value>
-  </data>
-  <data name="&gt;&gt;panel45.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel45.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;panel45.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
-  </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
-    <value>panel47</value>
-  </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel48.Name" xml:space="preserve">
-    <value>panel48</value>
-  </data>
-  <data name="&gt;&gt;panel48.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel48.Parent" xml:space="preserve">
-    <value>panel47</value>
-  </data>
-  <data name="&gt;&gt;panel48.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.Name" xml:space="preserve">
-    <value>txt_Guerrieri_Acc_Barbaro_PVE</value>
-  </data>
-  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.Parent" xml:space="preserve">
-    <value>panel47</value>
-  </data>
-  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel47.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 13</value>
-  </data>
-  <data name="panel47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 40</value>
-  </data>
-  <data name="panel47.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel47.Name" xml:space="preserve">
-    <value>panel47</value>
-  </data>
-  <data name="&gt;&gt;panel47.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel47.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;panel47.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 303</value>
-  </data>
-  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 219</value>
-  </data>
-  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Accampamento Barbaro PVE</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5721,6 +5697,63 @@
   <data name="&gt;&gt;txt_Arceri_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>panel45</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel46.Name" xml:space="preserve">
+    <value>panel46</value>
+  </data>
+  <data name="&gt;&gt;panel46.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel46.Parent" xml:space="preserve">
+    <value>panel45</value>
+  </data>
+  <data name="&gt;&gt;panel46.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.Name" xml:space="preserve">
+    <value>txt_Lancieri_Acc_Barbaro_PVE</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.Parent" xml:space="preserve">
+    <value>panel45</value>
+  </data>
+  <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel45.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 52</value>
+  </data>
+  <data name="panel45.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 40</value>
+  </data>
+  <data name="panel45.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel45.Name" xml:space="preserve">
+    <value>panel45</value>
+  </data>
+  <data name="&gt;&gt;panel45.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel45.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel45.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5807,6 +5840,63 @@
   </data>
   <data name="&gt;&gt;txt_Lancieri_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;label21.Name" xml:space="preserve">
+    <value>label21</value>
+  </data>
+  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+    <value>panel47</value>
+  </data>
+  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel48.Name" xml:space="preserve">
+    <value>panel48</value>
+  </data>
+  <data name="&gt;&gt;panel48.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel48.Parent" xml:space="preserve">
+    <value>panel47</value>
+  </data>
+  <data name="&gt;&gt;panel48.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.Name" xml:space="preserve">
+    <value>txt_Guerrieri_Acc_Barbaro_PVE</value>
+  </data>
+  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.Parent" xml:space="preserve">
+    <value>panel47</value>
+  </data>
+  <data name="&gt;&gt;txt_Guerrieri_Acc_Barbaro_PVE.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel47.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 13</value>
+  </data>
+  <data name="panel47.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 40</value>
+  </data>
+  <data name="panel47.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel47.Name" xml:space="preserve">
+    <value>panel47</value>
+  </data>
+  <data name="&gt;&gt;panel47.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel47.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;panel47.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="label21.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5989,7 +6079,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="txt_Forza_Esercito_PVP_Barbari.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.25pt</value>
@@ -6658,7 +6748,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;comboBox_PVP.Name" xml:space="preserve">
     <value>comboBox_PVP</value>
@@ -6874,7 +6964,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox8.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="txt_Descrizione.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -6907,6 +6997,36 @@
     <value>groupBox8</value>
   </data>
   <data name="&gt;&gt;txt_Descrizione.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Btn_Raduno.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="Btn_Raduno.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_Raduno.Location" type="System.Drawing.Point, System.Drawing">
+    <value>615, 451</value>
+  </data>
+  <data name="Btn_Raduno.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 58</value>
+  </data>
+  <data name="Btn_Raduno.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="Btn_Raduno.Text" xml:space="preserve">
+    <value>Raduno</value>
+  </data>
+  <data name="&gt;&gt;Btn_Raduno.Name" xml:space="preserve">
+    <value>Btn_Raduno</value>
+  </data>
+  <data name="&gt;&gt;Btn_Raduno.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_Raduno.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_Raduno.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

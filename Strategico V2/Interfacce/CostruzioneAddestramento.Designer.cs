@@ -2305,7 +2305,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "CostruzioneAddestramento";
-            this.Text = "Form1";
+            this.Text = "Costruzione & Addestramento";
             this.groupBox3.ResumeLayout(false);
             this.panel37.ResumeLayout(false);
             this.panel37.PerformLayout();

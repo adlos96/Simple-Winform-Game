@@ -142,28 +142,32 @@ namespace Strategico_V2
                     Console.WriteLine("[null]");
                     return;
                 }
-                string messaggio_Ricevuto = Encoding.UTF8.GetString(args.Data); // Ottenimento Risposta dal server
+                string messaggio = Encoding.UTF8.GetString(args.Data);
 
                 Console.WriteLine("Messaggio Ricevuto");
-                Console.WriteLine("Ricevuto: " + messaggio_Ricevuto);
-
-                var msgArgs = messaggio_Ricevuto.Split('|');
-
-                if (msgArgs.Length < 0)
-                { Console.WriteLine("[Errore|ServerConnection] >> needed 1 args"); return; }
-
-                switch (msgArgs[0])
+                Console.WriteLine("Ricevuto: " + messaggio);
+                string[] mess = null;
+                if (messaggio.Contains('|'))
                 {
-                    case "Login": if (msgArgs[1] == "true") Variabili_Client.login = true; else Variabili_Client.login = false; break;
-                    case "Update_Data": Update_Data(msgArgs); break;
-                    case "Log_Server": Update_Log(msgArgs[1]); break;
-                    case "Update_PVP_Player": Update_PVP_List(msgArgs); break;
-                    case "Descrizione": Update_Desc(msgArgs[1]); break;
+                    mess = messaggio.Split('|');
+                    switch (mess[0])
+                    {
+                        case "Login": if (mess[1] == "true") Variabili_Client.login = true; else Variabili_Client.login = false; break;
+                        case "Update_Data": Update_Data(mess); break;
+                        case "Log_Server": Update_Log(mess[1]); break;
+                        case "Update_PVP_Player": Update_PVP_List(mess); break;
+                        case "Descrizione": Update_Desc(mess[1]); break;
+                        case "Raduno": Update_Lista_Raduni(mess); break;
+                        case "Raduni_Player": Update_Lista_Raduni_Player(mess); break;
+                        case "RadunoPartecipo":
+                            Update_Raduni_Partecipazione(mess);
+                            break;
 
-                    default: Console.WriteLine($"[Errore] >> [{messaggio_Ricevuto}] Comando non riconosciuto"); break;
+                        default: Console.WriteLine($"[Errore] >> [{messaggio}] Comando non riconosciuto"); break;
+                    }
                 }
 
-                var comando = msgArgs[0];
+                var comando = mess[0];
                 Console.WriteLine("");
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine($"Comando:        {comando}");
@@ -302,6 +306,77 @@ namespace Strategico_V2
                             Variabili_Client.Giocatori_PVP.Add(mess[i]);
                     }
                 
+            }
+            static void Update_Lista_Raduni(string[] mess)
+            {
+                // Ignora il primo elemento (che è "Lista_Raduni")
+                // e ricostruisci la stringa originale
+                var datiCompleti = string.Join("|", mess.Skip(1)).Split('-');
+
+                if (Variabili_Client.Raduni_Creati.Count == 0)
+                    foreach (string attacco in datiCompleti)
+                    {
+                        var dato = attacco.Split('|');
+                        if (!string.IsNullOrEmpty(attacco))
+                            Variabili_Client.Raduni_Creati.Add(dato[0] + " - " + dato[1] + " - " + dato[2]);
+                    }
+                else
+                {
+                    if (datiCompleti.Count() - 1 < Variabili_Client.Raduni_Creati.Count)
+                        Variabili_Client.Raduni_Creati.Clear();
+
+                    foreach (string attacco in datiCompleti)
+                    {
+                        var dato = attacco.Split('|');
+                        if (!string.IsNullOrEmpty(attacco))
+                            if (!Variabili_Client.Raduni_Creati.Contains(dato[0] + " - " + dato[1] + " - " + dato[2]))
+                                Variabili_Client.Raduni_Creati.Add(dato[0] + " - " + dato[1] + " - " + dato[2]);
+                    }
+                }
+            }
+
+            static void Update_Lista_Raduni_Player(string[] mess)
+            {
+                // Ignora il primo elemento (che è "Lista_Raduni")
+                // e ricostruisci la stringa originale
+                var datiCompleti = string.Join("|", mess.Skip(1)).Split('-');
+
+                if (Variabili_Client.Raduni_InCorso.Count == 0)
+                    foreach (string attacco in datiCompleti)
+                    {
+                        var dato = attacco.Split('|');
+                        if (!string.IsNullOrEmpty(attacco))
+                            Variabili_Client.Raduni_InCorso.Add(dato[0] + " - " + dato[1] + " - " + dato[2] + " - " + dato[3] + " - " + dato[4] + " - " + dato[5] + " - " + dato[6]);
+                    }
+                else
+                {
+                    if (datiCompleti.Count() - 1 < Variabili_Client.Raduni_InCorso.Count)
+                        Variabili_Client.Raduni_InCorso.Clear();
+                
+                    foreach (string attacco in datiCompleti)
+                    {
+                        var dato = attacco.Split('|');
+                        if (!string.IsNullOrEmpty(attacco))
+                            if (!Variabili_Client.Raduni_InCorso.Contains(dato[0] + " - " + dato[1] + " - " + dato[2] + " - " + dato[3] + " - " + dato[4] + " - " + dato[5] + " - " + dato[6]))
+                                Variabili_Client.Raduni_InCorso.Add(dato[0] + " - " + dato[1] + " - " + dato[2] + " - " + dato[3] + " - " + dato[4] + " - " + dato[5] + " - " + dato[6]);
+                    }
+                }
+            }
+
+            static async void Update_Raduni_Partecipazione(string[] mess)
+            {
+                // Formato: CreatoreUsername|ID|NumPartecipanti|MieiGuerrieri|MieiLancieri|MieiArcieri|MieiCatapulte|TempoRimanente
+                var raduno = new Variabili_Client.AttaccoPartecipazione
+                {
+                    Creatore = mess[1],
+                    ID = mess[2],
+                    NumPartecipanti = int.Parse(mess[3]),
+                    MieiGuerrieri = int.Parse(mess[4]),
+                    MieiLancieri = int.Parse(mess[5]),
+                    MieiArcieri = int.Parse(mess[6]),
+                    MieiCatapulte = int.Parse(mess[7]),
+                    TempoRimanente = int.Parse(mess[8])
+                };
             }
         }
 
