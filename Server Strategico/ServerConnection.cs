@@ -68,8 +68,8 @@ namespace Server_Strategico
                     if (Convert.ToInt32(msgArgs[6]) > 0) player.QueueTrainUnits("Catapulta", Convert.ToInt32(msgArgs[6]), clientGuid, player); // Costruisci fattorie
                     break;
                 case "Battaglia":
-                    if (msgArgs[3] == "Barbari_PVE") Battaglie.Battaglia_Barbari_PVE(player, clientGuid);
-                    if (msgArgs[3] == "Barbari_PVP") Battaglie.Battaglia_Barbari_PVP(player, clientGuid);
+                    if (msgArgs[3] == "Barbari_PVE") Battaglie.Battaglia_Barbari(player, clientGuid, "Barbari_PVE");
+                    if (msgArgs[3] == "Barbari_PVP") Battaglie.Battaglia_Barbari(player, clientGuid, "Barbari_PVP");
                     if (msgArgs[3] == "PVP")
                     {
                         var temp = msgArgs[4].Split(",");

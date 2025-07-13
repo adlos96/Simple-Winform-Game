@@ -5,7 +5,7 @@ namespace Server_Strategico
     internal class Dati
     {
         public static string Difficoltà = "1";
-        public static string Versione = "0.1.22";
+        public static string Versione = "0.1.23";
         public static string Server = "Italy";
 
         public static double forza_Esercito_Att_PVP = 0;
@@ -284,7 +284,7 @@ namespace Server_Strategico
                         $"Pietra= {buildingCost.Pietra * count}, " +
                         $"Ferro= {buildingCost.Ferro * count}, " +
                         $"Oro= {buildingCost.Oro * count}\r\n");
-                    Console.WriteLine($"Risorse consumate per {count} costruzione/i di {buildingType}:\r\n Cibo={buildingCost.Cibo * count}, Legno={buildingCost.Legno * count}, Pietra={buildingCost.Pietra * count}, Ferro={buildingCost.Ferro * count}, Oro={buildingCost.Oro * count}\r\n");
+                    Console.WriteLine($"Risorse consumate per {count} costruzione/i di {buildingType}:\r\n Cibo: {buildingCost.Cibo * count}, Legno: {buildingCost.Legno * count}, Pietra: {buildingCost.Pietra * count}, Ferro: {buildingCost.Ferro * count}, Oro: {buildingCost.Oro * count}\r\n");
 
                     // Verifica se la coda di costruzione esiste per questo tipo di edificio, altrimenti creala
                     if (!constructionQueues.ContainsKey(buildingType))
@@ -554,16 +554,16 @@ namespace Server_Strategico
                     Armature -= unitCost.Armature * count;
 
                     Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
-                        $"Cibo={unitCost.Cibo * count}, " +
-                        $"Legno={unitCost.Legno * count}, " +
-                        $"Pietra={unitCost.Pietra * count}, " +
-                        $"Ferro={unitCost.Ferro * count}, " +
-                        $"Oro={unitCost.Oro * count}, " +
-                        $"Spade={unitCost.Spade * count}, " +
-                        $"Lance={unitCost.Lance * count}, " +
-                        $"Archi={unitCost.Archi * count}, " +
-                        $"Scudi={unitCost.Scudi * count}, " +
-                        $"Armature={unitCost.Armature * count}\r\n");
+                        $"Cibo: {unitCost.Cibo * count}, " +
+                        $"Legno: {unitCost.Legno * count}, " +
+                        $"Pietra: {unitCost.Pietra * count}, " +
+                        $"Ferro: {unitCost.Ferro * count}, " +
+                        $"Oro: {unitCost.Oro * count}, " +
+                        $"Spade: {unitCost.Spade * count}, " +
+                        $"Lance: {unitCost.Lance * count}, " +
+                        $"Archi: {unitCost.Archi * count}, " +
+                        $"Scudi: {unitCost.Scudi * count}, " +
+                        $"Armature: {unitCost.Armature * count}\r\n");
                     Console.WriteLine($"Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
                         $"Cibo={unitCost.Cibo * count}, " +
                         $"Legno={unitCost.Legno * count}, " +
