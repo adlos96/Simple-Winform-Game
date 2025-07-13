@@ -10,17 +10,16 @@ namespace Strategico_V2
         {
             InitializeComponent();
         }
-
+        public static string login_data = "";
         private void Form1_Load(object sender, EventArgs e)
         {
         }
-
-        private async void btn_New_Game_Click(object sender, EventArgs e)
+        private async void btn_Login_User_Click(object sender, EventArgs e)
         {
-            btn_New_Game.Enabled = false;
-            txt_Log.Text = "Connessione..."; 
+            btn_Login_User.Enabled = false;
+            txt_Log.Text = "Connessione...";
 
-            if(txt_IP.Text != "AUTO")
+            if (txt_IP.Text != "AUTO")
                 ClientConnection.TestClient._ServerIp = txt_IP.Text;
             ClientConnection.TestClient.InitializeClient(); // Connessione server
             await Sleep(2);
@@ -34,7 +33,31 @@ namespace Strategico_V2
                 Variabili_Client.username = txt_Username.Text;
                 Variabili_Client.password = txt_Password.Text;
                 this.Close();
+            }
+            else btn_Login_User.Enabled = true;
+            if (login_data != "") txt_Log.Text = login_data;
+        }
+
+        private async void btn_New_Game_Click(object sender, EventArgs e)
+        {
+            btn_New_Game.Enabled = false;
+            txt_Log.Text = "Connessione..."; 
+
+            if(txt_IP.Text != "AUTO")
+                ClientConnection.TestClient._ServerIp = txt_IP.Text;
+            ClientConnection.TestClient.InitializeClient(); // Connessione server
+            await Sleep(2);
+            txt_Log.Text = "Cotattando il server...";
+            await Sleep(2);
+            ClientConnection.TestClient.Send($"New Player|{txt_Username.Text}|{txt_Password.Text}");
+            await Sleep(2);
+            if (Variabili_Client.login == true)
+            {
+                Variabili_Client.username = txt_Username.Text;
+                Variabili_Client.password = txt_Password.Text;
+                this.Close();
             }else btn_New_Game.Enabled = true;
+            if (login_data != "") txt_Log.Text = login_data;
         }
         public static async Task<bool> Sleep(int secondi)
         {
@@ -54,36 +77,6 @@ namespace Strategico_V2
                 txt_Log.Text = $"Login completato con successo, buon game!";
             else txt_Log.Text = $"Login fallito!";
             return true;
-        }
-
-        private void txt_Password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Load_User_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

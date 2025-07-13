@@ -14,7 +14,7 @@ namespace Strategico_V2
 
         internal class TestClient
         {
-            public static string _ServerIp = "79.51.195.120"; // adly.xed.im 185.229.236.183
+            public static string _ServerIp = "localhost"; // adly.xed.im 185.229.236.183
             //public static string _ServerIp = "79.44.11.166"; // adly.xed.im 185.229.236.183
             private static int _ServerPort = 8443;
             private static bool _Ssl = false;
@@ -152,7 +152,11 @@ namespace Strategico_V2
                     mess = messaggio.Split('|');
                     switch (mess[0])
                     {
-                        case "Login": if (mess[1] == "true") Variabili_Client.login = true; else Variabili_Client.login = false; break;
+                        case "Login": 
+                            if (mess[1] == "true")  Variabili_Client.login = true; 
+                            else Variabili_Client.login = false;
+                            if (mess.Count() >= 3) Login.login_data = mess[2];
+                            break;
                         case "Update_Data": Update_Data(mess); break;
                         case "Log_Server": Update_Log(mess[1]); break;
                         case "Update_PVP_Player": Update_PVP_List(mess); break;
