@@ -1,9 +1,8 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using Server_Strategico.Gioco;
 using System.Text;
 using WatsonTcp;
 
-namespace Server_Strategico
+namespace Server_Strategico.Server
 {
     internal class ServerConnection
     {
@@ -35,11 +34,18 @@ namespace Server_Strategico
             var player = Server.servers_.GetPlayer(msgArgs[1], msgArgs[2]);
             switch (msgArgs[0])
             {
+                case "New Player":
+                    Console.WriteLine($"[Server] Richiesta nuovo utente ID: {clientGuid}");
+                    if (await New_Player(msgArgs[1], msgArgs[2], clientGuid))
+                        Server.Send(clientGuid, "Login|true");
+                    else
+                        Server.Send(clientGuid, $"Login|false|Questo nome utente è già presente: [{msgArgs[1]}]");
+                    break;
                 case "Login":
                     bool login = await Login(msgArgs[1], msgArgs[2], clientGuid);
                     if (login == true) Server.Send(clientGuid, "Login|true");
                     else
-                        Server.Send(clientGuid, "Login|false");
+                        Server.Send(clientGuid, $"Login|false|Username o password non corrispondono. User: [{msgArgs[1]}] psw: [{msgArgs[2]}]");
                     break;
                 case "Costruzione":
                     if (Convert.ToInt32(msgArgs[3]) > 0) player.QueueBuildConstruction("Fattoria", Convert.ToInt32(msgArgs[3]), clientGuid, player); // Costruisci fattorie
@@ -87,7 +93,7 @@ namespace Server_Strategico
                     switch (msgArgs[3])
                     {
                         case "Fattoria":
-                            Server.Send(clientGuid, $"Descrizione|La fattoria è indispensabile per la produzione di Cibo, fondamentale anche per la costruzione di strutture, " +
+                            Server.Send(clientGuid, $"Descrizione|La fattoria è la struttura principale per la produzione di Cibo, fondamentale anche per la costruzione di strutture, " +
                                 $"l'addestramento delle unità militari ed il loro mantenimento. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
                                 $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.Fattoria.Cibo.ToString("#,0")}\r\n" +
@@ -99,7 +105,7 @@ namespace Server_Strategico
                                 $"Produzione risorse: {Strutture.Edifici.Fattoria.Produzione.ToString()}");
                             break;
                         case "Segheria":
-                            Server.Send(clientGuid, $"Descrizione|La Segheria è indispensabile per la produzione di Legna, fondamentale per la costruzione di strutture e " +
+                            Server.Send(clientGuid, $"Descrizione|La Segheria è la struttura principale per la produzione di Legna, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
                                 $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.Segheria.Cibo.ToString("#,0")}\r\n" +
@@ -111,7 +117,7 @@ namespace Server_Strategico
                                 $"Produzione risorse: {Strutture.Edifici.Segheria.Produzione.ToString()}");
                             break;
                         case "Cava Pietra":
-                            Server.Send(clientGuid, $"Descrizione|La cava di pietra è indispensabile per la produzione di Pietra, fondamentale per la costruzione di strutture e " +
+                            Server.Send(clientGuid, $"Descrizione|La cava di pietra è la struttura principale per la produzione di Pietra, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
                                 $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.CavaPietra.Cibo.ToString("#,0")}\r\n" +
@@ -123,7 +129,7 @@ namespace Server_Strategico
                                 $"Produzione risorse: {Strutture.Edifici.CavaPietra.Produzione.ToString()}");
                             break;
                         case "Miniera Ferro":
-                            Server.Send(clientGuid, $"Descrizione|La Miniera di ferro è indispensabile per la produzione di Ferro, fondamentale per la costruzione di strutture e " +
+                            Server.Send(clientGuid, $"Descrizione|La Miniera di ferro è la struttura principale per la produzione di Ferro, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
                                 $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.MinieraFerro.Cibo.ToString("#,0")}\r\n" +
@@ -135,7 +141,7 @@ namespace Server_Strategico
                                 $"Produzione risorse: {Strutture.Edifici.MinieraFerro.Produzione.ToString()}");
                             break;
                         case "Miniera Oro":
-                            Server.Send(clientGuid, $"Descrizione|La miniera d'oro è indispensabile per la produzione dell'Oro, fondamentale per la costruzione di strutture e " +
+                            Server.Send(clientGuid, $"Descrizione|La miniera d'oro è la struttura principale per la produzione dell'Oro, fondamentale per la costruzione di strutture e " +
                                 $"l'addestramento delle unità militari. Indispensabile anche per la ricerca tecnologica e la produzione di componenti militari\r\n \r\n" +
                                 $"Costo Costruzione:\r\n" +
                                 $"Cibo: {Strutture.Edifici.MinieraOro.Cibo.ToString("#,0")}\r\n" +
@@ -317,7 +323,7 @@ namespace Server_Strategico
                                 $"Salute:  {(Esercito.EsercitoNemico.Guerriero.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Difesa:  {(Esercito.EsercitoNemico.Guerriero.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Attacco: {(Esercito.EsercitoNemico.Guerriero.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
-                                $"Esperienza: {(Esercito.EsercitoNemico.Guerriero.Esperienza).ToString("#,0")}\r\n");
+                                $"Esperienza: {Esercito.EsercitoNemico.Guerriero.Esperienza.ToString("#,0")}\r\n");
                             break;
                         case "Lanciere_PVE":
                             Server.Send(clientGuid, $"Descrizione|I Lancieri sono la spina dorsale di ogni esercito ben organizzato. Armati di lance, " +
@@ -327,7 +333,7 @@ namespace Server_Strategico
                                 $"Salute:  {(Esercito.EsercitoNemico.Lanciere.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Difesa:  {(Esercito.EsercitoNemico.Lanciere.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Attacco: {(Esercito.EsercitoNemico.Lanciere.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
-                                $"Esperienza: {(Esercito.EsercitoNemico.Lanciere.Esperienza).ToString("#,0")}\r\n");
+                                $"Esperienza: {Esercito.EsercitoNemico.Lanciere.Esperienza.ToString("#,0")}\r\n");
                             break;
                         case "Arciere_PVE":
                             Server.Send(clientGuid, $"Descrizione|Gli Arcieri armati di arco e faretra, sono soldati specializzati, dominano il campo di battaglia dalla distanza, " +
@@ -337,7 +343,7 @@ namespace Server_Strategico
                                 $"Salute:  {(Esercito.EsercitoNemico.Arciere.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Difesa:  {(Esercito.EsercitoNemico.Arciere.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Attacco: {(Esercito.EsercitoNemico.Arciere.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
-                                $"Esperienza: {(Esercito.EsercitoNemico.Arciere.Esperienza).ToString("#,0")}\r\n");
+                                $"Esperienza: {Esercito.EsercitoNemico.Arciere.Esperienza.ToString("#,0")}\r\n");
                             break;
                         case "Catapulta_PVE":
                             Server.Send(clientGuid, $"Descrizione|Le Catapulte sono potenti macchine d'assedio che cambiano le sorti delle battaglie, " +
@@ -347,7 +353,7 @@ namespace Server_Strategico
                                 $"Salute:  {(Esercito.EsercitoNemico.Catapulta.Salute + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Difesa:  {(Esercito.EsercitoNemico.Catapulta.Difesa + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
                                 $"Attacco: {(Esercito.EsercitoNemico.Catapulta.Attacco + player.Livello_Barbari_PVE).ToString("#,0")}\r\n" +
-                                $"Esperienza: {(Esercito.EsercitoNemico.Catapulta.Esperienza).ToString("#,0")}\r\n");
+                                $"Esperienza: {Esercito.EsercitoNemico.Catapulta.Esperienza.ToString("#,0")}\r\n");
                             break;
 
                         case "Raduno":
@@ -360,11 +366,11 @@ namespace Server_Strategico
                                 $"- Il livello delle unità non verrà mantenuto, perciò sia i giocatori che il barbaro avranno unità LV 0");
                             break;
                         case "Costruzione":
-                            Server.Send(clientGuid, $"Descrizione|Permette la costruzione di strutture militari, civili, caserme ed unità militari");
+                            Server.Send(clientGuid, $"Descrizione|Permette la costruzione di Strutture Militari, Civili, Caserme ed unità Militari");
                             break;
                         case "Ricerca":
                             Server.Send(clientGuid, $"Descrizione|La Ricerca è fondamentale per ogni città... Per il miglioramento delle strutture, la loro produzione, fino " +
-                                $"al reclutamento delle unità. Le stesse possono subire un miglioramento delle loro caratteristiche e del loro livello.");
+                                $"al reclutamento delle unità, le stesse possono subire un miglioramento delle loro caratteristiche e del loro livello.");
                             break;
                     }
                     break;
@@ -374,6 +380,23 @@ namespace Server_Strategico
                 default: Console.WriteLine($"Messaggio: [{msgArgs}]"); break;
             }
            
+        }
+        static async Task<bool> New_Player(string username, string password, Guid guid)
+        {
+            var existingPlayer = Server.servers_.GetPlayer(username, password);
+            if (existingPlayer != null) // Controlla se il giocatore esiste già
+            {
+                existingPlayer.guid_Player = guid; //Assegna il guid aggiornato
+                Console.WriteLine("New Player: Il giocatore già esiste");
+                return false;
+            }
+            if (await Server.servers_.Check_Username_Player(username)) // Controlla se il nome utente è disponibile
+            {
+                await Server.servers_.AddPlayer(username, password, guid);
+                await GameSave.LoadPlayer(username, password);
+                    return true;
+            }
+            return false;
         }
         static async Task<bool> Login(string username, string password, Guid guid)
         {
@@ -386,12 +409,10 @@ namespace Server_Strategico
             }
             if (await Server.servers_.Check_Username_Player(username)) // Controlla se il nome utente è disponibile
             {
-                await Server.servers_.AddPlayer(username, password, guid);
-                // Poi prova a caricare i dati salvati
-                if (await GameSave.LoadPlayer(username, password))
-                    return true;
+                if (await GameSave.LoadPlayer(username, password)) // Poi prova a caricare i dati salvati
+                    return false;
             }
-            return true;
+            return false;
         }
 
         public static async Task<bool> Load_User_Auto(string username, string password)
@@ -420,8 +441,8 @@ namespace Server_Strategico
             var buildingsQueue = player.GetQueuedBuildings();
             var unitsQueue = player.GetQueuedUnits();
 
-            double Cibo = (player.Guerrieri * Esercito.Unità.Guerriero.Cibo) + (player.Lancieri * Esercito.Unità.Lanciere.Cibo) + (player.Arceri * Esercito.Unità.Arciere.Cibo) + (player.Catapulte * Esercito.Unità.Catapulta.Cibo);
-            double Oro = (player.Guerrieri * Esercito.Unità.Guerriero.Salario) + (player.Lancieri * Esercito.Unità.Lanciere.Salario) + (player.Arceri * Esercito.Unità.Arciere.Salario) + (player.Catapulte * Esercito.Unità.Catapulta.Salario);
+            double Cibo = player.Guerrieri * Esercito.Unità.Guerriero.Cibo + player.Lancieri * Esercito.Unità.Lanciere.Cibo + player.Arceri * Esercito.Unità.Arciere.Cibo + player.Catapulte * Esercito.Unità.Catapulta.Cibo;
+            double Oro = player.Guerrieri * Esercito.Unità.Guerriero.Salario + player.Lancieri * Esercito.Unità.Lanciere.Salario + player.Arceri * Esercito.Unità.Arciere.Salario + player.Catapulte * Esercito.Unità.Catapulta.Salario;
 
             Server.Send(guid, $"Update_Data|" +
                 $"{player.Cibo.ToString("#,0")}|" +
@@ -431,11 +452,11 @@ namespace Server_Strategico
                 $"{player.Oro.ToString("#,0")}|" +
                 $"{player.Popolazione.ToString("#,0")}|" +
 
-                $"{((player.Fattoria * (Strutture.Edifici.Fattoria.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Cibo)) - Cibo).ToString("#,0.00")}|" +
+                $"{(player.Fattoria * (Strutture.Edifici.Fattoria.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Cibo) - Cibo).ToString("#,0.00")}|" +
                 $"{(player.Segheria * (Strutture.Edifici.Segheria.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Legno)).ToString("#,0.00")}|" +
                 $"{(player.CavaPietra * (Strutture.Edifici.CavaPietra.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Pietra)).ToString("#,0.00")}|" +
                 $"{(player.MinieraFerro * (Strutture.Edifici.MinieraFerro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Ferro)).ToString("#,0.00")}|" +
-                $"{((player.MinieraOro * (Strutture.Edifici.MinieraOro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Oro)) - Oro).ToString("#,0.00")}|" +
+                $"{(player.MinieraOro * (Strutture.Edifici.MinieraOro.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Oro) - Oro).ToString("#,0.00")}|" +
                 $"{(player.Abitazioni * (Strutture.Edifici.Case.Produzione + player.Ricerca_Produzione * Ricerca.Tipi.Incremento.Popolazione)).ToString("#,0.000")}|" +
 
                 $"{player.Fattoria.ToString("#,0")}|" +
@@ -471,9 +492,9 @@ namespace Server_Strategico
                 $"{player.Arceri.ToString("#,0")}/{player.Caserma_Arceri * player.ArceriMax}|" +
                 $"{player.Catapulte.ToString("#,0")}/{player.Caserma_Catapulte * player.CatapulteMax}|" +
 
-                $"{Server_Strategico.Dati.Server}|" +
-                $"{Server_Strategico.Dati.Versione}|" +
-                $"{Server_Strategico.Dati.Difficoltà}|" +
+                $"{Dati.Server}|" +
+                $"{Dati.Versione}|" +
+                $"{Dati.Difficoltà}|" +
 
                 $"{player.Livello}|" +
                 $"{player.Esperienza.ToString("#,0")}|" +
@@ -483,10 +504,10 @@ namespace Server_Strategico
                 $"{player.Arceri_Barbari_PVE.ToString("#,0")}|" +
                 $"{player.Catapulte_Barbari_PVE.ToString("#,0")}|" +
 
-                $"{Variabili.Barbari.PVP.Guerrieri.ToString("#,0")}|" +
-                $"{Variabili.Barbari.PVP.Lancieri.ToString("#,0")}|" +
-                $"{Variabili.Barbari.PVP.Arceri.ToString("#,0")}|" +
-                $"{Variabili.Barbari.PVP.Catapulte.ToString("#,0")}|" +
+                $"{Giocatori.Barbari.PVP.Guerrieri.ToString("#,0")}|" +
+                $"{Giocatori.Barbari.PVP.Lancieri.ToString("#,0")}|" +
+                $"{Giocatori.Barbari.PVP.Arceri.ToString("#,0")}|" +
+                $"{Giocatori.Barbari.PVP.Catapulte.ToString("#,0")}|" +
 
                 $"{player.forza_Esercito.ToString("#,0.00")}|" +
                 $"{player.forza_Esercito_PVE.ToString("#,0.00")}|" +

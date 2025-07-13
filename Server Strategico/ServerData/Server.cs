@@ -1,7 +1,8 @@
-﻿using WatsonTcp;
-using static Server_Strategico.Variabili;
+﻿using Server_Strategico.Gioco;
+using WatsonTcp;
+using static Server_Strategico.Gioco.Giocatori;
 
-namespace Server_Strategico
+namespace Server_Strategico.Server
 {
     internal class Server
     {
@@ -77,7 +78,7 @@ namespace Server_Strategico
                         Console.WriteLine("----------------------------------------------------------------------");
                         break;
                     case "player":
-                        Server.servers_.Player_Creati();
+                        servers_.Player_Creati();
                         break;
                     case "client":
                         ClientConnessi();
@@ -204,7 +205,7 @@ namespace Server_Strategico
                 if (!players.ContainsKey(username))
                 {
                     players.Add(username, new Player(username, password, guid));
-                    await Server.NewPlayer(username, password);
+                    await NewPlayer(username, password);
                     return true;
                 }
                 else
@@ -218,7 +219,7 @@ namespace Server_Strategico
                 if (!players.ContainsKey(username))
                 {
                     players.Add(username, new Player(username, password, Guid.Empty));
-                    await Server.NewPlayer(username, password);
+                    await NewPlayer(username, password);
                     return true;
                 }
                 else
@@ -272,12 +273,12 @@ namespace Server_Strategico
                 foreach (var item in players)
                 {
                     bool utentePresente = false;
-                    if (Server.Utenti_PVP.Count == 0) // Se la lista è vuota, aggiungi direttamente l'utente
+                    if (Utenti_PVP.Count == 0) // Se la lista è vuota, aggiungi direttamente l'utente
                     {
                         utentiDaAggiungere.Add($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
                         continue;
                     }
-                    foreach (var utentePVP in Server.Utenti_PVP) // Controlla se l'utente è già presente nella lista
+                    foreach (var utentePVP in Utenti_PVP) // Controlla se l'utente è già presente nella lista
                     {
                         var parti = utentePVP.Split(",");
                         if (parti[0].Trim() == item.Value.Username)
@@ -290,7 +291,7 @@ namespace Server_Strategico
                         utentiDaAggiungere.Add($"{item.Value.Username}, Livello: {item.Value.Livello}, Esperienza: {item.Value.Esperienza}");
                 }
                 foreach (var utente in utentiDaAggiungere) // Dopo aver terminato l'enumerazione, aggiungi tutti gli utenti dalla lista temporanea
-                    Server.Utenti_PVP.Add(utente);
+                    Utenti_PVP.Add(utente);
             }
             public async Task<bool> Check_Username_Player(string username)
             {
@@ -301,7 +302,7 @@ namespace Server_Strategico
             }
             public async Task<bool> Auto_Update_Clients()
             {
-                foreach (var client in Server.Client_Connessi)
+                foreach (var client in Client_Connessi)
                     foreach (var item in players)
                     {
                         if (item.Value.guid_Player == client)
@@ -315,8 +316,8 @@ namespace Server_Strategico
 
                 await GameSave.LoadBarbariPVP();
                 await GameSave.Load_Player_Data_Auto();
-
-                Task.Run(() => Server_Strategico.Barbari.Barbari_PVP(players));
+                Task.Run(() => Gioco.Barbari.Barbari_PVP(players));
+                servers_.Lista_Player_Auto();
 
                 while (!cancellationToken.IsCancellationRequested)
                 {
@@ -334,10 +335,10 @@ namespace Server_Strategico
                             await GameSave.SavePlayer(player);
 
                         player.forza_Esercito =
-                        player.Guerrieri * ((Esercito.Unità.Guerriero.Salute * 0.20) + (Esercito.Unità.Guerriero.Attacco * 0.25)) +
-                        player.Lancieri * ((Esercito.Unità.Lanciere.Salute * 0.20) + (Esercito.Unità.Lanciere.Attacco * 0.25)) +
-                        player.Arceri * ((Esercito.Unità.Arciere.Salute * 0.20) + (Esercito.Unità.Arciere.Attacco * 0.25)) +
-                        player.Catapulte * ((Esercito.Unità.Catapulta.Salute * 0.20) + (Esercito.Unità.Catapulta.Attacco * 0.25));
+                        player.Guerrieri * (Esercito.Unità.Guerriero.Salute * 0.20 + Esercito.Unità.Guerriero.Attacco * 0.25) +
+                        player.Lancieri * (Esercito.Unità.Lanciere.Salute * 0.20 + Esercito.Unità.Lanciere.Attacco * 0.25) +
+                        player.Arceri * (Esercito.Unità.Arciere.Salute * 0.20 + Esercito.Unità.Arciere.Attacco * 0.25) +
+                        player.Catapulte * (Esercito.Unità.Catapulta.Salute * 0.20 + Esercito.Unità.Catapulta.Attacco * 0.25);
 
                         await Auto_Update_Clients();
                         await Esperienza.LevelUp(player);
@@ -345,14 +346,14 @@ namespace Server_Strategico
                         if (player.Player_Loop == false)
                         {
                             player.Player_Loop = true;
-                            Task.Run(() => Server_Strategico.Barbari.Barbari_PVE(player));
+                            Task.Run(() => Gioco.Barbari.Barbari_PVE(player));
                         }
                     }
                     if (saveCounter >= 60)
                     {
                         saveCounter = 0;
                         await GameSave.SaveBarbariPVP();
-                        Server.servers_.Lista_Player_Auto();
+                        servers_.Lista_Player_Auto();
                     }
                     await Task.Delay(1000); // Ciclo ogni secondo, o regola il ritardo come necessario
 

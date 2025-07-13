@@ -1,7 +1,8 @@
+using Server_Strategico.Gioco;
 using System.Text.Json;
-using static Server_Strategico.Variabili;
+using static Server_Strategico.Gioco.Giocatori;
 
-namespace Server_Strategico
+namespace Server_Strategico.Server
 {
     internal class GameSave
     {
@@ -335,10 +336,10 @@ namespace Server_Strategico
         {
             var barbariData = new
             {
-                Guerrieri = Variabili.Barbari.PVP.Guerrieri,
-                Lancieri = Variabili.Barbari.PVP.Lancieri,
-                Arceri = Variabili.Barbari.PVP.Arceri,
-                Catapulte = Variabili.Barbari.PVP.Catapulte
+                Giocatori.Barbari.PVP.Guerrieri,
+                Giocatori.Barbari.PVP.Lancieri,
+                Giocatori.Barbari.PVP.Arceri,
+                Giocatori.Barbari.PVP.Catapulte
             };
 
             string fileName = Path.Combine(SavePath, "BarbariPVP.json");
@@ -362,11 +363,11 @@ namespace Server_Strategico
                 var barbariData = JsonSerializer.Deserialize<BarbariPVPData>(jsonString);
 
                 // Aggiorna i dati dei barbari con i dati caricati
-                Variabili.Barbari.PVP.Guerrieri = barbariData.Guerrieri;
-                Variabili.Barbari.PVP.Lancieri = barbariData.Lancieri;
-                Variabili.Barbari.PVP.Arceri = barbariData.Arceri;
-                Variabili.Barbari.PVP.Catapulte = barbariData.Catapulte;
-                Variabili.Barbari.PVP.Livello = barbariData.Livello;
+                Giocatori.Barbari.PVP.Guerrieri = barbariData.Guerrieri;
+                Giocatori.Barbari.PVP.Lancieri = barbariData.Lancieri;
+                Giocatori.Barbari.PVP.Arceri = barbariData.Arceri;
+                Giocatori.Barbari.PVP.Catapulte = barbariData.Catapulte;
+                Giocatori.Barbari.PVP.Livello = barbariData.Livello;
 
                 Console.WriteLine("[GameSave] Dati dei barbari PVP caricati.");
                 return true;

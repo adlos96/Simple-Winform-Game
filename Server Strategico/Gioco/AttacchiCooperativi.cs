@@ -1,7 +1,7 @@
-using System;
-using static Server_Strategico.Variabili;
+using static Server_Strategico.Gioco.Giocatori;
+using static Server_Strategico.Server.Server;
 
-namespace Server_Strategico
+namespace Server_Strategico.Gioco
 {
     public class AttacchiCooperativi
     {
@@ -92,28 +92,28 @@ namespace Server_Strategico
         {
             if (!AttacchiInCorso.ContainsKey(idAttacco))
             {
-                Server.Send(clientGuid, $"Log_Server|Attacco con ID {idAttacco} non trovato.");
+                Send(clientGuid, $"Log_Server|Attacco con ID {idAttacco} non trovato.");
                 return false;
             }
             
-            var player = Server.servers_.GetPlayer_Data(username);
+            var player = servers_.GetPlayer_Data(username);
             if (player == null)
             {
-                Server.Send(clientGuid, $"Log_Server|Giocatore non trovato.");
+                Send(clientGuid, $"Log_Server|Giocatore non trovato.");
                 return false;
             }
             
             // Verifico che i valori non siano negativi
             if (guerrieri < 0 || lancieri < 0 || arcieri < 0 || catapulte < 0)
             {
-                Server.Send(clientGuid, $"Log_Server|Non puoi inviare un numero negativo di truppe.");
+                Send(clientGuid, $"Log_Server|Non puoi inviare un numero negativo di truppe.");
                 return false;
             }
             
             // Verifico che venga inviata almeno una truppa
             if (guerrieri == 0 && lancieri == 0 && arcieri == 0 && catapulte == 0)
             {
-                Server.Send(clientGuid, $"Log_Server|Devi inviare almeno una truppa.");
+                Send(clientGuid, $"Log_Server|Devi inviare almeno una truppa.");
                 return false;
             }
             
@@ -121,7 +121,7 @@ namespace Server_Strategico
             if (player.Guerrieri < guerrieri || player.Lancieri < lancieri || 
                 player.Arceri < arcieri || player.Catapulte < catapulte)
             {
-                Server.Send(clientGuid, $"Log_Server|Non hai abbastanza truppe disponibili.");
+                Send(clientGuid, $"Log_Server|Non hai abbastanza truppe disponibili.");
                 return false;
             }
             
@@ -150,22 +150,22 @@ namespace Server_Strategico
             }
             
             // Invia conferma al giocatore
-            Server.Send(clientGuid, $"Log_Server|Hai contribuito all'attacco #{idAttacco} con: {guerrieri} Guerrieri, {lancieri} Lancieri, {arcieri} Arcieri, {catapulte} Catapulte.");
-            Server.Send(clientGuid, $"Log_Server|Forze totali: {totGuerrieri} Guerrieri, {totLancieri} Lancieri, {totArcieri} Arcieri, {totCatapulte} Catapulte.");
+            Send(clientGuid, $"Log_Server|Hai contribuito all'attacco #{idAttacco} con: {guerrieri} Guerrieri, {lancieri} Lancieri, {arcieri} Arcieri, {catapulte} Catapulte.");
+            Send(clientGuid, $"Log_Server|Forze totali: {totGuerrieri} Guerrieri, {totLancieri} Lancieri, {totArcieri} Arcieri, {totCatapulte} Catapulte.");
             
             // Notifica tutti i partecipanti dell'aggiornamento
             foreach (var partecipante in attacco.GiocatoriPartecipanti)
             {
-                var giocatore = Server.servers_.GetPlayer_Data(partecipante.Key);
+                var giocatore = servers_.GetPlayer_Data(partecipante.Key);
                 if (giocatore != null && giocatore.guid_Player != Guid.Empty && giocatore.guid_Player != clientGuid)
                 {
-                    Server.Send(giocatore.guid_Player, $"Log_Server|{player.Username} ha inviato truppe all'attacco #{idAttacco}: {guerrieri} Guerrieri, {lancieri} Lancieri, {arcieri} Arcieri, {catapulte} Catapulte.");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Forze totali: {totGuerrieri} Guerrieri, {totLancieri} Lancieri, {totArcieri} Arcieri, {totCatapulte} Catapulte.");
+                    Send(giocatore.guid_Player, $"Log_Server|{player.Username} ha inviato truppe all'attacco #{idAttacco}: {guerrieri} Guerrieri, {lancieri} Lancieri, {arcieri} Arcieri, {catapulte} Catapulte.");
+                    Send(giocatore.guid_Player, $"Log_Server|Forze totali: {totGuerrieri} Guerrieri, {totLancieri} Lancieri, {totArcieri} Arcieri, {totCatapulte} Catapulte.");
                 }
             }
             
             // Invia il messaggio di RadunoPartecipo per aggiornare l'interfaccia client
-            Server.Send(clientGuid, $"RadunoPartecipo|{attacco.CreatoreUsername}|{idAttacco}|{attacco.GiocatoriPartecipanti.Count}|{guerrieri}|{lancieri}|{arcieri}|{catapulte}|{attacco.TempoRimanente/60}");
+            Send(clientGuid, $"RadunoPartecipo|{attacco.CreatoreUsername}|{idAttacco}|{attacco.GiocatoriPartecipanti.Count}|{guerrieri}|{lancieri}|{arcieri}|{catapulte}|{attacco.TempoRimanente/60}");
             
             return true;
         }
@@ -175,26 +175,26 @@ namespace Server_Strategico
         {
             if (!AttacchiInCorso.ContainsKey(idAttacco))
             {
-                Server.Send(clientGuid, $"Log_Server|Attacco con ID {idAttacco} non trovato.");
+                Send(clientGuid, $"Log_Server|Attacco con ID {idAttacco} non trovato.");
                 return false;
             }
             
             var attacco = AttacchiInCorso[idAttacco];
             if (!attacco.GiocatoriPartecipanti.ContainsKey(username))
             {
-                Server.Send(clientGuid, $"Log_Server|Non stai partecipando a questo attacco.");
+                Send(clientGuid, $"Log_Server|Non stai partecipando a questo attacco.");
                 return false;
             }
             
             if (attacco.AttaccoInCorso)
             {
-                Server.Send(clientGuid, $"Log_Server|Non puoi abbandonare un attacco già iniziato.");
+                Send(clientGuid, $"Log_Server|Non puoi abbandonare un attacco già iniziato.");
                 return false;
             }
             
             // Recupera le truppe contribuite
             var truppeContribuite = attacco.GiocatoriPartecipanti[username];
-            var player = Server.servers_.GetPlayer_Data(username);
+            var player = servers_.GetPlayer_Data(username);
             
             if (player != null)
             {
@@ -207,23 +207,23 @@ namespace Server_Strategico
             // Rimuovi il giocatore dall'attacco
             attacco.RimuoviGiocatore(username);
             
-            Server.Send(clientGuid, $"Log_Server|Hai abbandonato l'attacco #{idAttacco} e recuperato le tue truppe.");
+            Send(clientGuid, $"Log_Server|Hai abbandonato l'attacco #{idAttacco} e recuperato le tue truppe.");
             
             // Se non ci sono più partecipanti, rimuovi l'attacco
             if (attacco.GiocatoriPartecipanti.Count == 0)
             {
                 AttacchiInCorso.Remove(idAttacco);
-                Server.Send(clientGuid, $"Log_Server|L'attacco #{idAttacco} è stato cancellato perché non ci sono più partecipanti.");
+                Send(clientGuid, $"Log_Server|L'attacco #{idAttacco} è stato cancellato perché non ci sono più partecipanti.");
             }
             else
             {
                 // Notifica gli altri partecipanti
                 foreach (var partecipante in attacco.GiocatoriPartecipanti)
                 {
-                    var giocatore = Server.servers_.GetPlayer_Data(partecipante.Key);
+                    var giocatore = servers_.GetPlayer_Data(partecipante.Key);
                     if (giocatore != null && giocatore.guid_Player != Guid.Empty)
                     {
-                        Server.Send(giocatore.guid_Player, $"Log_Server|{player.Username} ha abbandonato l'attacco #{idAttacco}.");
+                        Send(giocatore.guid_Player, $"Log_Server|{player.Username} ha abbandonato l'attacco #{idAttacco}.");
                     }
                 }
             }
@@ -236,11 +236,11 @@ namespace Server_Strategico
         {
             if (AttacchiInCorso.Count == 0)
             {
-                Server.Send(clientGuid, $"Log_Server|Non ci sono attacchi cooperativi in preparazione.");
+                Send(clientGuid, $"Log_Server|Non ci sono attacchi cooperativi in preparazione.");
                 return;
             }
             
-            Server.Send(clientGuid, $"Log_Server|Attacchi cooperativi in preparazione:");
+            Send(clientGuid, $"Log_Server|Attacchi cooperativi in preparazione:");
             foreach (var attaccoInfo in AttacchiInCorso)
             {
                 int gTot = 0, lTot = 0, aTot = 0, cTot = 0;
@@ -252,7 +252,7 @@ namespace Server_Strategico
                     cTot += part.Value.Catapulte;
                 }
                 
-                Server.Send(clientGuid, $"Log_Server|ID: {attaccoInfo.Key} - Partecipanti: {attaccoInfo.Value.GiocatoriPartecipanti.Count} - Truppe: G:{gTot}, L:{lTot}, A:{aTot}, C:{cTot} - Tempo: {attaccoInfo.Value.TempoRimanente/60} min");
+                Send(clientGuid, $"Log_Server|ID: {attaccoInfo.Key} - Partecipanti: {attaccoInfo.Value.GiocatoriPartecipanti.Count} - Truppe: G:{gTot}, L:{lTot}, A:{aTot}, C:{cTot} - Tempo: {attaccoInfo.Value.TempoRimanente/60} min");
             }
         }
 
@@ -261,7 +261,7 @@ namespace Server_Strategico
         {
             if (!AttacchiInCorso.ContainsKey(idAttacco))
             {
-                Server.Send(clientGuid, $"Log_Server|Attacco con ID {idAttacco} non trovato.");
+                Send(clientGuid, $"Log_Server|Attacco con ID {idAttacco} non trovato.");
                 return false;
             }
             
@@ -269,7 +269,7 @@ namespace Server_Strategico
             
             // Recupera il nome utente dal clientGuid
             string username = null;
-            foreach (var player in Server.servers_.GetAllPlayers())
+            foreach (var player in servers_.GetAllPlayers())
             {
                 if (player.guid_Player == clientGuid)
                 {
@@ -281,19 +281,19 @@ namespace Server_Strategico
             // Verifica se l'utente è il creatore
             if (username == null || username != attacco.CreatoreUsername)
             {
-                Server.Send(clientGuid, $"Log_Server|Solo il creatore dell'attacco ({attacco.CreatoreUsername}) può avviarlo.");
+                Send(clientGuid, $"Log_Server|Solo il creatore dell'attacco ({attacco.CreatoreUsername}) può avviarlo.");
                 return false;
             }
             
             if (attacco.GiocatoriPartecipanti.Count == 0)
             {
-                Server.Send(clientGuid, $"Log_Server|L'attacco non può iniziare perché non ci sono partecipanti.");
+                Send(clientGuid, $"Log_Server|L'attacco non può iniziare perché non ci sono partecipanti.");
                 return false;
             }
             
             if (attacco.AttaccoInCorso)
             {
-                Server.Send(clientGuid, $"Log_Server|L'attacco è già in corso.");
+                Send(clientGuid, $"Log_Server|L'attacco è già in corso.");
                 return false;
             }
             
@@ -302,10 +302,10 @@ namespace Server_Strategico
             // Notifica tutti i partecipanti che l'attacco sta iniziando
             foreach (var partecipante in attacco.GiocatoriPartecipanti)
             {
-                var giocatore = Server.servers_.GetPlayer_Data(partecipante.Key);
+                var giocatore = servers_.GetPlayer_Data(partecipante.Key);
                 if (giocatore != null && giocatore.guid_Player != Guid.Empty)
                 {
-                    Server.Send(giocatore.guid_Player, $"Log_Server|L'attacco cooperativo #{idAttacco} sta iniziando!");
+                    Send(giocatore.guid_Player, $"Log_Server|L'attacco cooperativo #{idAttacco} sta iniziando!");
                 }
             }
             
@@ -329,14 +329,14 @@ namespace Server_Strategico
             
             foreach (var partecipante in attacco.GiocatoriPartecipanti)
             {
-                var player = Server.servers_.GetPlayer_Data(partecipante.Key);
+                var player = servers_.GetPlayer_Data(partecipante.Key);
                 if (player != null)
                 {
                     totaleGuerrieri += partecipante.Value.Guerrieri;
                     totaleLancieri += partecipante.Value.Lancieri;
                     totaleArcieri += partecipante.Value.Arcieri;
                     totaleCatapulte += partecipante.Value.Catapulte;
-                    totaleFrecce += (int)(player.Frecce);
+                    totaleFrecce += (int)player.Frecce;
                 }
             }
             
@@ -358,10 +358,10 @@ namespace Server_Strategico
             int arcieri = playerVirtuale.Arceri;
             int catapulte = playerVirtuale.Catapulte;
 
-            int guerrieri_Enemy = Variabili.Barbari.PVP.Guerrieri;
-            int picchieri_Enemy = Variabili.Barbari.PVP.Lancieri;
-            int arcieri_Enemy = Variabili.Barbari.PVP.Arceri;
-            int catapulte_Enemy = Variabili.Barbari.PVP.Catapulte;
+            int guerrieri_Enemy = Giocatori.Barbari.PVP.Guerrieri;
+            int picchieri_Enemy = Giocatori.Barbari.PVP.Lancieri;
+            int arcieri_Enemy = Giocatori.Barbari.PVP.Arceri;
+            int catapulte_Enemy = Giocatori.Barbari.PVP.Catapulte;
 
             int tipi_Di_Unità = Battaglie.ContareTipiDiUnità(guerrieri, picchieri, arcieri, catapulte);
             int tipi_Di_Unità_Att = Battaglie.ContareTipiDiUnità(guerrieri_Enemy, picchieri_Enemy, arcieri_Enemy, catapulte_Enemy);
@@ -398,18 +398,18 @@ namespace Server_Strategico
             // Invia i risultati a tutti i partecipanti
             foreach (var partecipante in attacco.GiocatoriPartecipanti)
             {
-                var giocatore = Server.servers_.GetPlayer_Data(partecipante.Key);
+                var giocatore = servers_.GetPlayer_Data(partecipante.Key);
                 if (giocatore != null && giocatore.guid_Player != Guid.Empty)
                 {
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Danno subito: {(dannoInflittoDalNemico * tipi_Di_Unità).ToString("0.00")}");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Danno inflitto: {(dannoInflitto * tipi_Di_Unità_Att).ToString("0.00")}");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Risultato dell'attacco cooperativo #{idAttacco}:");
+                    Send(giocatore.guid_Player, $"Log_Server|Danno subito: {(dannoInflittoDalNemico * tipi_Di_Unità).ToString("0.00")}");
+                    Send(giocatore.guid_Player, $"Log_Server|Danno inflitto: {(dannoInflitto * tipi_Di_Unità_Att).ToString("0.00")}");
+                    Send(giocatore.guid_Player, $"Log_Server|Risultato dell'attacco cooperativo #{idAttacco}:");
                     
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Guerrieri: {guerrieriPersi}\r\n Lancieri: {picchieriPersi}\r\n Arcieri: {arcieriPersi}\r\n Catapulte: {catapultePersi}\r\n");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Truppe perse in totale:");
+                    Send(giocatore.guid_Player, $"Log_Server|Guerrieri: {guerrieriPersi}\r\n Lancieri: {picchieriPersi}\r\n Arcieri: {arcieriPersi}\r\n Catapulte: {catapultePersi}\r\n");
+                    Send(giocatore.guid_Player, $"Log_Server|Truppe perse in totale:");
                     
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Guerrieri: {guerrieri_Enemy_Persi}\r\n Lancieri: {picchieri_Enemy_Persi}\r\n Arcieri: {arcieri_Enemy_Persi}\r\n Catapulte: {catapulte_Enemy_Persi}\r\n");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Truppe perse dai barbari:");
+                    Send(giocatore.guid_Player, $"Log_Server|Guerrieri: {guerrieri_Enemy_Persi}\r\n Lancieri: {picchieri_Enemy_Persi}\r\n Arcieri: {arcieri_Enemy_Persi}\r\n Catapulte: {catapulte_Enemy_Persi}\r\n");
+                    Send(giocatore.guid_Player, $"Log_Server|Truppe perse dai barbari:");
                     
                     // Calcolo delle perdite proporzionali per questo giocatore
                     double rapportoGuerrieri = totaleGuerrieri > 0 ? (double)partecipante.Value.Guerrieri / totaleGuerrieri : 0;
@@ -427,10 +427,10 @@ namespace Server_Strategico
                     // Calcola l'esperienza in base al contributo
                     double contributo = (rapportoGuerrieri + rapportoLancieri + rapportoArcieri + rapportoCatapulte) / 4.0;
                     int esperienzaGuadagnata = (int)(contributo * (
-                        (guerrieri_Enemy_Persi * Esercito.EsercitoNemico.Guerriero.Esperienza) +
-                        (picchieri_Enemy_Persi * Esercito.EsercitoNemico.Lanciere.Esperienza) +
-                        (arcieri_Enemy_Persi * Esercito.EsercitoNemico.Arciere.Esperienza) +
-                        (catapulte_Enemy_Persi * Esercito.EsercitoNemico.Catapulta.Esperienza)
+                        guerrieri_Enemy_Persi * Esercito.EsercitoNemico.Guerriero.Esperienza +
+                        picchieri_Enemy_Persi * Esercito.EsercitoNemico.Lanciere.Esperienza +
+                        arcieri_Enemy_Persi * Esercito.EsercitoNemico.Arciere.Esperienza +
+                        catapulte_Enemy_Persi * Esercito.EsercitoNemico.Catapulta.Esperienza
                     ));
                     
                     giocatore.Esperienza += esperienzaGuadagnata;
@@ -448,18 +448,18 @@ namespace Server_Strategico
                     giocatore.Catapulte += catapulteRestituite;
                     giocatore.Frecce += frecceRestituite;
                     
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Truppe restituite: Guerrieri: {guerrieriRestituiti}, Lancieri: {lancieriRestituiti}, Arcieri: {arcieriRestituiti}, Catapulte: {catapulteRestituite}");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Esperienza guadagnata: {esperienzaGuadagnata}");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Guerrieri: {guerrieriPersiGiocatore}\r\n Lancieri: {lancieriPersiGiocatore}\r\n Arcieri: {arcieriPersiGiocatore}\r\n Catapulte: {catapultePersiGiocatore}\r\n");
-                    Server.Send(giocatore.guid_Player, $"Log_Server|Le tue perdite personali: [{giocatore.Username}]");
+                    Send(giocatore.guid_Player, $"Log_Server|Truppe restituite: Guerrieri: {guerrieriRestituiti}, Lancieri: {lancieriRestituiti}, Arcieri: {arcieriRestituiti}, Catapulte: {catapulteRestituite}");
+                    Send(giocatore.guid_Player, $"Log_Server|Esperienza guadagnata: {esperienzaGuadagnata}");
+                    Send(giocatore.guid_Player, $"Log_Server|Guerrieri: {guerrieriPersiGiocatore}\r\n Lancieri: {lancieriPersiGiocatore}\r\n Arcieri: {arcieriPersiGiocatore}\r\n Catapulte: {catapultePersiGiocatore}\r\n");
+                    Send(giocatore.guid_Player, $"Log_Server|Le tue perdite personali: [{giocatore.Username}]");
                 }
             }
             
             // Aggiorna i barbari PVP
-            Variabili.Barbari.PVP.Guerrieri = guerrieri_Enemy - guerrieri_Enemy_Temp;
-            Variabili.Barbari.PVP.Lancieri = picchieri_Enemy - picchieri_Enemy_Temp;
-            Variabili.Barbari.PVP.Arceri = arcieri_Enemy - arcieri_Enemy_Temp;
-            Variabili.Barbari.PVP.Catapulte = catapulte_Enemy - catapulte_Enemy_Temp;
+            Giocatori.Barbari.PVP.Guerrieri = guerrieri_Enemy - guerrieri_Enemy_Temp;
+            Giocatori.Barbari.PVP.Lancieri = picchieri_Enemy - picchieri_Enemy_Temp;
+            Giocatori.Barbari.PVP.Arceri = arcieri_Enemy - arcieri_Enemy_Temp;
+            Giocatori.Barbari.PVP.Catapulte = catapulte_Enemy - catapulte_Enemy_Temp;
             
             // Rimuovi l'attacco dalla lista
             AttacchiInCorso.Remove(idAttacco);
@@ -481,7 +481,7 @@ namespace Server_Strategico
                         // Restituisci le truppe ai giocatori
                         foreach (var partecipante in attaccoCooperativo.GiocatoriPartecipanti)
                         {
-                            var giocatore = Server.servers_.GetPlayer_Data(partecipante.Key);
+                            var giocatore = servers_.GetPlayer_Data(partecipante.Key);
                             if (giocatore != null)
                             {
                                 giocatore.Guerrieri += partecipante.Value.Guerrieri;
@@ -491,8 +491,8 @@ namespace Server_Strategico
                                 
                                 if (giocatore.guid_Player != Guid.Empty)
                                 {
-                                    Server.Send(giocatore.guid_Player, $"Log_Server|L'attacco cooperativo #{attaccoCooperativo.IdAttacco} è stato cancellato perché il tempo è scaduto.");
-                                    Server.Send(giocatore.guid_Player, $"Log_Server|Le tue truppe sono state restituite.");
+                                    Send(giocatore.guid_Player, $"Log_Server|L'attacco cooperativo #{attaccoCooperativo.IdAttacco} è stato cancellato perché il tempo è scaduto.");
+                                    Send(giocatore.guid_Player, $"Log_Server|Le tue truppe sono state restituite.");
                                 }
                             }
                         }
@@ -505,10 +505,10 @@ namespace Server_Strategico
                     {
                         foreach (var partecipante in attaccoCooperativo.GiocatoriPartecipanti)
                         {
-                            var giocatore = Server.servers_.GetPlayer_Data(partecipante.Key);
+                            var giocatore = servers_.GetPlayer_Data(partecipante.Key);
                             if (giocatore != null && giocatore.guid_Player != Guid.Empty)
                             {
-                                Server.Send(giocatore.guid_Player, $"Log_Server|Tempo rimanente per l'attacco cooperativo #{attaccoCooperativo.IdAttacco}: {attaccoCooperativo.TempoRimanente/60} minuti.");
+                                Send(giocatore.guid_Player, $"Log_Server|Tempo rimanente per l'attacco cooperativo #{attaccoCooperativo.IdAttacco}: {attaccoCooperativo.TempoRimanente/60} minuti.");
                             }
                         }
                     }
@@ -521,7 +521,7 @@ namespace Server_Strategico
         {
             if (msgArgs.Length < 4)
             {
-                Server.Send(clientGuid, $"Log_Server|Comando non valido. Usa: AttaccoCooperativo|<azione>|<parametri>");
+                Send(clientGuid, $"Log_Server|Comando non valido. Usa: AttaccoCooperativo|<azione>|<parametri>");
                 return;
             }
 
@@ -529,14 +529,14 @@ namespace Server_Strategico
             {
                 case "Crea":
                     string idNuovoAttacco = CreaAttaccoCooperativo(player.Username);
-                    Server.Send(clientGuid, $"Log_Server|Nuovo attacco cooperativo creato! ID: {idNuovoAttacco}");
-                    Server.Send(clientGuid, $"AttaccoCooperativo|Creato|{idNuovoAttacco}");
+                    Send(clientGuid, $"Log_Server|Nuovo attacco cooperativo creato! ID: {idNuovoAttacco}");
+                    Send(clientGuid, $"AttaccoCooperativo|Creato|{idNuovoAttacco}");
                     break;
                     
                 case "Partecipa":
                     if (msgArgs.Length < 9)
                     {
-                        Server.Send(clientGuid, $"Log_Server|Parametri insufficienti. Usa: AttaccoCooperativo|Partecipa|<idAttacco>|<guerrieri>|<lancieri>|<arcieri>|<catapulte>");
+                        Send(clientGuid, $"Log_Server|Parametri insufficienti. Usa: AttaccoCooperativo|Partecipa|<idAttacco>|<guerrieri>|<lancieri>|<arcieri>|<catapulte>");
                         return;
                     }
                     
@@ -552,7 +552,7 @@ namespace Server_Strategico
                 case "Abbandona":
                     if (msgArgs.Length < 5)
                     {
-                        Server.Send(clientGuid, $"Log_Server|Parametri insufficienti. Usa: AttaccoCooperativo|Abbandona|<idAttacco>");
+                        Send(clientGuid, $"Log_Server|Parametri insufficienti. Usa: AttaccoCooperativo|Abbandona|<idAttacco>");
                         return;
                     }
                     
@@ -563,7 +563,7 @@ namespace Server_Strategico
                 case "Inizia":
                     if (msgArgs.Length < 5)
                     {
-                        Server.Send(clientGuid, $"Log_Server|Parametri insufficienti. Usa: AttaccoCooperativo|Inizia|<idAttacco>");
+                        Send(clientGuid, $"Log_Server|Parametri insufficienti. Usa: AttaccoCooperativo|Inizia|<idAttacco>");
                         return;
                     }
                     
@@ -580,7 +580,7 @@ namespace Server_Strategico
                     break;
                     
                 default:
-                    Server.Send(clientGuid, $"Log_Server|Azione non riconosciuta. Azioni disponibili: Crea, Partecipa, Abbandona, Inizia, Lista, MieiAttacchi");
+                    Send(clientGuid, $"Log_Server|Azione non riconosciuta. Azioni disponibili: Crea, Partecipa, Abbandona, Inizia, Lista, MieiAttacchi");
                     break;
             }
         }
@@ -597,7 +597,7 @@ namespace Server_Strategico
             int totArcieri = 0;
             int totCatapulte = 0;
             
-            Server.Send(clientGuid, $"Log_Server|Le tue partecipazioni ai raduni:\n\r");
+            Send(clientGuid, $"Log_Server|Le tue partecipazioni ai raduni:\n\r");
             
             foreach (var attacco in AttacchiInCorso)
                 if (attacco.Value.GiocatoriPartecipanti.ContainsKey(username))
@@ -616,8 +616,8 @@ namespace Server_Strategico
                     int secondi = attacco.Value.TempoRimanente % 60;
                     
                     // Informazioni sull'attacco
-                    Server.Send(clientGuid, $"Log_Server|ID: {attacco.Key} - Creato da: {attacco.Value.CreatoreUsername}");
-                    Server.Send(clientGuid, $"Log_Server|Le tue truppe: G:{truppe.Guerrieri}, L:{truppe.Lancieri}, A:{truppe.Arcieri}, C:{truppe.Catapulte}");
+                    Send(clientGuid, $"Log_Server|ID: {attacco.Key} - Creato da: {attacco.Value.CreatoreUsername}");
+                    Send(clientGuid, $"Log_Server|Le tue truppe: G:{truppe.Guerrieri}, L:{truppe.Lancieri}, A:{truppe.Arcieri}, C:{truppe.Catapulte}");
                     
                     // Calcola totale truppe per questo attacco
                     int attaccoTotG = 0, attaccoTotL = 0, attaccoTotA = 0, attaccoTotC = 0;
@@ -629,27 +629,27 @@ namespace Server_Strategico
                         attaccoTotC += part.Value.Catapulte;
                     }
                     
-                    Server.Send(clientGuid, $"Log_Server|Truppe totali: G:{attaccoTotG}, L:{attaccoTotL}, A:{attaccoTotA}, C:{attaccoTotC}");
-                    Server.Send(clientGuid, $"Log_Server|Partecipanti: {attacco.Value.GiocatoriPartecipanti.Count} - Tempo rimanente: {minuti}m {secondi}s");
-                    Server.Send(clientGuid, $"Log_Server|-------------------------------------------");
-                    //Server.Send(clientGuid, $"RadunoPartecipo|{attacco.Value.CreatoreUsername}|{attacco.Key}|{attacco.GiocatoriPartecipanti.Count}|{totG}|{totL}|{totA}|{totC}|{}");
+                    Send(clientGuid, $"Log_Server|Truppe totali: G:{attaccoTotG}, L:{attaccoTotL}, A:{attaccoTotA}, C:{attaccoTotC}");
+                    Send(clientGuid, $"Log_Server|Partecipanti: {attacco.Value.GiocatoriPartecipanti.Count} - Tempo rimanente: {minuti}m {secondi}s");
+                    Send(clientGuid, $"Log_Server|-------------------------------------------");
+                    //Send(clientGuid, $"RadunoPartecipo|{attacco.Value.CreatoreUsername}|{attacco.Key}|{attacco.GiocatoriPartecipanti.Count}|{totG}|{totL}|{totA}|{totC}|{}");
 
                 }
             
             if (partecipazioniTrovate)
             {
                 // Invia anche un riepilogo generale
-                Server.Send(clientGuid, $"Log_Server|RIEPILOGO:");
-                Server.Send(clientGuid, $"Log_Server|Partecipazione a {totaleAttacchi} raduni");
-                Server.Send(clientGuid, $"Log_Server|Totale truppe impegnate: G:{totGuerrieri}, L:{totLancieri}, A:{totArcieri}, C:{totCatapulte}");
+                Send(clientGuid, $"Log_Server|RIEPILOGO:");
+                Send(clientGuid, $"Log_Server|Partecipazione a {totaleAttacchi} raduni");
+                Send(clientGuid, $"Log_Server|Totale truppe impegnate: G:{totGuerrieri}, L:{totLancieri}, A:{totArcieri}, C:{totCatapulte}");
                 
                 // Invia anche i dati in formato strutturato per l'interfaccia
-                Server.Send(clientGuid, $"AttacchiCooperativi|MieiAttacchi|{totaleAttacchi}|{totGuerrieri}|{totLancieri}|{totArcieri}|{totCatapulte}");
+                Send(clientGuid, $"AttacchiCooperativi|MieiAttacchi|{totaleAttacchi}|{totGuerrieri}|{totLancieri}|{totArcieri}|{totCatapulte}");
             }
             else
             {
-                Server.Send(clientGuid, $"Log_Server|Non stai partecipando a nessun raduno.");
-                Server.Send(clientGuid, $"AttacchiCooperativi|MieiAttacchi|0|0|0|0|0");
+                Send(clientGuid, $"Log_Server|Non stai partecipando a nessun raduno.");
+                Send(clientGuid, $"AttacchiCooperativi|MieiAttacchi|0|0|0|0|0");
             }
         }
 

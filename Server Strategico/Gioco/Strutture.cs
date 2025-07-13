@@ -1,4 +1,4 @@
-﻿namespace Server_Strategico
+﻿namespace Server_Strategico.Gioco
 {
     internal class Strutture
     {

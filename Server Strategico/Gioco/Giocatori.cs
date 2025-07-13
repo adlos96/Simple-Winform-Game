@@ -1,17 +1,17 @@
-﻿using static Server_Strategico.Variabili;
+﻿using static Server_Strategico.Server.Server;
 
-namespace Server_Strategico
+namespace Server_Strategico.Gioco
 {
     internal class Dati
     {
         public static string Difficoltà = "1";
-        public static string Versione = "0.1.23";
+        public static string Versione = "0.1.24";
         public static string Server = "Italy";
 
         public static double forza_Esercito_Att_PVP = 0;
     }
 
-    public class Variabili
+    public class Giocatori
     {
         public class Barbari
         {
@@ -186,7 +186,8 @@ namespace Server_Strategico
                 Arceri = 0;
                 Catapulte = 0;
 
-                GuerrieriMax    = 35; //Limite x caserma
+                //Limite x caserma
+                GuerrieriMax = 35;
                 LancieriMax     = 25;
                 ArceriMax       = 10;
                 CatapulteMax    = 5;
@@ -254,8 +255,8 @@ namespace Server_Strategico
             }
             public void ManutenzioneEsercito() //produzione risorse
             {
-                Cibo -= (Guerrieri * Esercito.Unità.Guerriero.Cibo) + (Lancieri * Esercito.Unità.Lanciere.Cibo) + (Arceri * Esercito.Unità.Arciere.Cibo) + (Catapulte * Esercito.Unità.Catapulta.Cibo);
-                Oro -= (Guerrieri * Esercito.Unità.Guerriero.Salario) + (Lancieri * Esercito.Unità.Lanciere.Salario) + (Arceri * Esercito.Unità.Arciere.Salario) + (Catapulte * Esercito.Unità.Catapulta.Salario);
+                Cibo -= Guerrieri * Esercito.Unità.Guerriero.Cibo + Lancieri * Esercito.Unità.Lanciere.Cibo + Arceri * Esercito.Unità.Arciere.Cibo + Catapulte * Esercito.Unità.Catapulta.Cibo;
+                Oro -= Guerrieri * Esercito.Unità.Guerriero.Salario + Lancieri * Esercito.Unità.Lanciere.Salario + Arceri * Esercito.Unità.Arciere.Salario + Catapulte * Esercito.Unità.Catapulta.Salario;
                 if (Cibo <= 0) Cibo = 0;
                 if (Oro <= 0) Oro = 0;
             }
@@ -278,7 +279,7 @@ namespace Server_Strategico
                     Ferro -= buildingCost.Ferro * count;
                     Oro -= buildingCost.Oro * count;
 
-                    Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per {count} costruzione/i di {buildingType}:\r\n " +
+                    Send(clientGuid, $"Log_Server|Risorse utilizzate per {count} costruzione/i di {buildingType}:\r\n " +
                         $"Cibo= {buildingCost.Cibo * count}, " +
                         $"Legno= {buildingCost.Legno * count}, " +
                         $"Pietra= {buildingCost.Pietra * count}, " +
@@ -305,7 +306,7 @@ namespace Server_Strategico
                 }
                 else
                 {
-                    Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per costruire {count} {buildingType}.");
+                    Send(clientGuid, $"Log_Server|Risorse insufficienti per costruire {count} {buildingType}.");
                     Console.WriteLine($"Risorse insufficienti per costruire {count} {buildingType}.");
                 }
             }
@@ -446,7 +447,7 @@ namespace Server_Strategico
                                 break;
                         }
                         // Avvia la prossima costruzione per questo tipo di edificio
-                        Server.Send(clientGuid, $"Log_Server|Costruzione completata {buildingType} costruita!\n\r");
+                        Send(clientGuid, $"Log_Server|Costruzione completata {buildingType} costruita!\n\r");
                         StartNextConstruction(buildingType);
                     }
                 }
@@ -500,31 +501,31 @@ namespace Server_Strategico
                 }
             }
 
-            public async void QueueTrainUnits(string unitType, int count, Guid clientGuid, Variabili.Player player)
+            public async void QueueTrainUnits(string unitType, int count, Guid clientGuid, Player player)
             {
                 var unitCost = GetUnitCost(unitType);
 
                 if (unitType == "Guerriero" && count + player.Guerrieri > player.GuerrieriMax * player.Caserma_Guerrieri)
                 {
-                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.GuerrieriMax * player.Caserma_Guerrieri}]");
+                    Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.GuerrieriMax * player.Caserma_Guerrieri}]");
                     Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.GuerrieriMax * player.Caserma_Guerrieri}]");
                     return;
                 }
                 else if (unitType == "Lanciere" && count + player.Lancieri > player.LancieriMax * player.Caserma_Lancieri)
                 {
-                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.LancieriMax * player.Caserma_Lancieri}]");
+                    Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.LancieriMax * player.Caserma_Lancieri}]");
                     Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}.[Limite: {player.LancieriMax * player.Caserma_Lancieri}]");
                     return;
                 }
                 else if (unitType == "Arciere" && count + player.Arceri > player.ArceriMax * player.Caserma_Arceri)
                 {
-                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.ArceriMax * player.Caserma_Arceri}]");
+                    Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.ArceriMax * player.Caserma_Arceri}]");
                     Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.ArceriMax * player.Caserma_Arceri}]");
                     return;
                 }
                 else if (unitType == "Catapulta" && count + player.Catapulte > player.CatapulteMax * player.Caserma_Catapulte)
                 {
-                    Server.Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.CatapulteMax * player.Caserma_Catapulte}]");
+                    Send(clientGuid, $"Log_Server|Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.CatapulteMax * player.Caserma_Catapulte}]");
                     Console.WriteLine($"Limite raggiunto per addestrare {count} {unitType}. [Limite: {player.CatapulteMax * player.Caserma_Catapulte}]");
                     return;
                 }
@@ -553,7 +554,7 @@ namespace Server_Strategico
                     Scudi -= unitCost.Scudi * count;
                     Armature -= unitCost.Armature * count;
 
-                    Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
+                    Send(clientGuid, $"Log_Server|Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
                         $"Cibo: {unitCost.Cibo * count}, " +
                         $"Legno: {unitCost.Legno * count}, " +
                         $"Pietra: {unitCost.Pietra * count}, " +
@@ -565,16 +566,16 @@ namespace Server_Strategico
                         $"Scudi: {unitCost.Scudi * count}, " +
                         $"Armature: {unitCost.Armature * count}\r\n");
                     Console.WriteLine($"Risorse utilizzate per l'addestramento di {count} {unitType}:\r\n " +
-                        $"Cibo={unitCost.Cibo * count}, " +
-                        $"Legno={unitCost.Legno * count}, " +
-                        $"Pietra={unitCost.Pietra * count}, " +
-                        $"Ferro={unitCost.Ferro * count}, " +
-                        $"Oro={unitCost.Oro * count}, " +
-                        $"Spade={unitCost.Spade * count}, " +
-                        $"Lance={unitCost.Lance * count}, " +
-                        $"Archi={unitCost.Archi * count}, " +
-                        $"Scudi={unitCost.Scudi * count}, " +
-                        $"Armature={unitCost.Armature * count}\r\n");
+                        $"Cibo: {unitCost.Cibo * count}, " +
+                        $"Legno: {unitCost.Legno * count}, " +
+                        $"Pietra: {unitCost.Pietra * count}, " +
+                        $"Ferro: {unitCost.Ferro * count}, " +
+                        $"Oro: {unitCost.Oro * count}, " +
+                        $"Spade: {unitCost.Spade * count}, " +
+                        $"Lance: {unitCost.Lance * count}, " +
+                        $"Archi: {unitCost.Archi * count}, " +
+                        $"Scudi: {unitCost.Scudi * count}, " +
+                        $"Armature: {unitCost.Armature * count}\r\n");
 
                     if (!recruitQueues.ContainsKey(unitType))
                         recruitQueues[unitType] = new Queue<RecruitTask>();
@@ -591,7 +592,7 @@ namespace Server_Strategico
                 }
                 else
                 {
-                    Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per addestrare {count} {unitType}.");
+                    Send(clientGuid, $"Log_Server|Risorse insufficienti per addestrare {count} {unitType}.");
                     Console.WriteLine($"Risorse insufficienti per addestrare {count} {unitType}.");
                 }
             }
@@ -647,7 +648,7 @@ namespace Server_Strategico
                                 Console.WriteLine($"{unitType} addestrato!");
                                 break;
                         }
-                        Server.Send(clientGuid, $"Log_Server|{unitType} addestrato!\n\r");
+                        Send(clientGuid, $"Log_Server|{unitType} addestrato!\n\r");
                         StartNextRecruitment(unitType);
                     }
                 }
@@ -669,22 +670,22 @@ namespace Server_Strategico
             }
             public void SetBuildings(int fattoria, int segheria, int cavaPietra, int mineraFerro, int mineraOro, int abitazioni, int ProdSp, int ProdLan, int ProdArc, int ProdScud, int ProdArmat, int ProdFrecce, int cas_Gu, int cas_Lan, int cas_Arc, int cas_Cat)
             {
-                this.Fattoria = fattoria;
-                this.Segheria = segheria;
-                this.CavaPietra = cavaPietra;
-                this.MinieraFerro = mineraFerro;
-                this.MinieraOro = mineraOro;
-                this.Abitazioni = abitazioni;
-                this.ProduzioneSpade = ProdSp;
-                this.ProduzioneLance = ProdLan;
-                this.ProduzioneArchi = ProdArc;
-                this.ProduzioneScudi = ProdScud;
-                this.ProduzioneArmature = ProdArmat;
-                this.ProduzioneFrecce = ProdFrecce;
-                this.Caserma_Guerrieri = cas_Gu;
-                this.Caserma_Lancieri = cas_Lan;
-                this.Caserma_Arceri = cas_Arc;
-                this.Caserma_Catapulte = cas_Cat;
+                Fattoria = fattoria;
+                Segheria = segheria;
+                CavaPietra = cavaPietra;
+                MinieraFerro = mineraFerro;
+                MinieraOro = mineraOro;
+                Abitazioni = abitazioni;
+                ProduzioneSpade = ProdSp;
+                ProduzioneLance = ProdLan;
+                ProduzioneArchi = ProdArc;
+                ProduzioneScudi = ProdScud;
+                ProduzioneArmature = ProdArmat;
+                ProduzioneFrecce = ProdFrecce;
+                Caserma_Guerrieri = cas_Gu;
+                Caserma_Lancieri = cas_Lan;
+                Caserma_Arceri = cas_Arc;
+                Caserma_Catapulte = cas_Cat;
             }
             public Dictionary<string, int> GetQueuedBuildings()
             {

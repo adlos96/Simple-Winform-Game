@@ -1,8 +1,7 @@
-﻿
-using static Server_Strategico.Esercito;
-using static Server_Strategico.Ricerca;
+﻿using static Server_Strategico.Gioco.Esercito;
+using static Server_Strategico.Server.Server;
 
-namespace Server_Strategico
+namespace Server_Strategico.Gioco
 {
     internal class Ricerca
     {
@@ -88,7 +87,7 @@ namespace Server_Strategico
 
         }
 
-        public static async Task<bool> Ricerca_Produzione(Variabili.Player player, Guid clientGuid)
+        public static async Task<bool> Ricerca_Produzione(Giocatori.Player player, Guid clientGuid)
         {
             int livello = player.Ricerca_Produzione + 1;
             if (player.Cibo >= Tipi.Produzione.Cibo * livello &&
@@ -104,7 +103,7 @@ namespace Server_Strategico
                 player.Ferro -= Tipi.Produzione.Ferro * livello;
                 player.Oro -= Tipi.Produzione.Oro * livello;
 
-                Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di [Produzione: {livello}]\r\n " +
+                Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di [Produzione: {livello}]\r\n " +
                     $"Cibo= {Tipi.Produzione.Cibo * livello}," +
                     $" Legno= {Tipi.Produzione.Legno * livello}," +
                     $" Pietra= {Tipi.Produzione.Pietra * livello}," +
@@ -120,7 +119,7 @@ namespace Server_Strategico
                 player.Ricerca_Produzione++;
             }else
             {
-                Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [Produzione: {livello}]\r\n " +
+                Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [Produzione: {livello}]\r\n " +
                     $"Cibo= {Tipi.Produzione.Cibo * livello}," +
                     $" Legno= {Tipi.Produzione.Legno * livello}," +
                     $" Pietra= {Tipi.Produzione.Pietra * livello}," +
@@ -135,7 +134,7 @@ namespace Server_Strategico
             }
             return false;
         }
-        public static async Task<bool> Ricerca_Costruzione(Variabili.Player player, Guid clientGuid)
+        public static async Task<bool> Ricerca_Costruzione(Giocatori.Player player, Guid clientGuid)
         {
             int livello = player.Ricerca_Costruzione + 1;
             if (player.Cibo >= Tipi.Costruzione.Cibo        * livello &&
@@ -151,7 +150,7 @@ namespace Server_Strategico
                 player.Ferro -= Tipi.Costruzione.Ferro      * livello;
                 player.Oro -= Tipi.Costruzione.Oro          * livello;
 
-                Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di [Costruzione: {livello}]\r\n " +
+                Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di [Costruzione: {livello}]\r\n " +
                     $"Cibo= {Tipi.Costruzione.Cibo      * livello}," +
                     $" Legno= {Tipi.Costruzione.Legno * livello}," +
                     $" Pietra= {Tipi.Costruzione.Pietra * livello}," +
@@ -169,7 +168,7 @@ namespace Server_Strategico
             }
             else
             {
-                Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [Costruzione: {livello}]\r\n " +
+                Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [Costruzione: {livello}]\r\n " +
                     $"Cibo= {Tipi.Costruzione.Cibo * livello}," +
                     $" Legno= {Tipi.Costruzione.Legno * livello}," +
                     $" Pietra= {Tipi.Costruzione.Pietra * livello}," +
@@ -184,14 +183,14 @@ namespace Server_Strategico
                 return false;
             }
         }
-        public static async Task<bool> Ricerca_Addestramento(Variabili.Player player, Guid clientGuid)
+        public static async Task<bool> Ricerca_Addestramento(Giocatori.Player player, Guid clientGuid)
         {
             int livello = player.Ricerca_Addestramento + 1;
             int valore = player.Ricerca_Addestramento * 3;
 
             if (player.Livello < valore)
             {
-                Server.Send(clientGuid, $"Log_Server|La ricerca [Addestramento {livello}], richiede che il giocatore sia almeno di livello: {valore}\r\n");
+                Send(clientGuid, $"Log_Server|La ricerca [Addestramento {livello}], richiede che il giocatore sia almeno di livello: {valore}\r\n");
                 Console.WriteLine($"La ricerca [Addestramento {livello}], richiede che il giocatore sia almeno di livello: {valore}\r\n");
                 return false;
             }
@@ -208,7 +207,7 @@ namespace Server_Strategico
                 player.Ferro -= Tipi.Addestramento.Ferro * livello;
                 player.Oro -= Tipi.Addestramento.Oro * livello;
 
-                Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di [Addestramento: {livello}]\r\n " +
+                Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di [Addestramento: {livello}]\r\n " +
                     $"Cibo= {Tipi.Addestramento.Cibo * livello}," +
                     $" Legno= {Tipi.Addestramento.Legno * livello}," +
                     $" Pietra= {Tipi.Addestramento.Pietra * livello}," +
@@ -226,7 +225,7 @@ namespace Server_Strategico
             }
             else
             {
-                Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [Addestramento: {livello}]\r\n " +
+                Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [Addestramento: {livello}]\r\n " +
                     $"Cibo= {Tipi.Addestramento.Cibo * livello}," +
                     $" Legno= {Tipi.Addestramento.Legno * livello}," +
                     $" Pietra= {Tipi.Addestramento.Pietra * livello}," +
@@ -242,7 +241,7 @@ namespace Server_Strategico
             }
         }
 
-        public static async Task<bool> Ricerca_Truppe(Variabili.Player player, Guid clientGuid, string tipo, string unità)
+        public static async Task<bool> Ricerca_Truppe(Giocatori.Player player, Guid clientGuid, string tipo, string unità)
         {
             int livello = 0, valore = 0;
             switch (unità)
@@ -258,7 +257,7 @@ namespace Server_Strategico
 
                         if (player.Guerriero_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca [{tipo} {unità} {livello}], richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca [{tipo} {unità} {livello}], richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -276,7 +275,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Salute.Ferro * livello;
                             player.Oro -= Soldati.Salute.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di: [{tipo} {unità} {livello}]\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di: [{tipo} {unità} {livello}]\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -294,7 +293,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [{tipo} {unità} {livello}]\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di [{tipo} {unità} {livello}]\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -319,7 +318,7 @@ namespace Server_Strategico
 
                         if (player.Guerriero_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -337,7 +336,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Difesa.Ferro * livello;
                             player.Oro -= Soldati.Difesa.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -355,7 +354,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -380,7 +379,7 @@ namespace Server_Strategico
 
                         if (player.Guerriero_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -398,7 +397,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Attacco.Ferro * livello;
                             player.Oro -= Soldati.Attacco.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -416,7 +415,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -448,7 +447,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Livello.Ferro * livello;
                             player.Oro -= Soldati.Livello.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {unità} {tipo} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {unità} {tipo} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -466,7 +465,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {unità} {tipo} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {unità} {tipo} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -493,7 +492,7 @@ namespace Server_Strategico
 
                         if (player.Lanciere_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -510,7 +509,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Salute.Ferro * livello;
                             player.Oro -= Soldati.Salute.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -528,7 +527,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -552,7 +551,7 @@ namespace Server_Strategico
 
                         if (player.Lanciere_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -569,7 +568,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Difesa.Ferro * livello;
                             player.Oro -= Soldati.Difesa.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -587,7 +586,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -611,7 +610,7 @@ namespace Server_Strategico
 
                         if (player.Lanciere_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -628,7 +627,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Attacco.Ferro * livello;
                             player.Oro -= Soldati.Attacco.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -646,7 +645,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -678,7 +677,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Livello.Ferro * livello;
                             player.Oro -= Soldati.Livello.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {unità} {tipo} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {unità} {tipo} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -696,7 +695,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -724,7 +723,7 @@ namespace Server_Strategico
 
                         if (player.Arciere_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -742,7 +741,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Salute.Ferro * livello;
                             player.Oro -= Soldati.Salute.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -760,7 +759,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -785,7 +784,7 @@ namespace Server_Strategico
 
                         if (player.Arciere_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -802,7 +801,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Difesa.Ferro * livello;
                             player.Oro -= Soldati.Difesa.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -820,7 +819,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -845,7 +844,7 @@ namespace Server_Strategico
 
                         if (player.Arciere_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -863,7 +862,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Attacco.Ferro * livello;
                             player.Oro -= Soldati.Attacco.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -881,7 +880,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -912,7 +911,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Livello.Ferro * livello;
                             player.Oro -= Soldati.Livello.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -930,7 +929,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -958,7 +957,7 @@ namespace Server_Strategico
 
                         if (player.catapulta_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -976,7 +975,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Salute.Ferro * livello;
                             player.Oro -= Soldati.Salute.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -994,7 +993,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Salute.Cibo * livello}," +
                                 $" Legno= {Soldati.Salute.Legno * livello}," +
                                 $" Pietra= {Soldati.Salute.Pietra * livello}," +
@@ -1019,7 +1018,7 @@ namespace Server_Strategico
 
                         if (player.catapulta_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -1037,7 +1036,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Difesa.Ferro * livello;
                             player.Oro -= Soldati.Difesa.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -1055,7 +1054,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Difesa.Cibo * livello}," +
                                 $" Legno= {Soldati.Difesa.Legno * livello}," +
                                 $" Pietra= {Soldati.Difesa.Pietra * livello}," +
@@ -1080,7 +1079,7 @@ namespace Server_Strategico
 
                         if (player.catapulta_Livello < valore * 2)
                         {
-                            Server.Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
+                            Send(clientGuid, $"Log_Server|La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             Console.WriteLine($"La ricerca {tipo} {unità} {livello}, richiede che il {unità} sia almeno di livello: {valore * 2}\r\n");
                             return false;
                         }
@@ -1098,7 +1097,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Attacco.Ferro * livello;
                             player.Oro -= Soldati.Attacco.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -1116,7 +1115,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Attacco.Cibo * livello}," +
                                 $" Legno= {Soldati.Attacco.Legno * livello}," +
                                 $" Pietra= {Soldati.Attacco.Pietra * livello}," +
@@ -1147,7 +1146,7 @@ namespace Server_Strategico
                             player.Ferro -= Soldati.Livello.Ferro * livello;
                             player.Oro -= Soldati.Livello.Oro * livello;
 
-                            Server.Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse utilizzate per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +
@@ -1165,7 +1164,7 @@ namespace Server_Strategico
                         }
                         else
                         {
-                            Server.Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
+                            Send(clientGuid, $"Log_Server|Risorse insufficienti per la ricerca di {tipo} {unità} {livello}:\r\n " +
                                 $"Cibo= {Soldati.Livello.Cibo * livello}," +
                                 $" Legno= {Soldati.Livello.Legno * livello}," +
                                 $" Pietra= {Soldati.Livello.Pietra * livello}," +

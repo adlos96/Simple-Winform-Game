@@ -1,13 +1,12 @@
-﻿
-using static Server_Strategico.Variabili;
+﻿using static Server_Strategico.Gioco.Giocatori;
 
-namespace Server_Strategico
+namespace Server_Strategico.Gioco
 {
     internal class Barbari
     {
         public static bool start = false;
 
-        public static async void Barbari_PVE(Variabili.Player player)
+        public static async void Barbari_PVE(Player player)
         {
             int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0;
             int respawn = 0;
@@ -57,10 +56,10 @@ namespace Server_Strategico
                 }
 
                 player.forza_Esercito_PVE =
-                    player.Guerrieri_Barbari_PVE * ((Esercito.EsercitoNemico.Guerriero.Salute * 0.25) + (Esercito.EsercitoNemico.Guerriero.Attacco * 0.30)) +
-                    player.Lancieri_Barbari_PVE * ((Esercito.EsercitoNemico.Lanciere.Salute * 0.25) + (Esercito.EsercitoNemico.Lanciere.Attacco * 0.30)) +
-                    player.Arceri_Barbari_PVE * ((Esercito.EsercitoNemico.Arciere.Salute * 0.25) + (Esercito.EsercitoNemico.Arciere.Attacco * 0.30)) +
-                    player.Catapulte_Barbari_PVE * ((Esercito.EsercitoNemico.Catapulta.Salute * 0.25) + (Esercito.EsercitoNemico.Catapulta.Attacco * 0.30));
+                    player.Guerrieri_Barbari_PVE * (Esercito.EsercitoNemico.Guerriero.Salute * 0.25 + Esercito.EsercitoNemico.Guerriero.Attacco * 0.30) +
+                    player.Lancieri_Barbari_PVE * (Esercito.EsercitoNemico.Lanciere.Salute * 0.25 + Esercito.EsercitoNemico.Lanciere.Attacco * 0.30) +
+                    player.Arceri_Barbari_PVE * (Esercito.EsercitoNemico.Arciere.Salute * 0.25 + Esercito.EsercitoNemico.Arciere.Attacco * 0.30) +
+                    player.Catapulte_Barbari_PVE * (Esercito.EsercitoNemico.Catapulta.Salute * 0.25 + Esercito.EsercitoNemico.Catapulta.Attacco * 0.30);
 
                 guerriero++;
                 lanciere++;
@@ -70,20 +69,20 @@ namespace Server_Strategico
                 Thread.Sleep(1000);
             }
         }
-        public static async void Barbari_PVP(Dictionary<string, Variabili.Player> players)
+        public static async void Barbari_PVP(Dictionary<string, Player> players)
         {
             int guerriero = 0, lanciere = 0, arciere = 0, catapulta = 0, i = 0;
             int respawn = 0;
-            int unità = Variabili.Barbari.PVP.Guerrieri + Variabili.Barbari.PVP.Lancieri + Variabili.Barbari.PVP.Arceri + Variabili.Barbari.PVP.Catapulte;
+            int unità = Giocatori.Barbari.PVP.Guerrieri + Giocatori.Barbari.PVP.Lancieri + Giocatori.Barbari.PVP.Arceri + Giocatori.Barbari.PVP.Catapulte;
             if (unità < 72)
                 Add_Troops_PVP(52,38,21,10);
 
             while (true)
             {
-                if (players.Count > 4 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2) Variabili.Barbari.PVP.Guerrieri += 1;
-                if (players.Count > 8 && lanciere >= Esercito.EsercitoNemico.Lanciere.TempoReclutamento * 2) Variabili.Barbari.PVP.Lancieri += 1;
-                if (players.Count > 12 && arciere >= Esercito.EsercitoNemico.Arciere.TempoReclutamento * 2) Variabili.Barbari.PVP.Arceri += 1;
-                if (players.Count > 16 && catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2) Variabili.Barbari.PVP.Catapulte += 1;
+                if (players.Count > 4 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2) Giocatori.Barbari.PVP.Guerrieri += 1;
+                if (players.Count > 8 && lanciere >= Esercito.EsercitoNemico.Lanciere.TempoReclutamento * 2) Giocatori.Barbari.PVP.Lancieri += 1;
+                if (players.Count > 12 && arciere >= Esercito.EsercitoNemico.Arciere.TempoReclutamento * 2) Giocatori.Barbari.PVP.Arceri += 1;
+                if (players.Count > 16 && catapulta >= Esercito.EsercitoNemico.Catapulta.TempoReclutamento * 2) Giocatori.Barbari.PVP.Catapulte += 1;
 
                 if (players.Count >= 2 && guerriero >= Esercito.EsercitoNemico.Guerriero.TempoReclutamento * 2)
                     Add_Troops_PVP(1,1,0,0);
@@ -121,11 +120,11 @@ namespace Server_Strategico
                     catapulta = 0;
                 }
 
-                Server_Strategico.Dati.forza_Esercito_Att_PVP =
-                    Variabili.Barbari.PVP.Guerrieri * ((Esercito.EsercitoNemico.Guerriero.Salute * 0.25) + (Esercito.EsercitoNemico.Guerriero.Attacco * 0.30)) +
-                    Variabili.Barbari.PVP.Lancieri * ((Esercito.EsercitoNemico.Lanciere.Salute * 0.25) + (Esercito.EsercitoNemico.Lanciere.Attacco * 0.30)) +
-                    Variabili.Barbari.PVP.Arceri * ((Esercito.EsercitoNemico.Arciere.Salute * 0.25) + (Esercito.EsercitoNemico.Arciere.Attacco * 0.30)) +
-                    Variabili.Barbari.PVP.Catapulte * ((Esercito.EsercitoNemico.Catapulta.Salute * 0.25) + (Esercito.EsercitoNemico.Catapulta.Attacco * 0.30));
+                Dati.forza_Esercito_Att_PVP =
+                    Giocatori.Barbari.PVP.Guerrieri * (Esercito.EsercitoNemico.Guerriero.Salute * 0.25 + Esercito.EsercitoNemico.Guerriero.Attacco * 0.30) +
+                    Giocatori.Barbari.PVP.Lancieri * (Esercito.EsercitoNemico.Lanciere.Salute * 0.25 + Esercito.EsercitoNemico.Lanciere.Attacco * 0.30) +
+                    Giocatori.Barbari.PVP.Arceri * (Esercito.EsercitoNemico.Arciere.Salute * 0.25 + Esercito.EsercitoNemico.Arciere.Attacco * 0.30) +
+                    Giocatori.Barbari.PVP.Catapulte * (Esercito.EsercitoNemico.Catapulta.Salute * 0.25 + Esercito.EsercitoNemico.Catapulta.Attacco * 0.30);
 
                 guerriero++;
                 lanciere++;
@@ -137,12 +136,12 @@ namespace Server_Strategico
         }
         static void Add_Troops_PVP(int guerrieri, int lancieri, int arcieri, int catapulte)
         {
-            Variabili.Barbari.PVP.Guerrieri += guerrieri;
-            Variabili.Barbari.PVP.Lancieri += lancieri;
-            Variabili.Barbari.PVP.Arceri += arcieri;
-            Variabili.Barbari.PVP.Catapulte += catapulte;
+            Giocatori.Barbari.PVP.Guerrieri += guerrieri;
+            Giocatori.Barbari.PVP.Lancieri += lancieri;
+            Giocatori.Barbari.PVP.Arceri += arcieri;
+            Giocatori.Barbari.PVP.Catapulte += catapulte;
         }
-        static void Add_Troops_PVE(int guerrieri, int lancieri, int arcieri, int catapulte, Variabili.Player player)
+        static void Add_Troops_PVE(int guerrieri, int lancieri, int arcieri, int catapulte, Player player)
         {
             player.Guerrieri_Barbari_PVE += guerrieri;
             player.Lancieri_Barbari_PVE += lancieri;

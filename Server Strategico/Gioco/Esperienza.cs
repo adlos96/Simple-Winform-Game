@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Server_Strategico
+﻿namespace Server_Strategico.Gioco
 {
     internal class Esperienza
     {
@@ -12,37 +6,37 @@ namespace Server_Strategico
         public static int cosa = 0;
         public static double moltiplicatore = 0.62;
 
-        public static async Task<bool> LevelUp(Variabili.Player player)
+        public static async Task<bool> LevelUp(Giocatori.Player player)
         {
             Moltiplicatore(player);
 
             switch (player.Livello)
             {
                 case 1:
-                    if (player.Esperienza >= exp_Level_Up + (exp_Level_Up * player.Livello * 0.35))
+                    if (player.Esperienza >= exp_Level_Up + exp_Level_Up * player.Livello * 0.35)
                     {
-                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + (exp_Level_Up * player.Livello * 0.35));
+                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + exp_Level_Up * player.Livello * 0.35);
                         player.Livello++;
                     }
                     break;
                 case 2:
-                    if (player.Esperienza >= exp_Level_Up + (exp_Level_Up * player.Livello * 0.40))
+                    if (player.Esperienza >= exp_Level_Up + exp_Level_Up * player.Livello * 0.40)
                     {
-                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + (exp_Level_Up * player.Livello * 0.40));
+                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + exp_Level_Up * player.Livello * 0.40);
                         player.Livello++;
                     }
                     break;
                 case 3:
-                    if (player.Esperienza >= exp_Level_Up + (exp_Level_Up * player.Livello * 0.45))
+                    if (player.Esperienza >= exp_Level_Up + exp_Level_Up * player.Livello * 0.45)
                     {
-                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + (exp_Level_Up * player.Livello * 0.45));
+                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + exp_Level_Up * player.Livello * 0.45);
                         player.Livello++;
                     }
                     break;
                 default:
-                    if (player.Esperienza >= exp_Level_Up + (exp_Level_Up * player.Livello * moltiplicatore))
+                    if (player.Esperienza >= exp_Level_Up + exp_Level_Up * player.Livello * moltiplicatore)
                     {
-                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + (exp_Level_Up * player.Livello * moltiplicatore));
+                        player.Esperienza -= Convert.ToInt32(exp_Level_Up + exp_Level_Up * player.Livello * moltiplicatore);
                         player.Livello++;
                         if (player.Livello >= 10 && player.Livello < 11) cosa = 1;
                         else if (player.Livello >= 20 && player.Livello < 21) cosa = 2;
@@ -52,7 +46,7 @@ namespace Server_Strategico
             }
             return true;
         }
-        public static void Moltiplicatore(Variabili.Player player)
+        public static void Moltiplicatore(Giocatori.Player player)
         {
             if (player.Livello >= 10 && player.Livello < 20 && cosa == 1)
             {
