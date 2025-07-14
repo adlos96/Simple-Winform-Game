@@ -31,7 +31,7 @@
                 Pietra = 64,
                 Ferro = 118,
                 Oro = 110,
-                TempoReclutamento = 55, //55
+                TempoReclutamento = 95, //55
                 Popolazione = 1
             };
             public static CostoReclutamento Lanciere = new CostoReclutamento
@@ -47,7 +47,7 @@
                 Pietra = 107,
                 Ferro = 164,
                 Oro = 143,
-                TempoReclutamento = 69,
+                TempoReclutamento = 109,
                 Popolazione = 1
             };
             public static CostoReclutamento Arciere = new CostoReclutamento
@@ -63,7 +63,7 @@
                 Pietra = 193,
                 Ferro = 213,
                 Oro = 202,
-                TempoReclutamento = 87,
+                TempoReclutamento = 127,
                 Popolazione = 1
             };
             public static CostoReclutamento Catapulta = new CostoReclutamento
@@ -79,7 +79,7 @@
                 Pietra = 389,
                 Ferro = 276,
                 Oro = 313,
-                TempoReclutamento = 119,
+                TempoReclutamento = 159,
                 Popolazione = 6
             };
         }
@@ -92,7 +92,7 @@
                 Difesa = 3,
                 Distanza = 1,
                 Quantità = 0,
-                TempoReclutamento = 55,
+                TempoReclutamento = 95,
                 Esperienza = 1
             };
             public static Unità Lanciere = new Unità
@@ -102,7 +102,7 @@
                 Difesa = 4,
                 Distanza = 2,
                 Quantità = 0,
-                TempoReclutamento = 69,
+                TempoReclutamento = 109,
                 Esperienza = 1
             };
             public static Unità Arciere = new Unità
@@ -112,7 +112,7 @@
                 Difesa = 2,
                 Distanza = 6,
                 Quantità = 0,
-                TempoReclutamento = 87,
+                TempoReclutamento = 127,
                 Esperienza = 2
             };
             public static Unità Catapulta = new Unità
@@ -122,7 +122,7 @@
                 Difesa = (int)(Guerriero.Difesa * 0.58 * CostoReclutamento.Catapulta.Popolazione),
                 Distanza = 14,
                 Quantità = 0,
-                TempoReclutamento = 119,
+                TempoReclutamento = 159,
                 Esperienza = 3
             };
         }

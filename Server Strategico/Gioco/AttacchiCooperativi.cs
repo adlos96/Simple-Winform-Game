@@ -368,7 +368,7 @@ namespace Server_Strategico.Gioco
 
             // Calcolo del danno per il giocatore e il nemico
             double dannoInflittoDalNemico = Battaglie.CalcolareDanno_Invasore(arcieri_Enemy, catapulte_Enemy, guerrieri_Enemy, picchieri_Enemy, playerVirtuale) / tipi_Di_Unità;
-            double dannoInflitto = Battaglie.CalcolareDanno_Giocatore(arcieri, catapulte, guerrieri, picchieri, playerVirtuale) / tipi_Di_Unità_Att;
+            double dannoInflitto = Battaglie.CalcolareDanno_Giocatore(arcieri, catapulte, guerrieri, picchieri, playerVirtuale, clientGuid) / tipi_Di_Unità_Att;
 
             // Applicare il danno alle unità del giocatore
             int guerrieri_Temp = Battaglie.RidurreNumeroSoldati(guerrieri, dannoInflittoDalNemico, Esercito.Unità.Guerriero.Difesa * guerrieri, Esercito.Unità.Guerriero.Salute);

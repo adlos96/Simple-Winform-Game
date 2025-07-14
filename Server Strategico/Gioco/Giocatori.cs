@@ -5,7 +5,7 @@ namespace Server_Strategico.Gioco
     internal class Dati
     {
         public static string Difficoltà = "1";
-        public static string Versione = "0.1.24";
+        public static string Versione = "0.1.25";
         public static string Server = "Italy";
 
         public static double forza_Esercito_Att_PVP = 0;
@@ -504,6 +504,12 @@ namespace Server_Strategico.Gioco
             public async void QueueTrainUnits(string unitType, int count, Guid clientGuid, Player player)
             {
                 var unitCost = GetUnitCost(unitType);
+                int ridurre_Addestramento = 0;
+
+                if (unitType == "Guerriero") ridurre_Addestramento = 1;
+                if (unitType == "Lanciere") ridurre_Addestramento = 1;
+                if (unitType == "Arciere") ridurre_Addestramento = 2;
+                if (unitType == "Catapulta") ridurre_Addestramento = 3;
 
                 if (unitType == "Guerriero" && count + player.Guerrieri > player.GuerrieriMax * player.Caserma_Guerrieri)
                 {
@@ -580,7 +586,9 @@ namespace Server_Strategico.Gioco
                     if (!recruitQueues.ContainsKey(unitType))
                         recruitQueues[unitType] = new Queue<RecruitTask>();
 
-                    int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento - player.Ricerca_Addestramento);
+                    int tempoAddestramentoInSecondi = Convert.ToInt32(unitCost.TempoReclutamento - (player.Ricerca_Addestramento * ridurre_Addestramento));
+                    Console.WriteLine($"[Server] Tempo addestramento - Base {unitCost.TempoReclutamento}s/{unitCost.TempoReclutamento - (player.Ricerca_Addestramento * ridurre_Addestramento)}s | Livello: {player.Ricerca_Addestramento}");
+                    
                     for (int i = 0; i < count; i++)
                         recruitQueues[unitType].Enqueue(new RecruitTask(unitType, tempoAddestramentoInSecondi));
 
