@@ -67,8 +67,9 @@ namespace Strategico_V2
         public async Task<bool> Loop_Login(int tentativi_Max)
         {
             int tentativi = 1;
-            while (Variabili_Client.login == false || tentativi >= tentativi_Max)
+            while (Variabili_Client.login == false)
             {
+                if (tentativi >= tentativi_Max) return false;
                 txt_Log.Text = $"Tentativo Login... [{tentativi}/{tentativi_Max}]";
                 await Task.Delay(2000);
                 tentativi++;

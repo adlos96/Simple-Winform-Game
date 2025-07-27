@@ -45,7 +45,7 @@
             this.btn_New_Game.Location = new System.Drawing.Point(223, 35);
             this.btn_New_Game.Name = "btn_New_Game";
             this.btn_New_Game.Size = new System.Drawing.Size(93, 32);
-            this.btn_New_Game.TabIndex = 0;
+            this.btn_New_Game.TabIndex = 4;
             this.btn_New_Game.Text = "New Game";
             this.btn_New_Game.UseVisualStyleBackColor = true;
             this.btn_New_Game.Click += new System.EventHandler(this.btn_New_Game_Click);
@@ -63,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(12, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Username";
             // 
             // label2
@@ -73,7 +73,7 @@
             this.label2.Location = new System.Drawing.Point(12, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(314, 29);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Adlos Game Industries ^.^";
             // 
             // btn_Login_User
@@ -81,7 +81,7 @@
             this.btn_Login_User.Location = new System.Drawing.Point(223, 73);
             this.btn_Login_User.Name = "btn_Login_User";
             this.btn_Login_User.Size = new System.Drawing.Size(93, 32);
-            this.btn_Login_User.TabIndex = 4;
+            this.btn_Login_User.TabIndex = 5;
             this.btn_Login_User.Text = "Load User";
             this.btn_Login_User.UseVisualStyleBackColor = true;
             this.btn_Login_User.Click += new System.EventHandler(this.btn_Login_User_Click);
@@ -92,7 +92,7 @@
             this.label3.Location = new System.Drawing.Point(12, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Password";
             // 
             // txt_Password
@@ -100,7 +100,7 @@
             this.txt_Password.Location = new System.Drawing.Point(73, 62);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(144, 20);
-            this.txt_Password.TabIndex = 5;
+            this.txt_Password.TabIndex = 2;
             // 
             // label4
             // 
@@ -108,7 +108,7 @@
             this.label4.Location = new System.Drawing.Point(12, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 7;
             this.label4.Text = "IP";
             // 
             // txt_IP
@@ -116,7 +116,7 @@
             this.txt_IP.Location = new System.Drawing.Point(73, 90);
             this.txt_IP.Name = "txt_IP";
             this.txt_IP.Size = new System.Drawing.Size(144, 20);
-            this.txt_IP.TabIndex = 7;
+            this.txt_IP.TabIndex = 3;
             this.txt_IP.Text = "AUTO";
             // 
             // txt_Log
@@ -128,7 +128,7 @@
             this.txt_Log.Multiline = true;
             this.txt_Log.Name = "txt_Log";
             this.txt_Log.Size = new System.Drawing.Size(301, 53);
-            this.txt_Log.TabIndex = 9;
+            this.txt_Log.TabIndex = 6;
             this.txt_Log.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Login

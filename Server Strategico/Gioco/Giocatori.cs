@@ -5,7 +5,7 @@ namespace Server_Strategico.Gioco
     internal class Dati
     {
         public static string Difficoltà = "1";
-        public static string Versione = "0.1.25";
+        public static string Versione = "0.1.3";
         public static string Server = "Italy";
 
         public static double forza_Esercito_Att_PVP = 0;
