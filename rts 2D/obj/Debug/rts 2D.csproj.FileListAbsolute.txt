@@ -1,0 +1,15 @@
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\bin\Debug\rts 2D.exe.config
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\bin\Debug\rts 2D.exe.manifest
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\bin\Debug\rts 2D.application
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\bin\Debug\rts 2D.exe
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\bin\Debug\rts 2D.pdb
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.csproj.AssemblyReference.cache
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts_2D.Esercito_Form.resources
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts_2D.Form1.resources
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts_2D.Properties.Resources.resources
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.csproj.GenerateResource.cache
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.csproj.CoreCompileInputs.cache
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.exe.manifest
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.application
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.exe
+C:\Users\Adlos\source\repos\rts 2D\rts 2D\obj\Debug\rts 2D.pdb

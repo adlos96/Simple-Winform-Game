@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuovo profilo",
+    "Projects": [
+      {
+        "Path": "Server Strategico\\Server Strategico.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Strategico V2\\Strategico V2.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
